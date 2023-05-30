@@ -847,7 +847,18 @@ Oblast pùsobení: 1 bytost
 Záchranný hod: žádný
 
 Èarodìj tímto kouzlem otevøe spojení mezi svou sférou a sférou negativní energie. Toto spojení vysaje životní sílu obìti a pøenese ji do sféry negativní energie. Obìti tak budou vysáty 2 úrovnì zkušeností. Cíl kouzla ztratí natrvalo úrovnì, životy, životaschopnost a schopnosti. Tyto úrovnì lze navrátit pouze knìžským kouzlem Obnova.~
+@216 = ~Vyvolej zvíøata (Stvoøení/Povolávání) 
+Úroveò: 6
+Sféra: Povolávání 
+Dosah: 60 metrù
+Trvání: 4 tahy
+Doba sesílání: 9
+Oblast pùsobení: zvláštní 
+Záchranný hod: žádný 
 
+Toto kouzlo umožòuje sesilateli povolat a ovládat dva  medvìdodlaky s životaschopností 20. Po dobu trvání kouzla plní medvìdodlaci každé sesilatelovo pøání. Medvìdodlaci jsou pomalejší než velcí vlkodlaci, ale jsou naproti tomu robustnìjší. Jsou též odolní na elementální a magické útoky a velmi rychle regenerují.~
+@217 = ~Velký medvìdodlak~
+@218 = ~Medvìdodlak~
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////                                                  \\\\\

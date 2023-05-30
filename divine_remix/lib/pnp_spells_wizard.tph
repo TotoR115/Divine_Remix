@@ -1,0 +1,85 @@
+/////                                                  \\\\\
+///// changes to existing spells                       \\\\\
+/////                                                  \\\\\
+   
+ACTION_IF ((FILE_EXISTS ~divine_remix/languages/%LANGUAGE%/utf8_kit_sphere.tra~) OR (FILE_EXISTS ~divine_remix/languages/%LANGUAGE%/kit_sphere.tra~)) THEN BEGIN
+
+  OUTER_SPRINT macro_lang "%LANGUAGE%"
+
+END ELSE BEGIN
+
+  OUTER_SPRINT macro_lang "english"
+
+END
+
+ACTION_IF FILE_EXISTS ~divine_remix/languages/%macro_lang%/utf8_kit_sphere.tra~ THEN BEGIN
+
+  LOAD_TRA ~divine_remix/languages/%macro_lang%/utf8_kit_sphere.tra~
+
+END ELSE BEGIN
+
+  LOAD_TRA ~divine_remix/languages/%macro_lang%/kit_sphere.tra~
+
+END
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~eff_p32.wav~ THEN BEGIN
+
+  COPY ~divine_remix/wav/eff_p32.wav~ ~override~
+
+END
+
+/////// better Monster Summoning III: replace ettercap by winter wolf and add carrion crawler
+
+COPY ~divine_remix/2da/monsum03.2da~ ~override~
+COPY_EXISTING ~wolfwisu.cre~ override
+	WRITE_SHORT 0x24 40
+	WRITE_SHORT 0x26 40
+	WRITE_BYTE 0x234 5	// Set Lv to 5
+	WRITE_BYTE 0x273 11	// Set Class to druid to allow player to change weapon
+	WRITE_BYTE 0x23d 14	// Set Constotution to 14 to avoid bonus linked to the new class
+
+/////// Rework of carrion Summoning: rename it Monster Summoning IV
+
+COPY ~divine_remix/2da/monsum04.2da~ ~override~
+	 ~divine_remix/eff/spcarr.eff~ ~override~
+	 ~divine_remix/cre/ogremasu.cre~ ~override~ // Weapons + regen + spells update
+
+COPY ~divine_remix/spl/spwi623.spl~ ~override~
+    SAY NAME1 @401
+    SAY UNIDENTIFIED_DESC @402
+
+
+COMPILE ~divine_remix/baf/ogremasu.baf~ ~override~ // New spells
+
+
+/////// better (more PnP) Djinni & Efreeti (spells and weapons) and nishrusu & Hakeshar
+
+COPY ~divine_remix/cre/efreetsu.cre~ ~override~ // New spells and Magical weapon
+	 ~divine_remix/cre/djinnisu.cre~ ~override~ // New spells and Magical weapon
+
+COMPILE ~divine_remix/baf/trefreet.baf~ ~override~ // New spells: focus on fire dmg
+		~divine_remix/baf/trdjinni.baf~ ~override~ // New spells: focus on magic prot + powerfull spells
+
+COPY_EXISTING ~nishrusu.cre~ override
+			  ~haksu.cre~ override
+    REMOVE_KNOWN_SPELLS                                                                // Remove all known spells from the current creature
+    REMOVE_MEMORIZED_SPELLS                                                            // Remove all memorized spells from the current creature
+
+/////// better Call Wyvern: 60%/40% to summon 2 wyverns like other summoning spells
+
+COPY ~divine_remix/spl/spwi619.spl~ ~override~
+    SAY UNIDENTIFIED_DESC @403
+
+COPY_EXISTING ~wyvernsu.cre~ override
+	WRITE_BYTE 0x10 THIS BOR 0b01000000	// Set no corpse
+	WRITE_BYTE 0x273 11	// Set Class to druid to allow player to change weapon manually
+
+// disable original spells that were moved to another level
+
+// ACTION_FOR_EACH file IN 
+			  // ~sppr317~ // Cure Disease
+// BEGIN
+  // COPY_EXISTING ~%file%.SPL~ ~override~
+    // WRITE_BYTE 0x21 0b11000000 // don't show up automatically in spellbooks
+  // BUT_ONLY IF_EXISTS
+// END

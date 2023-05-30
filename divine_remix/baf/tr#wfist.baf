@@ -1,0 +1,7 @@
+IF
+	Die()
+THEN
+	RESPONSE #100
+		ApplySpellRES("tr#wfist",LastSummonerOf(Myself))  // No such index
+END
+

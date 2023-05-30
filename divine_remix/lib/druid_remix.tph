@@ -1,0 +1,72 @@
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// Druid Remix                                      \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+// change f/d description to mention armor is now also restricted to druid armor
+OUTER_SPRINT ~old_wep~ @20003
+OUTER_SPRINT ~new_wep~ @20004
+ACTION_GET_STRREF 9579 desc // fighter-druid descript
+OUTER_INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+  REPLACE_TEXTUALLY ~%old_wep%~ ~%new_wep%~
+END
+
+COPY ~divine_remix/2da/mxsplprs.2da~ ~override/mxspldru.2da~
+
+STRING_SET_EVALUATE 9579 ~%desc%~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~jahei14.cre~ THEN BEGIN
+
+  //Jaheira's ToB armor change to Ankheg Plate
+  COPY_EXISTING ~jahei14.cre~ ~override~
+    READ_LONG  0x2bc "itm_off"
+    READ_LONG  0x2c0 "itm_num"
+    FOR ( index = 0 ; index < itm_num ; index = index + 1 ) BEGIN
+      READ_ASCII ("%itm_off%" + (0x14 * "%index%")) "item"
+      PATCH_IF ("%item%" STRING_COMPARE_CASE "chan08" = 0) BEGIN
+        WRITE_ASCII ("%itm_off%" + (0x14 * "%index%")) "plat06" #8
+      END
+    END
+    BUT_ONLY_IF_IT_CHANGES
+
+END
+
+//Alignment changes
+COPY_EXISTING ~alignmnt.2da~ ~override~
+  REPLACE_TEXTUALLY ~^\(DRUID\|FIGHTER_DRUID\|TOTEMIC_DRUID\|SHAPESHIFTER\|BEAST_FRIEND\)[ %TAB%]+.+~ ~\1 0 1 0 1 1 1 0 1 0~
+  BUT_ONLY_IF_IT_CHANGES
+
+PRINT @3
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  READ_BYTE 0x1C "type" ELSE 0
+  PATCH_IF (("%type%" = 2) OR (("%type%" > 59) AND ("%type%" < 68))) BEGIN // any armor
+    READ_BYTE 0x1F "fighter_druid"
+    READ_BYTE 0x21 "druid"
+    PATCH_IF (("%druid%"  BAND 0b01000000) = 0b01000000) BEGIN // If unusable by druids
+      WRITE_BYTE 0x1F ("%fighter_druid%" BOR 0b00010000)        // Making sure Fighter-Druids are restricted to Druid items only.
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+ACTION_IF GAME_IS ~tutu tutu_totsc~ THEN BEGIN // Tutu
+
+  COPY_EXISTING ~_b1-3.itm~    ~override~ // adds magical flag to misc weapons
+                ~_b2-16.itm~   ~override~
+                ~_b1-20.itm~   ~override~
+                ~_drizzts.itm~ ~override~
+                ~_fblade.itm~  ~override~
+                ~_s1-10.itm~   ~override~
+                ~_s1-12.itm~   ~override~
+                ~_s2-16.itm~   ~override~
+                ~_sarevo.itm~  ~override~
+    PATCH_IF (SOURCE_SIZE > 0x71) THEN BEGIN // protects against invalid files
+      READ_BYTE  0x18 "flags"
+      WRITE_BYTE 0x18 ("%flags%" BOR 0b01000000)
+    END
+    BUT_ONLY
+
+END

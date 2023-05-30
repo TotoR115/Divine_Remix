@@ -51,14 +51,16 @@ DEFINE_ACTION_MACRO CD_BUILD_SPHERE BEGIN
     ACTION_IF ("%sphere%" STRING_COMPARE_CASE "ew" = 0) BEGIN OUTER_SPRINT sph_text @2013 END ELSE
     ACTION_IF ("%sphere%" STRING_COMPARE_CASE "gu" = 0) BEGIN OUTER_SPRINT sph_text @2018 END ELSE
     ACTION_IF ("%sphere%" STRING_COMPARE_CASE "he" = 0) BEGIN OUTER_SPRINT sph_text @2019 END ELSE
+    ACTION_IF ("%sphere%" STRING_COMPARE_CASE "hr" = 0) BEGIN OUTER_SPRINT sph_text @2019 END ELSE
     ACTION_IF ("%sphere%" STRING_COMPARE_CASE "lw" = 0) BEGIN OUTER_SPRINT sph_text @2020 END ELSE
     ACTION_IF ("%sphere%" STRING_COMPARE_CASE "ne" = 0) BEGIN OUTER_SPRINT sph_text @2021 END ELSE
-    ACTION_IF ("%sphere%" STRING_COMPARE_CASE "ne" = 0) BEGIN OUTER_SPRINT sph_text @2021 END ELSE
+    ACTION_IF ("%sphere%" STRING_COMPARE_CASE "nr" = 0) BEGIN OUTER_SPRINT sph_text @2021 END ELSE
     ACTION_IF ("%sphere%" STRING_COMPARE_CASE "nu" = 0) BEGIN OUTER_SPRINT sph_text @2022 END ELSE
     ACTION_IF ("%sphere%" STRING_COMPARE_CASE "pl" = 0) BEGIN OUTER_SPRINT sph_text @2029 END ELSE
     ACTION_IF ("%sphere%" STRING_COMPARE_CASE "pr" = 0) BEGIN OUTER_SPRINT sph_text @2023 END ELSE
     ACTION_IF ("%sphere%" STRING_COMPARE_CASE "su" = 0) BEGIN OUTER_SPRINT sph_text @2025 END ELSE
     ACTION_IF ("%sphere%" STRING_COMPARE_CASE "sn" = 0) BEGIN OUTER_SPRINT sph_text @2024 END ELSE
+    ACTION_IF ("%sphere%" STRING_COMPARE_CASE "sm" = 0) BEGIN OUTER_SPRINT sph_text @2039 END ELSE
     ACTION_IF ("%sphere%" STRING_COMPARE_CASE "th" = 0) BEGIN OUTER_SPRINT sph_text @2014 END ELSE
     ACTION_IF ("%sphere%" STRING_COMPARE_CASE "ti" = 0) BEGIN OUTER_SPRINT sph_text @2035 END ELSE
     ACTION_IF ("%sphere%" STRING_COMPARE_CASE "tr" = 0) BEGIN OUTER_SPRINT sph_text @2015 END ELSE
@@ -106,7 +108,7 @@ DEFINE_ACTION_MACRO CD_BUILD_SPHERE BEGIN
           END
         END
         BUT_ONLY
-
+	//PRINT ~%desc%~
       ACTION_IF (sphere_descript != 0) THEN BEGIN
   
         STRING_SET_EVALUATE desc_strref "%desc%"
@@ -355,6 +357,16 @@ DEFINE_PATCH_FUNCTION cd_spellbook
         END
       END
     END
+	PATCH_IF (sb_delta < 0) BEGIN
+      WRITE_LONG 0x2A4 (sb_num + sb_delta)
+      PATCH_FOR_EACH offset IN 0x2a8 0x2b0 0x2b8 0x2bc 0x2c4 BEGIN
+        READ_LONG offset off
+        PATCH_IF off > sb_off BEGIN
+          WRITE_LONG offset (THIS + (sb_delta * 0x0C))
+        END
+      END
+    END
+	SET sb_delta = 0
   END
 
 END
@@ -626,8 +638,7 @@ DEFINE_PATCH_MACRO ~extend_clab_to_level_50~ BEGIN
   REPLACE_TEXTUALLY ~\(1[ %TAB%]+2[ %TAB%]+3[ %TAB%]+4[ %TAB%]+5[ %TAB%]+6[ %TAB%]+7[ %TAB%]+8[ %TAB%]+9[ %TAB%]+10[ %TAB%]+11[ %TAB%]+12[ %TAB%]+13[ %TAB%]+14[ %TAB%]+15[ %TAB%]+16[ %TAB%]+17[ %TAB%]+18[ %TAB%]+19[ %TAB%]+20[ %TAB%]+21[ %TAB%]+22[ %TAB%]+23[ %TAB%]+24[ %TAB%]+25[ %TAB%]+26[ %TAB%]+27[ %TAB%]+28[ %TAB%]+29[ %TAB%]+30[ %TAB%]+31[ %TAB%]+32[ %TAB%]+33[ %TAB%]+34[ %TAB%]+35[ %TAB%]+36[ %TAB%]+37[ %TAB%]+38[ %TAB%]+39\)\([ %TAB%]+\)40[ %TAB%]*~
     ~\1\240\241\242\243\244\245\246\247\248\249\250~
   REPLACE_TEXTUALLY ~^\(ABILITY[0-9A-Z]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+\)\([ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%%lnl%]+\)[ %TAB%]*$~
-    ~\1\2\2~
-
+    ~\1\2\2~ 
 END
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -657,6 +668,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
     elemental_water         = none
     guardian                = none
     healing                 = none
+    healing_sr              = none
     law                     = none
     necromantic             = none
     necromantic_restorative = none
@@ -665,6 +677,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
     protection              = none
     summoning               = none
     sun                     = none
+    sun_moon                = none
     thoughts                = none
     time                    = none
     travelers               = none
@@ -674,8 +687,19 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
   BEGIN
   
   ACTION_IF FILE_EXISTS_IN_GAME ~%table%.2da~ THEN BEGIN
-
-    ACTION_IF NOT FILE_CONTAINS_EVALUATED (~%table%.2da~ ~[ %TAB%]CDDR[a-z][a-z][1-7][ %TAB%]~) THEN BEGIN // don't mess with it if spell sphere spells already exist
+   
+   COPY_EXISTING ~%table%.2da~ ~override~ // extends CLAB to level 50 if needed
+        PATCH_IF (SOURCE_SIZE > 0) BEGIN
+          REPLACE_TEXTUALLY ~[%WNL%%MNL%]+~ ~%LNL%~
+          REPLACE_TEXTUALLY ~\(1[ %TAB%]+2[ %TAB%]+3[ %TAB%]+4[ %TAB%]+5[ %TAB%]+6[ %TAB%]+7[ %TAB%]+8[ %TAB%]+9[ %TAB%]+10[ %TAB%]+11[ %TAB%]+12[ %TAB%]+13[ %TAB%]+14[ %TAB%]+15[ %TAB%]+16[ %TAB%]+17[ %TAB%]+18[ %TAB%]+19[ %TAB%]+20[ %TAB%]+21[ %TAB%]+22[ %TAB%]+23[ %TAB%]+24[ %TAB%]+25[ %TAB%]+26[ %TAB%]+27[ %TAB%]+28[ %TAB%]+29[ %TAB%]+30[ %TAB%]+31[ %TAB%]+32[ %TAB%]+33[ %TAB%]+34[ %TAB%]+35[ %TAB%]+36[ %TAB%]+37[ %TAB%]+38[ %TAB%]+39\)\([ %TAB%]+\)40[ %TAB%]*~
+            ~\1\240\241\242\243\244\245\246\247\248\249\250~
+          REPLACE_TEXTUALLY ~^\(ABILITY[0-9A-Z]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+\)\([ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%%LNL%]+\)[ %TAB%]*$~
+            ~\1\2\2~
+        END
+    UNLESS ~41[ %TAB%]+42[ %TAB%]+43[ %TAB%]+44[ %TAB%]+45[ %TAB%]+46[ %TAB%]+47[ %TAB%]+48[ %TAB%]+49[ %TAB%]+50~
+   BUT_ONLY
+		
+    ACTION_IF NOT FILE_CONTAINS_EVALUATED (~%table%.2da~ ~[ %TAB%]AP_CDDR[a-z][a-z][1-7][ %TAB%]~) THEN BEGIN // don't mess with it if spell sphere spells already exist
         
       ACTION_FOR_EACH restrict IN all good evil geneutral lawful chaotic lcneutral BEGIN
 
@@ -697,15 +721,18 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
             PATCH_IF ("%elemental_water%" STRING_COMPARE_CASE "none")         THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_ew_%index%_%restrict%.2da~ END
             PATCH_IF ("%guardian%" STRING_COMPARE_CASE "none")                THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_gu_%index%_%restrict%.2da~ END
             PATCH_IF ("%healing%" STRING_COMPARE_CASE "none")                 THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_he_%index%_%restrict%.2da~ END
+            PATCH_IF ("%healing_sr%" STRING_COMPARE_CASE "none") 			  THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_hr_%index%_%restrict%.2da~ END
             PATCH_IF ("%law%" STRING_COMPARE_CASE "none")                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_lw_%index%_%restrict%.2da~ END
-            PATCH_IF ("%necromantic%" STRING_COMPARE_CASE "none")             THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_ne_%index%_%restrict%.2da~ 
+            PATCH_IF ("%necromantic%" STRING_COMPARE_CASE "none")             THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_ne_%index%_%restrict%.2da~
                                                                                          APPEND_FILE ~divine_remix/spheres/spellbook_nr_%index%_%restrict%.2da~ END
             PATCH_IF ("%necromantic_restorative%" STRING_COMPARE_CASE "none") THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_nr_%index%_%restrict%.2da~ END
             PATCH_IF ("%numbers%" STRING_COMPARE_CASE "none")                 THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_nu_%index%_%restrict%.2da~ END
             PATCH_IF ("%plant%" STRING_COMPARE_CASE "none")                   THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_pl_%index%_%restrict%.2da~ END
             PATCH_IF ("%protection%" STRING_COMPARE_CASE "none")              THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_pr_%index%_%restrict%.2da~ END
             PATCH_IF ("%summoning%" STRING_COMPARE_CASE "none")               THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_su_%index%_%restrict%.2da~ END
-            PATCH_IF ("%sun%" STRING_COMPARE_CASE "none")                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_sn_%index%_%restrict%.2da~ END
+            PATCH_IF ("%sun%" STRING_COMPARE_CASE "none")                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_sn_%index%_%restrict%.2da~ 
+                                                                                         APPEND_FILE ~divine_remix/spheres/spellbook_sm_%index%_%restrict%.2da~ END
+            PATCH_IF ("%sun_moon%" STRING_COMPARE_CASE "none") 				  THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_sm_%index%_%restrict%.2da~ END
             PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "none")                THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_th_%index%_%restrict%.2da~ END
             PATCH_IF ("%time%" STRING_COMPARE_CASE "none")                    THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_ti_%index%_%restrict%.2da~ END
             PATCH_IF ("%travelers%" STRING_COMPARE_CASE "none")               THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_tr_%index%_%restrict%.2da~ END
@@ -732,16 +759,19 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
             PATCH_IF ("%elemental_fire%" STRING_COMPARE_CASE "major" = 0)          THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_ef_%index%_%restrict%.2da~ END
             PATCH_IF ("%elemental_water%" STRING_COMPARE_CASE "major" = 0)         THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_ew_%index%_%restrict%.2da~ END
             PATCH_IF ("%guardian%" STRING_COMPARE_CASE "major" = 0)                THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_gu_%index%_%restrict%.2da~ END
-            PATCH_IF ("%healing%" STRING_COMPARE_CASE "major" = 0)                 THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_he_%index%_%restrict%.2da~ END
+            PATCH_IF ("%healing%" STRING_COMPARE_CASE "major" = 0)            	   THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_he_%index%_%restrict%.2da~ END
+            PATCH_IF ("%healing_sr%" STRING_COMPARE_CASE "major" = 0) 			   THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_hr_%index%_%restrict%.2da~ END
             PATCH_IF ("%law%" STRING_COMPARE_CASE "major" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_lw_%index%_%restrict%.2da~ END
             PATCH_IF ("%necromantic%" STRING_COMPARE_CASE "major" = 0)             THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_ne_%index%_%restrict%.2da~ 
-                                                                                         APPEND_FILE ~divine_remix/spheres/spellbook_nr_%index%_%restrict%.2da~ END
+																							  APPEND_FILE ~divine_remix/spheres/spellbook_nr_%index%_%restrict%.2da~ END
             PATCH_IF ("%necromantic_restorative%" STRING_COMPARE_CASE "major" = 0) THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_nr_%index%_%restrict%.2da~ END
             PATCH_IF ("%numbers%" STRING_COMPARE_CASE "major" = 0)                 THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_nu_%index%_%restrict%.2da~ END
             PATCH_IF ("%plant%" STRING_COMPARE_CASE "major" = 0)                   THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_pl_%index%_%restrict%.2da~ END
             PATCH_IF ("%protection%" STRING_COMPARE_CASE "major" = 0)              THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_pr_%index%_%restrict%.2da~ END
             PATCH_IF ("%summoning%" STRING_COMPARE_CASE "major" = 0)               THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_su_%index%_%restrict%.2da~ END
-            PATCH_IF ("%sun%" STRING_COMPARE_CASE "major" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_sn_%index%_%restrict%.2da~ END
+            PATCH_IF ("%sun%" STRING_COMPARE_CASE "major" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_sn_%index%_%restrict%.2da~ 
+																							  APPEND_FILE ~divine_remix/spheres/spellbook_sm_%index%_%restrict%.2da~ END
+            PATCH_IF ("%sun_moon%" STRING_COMPARE_CASE "major" = 0) 			   THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_sm_%index%_%restrict%.2da~ END
             PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "major" = 0)                THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_th_%index%_%restrict%.2da~ END
             PATCH_IF ("%time%" STRING_COMPARE_CASE "major" = 0)                    THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_ti_%index%_%restrict%.2da~ END
             PATCH_IF ("%travelers%" STRING_COMPARE_CASE "major" = 0)               THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_tr_%index%_%restrict%.2da~ END
@@ -767,7 +797,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
               APPEND ~spellbook_%table%_%index%_0.2da~ ~%spell%~ UNLESS ~%spell%~
             END
           END
-          BUT_ONLY
+        BUT_ONLY
 
         COPY_EXISTING ~spellbook_%table%_%index%_0.2da~ ~override/spellbook_%table%_%index%_17.2da~ // lawful good
                       ~spellbook_%table%_%index%_0.2da~ ~override/spellbook_%table%_%index%_18.2da~ // lawful neutral
@@ -799,7 +829,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
               END
             END
           END
-          BUT_ONLY
+        BUT_ONLY
         
         COPY ~divine_remix/spheres/spellbook_%table%_%index%_lcneutral.2da~ ~divine_remix/spheres/spellbook_%table%_%index%_lcneutral.2da~
           COUNT_2DA_ROWS 1 rows
@@ -821,7 +851,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
               END
             END
           END
-          BUT_ONLY
+        BUT_ONLY
         
         COPY ~divine_remix/spheres/spellbook_%table%_%index%_chaotic.2da~ ~divine_remix/spheres/spellbook_%table%_%index%_chaotic.2da~
           COUNT_2DA_ROWS 1 rows
@@ -843,7 +873,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
               END
             END
           END
-          BUT_ONLY
+        BUT_ONLY
 
         MOVE ~override/spellbook_%table%_%index%_0.2da~  ~divine_remix/spheres~ // no alignment
              ~override/spellbook_%table%_%index%_17.2da~ ~divine_remix/spheres~ // lawful good
@@ -860,7 +890,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
 
       COPY_EXISTING ~%table%.2da~ ~override~
         LAUNCH_PATCH_MACRO ~remove_blank_lines_from_eof~ // remove eof blank lines
-        LAUNCH_PATCH_MACRO ~extend_clab_to_level_50~     // extends CLAB to level 50
+        //LAUNCH_PATCH_MACRO ~extend_clab_to_level_50~     // extends CLAB to level 50
         PATCH_IF ("%all%" STRING_COMPARE_CASE "major" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_al_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_al.2da~ END
         PATCH_IF ("%animal%" STRING_COMPARE_CASE "major" = 0)                  THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_an_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_an.2da~ END
         PATCH_IF ("%astral%" STRING_COMPARE_CASE "major" = 0)                  THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_as_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_as.2da~ END
@@ -876,6 +906,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
         PATCH_IF ("%elemental_water%" STRING_COMPARE_CASE "major" = 0)         THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_ew_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_ew.2da~ END
         PATCH_IF ("%guardian%" STRING_COMPARE_CASE "major" = 0)                THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_gu_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_gu.2da~ END
         PATCH_IF ("%healing%" STRING_COMPARE_CASE "major" = 0)                 THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_he_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_he.2da~ END
+        PATCH_IF ("%healing_sr%" STRING_COMPARE_CASE "major" = 0)              THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_hr_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_hr.2da~ END
         PATCH_IF ("%law%" STRING_COMPARE_CASE "major" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_lw_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_lw.2da~ END
         PATCH_IF ("%necromantic%" STRING_COMPARE_CASE "major" = 0)             THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_ne_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_ne.2da~
                                                                                           APPEND_FILE ~divine_remix/spheres/%class%_nr_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_nr.2da~ END
@@ -884,7 +915,9 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
         PATCH_IF ("%plant%" STRING_COMPARE_CASE "major" = 0)                   THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_pl_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_pl.2da~ END
         PATCH_IF ("%protection%" STRING_COMPARE_CASE "major" = 0)              THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_pr_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_pr.2da~ END
         PATCH_IF ("%summoning%" STRING_COMPARE_CASE "major" = 0)               THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_su_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_su.2da~ END
-        PATCH_IF ("%sun%" STRING_COMPARE_CASE "major" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_sn_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_sn.2da~ END
+        PATCH_IF ("%sun%" STRING_COMPARE_CASE "major" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_sn_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_sn.2da~ 
+                                                                                          APPEND_FILE ~divine_remix/spheres/%class%_sm_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_sm.2da~ END
+        PATCH_IF ("%sun_moon%" STRING_COMPARE_CASE "major" = 0) 			   THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_sm_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_sm.2da~ END
         PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "major" = 0)                THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_th_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_th.2da~ END
         PATCH_IF ("%time%" STRING_COMPARE_CASE "major" = 0)                    THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_ti_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_ti.2da~ END
         PATCH_IF ("%travelers%" STRING_COMPARE_CASE "major" = 0)               THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_tr_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_tr.2da~ END
@@ -906,6 +939,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
         PATCH_IF ("%elemental_water%" STRING_COMPARE_CASE "minor" = 0)         THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_ew_minor.2da~ END
         PATCH_IF ("%guardian%" STRING_COMPARE_CASE "minor" = 0)                THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_gu_minor.2da~ END
         PATCH_IF ("%healing%" STRING_COMPARE_CASE "minor" = 0)                 THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_he_minor.2da~ END
+        PATCH_IF ("%healing_sr%" STRING_COMPARE_CASE "minor" = 0)              THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_hr_minor.2da~ END
         PATCH_IF ("%law%" STRING_COMPARE_CASE "minor" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_lw_minor.2da~ END
         PATCH_IF ("%necromantic%" STRING_COMPARE_CASE "minor" = 0)             THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_ne_minor.2da~ APPEND_FILE ~divine_remix/spheres/%class%_nr_minor.2da~ END
         PATCH_IF ("%necromantic_restorative%" STRING_COMPARE_CASE "minor" = 0) THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_nr_minor.2da~ END
@@ -913,7 +947,8 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
         PATCH_IF ("%plant%" STRING_COMPARE_CASE "minor" = 0)                   THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_pl_minor.2da~ END
         PATCH_IF ("%protection%" STRING_COMPARE_CASE "minor" = 0)              THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_pr_minor.2da~ END
         PATCH_IF ("%summoning%" STRING_COMPARE_CASE "minor" = 0)               THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_su_minor.2da~ END
-        PATCH_IF ("%sun%" STRING_COMPARE_CASE "minor" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_sn_minor.2da~ END
+        PATCH_IF ("%sun%" STRING_COMPARE_CASE "minor" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_sn_minor.2da~  APPEND_FILE ~divine_remix/spheres/%class%_sm_minor.2da~ END
+        PATCH_IF ("%sun_moon%" STRING_COMPARE_CASE "minor" = 0) 			   THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_sm_minor.2da~ END
         PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "minor" = 0)                THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_th_minor.2da~ END
         PATCH_IF ("%time%" STRING_COMPARE_CASE "minor" = 0)                    THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_ti_minor.2da~ END
         PATCH_IF ("%travelers%" STRING_COMPARE_CASE "minor" = 0)               THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_tr_minor.2da~ END
@@ -968,12 +1003,14 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
         OUTER_SPRINT sphere_we     @2017 // Weather
         OUTER_SPRINT sphere_gu     @2018 // Guardian
         OUTER_SPRINT sphere_he     @2019 // Healing
+        OUTER_SPRINT sphere_hr     @2019 // Healing (for SR)
         OUTER_SPRINT sphere_lw     @2020 // Law
         OUTER_SPRINT sphere_ne     @2021 // Necromantic
         OUTER_SPRINT sphere_nr     @2036 // Necromantic (restorative only)
         OUTER_SPRINT sphere_nu     @2022 // Numbers
         OUTER_SPRINT sphere_pr     @2023 // Protection
         OUTER_SPRINT sphere_sn     @2024 // Sun
+        OUTER_SPRINT sphere_sm     @2039 // Sun (moon)
         OUTER_SPRINT sphere_su     @2025 // Summoning
         OUTER_SPRINT sphere_pl     @2029 // Plant
         OUTER_SPRINT sphere_wd     @2030 // Wards
@@ -991,7 +1028,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
           END
           PATCH_IF help != 0 BEGIN
             GET_STRREF help desc
-            PATCH_IF ("%desc%" STRING_CONTAINS_REGEXP "%sphere_header%") BEGIN
+			PATCH_IF ("%desc%" STRING_CONTAINS_REGEXP "%sphere_header%") BEGIN
               INNER_PATCH_SAVE desc ~%desc%~ BEGIN
                 PATCH_IF ("%all%" STRING_COMPARE_CASE "major" = 0)             THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_al%" END
                 PATCH_IF ("%animal%" STRING_COMPARE_CASE "major" = 0)          THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_an%" END
@@ -1008,6 +1045,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
                 PATCH_IF ("%elemental_water%" STRING_COMPARE_CASE "major" = 0) THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_ew%" END
                 PATCH_IF ("%guardian%" STRING_COMPARE_CASE "major" = 0)        THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_gu%" END
                 PATCH_IF ("%healing%" STRING_COMPARE_CASE "major" = 0)         THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_he%" END
+                PATCH_IF ("%healing_sr%" STRING_COMPARE_CASE "major" = 0)      THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_hr%" END
                 PATCH_IF ("%law%" STRING_COMPARE_CASE "major" = 0)             THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_lw%" END
                 PATCH_IF ("%necromantic%" STRING_COMPARE_CASE "major" = 0)     THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_ne%" END
                 PATCH_IF ("%necromantic_restorative%" STRING_COMPARE_CASE "major" = 0)     THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_nr%" END
@@ -1016,6 +1054,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
                 PATCH_IF ("%protection%" STRING_COMPARE_CASE "major" = 0)      THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_pr%" END
                 PATCH_IF ("%summoning%" STRING_COMPARE_CASE "major" = 0)       THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_su%" END
                 PATCH_IF ("%sun%" STRING_COMPARE_CASE "major" = 0)             THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_sn%" END
+                PATCH_IF ("%sun_moon%" STRING_COMPARE_CASE "major" = 0)        THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_sm%" END
                 PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "major" = 0)        THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_th%" END
                 PATCH_IF ("%time%" STRING_COMPARE_CASE "major" = 0)            THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_ti%" END
                 PATCH_IF ("%travelers%" STRING_COMPARE_CASE "major" = 0)       THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_tr%" END
@@ -1037,6 +1076,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
                 PATCH_IF ("%elemental_water%" STRING_COMPARE_CASE "minor" = 0) THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_ew%" END
                 PATCH_IF ("%guardian%" STRING_COMPARE_CASE "minor" = 0)        THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_gu%" END
                 PATCH_IF ("%healing%" STRING_COMPARE_CASE "minor" = 0)         THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_he%" END
+                PATCH_IF ("%healing_sr%" STRING_COMPARE_CASE "minor" = 0)      THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_hr%" END
                 PATCH_IF ("%law%" STRING_COMPARE_CASE "minor" = 0)             THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_lw%" END
                 PATCH_IF ("%necromantic%" STRING_COMPARE_CASE "minor" = 0)     THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_ne%" END
                 PATCH_IF ("%necromantic_restorative%" STRING_COMPARE_CASE "minor" = 0)     THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_nr%" END
@@ -1045,58 +1085,61 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
                 PATCH_IF ("%protection%" STRING_COMPARE_CASE "minor" = 0)      THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_pr%" END
                 PATCH_IF ("%summoning%" STRING_COMPARE_CASE "minor" = 0)       THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_su%" END
                 PATCH_IF ("%sun%" STRING_COMPARE_CASE "minor" = 0)             THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_sn%" END
+                PATCH_IF ("%sun_moon%" STRING_COMPARE_CASE "minor" = 0)        THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_sn%" END
                 PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "minor" = 0)        THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_th%" END
                 PATCH_IF ("%time%" STRING_COMPARE_CASE "minor" = 0)            THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_ti%" END
                 PATCH_IF ("%travelers%" STRING_COMPARE_CASE "minor" = 0)       THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_tr%" END
                 PATCH_IF ("%war%" STRING_COMPARE_CASE "minor" = 0)             THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_wa%" END
                 PATCH_IF ("%wards%" STRING_COMPARE_CASE "minor" = 0)           THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_wd%" END
                 PATCH_IF ("%weather%" STRING_COMPARE_CASE "minor" = 0)         THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_we%" END
-                PATCH_IF ("%all%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_al%" END
-                PATCH_IF ("%animal%" STRING_COMPARE_CASE "none" = 0)          THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_an%" END
-                PATCH_IF ("%astral%" STRING_COMPARE_CASE "none" = 0)          THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_as%" END
-                PATCH_IF ("%chaos%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_cs%" END
-                PATCH_IF ("%charm%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_cm%" END
-                PATCH_IF ("%combat%" STRING_COMPARE_CASE "none" = 0)          THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_co%" END
-                PATCH_IF ("%creation%" STRING_COMPARE_CASE "none" = 0)        THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_cr%" END
-                PATCH_IF ("%divination%" STRING_COMPARE_CASE "none" = 0)      THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_di%" END
-                PATCH_IF ("%elemental%" STRING_COMPARE_CASE "none" = 0)       THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ex%" END
-                PATCH_IF ("%elemental_air%" STRING_COMPARE_CASE "none" = 0)   THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ea%" END
-                PATCH_IF ("%elemental_earth%" STRING_COMPARE_CASE "none" = 0) THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ee%" END
-                PATCH_IF ("%elemental_fire%" STRING_COMPARE_CASE "none" = 0)  THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ef%" END
-                PATCH_IF ("%elemental_water%" STRING_COMPARE_CASE "none" = 0) THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ew%" END
-                PATCH_IF ("%guardian%" STRING_COMPARE_CASE "none" = 0)        THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_gu%" END
-                PATCH_IF ("%healing%" STRING_COMPARE_CASE "none" = 0)         THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_he%" END
-                PATCH_IF ("%law%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_lw%" END
-                PATCH_IF ("%necromantic%" STRING_COMPARE_CASE "none" = 0)     THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ne%" END
-                PATCH_IF ("%necromantic_restorative%" STRING_COMPARE_CASE "none" = 0)     THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_nr%" END
-                PATCH_IF ("%numbers%" STRING_COMPARE_CASE "none" = 0)         THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_nu%" END
-                PATCH_IF ("%plant%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_pl%" END
-                PATCH_IF ("%protection%" STRING_COMPARE_CASE "none" = 0)      THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_pr%" END
-                PATCH_IF ("%summoning%" STRING_COMPARE_CASE "none" = 0)       THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_su%" END
-                PATCH_IF ("%sun%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_sn%" END
-                PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "none" = 0)        THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_th%" END
-                PATCH_IF ("%time%" STRING_COMPARE_CASE "none" = 0)            THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ti%" END
-                PATCH_IF ("%travelers%" STRING_COMPARE_CASE "none" = 0)       THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_tr%" END
-                PATCH_IF ("%war%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_wa%" END
-                PATCH_IF ("%wards%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_wd%" END
-                PATCH_IF ("%weather%" STRING_COMPARE_CASE "none" = 0)         THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_we%" END
-                REPLACE_TEXTUALLY ~\(\(.\|%LNL%\|%MNL%\|%WNL%\)+\)~ ~\1
+                // PATCH_IF ("%all%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_al%" END
+                // PATCH_IF ("%animal%" STRING_COMPARE_CASE "none" = 0)          THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_an%" END
+                // PATCH_IF ("%astral%" STRING_COMPARE_CASE "none" = 0)          THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_as%" END
+                // PATCH_IF ("%chaos%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_cs%" END
+                // PATCH_IF ("%charm%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_cm%" END
+                // PATCH_IF ("%combat%" STRING_COMPARE_CASE "none" = 0)          THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_co%" END
+                // PATCH_IF ("%creation%" STRING_COMPARE_CASE "none" = 0)        THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_cr%" END
+                // PATCH_IF ("%divination%" STRING_COMPARE_CASE "none" = 0)      THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_di%" END
+                // PATCH_IF ("%elemental%" STRING_COMPARE_CASE "none" = 0)       THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ex%" END
+                // PATCH_IF ("%elemental_air%" STRING_COMPARE_CASE "none" = 0)   THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ea%" END
+                // PATCH_IF ("%elemental_earth%" STRING_COMPARE_CASE "none" = 0) THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ee%" END
+                // PATCH_IF ("%elemental_fire%" STRING_COMPARE_CASE "none" = 0)  THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ef%" END
+                // PATCH_IF ("%elemental_water%" STRING_COMPARE_CASE "none" = 0) THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ew%" END
+                // PATCH_IF ("%guardian%" STRING_COMPARE_CASE "none" = 0)        THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_gu%" END
+                // PATCH_IF ("%healing%" STRING_COMPARE_CASE "none" = 0)         THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_he%" END
+                // PATCH_IF ("%law%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_lw%" END
+                // PATCH_IF ("%necromantic%" STRING_COMPARE_CASE "none" = 0)     THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ne%" END
+                // PATCH_IF ("%necromantic_restorative%" STRING_COMPARE_CASE "none" = 0)     THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_nr%" END
+                // PATCH_IF ("%numbers%" STRING_COMPARE_CASE "none" = 0)         THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_nu%" END
+                // PATCH_IF ("%plant%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_pl%" END
+                // PATCH_IF ("%protection%" STRING_COMPARE_CASE "none" = 0)      THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_pr%" END
+                // PATCH_IF ("%summoning%" STRING_COMPARE_CASE "none" = 0)       THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_su%" END
+                // PATCH_IF ("%sun%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_sn%" END
+                // PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "none" = 0)        THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_th%" END
+                // PATCH_IF ("%time%" STRING_COMPARE_CASE "none" = 0)            THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ti%" END
+                // PATCH_IF ("%travelers%" STRING_COMPARE_CASE "none" = 0)       THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_tr%" END
+                // PATCH_IF ("%war%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_wa%" END
+                // PATCH_IF ("%wards%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_wd%" END
+                // PATCH_IF ("%weather%" STRING_COMPARE_CASE "none" = 0)         THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_we%" END
+				REPLACE_TEXTUALLY ~\(\(.\|%LNL%\|%MNL%\|%WNL%\)+\)~ ~\1
     
-  %sphere_header%
-  %sphere_major%
-  %sphere_minor%
-  %sphere_none%~
+%sphere_header%
+%sphere_major%
+%sphere_minor%
+%sphere_none%~
                 REPLACE_TEXTUALLY ~^%sphere_major_orig%$~ ~%sphere_major_none%~
                 REPLACE_TEXTUALLY ~^%sphere_minor_orig%$~ ~%sphere_minor_none%~
                 REPLACE_TEXTUALLY ~^%sphere_none_orig%$~ ~~
-                REPLACE_TEXTUALLY ~%sphere_ne%, %sphere_nr%~ ~%sphere_ne%~
+				REPLACE_TEXTUALLY ~%sphere_ne%, %sphere_nr%~ ~%sphere_ne%~
+				REPLACE_TEXTUALLY ~%sphere_he%, %sphere_hr%~ ~%sphere_he%~
+				REPLACE_TEXTUALLY ~%sphere_sn%, %sphere_sm%~ ~%sphere_sn%~
                 REPLACE_TEXTUALLY ~%sphere_ex%, %sphere_ea%, %sphere_ee%, %sphere_ef%, %sphere_ew%~ ~%sphere_ex%~
                 REPLACE_TEXTUALLY ~CD_REPLACEME, ~ ~~
               END
             END
-          END
-          BUT_ONLY
-        
+		  END
+		  BUT_ONLY
+        //PRINT ~%desc%~
         ACTION_IF (help != 0) BEGIN
           STRING_SET_EVALUATE help "%desc%"
         END
@@ -1136,6 +1179,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere_descript
     elemental_water         = none
     guardian                = none
     healing                 = none
+    healing_sr              = none
     law                     = none
     necromantic             = none
     necromantic_restorative = none
@@ -1144,6 +1188,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere_descript
     protection              = none
     summoning               = none
     sun                     = none
+    sun_moon                = none
     thoughts                = none
     time                    = none
     travelers               = none
@@ -1192,12 +1237,14 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere_descript
     OUTER_SPRINT sphere_we     @2017 // Weather
     OUTER_SPRINT sphere_gu     @2018 // Guardian
     OUTER_SPRINT sphere_he     @2019 // Healing
+    OUTER_SPRINT sphere_hr     @2019 // Healing (for SR)
     OUTER_SPRINT sphere_lw     @2020 // Law
     OUTER_SPRINT sphere_ne     @2021 // Necromantic
     OUTER_SPRINT sphere_nr     @2036 // Necromantic (restorative only)
     OUTER_SPRINT sphere_nu     @2022 // Numbers
     OUTER_SPRINT sphere_pr     @2023 // Protection
     OUTER_SPRINT sphere_sn     @2024 // Sun
+    OUTER_SPRINT sphere_sm     @2039 // Sun (moon)
     OUTER_SPRINT sphere_su     @2025 // Summoning
     OUTER_SPRINT sphere_pl     @2029 // Plant
     OUTER_SPRINT sphere_wd     @2030 // Wards
@@ -1222,6 +1269,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere_descript
         PATCH_IF ("%elemental_water%" STRING_COMPARE_CASE "major" = 0) THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_ew%" END
         PATCH_IF ("%guardian%" STRING_COMPARE_CASE "major" = 0)        THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_gu%" END
         PATCH_IF ("%healing%" STRING_COMPARE_CASE "major" = 0)         THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_he%" END
+        PATCH_IF ("%healing_sr%" STRING_COMPARE_CASE "major" = 0)      THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_hr%" END
         PATCH_IF ("%law%" STRING_COMPARE_CASE "major" = 0)             THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_lw%" END
         PATCH_IF ("%necromantic%" STRING_COMPARE_CASE "major" = 0)     THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_ne%" END
         PATCH_IF ("%necromantic_restorative%" STRING_COMPARE_CASE "major" = 0)     THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_nr%" END
@@ -1230,6 +1278,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere_descript
         PATCH_IF ("%protection%" STRING_COMPARE_CASE "major" = 0)      THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_pr%" END
         PATCH_IF ("%summoning%" STRING_COMPARE_CASE "major" = 0)       THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_su%" END
         PATCH_IF ("%sun%" STRING_COMPARE_CASE "major" = 0)             THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_sn%" END
+        PATCH_IF ("%sun_moon%" STRING_COMPARE_CASE "major" = 0)        THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_sm%" END
         PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "major" = 0)        THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_th%" END
         PATCH_IF ("%time%" STRING_COMPARE_CASE "major" = 0)            THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_ti%" END
         PATCH_IF ("%travelers%" STRING_COMPARE_CASE "major" = 0)       THEN BEGIN SPRINT sphere_major "%sphere_major%, %sphere_tr%" END
@@ -1251,6 +1300,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere_descript
         PATCH_IF ("%elemental_water%" STRING_COMPARE_CASE "minor" = 0) THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_ew%" END
         PATCH_IF ("%guardian%" STRING_COMPARE_CASE "minor" = 0)        THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_gu%" END
         PATCH_IF ("%healing%" STRING_COMPARE_CASE "minor" = 0)         THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_he%" END
+        PATCH_IF ("%healing_sr%" STRING_COMPARE_CASE "minor" = 0)      THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_hr%" END
         PATCH_IF ("%law%" STRING_COMPARE_CASE "minor" = 0)             THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_lw%" END
         PATCH_IF ("%necromantic%" STRING_COMPARE_CASE "minor" = 0)     THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_ne%" END
         PATCH_IF ("%necromantic_restorative%" STRING_COMPARE_CASE "minor" = 0)     THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_nr%" END
@@ -1259,41 +1309,42 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere_descript
         PATCH_IF ("%protection%" STRING_COMPARE_CASE "minor" = 0)      THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_pr%" END
         PATCH_IF ("%summoning%" STRING_COMPARE_CASE "minor" = 0)       THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_su%" END
         PATCH_IF ("%sun%" STRING_COMPARE_CASE "minor" = 0)             THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_sn%" END
+        PATCH_IF ("%sun_moon%" STRING_COMPARE_CASE "minor" = 0)        THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_sm%" END
         PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "minor" = 0)        THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_th%" END
         PATCH_IF ("%time%" STRING_COMPARE_CASE "minor" = 0)            THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_ti%" END
         PATCH_IF ("%travelers%" STRING_COMPARE_CASE "minor" = 0)       THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_tr%" END
         PATCH_IF ("%war%" STRING_COMPARE_CASE "minor" = 0)             THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_wa%" END
         PATCH_IF ("%wards%" STRING_COMPARE_CASE "minor" = 0)           THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_wd%" END
         PATCH_IF ("%weather%" STRING_COMPARE_CASE "minor" = 0)         THEN BEGIN SPRINT sphere_minor "%sphere_minor%, %sphere_we%" END
-        PATCH_IF ("%all%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_al%" END
-        PATCH_IF ("%animal%" STRING_COMPARE_CASE "none" = 0)          THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_an%" END
-        PATCH_IF ("%astral%" STRING_COMPARE_CASE "none" = 0)          THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_as%" END
-        PATCH_IF ("%chaos%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_cs%" END
-        PATCH_IF ("%charm%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_cm%" END
-        PATCH_IF ("%combat%" STRING_COMPARE_CASE "none" = 0)          THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_co%" END
-        PATCH_IF ("%creation%" STRING_COMPARE_CASE "none" = 0)        THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_cr%" END
-        PATCH_IF ("%divination%" STRING_COMPARE_CASE "none" = 0)      THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_di%" END
-        PATCH_IF ("%elemental%" STRING_COMPARE_CASE "none" = 0)       THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ex%" END
-        PATCH_IF ("%elemental_air%" STRING_COMPARE_CASE "none" = 0)   THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ea%" END
-        PATCH_IF ("%elemental_earth%" STRING_COMPARE_CASE "none" = 0) THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ee%" END
-        PATCH_IF ("%elemental_fire%" STRING_COMPARE_CASE "none" = 0)  THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ef%" END
-        PATCH_IF ("%elemental_water%" STRING_COMPARE_CASE "none" = 0) THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ew%" END
-        PATCH_IF ("%guardian%" STRING_COMPARE_CASE "none" = 0)        THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_gu%" END
-        PATCH_IF ("%healing%" STRING_COMPARE_CASE "none" = 0)         THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_he%" END
-        PATCH_IF ("%law%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_lw%" END
-        PATCH_IF ("%necromantic%" STRING_COMPARE_CASE "none" = 0)     THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ne%" END
-        PATCH_IF ("%necromantic_restorative%" STRING_COMPARE_CASE "none" = 0)     THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_nr%" END
-        PATCH_IF ("%numbers%" STRING_COMPARE_CASE "none" = 0)         THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_nu%" END
-        PATCH_IF ("%plant%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_pl%" END
-        PATCH_IF ("%protection%" STRING_COMPARE_CASE "none" = 0)      THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_pr%" END
-        PATCH_IF ("%summoning%" STRING_COMPARE_CASE "none" = 0)       THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_su%" END
-        PATCH_IF ("%sun%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_sn%" END
-        PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "none" = 0)        THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_th%" END
-        PATCH_IF ("%time%" STRING_COMPARE_CASE "none" = 0)            THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ti%" END
-        PATCH_IF ("%travelers%" STRING_COMPARE_CASE "none" = 0)       THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_tr%" END
-        PATCH_IF ("%war%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_wa%" END
-        PATCH_IF ("%wards%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_wd%" END
-        PATCH_IF ("%weather%" STRING_COMPARE_CASE "none" = 0)         THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_we%" END
+        // PATCH_IF ("%all%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_al%" END
+        // PATCH_IF ("%animal%" STRING_COMPARE_CASE "none" = 0)          THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_an%" END
+        // PATCH_IF ("%astral%" STRING_COMPARE_CASE "none" = 0)          THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_as%" END
+        // PATCH_IF ("%chaos%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_cs%" END
+        // PATCH_IF ("%charm%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_cm%" END
+        // PATCH_IF ("%combat%" STRING_COMPARE_CASE "none" = 0)          THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_co%" END
+        // PATCH_IF ("%creation%" STRING_COMPARE_CASE "none" = 0)        THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_cr%" END
+        // PATCH_IF ("%divination%" STRING_COMPARE_CASE "none" = 0)      THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_di%" END
+        // PATCH_IF ("%elemental%" STRING_COMPARE_CASE "none" = 0)       THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ex%" END
+        // PATCH_IF ("%elemental_air%" STRING_COMPARE_CASE "none" = 0)   THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ea%" END
+        // PATCH_IF ("%elemental_earth%" STRING_COMPARE_CASE "none" = 0) THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ee%" END
+        // PATCH_IF ("%elemental_fire%" STRING_COMPARE_CASE "none" = 0)  THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ef%" END
+        // PATCH_IF ("%elemental_water%" STRING_COMPARE_CASE "none" = 0) THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ew%" END
+        // PATCH_IF ("%guardian%" STRING_COMPARE_CASE "none" = 0)        THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_gu%" END
+        // PATCH_IF ("%healing%" STRING_COMPARE_CASE "none" = 0)         THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_he%" END
+        // PATCH_IF ("%law%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_lw%" END
+        // PATCH_IF ("%necromantic%" STRING_COMPARE_CASE "none" = 0)     THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ne%" END
+        // PATCH_IF ("%necromantic_restorative%" STRING_COMPARE_CASE "none" = 0)     THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_nr%" END
+        // PATCH_IF ("%numbers%" STRING_COMPARE_CASE "none" = 0)         THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_nu%" END
+        // PATCH_IF ("%plant%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_pl%" END
+        // PATCH_IF ("%protection%" STRING_COMPARE_CASE "none" = 0)      THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_pr%" END
+        // PATCH_IF ("%summoning%" STRING_COMPARE_CASE "none" = 0)       THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_su%" END
+        // PATCH_IF ("%sun%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_sn%" END
+        // PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "none" = 0)        THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_th%" END
+        // PATCH_IF ("%time%" STRING_COMPARE_CASE "none" = 0)            THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_ti%" END
+        // PATCH_IF ("%travelers%" STRING_COMPARE_CASE "none" = 0)       THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_tr%" END
+        // PATCH_IF ("%war%" STRING_COMPARE_CASE "none" = 0)             THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_wa%" END
+        // PATCH_IF ("%wards%" STRING_COMPARE_CASE "none" = 0)           THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_wd%" END
+        // PATCH_IF ("%weather%" STRING_COMPARE_CASE "none" = 0)         THEN BEGIN SPRINT sphere_none "%sphere_none%, %sphere_we%" END
         REPLACE_TEXTUALLY ~\(\(.\|%LNL%\|%MNL%\|%WNL%\)+\)~ ~\1
   
 %sphere_header%
@@ -1304,6 +1355,8 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere_descript
         REPLACE_TEXTUALLY ~^%sphere_minor_orig%$~ ~%sphere_minor_none%~
         REPLACE_TEXTUALLY ~^%sphere_none_orig%$~ ~~
         REPLACE_TEXTUALLY ~%sphere_ne%, %sphere_nr%~ ~%sphere_ne%~
+        REPLACE_TEXTUALLY ~%sphere_he%, %sphere_hr%~ ~%sphere_he%~
+        REPLACE_TEXTUALLY ~%sphere_sn%, %sphere_sm%~ ~%sphere_sn%~
         REPLACE_TEXTUALLY ~%sphere_ex%, %sphere_ea%, %sphere_ee%, %sphere_ef%, %sphere_ew%~ ~%sphere_ex%~
         REPLACE_TEXTUALLY ~CD_REPLACEME, ~ ~~
       END

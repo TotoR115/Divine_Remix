@@ -10,21 +10,79 @@
 
 
 @112 =~Faerie Fire~
-@113 =~Faerie Fire (Evocation)
+@113 =~Faerie Fire 
+(Alteration)
 Level: 1
 Sphere: Weather
 Range: Sight of Caster
 Duration: 4 rounds + 1 round/5 levels
 Casting Time: 4
-Area of Effect: 1 Creature
+Area of Effect: 15-ft. radius
 Saving Throw: None
 
-Faerie Fire outlines the target creature with a pale glow, making its position and movements easily visible. The net effect is an armor class penalty of -2 to the target.~
+Faerie Fire outlines the creatures within area of effect with a pale glow, making their positions and movements easily visible. The net effect is an armor class penalty of -2 to the creature and invisible creature become visible.~
+@114 =~Magical Stones
+(Enchantment) 
+Level: 1
+Sphere: Combat 
+Range: 0 
+Duration: Special 
+Casting Time: 4 
+Area of Effect: Caster 
+Saving Throw: None 
+
+By using this spell, the priest can create three small magical pebbles, no larger than sling bullets. The magical stones can then be hurled up to 30 yards, and all three can be thrown in one round. The character using them must roll normally to hit, although the magic of the stones enables any character to be proficient with them. The stones are considered +1 weapons for determining if a creature can be struck (those struck only by magical weapons, for instance), although they do not have an attack or damage bonus. Each stone that hits inflicts 1d4 points of damage plus an additional 1d4 points to undead. The magic in each stone lasts only for half an hour, or until used.~
+@118 =~Created by the Magical Stone spell.  When thrown at opponents they inflicts 1d4 points of damage plus an additional 1d4 points to undead.~
+@115 =~Command
+(Enchantment/Charm)
+Level: 1
+Sphere: Charm, Combat, Law
+Range: 25 ft. 
+Duration: 1 round 
+Casting Time: 1 
+Area of Effect: 1 creature 
+Saving Throw: Special
+
+This spell enables the priest to command with a single word another humanoid to "die" (sleep) for a single round. The command must be uttered in a language understood by the creature.  At the end of the round, the creature awakens and is unharmed. Creatures with 6 or more Hit Dice (or experience levels) are entitled to a Saving Throw vs. Spell to ignore the command.~
+@116 = ~Dictate~
+@117 = ~Dictate
+(Enchantment/Charm)
+Level: 3
+Sphere: Charm, Law
+Range: 30 yards
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: 20-ft. radius
+Saving Throw: Neg.
+
+As with the 1st-level spell Command, this spell enables the priest to command other creatures to "die" (sleep), except that the effects of this spell last 1 round per level of the caster. The command must be uttered in a language understood by the creatures. At the end of the last round, the creature(s) awaken and are unharmed. The area of effect is similar to that of a Stinking Cloud or a Fireball.~
+@123 = ~Flame Blade
+(Evocation)
+Level: 2
+Sphere: Elemental (Fire) 
+Range: 0 
+Duration: 4 rounds + 1 round/2 levels 
+Casting Time: 4 
+Area of Effect: Special
+Saving Throw: None 
+
+With this spell, the caster causes a blazing ray of red-hot fire to spring forth from his hand. This blade-like ray is wielded as if it were a scimitar. If the caster successfully hits with the flame blade in melee combat, the creature struck suffers 1d4 + 4 points of fire damage, plus an additional + 2 points of fire damage vs. Undead (i.e., 7-10 points). However, it is not a magical weapon in the normal sense of the term, so creatures struck only by magical weapons are not harmed by it.~
+
+@124 = ~Goodberry
+(Alteration, Evocation)
+Level: 2
+Sphere: Plant
+Range: 0
+Duration: Permanent
+Casting Time: 9 
+Area of Effect: Special 
+Saving Throw: None 
+
+Casting a Goodberry spell creates 8 magical berries that the caster can carry with <PRO_HIMHER>. Each berry restores 1 Hit Point, removes fatigue and cures intoxication when eaten.~
 
 // translator note--you can just use your language's cure disease description and remove the part about curing blindness or deafness
-@125 = ~Cure Disease
+@125 = ~Cure Disease 
 (Abjuration)
-
 Level: 3
 Sphere: Healing
 Range: Touch
@@ -34,9 +92,25 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 By laying <PRO_HISHER> hands upon a sickly person, the caster can cure almost any disease with this spell. The cure is permanent, but does not grant the recipient of the spell immunity from further afflictions. Feeblemind are also cured with this spell. Some magically created diseases may not be curable by this spell.~
+@126 = ~Flame Strike 
+(Invocation/Evocation)
+Level: 5
+Sphere: Combat
+Range: 60 yards
+Duration: Instantaneous
+Casting Time: 8
+Area of Effect: 7 ft. radius
+Saving Throw: 1/2
 
-@166 =~Divine Shell~
-@167 =~Divine Shell (Abjuration)
+When the priest calls down a flame strike spell, a vertical column of fire roars downward striking the exact location called for by the caster. Any creatures within the area of effect must roll a saving throw vs. spell. Failure means the creature sustains 6d8 points of damage; otherwise, the damage is halved.~
+@127 = ~Created by the Goodberry spell, these simple looking blueberries will heal one point of damage, remove fatigue and cure intoxication for each handfull of berries eaten.~
+@128 = ~Created by the Flame Blade spell. The creature struck by this blade suffers 1d4 + 4 points of fire damage, plus an additional + 2 points of fire damage vs. Undead.~
+@129 = ~Created by Sol's Searing Orb spell, This glowing gem inflicts 6d6 points of fire damage to the target and blinds her for 1d6 rounds. The victim is allowed a saving throw vs. spell. If successful, only half damage is sustained and the target is not blinded. Undead creatures suffer 12d6 points of fire damage and are blinded for twelve rounds (if applicable) assuming their save is failed. They receive 9d6 points of damage and are blinded for six rounds if the save is successful.~
+@130 = ~Created by the Fire Seed spell, This seeds inflict 2-16 points of damage to all within the area of effect, allowing a save vs. spells for half damage.~
+
+@166 =~Entropy Shield~
+@167 =~Entropy Shield
+(Abjuration)
 Level: 6
 Sphere: Chaos
 Range: Caster
@@ -45,8 +119,9 @@ Casting Time: 9
 Area of Effect: Caster
 Saving Throw: None
 
-When cast, this spell surrounds the caster with a defensive shell of energy that blocks or deflects many attacks. The caster receives a +2 bonus to armor class, 10% resistance to elemental damage (cold, fire, lightning, and acid), +2 to saves and immunity to normal missiles.~
-@168 = ~Chaotic Commands (Enchantment/Charm)
+When cast, this spell surrounds the caster with a defensive shell of energy that blocks or deflects many attacks. The caster receives a +2 bonus to armor class, 50% resistance to elemental damage (cold, fire, lightning, and acid), +2 to saves and immunity to normal missiles.~
+@168 = ~Chaotic Commands 
+(Enchantment/Charm)
 Level: 5
 Sphere: Chaos
 Range: Visual sight of caster
@@ -55,11 +130,12 @@ Casting Time: 3
 Area of Effect: 1 creature
 Saving Throw: None
 
-Chaotic Commands renders a creature immune to magical commands. Command, greater command, charm person, dire charm and sleep are all spells that fit into this category. This spell affects only one creature and lasts for the duration or until dispelled.~
+Chaotic Commands renders a creature immune to magical commands. Suggestion, Charm, Domination, Command, Sleep, Maze, and Confusion are all spells that fit into this category. This spell affects only one creature and lasts for the duration or until dispelled.~
 
 
 @171 = ~Impregnable Mind~
-@172 = ~Impregnable Mind (Enchantment/Charm)
+@172 = ~Impregnable Mind 
+(Enchantment/Charm)
 Level: 5
 Sphere: Protection, Thought
 Range: Touch
@@ -70,7 +146,8 @@ Saving Throw: None
 
 This spell guards the spell recipient against magical or psionic attacks that affect the mind. This includes hold person, rigid thinking, confusion, domination and similar effects, as well as most telepathic psionic powers and attacks.~
 @173 = ~Resist Acid and Corrosion~
-@174 = ~Resist Acid and Corrosion (Abjuration)
+@174 = ~Resist Acid and Corrosion 
+(Abjuration)
 Level: 2
 Sphere: Protection
 Range: Touch
@@ -81,7 +158,8 @@ Saving Throw: None
 
 This spell provides a subject with a better resistance to acid, corrosives, and caustic substances of all kinds, such as black dragon breath, Melf’s acid arrow, and the natural attacks of various puddings, oozes, slimes, and jellies. Such substances inflict only half the normal damage on the protected character.~
 @175 = ~Strength of Stone~
-@176 = ~Strength of Stone (Invocation/Evocation)
+@176 = ~Strength of Stone 
+(Invocation/Evocation)
 Level: 1
 Sphere: Elemental (earth)
 Range: Touch
@@ -91,12 +169,25 @@ Area of Effect: 1 creature
 Saving Throw: None
 
 This spell grants supernatural strength to the recipient by raising his strength score to 15+1D4, with +4 translating to 18/50 rather than 19. If the recipient's strength is already 17 or above, this spell may actually lower it.~
+@1761 = ~Strength of Stone 
+(Invocation/Evocation)
+Level: 1
+Sphere: Elemental (earth)
+Range: Touch
+Duration: 3 rounds + 1 round/level
+Casting Time: 4
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell grants supernatural strength to the recipient by raising his strength score by +1D6, with +6 translating to 18/xx rather than 19. If the recipient's strength is already 18/00 or above, this spell may actually lower it. This spell has no effect on enemy.~
+
 @177 =~Resist Magic
 This ability allows a cleric to call upon their deity to aid fight off the effects of malevolent magic. For 4 rounds the cleric's magic resistance is set to 50%. This is not cumulative with other forms of magic resistance so if the cleric already has 50% magic resistance or greater, the ability is useless.~
 @178 =~Tracking
 With an intimate knowledge of his surroundings and the creatures that live within them, a cleric can use the Tracking ability to give himself a general idea of what creatures are in an area and which direction they are. Red arrows at the edge of the screen will point in the general direction of the creatures in the area.~
 @179 = ~Cure Blindness or Deafness~
-@180 = ~Cure Blindness or Deafness (Abjuration)
+@180 = ~Cure Blindness or Deafness 
+(Abjuration)
 Level: 3
 Sphere: Healing
 Range: Touch
@@ -107,7 +198,8 @@ Saving Throw: Special
 
 By touching the creature afflicted, the priest employing the spell can permanently cure some forms of blindness or deafness.~
 @181 = ~Cause Blindness or Deafness~
-@182 = ~Cause Blindness or Deafness (Abjuration)
+@182 = ~Cause Blindness or Deafness 
+(Abjuration)
 Level: 3
 Sphere: Healing
 Range: Touch
@@ -120,7 +212,8 @@ This spell requires a successful touch (successful attack roll) on the victim. I
 
 Deafened spellcasters have a 50% chance to miscast any spell.  A blinded creature suffers a -4 penalty to its attack rolls, and a +4 penalty to its Armor Class.~
 @184 = ~Cause Disease~
-@185 = ~Cause Disease (Abjuration)
+@185 = ~Cause Disease 
+(Abjuration)
 Level: 3
 Sphere: Healing
 Range: Touch
@@ -134,7 +227,8 @@ This spell will cause one of two forms of disease in a creature (50% chance of e
 
 
 @194 =~Detect Good~
-@195 =~Detect Good (Divination)
+@195 =~Detect Good 
+(Divination)
 Level: 1
 Sphere:  Divination
 Range: Visual range of caster
@@ -145,7 +239,8 @@ Saving Throw: None
 
 This spell discovers emanations of good from any creature. Any good creature within the range of the spell will glow green briefly.~
 @196 =~Protection From Good~
-@197 =~Protection From Good (Abjuration)
+@197 =~Protection From Good 
+(Abjuration)
 Level: 1
 Sphere: Protection
 Range: Touch
@@ -154,27 +249,40 @@ Casting Time: 1
 Area of Effect: Creature touched
 Saving Throw: None
 
-When this spell is cast, it creates a magical barrier around the recipient at a distance of one foot. The barrier moves with the recipient and has two major effects: First, all attacks made by good or good-enchanted creatures against the protected creature receive a penalty of - 2 to each attack roll, and second, any saving throws caused by such attacks are made by the protected creature with a +2 bonus.~
+When this spell is cast, it creates a magical barrier around the recipient at a distance of one foot. The barrier moves with the recipient and has two major effects: First, all attacks made by good or good-enchanted creatures against the protected creature receive a penalty of - 2 to each attack roll, and second, any saving throws caused by such attacks are made by the protected creature with a +2 bonus. Attempts to possess, dominate, or exercise other forms of mental control against the recipient are automatically blocked by this spell.~
 @198 =~Protection From Good 10' Radius~
 @199 =~Protection From Good 10' Radius
 (Abjuration)
-Level: 3
+Level: 4
 Sphere: Protection
 Range: Touch
 Duration: 1 turn/level
 Casting Time: 7
-Area of Effect: 10' radius
+Area of Effect: 10-ft. radius
 Saving Throw: None
 
-When this spell is cast, all creatures within a 10' radius are affected individually by 'protection from good'.  It creates a magical barrier around the recipients at a distance of one foot. The barrier moves with the recipient and has two major effects: First, all attacks made by good or good-enchanted creatures against the protected creature receive a penalty of - 2 to each attack roll, and second, any saving throws caused by such attacks are made by the protected creature with a +2 bonus.~
+When this spell is cast, all creatures within a 10' radius are affected individually by 'protection from good'. It creates a magical barrier around the recipients at a distance of one foot. The barrier moves with the recipient and has two major effects: First, all attacks made by good or good-enchanted creatures against the protected creature receive a penalty of - 2 to each attack roll, and second, any saving throws caused by such attacks are made by the protected creature with a +2 bonus. Attempts to possess, dominate, or exercise other forms of mental control against the recipient are automatically blocked by this spell.~
 
-
+@200 =~Protected from Chaos~
 @201 =~Protected from Good~
+@202 = ~Protection From Chaos~
+@203 = ~Protection From Chaos
+(Abjuration)
+Level: 1
+Sphere: Law
+Range: Touch
+Duration: 3 rounds/level
+Casting Time: 1
+Area of Effect: Creature touched
+Saving Throw: None
+
+When this spell is cast, it creates a magical barrier around the recipient at a distance of one foot. The barrier moves with the recipient and has two major effects: First, all attacks made by chaotic or chaotic-enchanted creatures against the protected creature receive a penalty of - 2 to each attack roll, and second, any saving throws caused by such attacks are made by the protected creature with a +2 bonus. Attempts to possess, dominate, or exercise other forms of mental control against the recipient are automatically blocked by this spell.~
 
 
 @204 =~Cause Medium Wounds~
-@205 =~Cause Medium Wounds (Necromancy)
-Level: 5
+@205 =~Cause Medium Wounds 
+(Necromancy)
+Level: 3
 Sphere: Healing
 Range: Touch
 Duration: Permanent
@@ -182,14 +290,68 @@ Casting Time: 5
 Area of Effect: Creature touched
 Saving Throw: None
 
-This spell is the reverse of cure light wounds. Instead of healing the creature touched, it causes damage.  On a successful touch from the priest, the spell inflicts 14 damage upon the target.  The next attack that the priest makes will inflict this effect, however he only has 2 rounds to make the attack before the spell fizzles.  Also, if the priest misses the target creature the spell is wasted.  There is no saving throw.~
-@206 =~Protection from Alignment~
+This spell is the reverse of Cure Medium Wounds. Instead of healing the creature touched, it causes damage.  On a successful touch from the priest, the spell inflicts 14 damage upon the target.  The next attack that the priest makes will inflict this effect, however he only has 2 rounds to make the attack before the spell fizzles.  Also, if the priest misses the target creature the spell is wasted.  There is no saving throw.~
+@206 =~Cause Light Wounds~
+@207 =~Cause Light Wounds 
+(Necromancy)
+Level: 1
+Sphere: Healing
+Range: Touch
+Duration: Permanent
+Casting Time: 5
+Area of Effect: Creature touched
+Saving Throw: None
 
+This spell is the reverse of Cure Light Wounds. Instead of healing the creature touched, it causes damage.  On a successful touch from the priest, the spell inflicts 8 damage upon the target.  The next attack that the priest makes will inflict this effect, however he only has 2 rounds to make the attack before the spell fizzles.  Also, if the priest misses the target creature the spell is wasted. There is no saving throw.~
+@208 =~Slay Living 
+(Necromancy)
+Level: 5
+Sphere: Necromantic
+Range: Touch
+Duration: Permanent
+Casting Time: 6
+Area of Effect: Creature touched
+Saving Throw: Special
 
-@208 =~Protected from Good~
+Upon casting this spell, the priest has to touch an opponent in order to visit the effect upon them. An item is created upon casting. The next attack the priest makes, which must happen in the next 3 rounds, will use this item. If the first attack misses, the item disappears and the spell is wasted; however, if the attack succeeds, the victim automatically takes 2d8+1 damage. Also, <PRO_HESHE> must make a Save vs. Death or be instantly killed. Slay Living can be dispelled if cast between the casting of this spell and the necessary attack.~
+@209 =~Energy Drain
+(Necromancy) 
+Level: 7
+Sphere: Necromantic
+Range: Touch
+Duration: Permanent
+Casting Time: 3
+Area of Effect: Creature touched
+Saving Throw: None 
 
+Upon casting this spell, the priest has to touch an opponent in order to visit the effect upon them. The casting of this spell opens a channel between the caster's plane and the Negative Energy Plane. The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative Energy Plane, draining <PRO_HIMHER> of 1 levels of experience. The target of this spell loses level, Hit Dice, Hit Points, and abilities permanently. These levels can only be restored by a priest's Restoration spell. The next attack that the priest makes will inflict this effect, however he only has 3 rounds to make the attack before the spell fizzles.  Also, if the priest misses the target creature the spell is wasted. There is no saving throw.~
+@210 =~Destruction~
+@211 =~Destruction
+(Necromancy)
+Level: 7
+Sphere: Necromantic
+Range: Touch
+Duration: Permanent
+Casting Time: 9
+Area of Effect: Creature touched
+Saving Throw: Special
 
-@214 =~Conjure Air Elemental (Conjuration/Summoning)
+Upon casting this spell, the priest has to touch an opponent in order to visit the effect upon them. An item is created upon casting. The next attack the priest makes, which must happen in the next 3 rounds, will use this item. If the first attack misses, the item disappears and the spell is wasted; however, if the attack succeeds, the victim automatically takes 8d6 damage. Also, <PRO_HESHE> must make a Save vs. Death at a penalty of -4 or be instantly killed. Destruction can be dispelled if cast between the casting of this spell and the necessary attack.~
+@212 =~Wither~
+@213 =~Wither
+(Necromancy)
+Level: 7
+Sphere: Healing
+Range: Touch
+Duration: 2 turns
+Casting Time: 7
+Area of Effect: Creature touched
+Saving Throw: Special
+
+This spell is the reverse of regeneration. Instead of healing, this spell causes the member or organ touched to cease functioning in one round.  On a successful touch from the priest, the spell inflicts 3 damage per seconds upon the target.  The next attack that the priest makes will inflict this effect, however he only has 2 rounds to make the attack before the spell fizzles.  Also, if the priest misses the target creature the spell is wasted. There is no saving throw.~
+
+@214 =~Conjure Air Elemental 
+(Conjuration/Summoning)
 Sphere: Elemental (air)
 Level: 7
 Range: Visual sight of caster 
@@ -199,7 +361,8 @@ Area of Effect: Special
 Saving Throw: None 
 
 Upon casting a conjure air elemental spell, the caster opens a special gate to the elemental plane of Air, and an air elemental is summoned to the vicinity of the spellcaster.  It is 60% likely that a 12 hit dice elemental appears, 35% likely that a 16 hit dice elemental appears, and 5% likely that a 24 hit dice elemental appears.  Once the elemental appears the caster must concentrate on the creature for 3 rounds in order to assure that the elemental will not turn on him (there is a 15% chance of losing control).  However, after this period has passed the elemental will do the bidding of the caster until it is slain, or the duration of the spell runs out.  All of the commands given to the elemental are done so telepathically, so there is no time lost due to miscommunication, and it is not necessary to know the language of the summoned creature.~
-@215 =~Energy Drain (Necromancy)
+@215 =~Energy Drain 
+(Necromancy)
 Level: 7
 Sphere:  Necromantic
 Range: Touch
@@ -209,6 +372,339 @@ Area of Effect: 1 Creature
 Saving Throw: None
 
 The casting of this spell opens a channel between the caster's plane and the Negative Energy plane.  The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative energy plane, draining him of 2 levels of experience.  The target of this spell loses levels, Hit Dice, hit points, and abilities permanently.  These levels can only be restored by a priest's restoration spell.~
+@216 = ~Conjure Animals
+(Conjuration/Summoning) 
+Level: 6
+Sphere: Summoning
+Range: 30 yards
+Duration: 2 rounds/levels
+Casting Time: 9
+Area of Effect: Special 
+Saving Throw: None
+
+This spell allows the caster to summon forth and control massive animals. The total Hit Dice of the mammals cannot exceed his level. The animals will respond to the caster's every whim for the duration of the spell.~
+
+@217 =~Protection from Alignment~
+@249 = ~Animal Friendship
+(nchantment/Charm)
+Level: 1
+Sphere: Animal
+Range: 10 yards
+Duration: 8 hours
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+This spell affects any single animal it is cast upon. If the spell's recipient fails <PRO_HISHER> Saving Throw, <PRO_HESHE> regards the caster as a trusted friend and ally to be heeded and protected. The caster may give <PRO_HIMHER> orders, and the charmed individual will carry them out as quickly as possible.
+
+If the caster harms—or attempts to harm—the charmed animal by some overt action, or if a Dispel Magic spell is cast upon the charmed animal, the Charm spell is broken. If two or more Charms simultaneously affect a creature, the most recent Charm takes precedence. Note that the subject has full memory of the events that took place while <PRO_HESHE> was charmed. Also note that you cannot have a charmed creature leave the area where <PRO_HESHE> is charmed.~
+@250 = ~Dismissal~
+@251 = ~Dismissal
+(Abjuration)
+Level: 4
+Sphere: Summoning
+Range: Visual sight of caster
+Duration: Instant
+Casting Time: 1
+Area of Effect: 1 creature
+Saving Throw: Special
+
+Upon completion of this spell the target summoned creature is instantly slay. If the target creature is an extraplanar it must make a saving throw vs. Spell or be returned to the place it came from. This spell has no effect on creatures that are not summoned or extraplanar, so it is possible to send back a djinni but not an ogre or a dryad that have not been summoned.~
+@252 = ~Holy Word
+(Conjuration/Summoning)
+Level: 7
+Sphere: Combat
+Range: 0
+Duration: Special
+Casting Time: 1
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Uttering a Holy Word spell creates magic of tremendous power. The priest acts as a bridge between <PRO_HISHER> god and the Prime Material Plane, causing a small explosion centered on the priest and reaching up to a 15-ft. radius. It slays summons and affects only enemy evil creatures and undead of any alignment that are caught in the area of effect. The effects vary depending on the target's Hit Dice:
+
+Hit Dice / Levels  –  Effects of Holy Word
+Less than 4  –  Death
+4 to 7  –  Stunned for 1 turn
+8 to 11  –  Slowed for 1 turn with a 75% chance of spell failure
+12+  –  Deafened for 1 turn with a 50% chance of spell failure
+
+There is no Saving Throw. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that this spell may not be cast by any priest of evil alignment.~
+@253 = ~Unholy Word
+(Conjuration/Summoning)
+Level: 7
+Sphere: Combat
+Range: 0
+Duration: Special
+Casting Time: 1
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+Uttering an Unholy Word spell creates magic of tremendous power. The priest acts as a bridge between <PRO_HISHER> god and the Prime Material Plane, causing a small explosion centered on the priest and reaching up to a 15-ft. radius. It slays summons and affects only creatures of any good alignment that are caught in the area of effect. The effects vary depending on the target's Hit Dice:
+
+Hit Dice / Levels  –  Effects of Unholy Word
+Less than 4  –  Death
+4 to 7  –  Stunned for 1 turn
+8 to 11  –  Slowed for 1 turn with a 75% chance of spell failure
+12+  –  Deafened for 1 turn with a 50% chance of spell failure
+
+There is no Saving Throw. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that priests of good alignment may not cast this spell.~
+@254 = ~Pyrotechnics~
+@255 = ~Pyrotechnics
+(Transmutation/Alteration)
+Level: 3
+Sphere: Elemental Fire
+Range: Visual sight of caster
+Duration: Instant
+Casting Time: 2
+Area of Effect: 15-ft. radius
+Saving Throw: Neg.
+
+Upon completion of this spell, the caster create a display of flashing, fiery lights not unlike fireworks. Creatures viewing this are blinded for 3 rounds unless they successfully save versus spells.~
+@256 = ~Animal Growth~
+@257 = ~Animal Growth
+(Transmutation/Alteration)
+Level: 5
+Sphere: Animal
+Range: Visual sight of caster
+Duration: 3 turns
+Casting Time: 5
+Area of Effect: 15-ft. radius
+Saving Throw: None
+
+When this spell is cast, the caster causes all friendly animals within range to grow in size. This increase had a number of effects including making the creature more powerful. The alteration grants +4 bonus to attack rolls, damage rolls and saving throws. It also increases the recipient's hit points by 100%.~
+@258 = ~Produce Ice~
+@259 = ~Produce Ice
+(Evocation)
+Level: 5
+Sphere: Elemental Water
+Range: 60 yards
+Duration: 1 turn/level
+Casting Time: 8 
+Area of Effect: 10-ft. radius
+Saving Throw: Special
+
+When this spell is cast, This spell creates supernatural cold in the area of effect that inflicts 2d4 points plus 1 point per level of the caster of cold damage (up to a maximum of 2d4 + 20) and slow any creature within the area of effect for 4 rounds/Level. a successfully save versus spells half damage and negate slow.~
+@260 = ~Wall of Fire 
+(Conjuration/Summoning)
+Level: 5
+Sphere: Elemental Fire
+Range: 60 yards
+Duration: 5 Rounds
+Casting Time: 8
+Area of Effect: Special
+Saving Throw: None
+
+The wall of fire spell brings forth an immobile, blazing curtain of magical fire. The wall inflicts 4d4 points of damage, plus 1 point of damage per level of the spellcaster, to any creature passing through it (up to a maximum of 4d4 + 20). Creatures especially subject to fire may take additional damage, and undead always take twice normal damage.~
+@261 = ~Wolf Spirit~
+@262 = ~Wolf Spirit
+(Conjuration/Summoning)
+Level: 7
+Sphere: Animal
+Range: 60 yards
+Duration: 4 turns
+Casting Time: 9
+Area of Effect: Special 
+Saving Throw: None
+
+This spell allows the caster to summon forth and control 5 Wolf Spirit. They will respond to the caster's every whim for the duration of the spell and are immune to all forms of mind control, illusions, gases, paralyzation, and spells which affect only corporeal creatures. Thoses spirits cannot be harmed by weapons of less than +2 enchantment.~
+@263 = ~Battlefate~
+@264 = ~Battlefate
+(Transmutation/Alteration)
+Level: 1
+Sphere: Chaos
+Range: Visual sight of caster
+Duration: 2 rounds/level
+Casting Time: 4
+Area of Effect: 1 Creature
+Saving Throw: None
+
+This spell alters probability to favor one character or creature locked in battle. The more powerful the priest, the more potent the aid; combat modifiers provided by Battlefate equal +1 per three levels to a maximum of +5 for a 13th-level priest. The exact form of the aid or assistance varies from round to round and is determined by a 1D6: 
+
+   1. No Effect
+   2. Bonus to AC
+   3. Bonus to Saves
+   4. Bonus to Attack rolls
+   5. Bonus to Damage rolls
+   6. An extra attack with a bonus to attack or damage~
+@265 = ~Adamantite Mace~
+@266 = ~Adamantite Mace
+(Transmutation/Alteration)
+Level: 4
+Sphere: Elemental Earth
+Range: 0
+Duration: 1 round/level
+Casting Time: 7
+Area of Effect: Creates 1 cudgel
+Saving Throw: None
+
+By means of this spell, the priest creates a an enchanted weapon of adamantite, the most magical mineral known.  The adamantite mace gains a +2 bonus to attack and damage rolls, but it can strike creatures normally hit only by +4. It causes 2D4 + 2 points of damage plus, as an incarnation of elemental earth, 2D4 + 2 points of damage against creatures of elemental air or magical avians such as griffons, perytons, pegasi, and winged baatezu or tanar’ri.  The adamantite mace retains its special properties for one round per level of experience of the caster.~
+@267 = ~Command Monster~
+@268 = ~Command Monster
+(Enchantment/Charm)
+Level: 6
+Sphere: Charm
+Range: 25 ft. 
+Duration: 1 round/2 levels
+Casting Time: 1
+Area of Effect: 1 creature 
+Saving Throw: Neg.
+
+This spell enables the priest to command with a single word to any one creature to "die" (sleep) for a single round. The magic of the spell translates the priest's order into a language or form the subject creature can understand.  At the end of the last round, the creature awakens and is unharmed. Creatures are entitled to a Saving Throw vs. Spell to ignore the command.~
+@269 = ~Produce Flame~
+@270 = ~Produce Flame
+(Transmutation/Alteration)
+Level: 2
+Sphere: Elemental Fire
+Range: 40 yards
+Duration: 1 round/level
+Casting Time: 5
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell produce a flame in the Priest hand. The flame does not harm the caster, but it is hot and it causes the combustion of flammable materials. The caster is capable of hurling the magical flame as a missile, with a range of 40 yards. A creature struck by the flame suffers 1d4+1 points of damage. The caster can hurl a maximum of one flame per level, but no more than one flame per round.~
+@271 = ~Bestow Curse~
+@272 = ~Bestow Curse
+(Abjuration)
+Level: 3
+Sphere: Protection
+Range: Touch
+Duration: 1 turn/level
+Casting Time: 6
+Area of Effect: 1 creature
+Saving Throw: Neg.
+
+Upon completion of this spell, the priest must touched his target of a bestow curse spell. If the victim is touched, a saving throw is still applicable; if it is successful, the effect is negated. The bestowed curse cannot be dispelled. This spell lasts for one turn for every experience level of the priest and can have one of the following effects: 
+- 50% of the time it reduces one ability of the victim to 3 
+- 25% of the time it lowers the victim's attack and saving throw rolls by -4; 
+- 25% of the time, each rounds, it makes the victim 50% likely to drop whatever he is holding (or do nothing, in the case of creatures not using tools).~
+@273 = ~Summon Animal Spirit~
+@274 = ~Summon Animal Spirit
+(Necromancy)
+Level: 3
+Sphere: Summoning
+Range: 30 yards
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: Special
+Saving Throw: None
+
+This spell summons a minor spirit or entity to the caster's aid. It appears as a ghostly beast of some kind-wolves, bears or lions are most common. The animal spirit obeys the mental commands of the priest, attacking his enemies. In combat, it can only be injured by magical weapons and can strike monsters hit only by +1 or better weapons. The creature is not affected by charm, sleep, hold, or other mind-affecting spells and suffers no damage from cold-based attacks. However, it is vulnerable to turning as an undead monster of the caster's Hit Dice. If the animal spirit is destroyed, the priest who summoned it must make a saving throw vs. spell or be stunned for 1d4 rounds.~
+@275 = ~Detect Snares and Pits~
+@276 = ~Detect Snares and Pits
+(Divination)
+Level: 1
+Sphere: Plant
+Range: Caster
+Duration: 3 turns
+Casting Time: 4
+Area of Effect: Caster
+Saving Throw: None
+
+Upon casting this spell, the caster is able to detect snares, pits, deadfalls and similar hazards. The caster experiences a feeling of danger from the direction of a detected hazard, which increases as the danger is approached. The caster learns the general nature of the danger (pit, snare, or deadfall) but not its exact operation, nor how to disarm it. Close examination, however, enables the caster to sense what intended actions might trigger it. Due to the nature of the spell, the caster must be outdoor.~
+@277 = ~Giant Insect~
+@278 = ~Giant Insect
+(Transmutation/Alteration)
+Level: 4
+Sphere: Animal
+Range: 20 yards
+Duration: 8 hours
+Casting Time: 7
+Area of Effect: Special
+Saving Throw: None
+
+By means of this spell, the priest can summons up to five giant-sized beetles. The type of beetles that appear depend upon the level of the Priest casting the spell.
+7th : fire and bombardier beetles
+10th : bombardier and boring beetles
+13th+ : boring and rhinoceros beetles
+These insects will remain under the Priest's control until slain, or the spell duration expires.~
+@279 = ~Fire Beetle~
+@280 = ~Bombardier Beetle~
+@281 = ~Boring Beetle~
+@282 = ~Rhinoceros Beetle~
+@283 = ~Watery Fist~
+@284 = ~Watery Fist
+(Conjuration)
+Level: 2
+Sphere: Elemental Water
+Range: 60 yards
+Duration: 1 turn
+Casting Time: 5
+Area of Effect: Special
+Saving Throw: None
+
+This spell conjures a coherent pseudopod of water. The pseudopod obeys the priest’s mental commands, but the priest must concentrate each round in order to maintain control of the watery member. spellcasting is impossible while maintaining the spell.
+it attacks with THAC0 of 12, inflicts 2d8 damage, is AC 6 and has 28 hp. It can only be damaged by magical weapons, fire, or cold; all other attacks simply pass through the water.~
+@285 = ~Symbol, Pain~
+@286 = ~Symbol, Pain
+(Conjuration/Summoning)
+Level: 7
+Sphere: Guardian
+Range: 25 ft.
+Duration: Special
+Casting Time: 3
+Area of Effect: 12-ft. radius
+Saving Throw: None
+
+Symbol, Pain is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area of effect to suffer -4 penalties to their attack rolls and -2 penalties to their Dexterity ability scores due to wracking pains for 2 rounds + 1 round every 3 levels of the caster.~
+@287 = ~Symbol, Hopelessness~
+@288 = ~Symbol, Hopelessness
+(Conjuration/Summoning)
+Level: 7
+Sphere: Guardian
+Range: 25 ft.
+Duration: Special
+Casting Time: 3
+Area of Effect: 12-ft. radius
+Saving Throw: None
+
+Symbol, Hopelessness is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area of effect to make a Saving Throw vs. Spell or stand in place, overwhelmed by dejection and surrender. They will make no move to defend themselves from attack for 2 rounds + 1 round every 3 levels of the caster.~
+@289 = ~Symbol, Persuasion~
+@290 = ~Symbol, Persuasion
+(Conjuration/Summoning)
+Level: 7
+Sphere: Guardian
+Range: 25 ft.
+Duration: Special
+Casting Time: 3
+Area of Effect: 12-ft. radius
+Saving Throw: None
+
+Symbol, Persuasion is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area of effect to make a Saving Throw vs. Spell or become of the same alignment as and friendly
+to the priest who scribed for 2 rounds + 1 round every 3 levels of the caster.~
+@291 = ~Obscuring Mist~
+@292 = ~Obscuring Mist
+(Conjuration/Summoning)
+Level: 1
+Sphere: Weather
+Range: 30 ft.
+Duration: 6 rounds
+Casting Time: 5
+Area of Effect: 20-ft. radius
+Saving Throw: None
+
+When this spell is cast, a misty bank of fog billows out from the designated point obscuring all sight. Everyone within the cloud suffer -2 penalty to attack rolls, and have their line of sight halved. Anyone, inside or outside the cloud, trying to attack a creature concealed by the fog with ranged weapons will do so with a -4 penalty to attack rolls.~
+
+@401 = ~Monster Summoning IV~
+@402 = ~Monster Summoning IV 
+(Conjuration/Summoning) 
+Level: 6
+Range: 40 yards 
+Duration: 7 rounds + 1 round/level
+Casting Time: 6
+Area of Effect: Special 
+Saving Throw: None 
+
+This spell is much like the 3rd-level monster summoning I spell, except that this spell summons 6 HD monsters. There is a 60% chance of receiving one monster and a 40% chance of receiving two monsters.  These monster(s) appear within spell range and attack the caster's opponents until the spell duration expires, or until they are slain.~
+@403 = ~Wyverns Call 
+(Conjuration/Summoning) 
+Level: 6
+Range: 40 yards 
+Duration: 6 rounds + 1 round/level
+Casting Time: 6 round
+Area of Effect: Special 
+Saving Throw: None 
+
+When this spell is cast the wizard opens up a magical channel that will summon one or two wyverns to his aid. There is a 60% chance of receiving one wyvern and a 40% chance of receiving two wyverns. This creature will be totally under his mental control with no chance of it turning on him except, of course, through magical means like charm monster.  The creature will remain under the wizard's control, and will live and die at his command until the spell duration expires.~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -279,13 +775,13 @@ This ability allows a priest to create low and mid level spell scrolls. The scro
 @10129=~Before you depart, I have a proposal for you. I know of you; your actions prove you not as loyal to good as you could be, though you give thought to either side of an argument.~
 @10130 =~Investigate and destroy the Cult of the Eyeless.
 
-After witnessing the eyeless priest's speech, I was approached by a priest of Helm who expressed a need to investigate this new cult further.  He asked me to follow him to the temple of Helm to discuss the matter further. He also mentioned we could assist the Lathander temple.~
+After witnessing the eyeless priest's speech, I was approached by a watcher of Helm who expressed a need to investigate this new cult further.  He asked me to follow him to the temple of Helm to discuss the matter further. He also mentioned we could assist the Lathander temple.~
 @10131 =~Or perhaps you follow the word of Helm.  If so, you should hurry to his temple.  It matters not which of us you undertake this mission for, as long as you see to it quickly.~
 @10132 =~Perhaps you would wish to serve Lathander in this matter. It makes little difference, so long as this threat is quickly addressed.~
 @10133 =~Investigate and destroy the Cult of the Eyeless.
 
 After witnessing the eyeless priest's speech, I was approached by a cleric of Lathander who bade me to come to the temple of Lathander to speak with him further regarding performing a service for the temple and investigating this new cult. He also mentioned we could help the Helm temple.~
-@10133 = ~Priest~
+@10154 = ~Priest~
 @10134 = ~priest~
 @10135 = ~PRIEST~
 @10136 = ~Stormlord~
@@ -333,7 +829,7 @@ Powerful clerics may call upon their deity to watch over them from harm, sliding
 
 Abilities:
 - Spiritual Weapon: Half-Spear - 'Fury of Talos' once per day
-SPRITIUAL WEAPON: The Half-Spear is the spiritual weapon of Stormlords of Talos, and is wielded as if the caster had grand mastery in the weapon. The Half-Spear is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds and can be used once per day.
+The Half-Spear is the spiritual weapon of Stormlords of Talos, and is wielded as if the caster had grand mastery in the weapon. The Half-Spear is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds and can be used once per day.
 - Innate electrical resistance of 1% per level
 - Destructive Blow once per day
 DESTRUCTIVE BLOW: Once per day, a Stormlord can focus the destructive wrath of Talos in combat. This spell grants the Stormlord +2 to damage and +2 to hit for one round per level, up to 20 rounds.
@@ -345,13 +841,20 @@ STORM SHIELD:  This spell lasts 6 seconds per level of the caster.  It protects 
 
 Disadvantages:
 – Alignment restricted to neutral evil, chaotic evil, and chaotic neutral.~
+@10182 =~Only the most worthy and devoted servants of the Storm Lord are granted these powerful holy symbols.
+
+STATISTICS:
+
+   Grants an additional 6th and 7th level spell.
+   5% Magic Resistance while worn
+   +1 to Strength while worn~
 // this is the sphere-enabled kit description. Spheres will be added automatically via patching
-@10178 =~PRIEST OF LATHANDER: Lathander is the good god of renewal, creativity, and youth, and is celebrated nearly everywhere. His followers are very popular throughout the Realms, and there are numerous wealthy temples devoted to him.
+@10178 =~MORNINGLORD OF LATHANDER: Lathander is the good god of renewal, creativity, and youth, and is celebrated nearly everywhere. His followers are very popular throughout the Realms, and there are numerous wealthy temples devoted to him.
 
 Abilities:
 
 - Spiritual Weapon: Mace - 'Dawn's Embrace' once per day
-SPIRITUAL WEAPON: The mace is the spiritual weapon of Morninglords of Lathander, and is wielded as if the caster had grand mastery in the weapon. The mace is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
+The mace is the spiritual weapon of Morninglords of Lathander, and is wielded as if the caster had grand mastery in the weapon. The mace is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - May cast 'Boon of Lathander' for every 10 levels of the caster, as detailed below  (starts at 1st level with one use).
 BOON OF LATHANDER:  This spell lasts for 6 seconds per level of the caster.  It gives the caster +1 to hit, +1 to damage, +1 to all saving throws and gives the caster 1 extra attack per round.  It also protects the recipient from level drain.
 - From level 7 can cast Hold Undead once per day, as third level mage spell of the same name
@@ -362,7 +865,7 @@ BOON OF LATHANDER:  This spell lasts for 6 seconds per level of the caster.  It 
 Disadvantages:
 – Alignment restricted to lawful good, neutral good, chaotic good, and true neutral.~
 // this is the generic kit description with 'PRIEST' changed to 'MORNINGLORD'
-@10179 =~PRIEST OF LATHANDER: Lathander is the good god of renewal, creativity, and youth, and is celebrated nearly everywhere. His followers are very popular throughout the Realms, and there are numerous wealthy temples devoted to him.
+@10179 =~MORNINGLORD OF LATHANDER: Lathander is the good god of renewal, creativity, and youth, and is celebrated nearly everywhere. His followers are very popular throughout the Realms, and there are numerous wealthy temples devoted to him.
 
 Advantages:
 – May cast Hold Undead once per day every 5 levels of the caster (starts at 1st level with one use).
@@ -374,13 +877,6 @@ Disadvantages:
 – Alignment restricted to lawful good, neutral good, chaotic good, and true neutral.~
 @10180 =~Mace - 'Dawn's Embrace'~
 @10181 =~The mace is the spiritual weapon of Morninglords of Lathander, and is wielded as if the caster had grand mastery in the weapon. The mace is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above.~
-@10182 =~Only the most worthy and devoted servants of the Storm Lord are granted these powerful holy symbols.
-
-STATISTICS:
-
-   Grants an additional 6th and 7th level spell.
-   5% Magic Resistance while worn
-   +1 to Strength while worn~
 @10183 =~Only the most worthy and devoted servants of the Dawnbringer are granted these powerful holy symbols.
 
 STATISTICS:
@@ -401,7 +897,7 @@ Disadvantages:
 – Alignment restricted to lawful good, lawful neutral, lawful evil, and true neutral.~
 @10185 =~Bastard Sword - 'Ever Watchful'~
 @10186 =~The bastard sword is the spiritual weapon of Watchers of Helm, and is wielded as if the caster had grand mastery in the weapon. The bastard sword is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
-@10187 =~Only those most worthy and devoted servants of the Watcher are granted these powerful holy symbols.
+@10187 =~Only the most worthy and devoted servants of the Watcher are granted these powerful holy symbols.
 
 STATISTICS:
 
@@ -418,7 +914,7 @@ STATISTICS:
 
 Abilities:
 - Spiritual Weapon: Bastard Sword - 'Ever Watchful' once per day
-SPRITUAL WEAPON: The bastard sword is the spiritual weapon of Watchers of Helm, and is wielded as if the caster had grand mastery in the weapon. The bastard sword is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
+The bastard sword is the spiritual weapon of Watchers of Helm, and is wielded as if the caster had grand mastery in the weapon. The bastard sword is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - Glyph of Warding once per day, as third level cleric spell of the same name
 - From level 7 can cast Farsight once per day, as fourth level cleric spell of the same name
 - From level 9 can cast Protection From Normal Weapons once per day, as fifth level mage spell of the same name
@@ -450,7 +946,7 @@ Selûne's clerics, called Silverstars of Selûne, are dedicated advocates of freed
 
 Abilities:
 - Spiritual Weapon: Mace - 'Moon's Hand' once per day
-SPIRITUAL WEAPON: The Moon's Hand is the spiritual weapon of Silverstars of Selûne, and is wielded as if the caster had grand mastery in the weapon. The Moon's Mace is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
+The Moon's Hand is the spiritual weapon of Silverstars of Selûne, and is wielded as if the caster had grand mastery in the weapon. The Moon's Mace is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - Infravision
 - Can cast Moon Shield once per day
 MOON SHIELD: Upon casting this spell, the Silverstar receives a resistance to all magic. The resistance conferred is 2% per level of the cleric up to a maximum of 40% at 20th level. This resistance is set so if the target already has more magic resistance than the cleric would confer, it will actually lower it to the set value. This effect will last for the duration of the spell or until dispelled.
@@ -524,6 +1020,8 @@ Abilities:
 - Spiritual Weapon: Chakram - 'Disc of Night' once per day
 The Disc of Night is the spiritual weapon of Nightcloaks. The chakram is treated as a returning dart and is wielded as if the caster had grand mastery in the weapon. The chakram is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - Immune to all forms of Blindness.
+- Can cast Dark Bolt once per day.
+This spell creates small chakrams in the casters hand (one per level of the caster). These chakrams can be hurled, causing silence on a failed save vs. spell on the target creature and causing 2d4 cold damage. Undead creatures must also make a save vs. paralyzation or be held for one round.
 - From level 7 can cast Confusion once per day, as fourth level mage spell of the same name
 - From level 9 can cast Feeblemind once per day, as fifth level mage spell of the same name
 - From level 11 can cast Invisible Stalker once per day, as sixth level mage spell of the same name
@@ -531,7 +1029,7 @@ The Disc of Night is the spiritual weapon of Nightcloaks. The chakram is treated
 @10603 =~nightcloak of shar~
 @10604 =~Shar's Curse~
 @10605 =~Shar's Curse (Enchantment/Charm)
-Level: Special
+Level: Quest
 Sphere: Charm
 Range: Visual range of the caster
 Duration: Permanent
@@ -645,7 +1143,7 @@ Though these pilgrimages are often considered an unwanted duty by the more polit
 @10901 =~Battleguard of Tempus~
 @10902 =~BATTLEGUARD OF TEMPUS: Tempus is the Realms' god of war, the Lord of Battle, the Foehammer. He is random in his favors, yet his chaotic nature favors all sides equally. He may be on an army's side on one day and against them the next. Such is the nature of war as embodied by Tempus.
 
-The dress of the priest of Tempus is armor, battle-worn and battered. In more civilized regions this has been replaced by a steel skullcap, but the message is the same--these are warrior priests. Their place is in the trenches with the troops, urging them onwards. Priests of Tempus may be found on both sides of a conflict, as none can ever truly know who the war god will favor.
+The dress of the Battleguard of Tempus is armor, battle-worn and battered. In more civilized regions this has been replaced by a steel skullcap, but the message is the same--these are warrior priests. Their place is in the trenches with the troops, urging them onwards. Battleguards of Tempus may be found on both sides of a conflict, as none can ever truly know who the war god will favor.
 
 Battleguards of Tempus can only be of Chaotic Neutral, Chaotic Good, True Neutral, and Chaotic Evil alignments
 
@@ -675,19 +1173,19 @@ Grants an additional 6th and 7th level spell.
 +1 to Strength while worn~
 @10912 =~Tempus' Shield~
 @10913 =~Tempus' Shield (Abjuration)
-Level: Special
+Level: Quest
+Sphere: Combat
 Range: 0
 Duration: 4 rounds
 Casting Time: 1
 Area of Effect: Caster
-Sphere: Combat
 Saving Throw: None
 
 Calling upon Tempus for endurance in adversity, the Battleguard becomes protected from most physical harm. When the spell is cast, it confers complete invulnerability to all weapons except for those of greater than +5 enchantment. This spell is incredibly powerful, hence the short duration. However the casting time is also very short making this spell incredibly useful in the thick of combat where buying a few seconds can mean the difference between life or death. This spell lasts for the duration or until dispelled.~
 @10914 =~battleguard of tempus~
 @10915 =~BATTLEGUARD OF TEMPUS: Tempus is the Realms' god of war, the Lord of Battle, the Foehammer. He is random in his favors, yet his chaotic nature favors all sides equally. He may be on an army's side on one day and against them the next. Such is the nature of war as embodied by Tempus.
 
-The dress of the priest of Tempus is armor, battle-worn and battered. In more civilized regions this has been replaced by a steel skullcap, but the message is the same--these are warrior priests. Their place is in the trenches with the troops, urging them onwards. Priests of Tempus may be found on both sides of a conflict, as none can ever truly know who the war god will favor.
+The dress of the Battleguard of Tempus is armor, battle-worn and battered. In more civilized regions this has been replaced by a steel skullcap, but the message is the same--these are warrior priests. Their place is in the trenches with the troops, urging them onwards. Battleguards of Tempus may be found on both sides of a conflict, as none can ever truly know who the war god will favor.
 
 Advantages:
 - Can specialize (two points) in any melee weapon that a cleric can use
@@ -780,6 +1278,7 @@ Though these missions to the untamed wilderness are often considered an unwanted
 
 @11501 =~Flail - 'Tendril of Flame'~
 @11502 =~Spiked Chain - 'Tendril of Flame'~
+@11516 =~The flail is the spiritual weapon of Firewalkers of Kossuth, and is wielded as if the caster had grand mastery in the weapon. The flail is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
 @11503 =~Firewalker of Kossuth~
 @11504 =~FIREWALKER OF KOSSUTH: Kossuth, Firelord, the Tyrant among Fire, is an Elemental Lord from the Elemental Plane of Fire. He is generally uncaring to his faithful, but continues to grant his priests their powers since their worship increases his power on his home plane. To maintain continued worship he does take a limited interest in his followers' mortal problems, and occasionally makes his presence known with a manifestation, but never an avatar.
 
@@ -877,7 +1376,7 @@ Grants an additional 6th and 7th level spell.
 @11805 =~'Scimitar of Souls'~
 @11806 =~The Scimitar of Souls is the spiritual weapon of Authlim of Iyachtu Xvim, and is wielded as if the caster had grand mastery in the weapon. The Scimitar of Souls is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
 @11807 =~Xvim's Summoning~
-@11808 =~Xvim's Summoning
+@11808 =~Xvim's Summoning 
 (Conjuration/Summoning)
 Level: Quest
 Sphere: All, Summoning
@@ -930,6 +1429,7 @@ The longsword is the spiritual weapon of Lorekeepers of Oghma, and is wielded as
 Disadvantages:
 – None~
 @12103 = ~Longsword - Mortal Strike~
+@12112 = ~The longsword is the spiritual weapon of Lorekeepers of Oghma, and is wielded as if the caster had grand mastery in the weapon. The sword is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
 @12104 = ~Wisdom of Oghma~
 @12105 = ~Holy Symbol of Oghma~
 @12106 = ~Oghma rewards his most powerful servants with a Holy Symbol, a ring bearing his personal device of an scroll of parchment. When worn, the symbol empowers the Lorekeeper with Oghma's power.
@@ -974,8 +1474,10 @@ Sune's speciality priests, known as Heartwarders of Sune, are aesthetes and hedo
 Abilities:
 - Spiritual Weapon: Flail - 'Shock Flail' once per day
 The Shock Flail is the spiritual weapon of Heartwarders of Sune, and is wielded as if the caster had grand mastery in the weapon. The Shock Flail is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
-- +1 Charisma
-- From level 7 can cast Emotion once per day, as fourth level mage spell of the same name
+- +1 charisma bonus
+- Can cast Veil of Djalice once per day
+The Heartwarder temporarily augments <PRO_HISHER> beauty to unearthly levels, boosting effective charisma to 20 and forcing any hostiles to save vs. spell at -2 or be dire charmed for six rounds.
+- From level 7 can cast Emotion: Hoplessness once per day, as fourth level mage spell of the same name
 - From level 9 can cast Flamestrike once per day, as fifth level cleric spell of the same name
 - From level 11 can cast Mislead once per day, as sixth level mage spell of the same name
 - From level 14 can cast Mantle once per day, as seventh level mage spell of the same name
@@ -1001,7 +1503,7 @@ Sune herself is said to be benevolent and sometimes whimsical, alternating betwe
 Sune's speciality priests, known as Heartwarders of Sune, are aesthetes and hedonists who actively seek out pleasure and beauty in all things, and who nurture the creation of beautiful objects.  They are typically found in large cities in the company of the cultural elite.  Most are active patrons of the arts, and all play the role of matchmaker for persons in all levels of society.  Many are employed as artists, crafters, performers, or instructors, though a few travel the world to promote beauty and love.
 
 Advantages:
-- +1 Charisma
+- +1 charisma bonus
 – May cast Emotion: Hoplessness once per day every 5 levels (starts at 1st level with one use).
 – May use Veil of Djalice once per day every 10 levels (starts at 1st level with one use), as detailed below.
 
@@ -1046,9 +1548,10 @@ Disadvantages:
 – Alignment restricted to chaotic good, neutral good or chaotic neutral.~
 @12704 =~Longsword - 'Sahandrian'~
 @12705 =~Sahandrian is the spiritual weapon of Feywardens of Corellon, and is wielded as if the caster had grand mastery in the weapon. Sahandrian is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
-@12706 =~Improved Alacrity
+@12706 =~Improved Alacrity 
 (Any School)
-Level: 10
+Level: Quest
+Sphere: All
 Range: Unlimited
 Duration: 2 rounds
 Casting Time: 9
@@ -1103,17 +1606,16 @@ Strifeleaders wear black and purple robes. Silver bands, the symbol of their ens
 Abilities:
 - Spiritual Weapon: Long Sword - 'Razor's Edge' once per day
 Razor's Edge is the spiritual weapon of Strifeleaders of Cyric, and is wielded as if the caster had grand mastery in the weapon. The Razor's Edge is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
--  May coat his weapon in poison once per day per 6 levels.  Attacks made in the next round with that weapon will inject the poison into the target, dealing out 1 damage per second for 24 seconds (3 damage for the first 6 seconds).  A saving throw vs. poison limits damage to 12 total.
+- May coat his weapon in poison once per day per 6 levels.  
+Attacks made in the next round with that weapon will inject the poison into the target, dealing out 1 damage per second for 24 seconds (3 damage for the first 6 seconds).  A saving throw vs. poison limits damage to 12 total.
 - From level 7 can cast Dread Blast once per day
 Fires a ray of negative energy that deals 4d8 damage +1/level (max +20) and confuses target for 1 round (save vs. spell at -2 to negate confusion)
 - From level 9 can cast Chaos once per day, as fifth level mage spell of the same name
 - From level 11 can cast Death Fog once per day, as sixth level mage spell of the same name
 - From level 14 can cast Sphere of Chaos once per day, as seventh level mage spell of the same name
 
-Sphere Access:
-- Major access to the spheres of all, astral, charm, combat, guardian, healing, necromantic, summoning, sun, time, war, weather
-- Minor access to the spheres of divination, elemental, numbers, protection
-- No access to the spheres of animal, creation, chaos, law, plant, thought, travel, wards~
+Disadvantages:
+– Alignment restricted to chaotic neutral or any evil.~
 @13005 =~Holy Symbol of Cyric~
 @13006 =~Cyric grants his most powerful servants with a Holy Symbol, silvered bracers inscribed with his device: a skull in front of a dark sun. As well as being a visible symbol of the priest's obvious power, these bracers represent his enslavement to the Prince of Lies. When worn, the symbol enhances the Strifeleader's already fearsome power.
 
@@ -1133,11 +1635,9 @@ Strifeleaders wear black and purple robes. Silver bands, the symbol of their ens
 
 Advantages:
 – May coat <PRO_HISHER> weapon once per day every 5 levels (starts at 1st level with one use), as detailed below
-
 POISON WEAPON: Attacks made in the next round with that weapon will inject the poison into the target, dealing out 1 damage per second for 24 seconds (3 damage for the first 6 seconds).  A saving throw vs. poison limits damage to 12 total.
 
 – May use Dread Blast once per day every 10 levels (starts at 1st level with one use), as detailed below.
-
 DREAD BLAST: Fires a ray of negative energy that deals 4d8 damage +1/level (max +20) and confuses target for one round (save vs. spell at -2 to negate confusion)
 
 Disadvantages:
@@ -1204,6 +1704,8 @@ Disadvantages:
 
 @20305 = ~Paralytic Touch~
 @20306 = ~Shapeshift: Mustard Jelly~
+@20307 = ~Charisma -1~ 
+@20308 = ~Immune to Acid~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1232,6 +1734,7 @@ Disadvantages:
 - Can not even be proficient in any other melee weapon
 - Cannot wear any metal armor~
 @40304 = ~Speed Shot~
+@40305 = ~When the bowslinger activates this ability, he makes one extra attack per round for five rounds.~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1256,10 +1759,11 @@ Advantages:
 Disadvantages:
 - Becomes winded after Feral Rage. While he's winded he receives -2 to hit, -2 to damage and a +2 penalty to armor class
 - Can only become proficient (one point) in bastard swords, long swords, short swords, two-handed swords, katanas, scimitars, halberds, flails and crossbows
-- Cannot wear any armor or use large shields
+- Cannot wear any armor
 - Maximum Charisma is 2 points lower than a standard member of the race~
 @40604 = ~Feral Rage~
 @40605 = ~Call of the Wild~
+@40610 = ~This unique ability summons an animal companion who will fight for the caster for 3 rounds + 1 round/level.  More powerful creatures are summoned at higher levels.~
 @40606 = ~Wild Dog~
 @40607 = ~Wolf~
 @40608 = ~Dire Wolf~
@@ -1289,6 +1793,7 @@ Disadvantages:
 - Can only become proficient (one point) in axes, two-handed swords, warhammers, and crossbows~
 @40904 = ~Inspire~
 @40905 = ~Inspired~
+@40906 = ~This unique ability boosts the morale and attack rolls of the Forest Runner's companions for 3 rounds.~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1341,6 +1846,15 @@ Disadvantages:
 - Can only become proficient (one point) in flails, morningstars and warhammers
 - Maximum Charisma is 2 points lower than a standard member of the race~
 @41504 = ~Enhanced Charm Animal~
+@41505 = ~Enhanced Charm Animal
+
+Range: visual sight
+Duration: 4 turns
+Casting Time: 1
+Area of Effect: All animal in the area
+Saving Throw: Negates effect
+
+This ability affects any animal it is cast upon. The animals are allowed a save vs. spell to negate the effect. If the ability's recipient fails its Saving Throw, it regards the caster as a trusted friend and ally to be heeded and protected. The caster may give it orders, and the charmed animal will carry them out as quickly as possible. If the caster harms, or attempts to harm, the charmed animal by some overt action, or if a Dispel Magic spell is cast upon the charmed animal, the ability is broken. If two or more charms simultaneously affect a creature, the most recent charm takes precedence. Note that the subject will be hostile when the charm expires, regardless of its original attitude. Also note that you cannot have a charmed creature leave the area where it was charmed.~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\

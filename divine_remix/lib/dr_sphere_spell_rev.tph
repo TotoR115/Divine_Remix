@@ -1,0 +1,491 @@
+/////                                                  \\\\\
+///// assign spells to sphere spells                   \\\\\
+/////                                                  \\\\\
+
+// array sets primary sphere assignments
+ACTION_IF !((IDS_OF_SYMBOL (~spell~ ~CLERIC_SYMBOL_PAIN~)) < 0) BEGIN
+  OUTER_SPRINT "CLERIC_SYMBOL_1" "CLERIC_SYMBOL_PAIN"
+END ELSE OUTER_SPRINT "CLERIC_SYMBOL_1" "CLERIC_SYMBOL_STUN"
+ACTION_IF !((IDS_OF_SYMBOL (~spell~ ~CLERIC_SYMBOL_HOPELESSNESS~)) < 0) BEGIN
+  OUTER_SPRINT "CLERIC_SYMBOL_2" "CLERIC_SYMBOL_HOPELESSNESS"
+END ELSE OUTER_SPRINT "CLERIC_SYMBOL_2" "CLERIC_SYMBOL_FEAR"
+ACTION_IF !((IDS_OF_SYMBOL (~spell~ ~CLERIC_SYMBOL_PERSUASION~)) < 0) BEGIN
+  OUTER_SPRINT "CLERIC_SYMBOL_3" "CLERIC_SYMBOL_PERSUASION"
+END ELSE OUTER_SPRINT "CLERIC_SYMBOL_3" "CLERIC_SYMBOL_DEATH"
+  
+ACTION_CLEAR_ARRAY cd_spheres
+ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_spheres BEGIN
+  
+  // Sphere: all (minor = 5; major = 8)
+  CLERIC_BLESS                          => al // Vanilla; Lv 1
+  CLERIC_CURSE                          => al // IWD; Lv 1
+  CLERIC_CHANT                          => al // Vanilla; Lv 2
+  CLERIC_DISPEL_MAGIC                   => al // Vanilla; Lv 3
+  CLERIC_BREAK_ENCHANTMENT              => al // SR; Lv 3
+  CLERIC_BESTOW_CURSE                   => al // Vanilla; Lv 3
+  CLERIC_TRUE_SIGHT                     => al // Vanilla; Lv 5
+  CLERIC_HALLOW							=> al // mih_sp; Lv 5
+  CLERIC_UNHALLOW						=> al // mih_sp; Lv 5
+  CLERIC_SUMMON_DEATH_KNIGHT			=> al // SR; Lv 7
+  // Sphere: animal (minor = 4; major = 15)
+  CLERIC_ANIMAL_FRIENDSHIP           	=> an // DR; Lv 1
+  CLERIC_ANIMAL_SUMMONING_LEVEL_1       => an // SR; Lv 1
+  CLERIC_REGENERATE_LIGHT_WOUNDS        => an // SR; Lv 1
+  CLERIC_CHARM_PERSON                   => an // Vanilla; Lv 2
+  CLERIC_BEAST_CLAW                     => an // IWD; Lv 2
+  CLERIC_ANIMAL_SUMMONING_LEVEL_2       => an // SR; Lv 2
+  CLERIC_REGENERATE_MODERATE_WOUNDS		=> an // SR; Lv 2
+  CLERIC_HOLD_ANIMAL                    => an // Vanilla; Lv 3
+  CLERIC_SUMMON_INSECTS            		=> an // Vanilla; Lv 3
+  CLERIC_ANIMAL_SUMMONING_LEVEL_3       => an // SR; Lv 3
+  CLERIC_REGENERATE_SERIOUS_WOUNDS    	=> an // SR; Lv 3
+  CLERIC_MAGIC_FANG						=> an // SR; Lv 3
+  CLERIC_CALL_WOODLAND_BEINGS           => an // Vanilla; Lv 4
+  CLERIC_GIANT_INSECT                   => an // DR, IWD; Lv 4
+  CLERIC_REPEL_INSECTS           		=> an // mih_sp; Lv 4
+  CLERIC_ANIMAL_SUMMONING_LEVEL_4       => an // SR; Lv 4
+  CLERIC_REGENERATE_CRITICAL_WOUNDS		=> an // SR; Lv 4
+  CLERIC_INSECT_PLAGUE                  => an // Vanilla; Lv 5
+  CLERIC_ANIMAL_GROWTH					=> an // DR, IWD; Lv 5
+  CLERIC_ANIMAL_SUMMONING_LEVEL_5       => an // SR; Lv 5
+  CLERIC_POLYMORPH_OTHER				=> an // SR; Lv 5
+  CLERIC_MASS_REGENERATE				=> an // SR; Lv 5
+  CLERIC_ANIMAL_SUMMONING_LEVEL_6       => an // SR; Lv 6
+  CLERIC_REGENERATION_DRUID_VERSION		=> an // SR; Lv 6
+  CLERIC_CREEPING_DOOM                  => an // Vanilla; Lv 7
+  CLERIC_WOLF_SPIRIT					=> an // Vanilla; Lv 7
+  CLERIC_REINCARNATION                  => an // galctygon; Lv 7
+  CLERIC_ANIMAL_SUMMONING_LEVEL_7       => an // SR; Lv 7
+  CLERIC_SUMMON_SIRINE                  => an // DSotSC; Lv 7
+  // Sphere: astral(minor = 0; major = 0)
+  // Sphere: chaos (minor = 3; major = 5)
+  CLERIC_BATTLEFATE                     => cs // DR, galctygon; Lv 1
+  CLERIC_MISCAST_MAGIC                  => cs // Vanilla; Lv 3
+  CLERIC_RANDOM_CASUALTY                => cs // galctygon; Lv 3
+  CLERIC_CHAOTIC_COMMANDS               => cs // Vanilla; Lv 5
+  CLERIC_ENTROPY_SHIELD                 => cs // DR, IWD; Lv 6
+  CLERIC_CHAOS							=> cs // SR; Lv 7
+  // Sphere: Charm (minor = 6; major = 12)
+  CLERIC_COMMAND                        => cm // Vanilla; Lv 1
+  CLERIC_REMOVE_FEAR                    => cm // Vanilla; Lv 1
+  CLERIC_SANCTUARY                      => cm // Vanilla; Lv 1
+  CLERIC_DOOM                           => cm // Vanilla; Lv 1
+  CLERIC_HOLD_PERSON                    => cm // Vanilla; Lv 2
+  CLERIC_GREATER_COMMAND                => cm // Vanilla; Lv 5 - DR; Lv3
+  CLERIC_PAIN		                    => cm // DSotSC; Lv 3
+  CLERIC_CLOAK_OF_FEAR                  => cm // Vanilla; Lv 4
+  CLERIC_FREE_ACTION                    => cm // Vanilla; Lv 4
+  CLERIC_WONDROUS_RECALL                => cm // Vanilla; Lv 6
+  CLERIC_COMMAND_MONSTER          		=> cm // DR; Lv 6
+  CLERIC_CONFUSION                      => cm // Vanilla; Lv 7
+  // Sphere: combat (minor = 13; major = 29) 
+  CLERIC_MAGIC_STONE                    => co // Vanilla; Lv 1
+  CLERIC_CIRCLE_PROTECTION           	=> co // mih_sp; Lv 1
+  CLERIC_STRIKING                		=> co // mih_sp; Lv 1
+  CLERIC_ARMOR_MELT           			=> co // DSotSC; Lv 1
+  CLERIC_AID                            => co // Vanilla; Lv 2
+  CLERIC_SPIRITUAL_HAMMER               => co // Vanilla; Lv 2
+  CLERIC_ALICORN_LANCE                  => co // IWD; Lv 2
+  CLERIC_EXALTATION                     => co // IWD; Lv 3
+  CLERIC_PRAYER                         => co // IWD; Lv 3
+  CLERIC_MOONBLADE                      => co // IWD; Lv 3
+  CLERIC_MOON_BLADE                     => co // galctygon; Lv 3
+  CLERIC_ELYSIUMS_TEARS                 => co // galctygon; Lv 3
+  CLERIC_HOLY_POWER                     => co // Vanilla; Lv 4
+  CLERIC_RECITATION                     => co // IWD; Lv 4
+  CLERIC_BLOOD_RAGE                     => co // IWD; Lv 4
+  CLERIC_CLOUD_OF_PESTILENCE            => co // IWD; Lv 4
+  CLERIC_STAR_METAL_CUDGEL              => co // IWD; Lv 4
+  CLERIC_HEROISM                		=> co // mih_sp; Lv 4
+  CLERIC_FLAME_STRIKE                   => co // Vanilla; Lv 5
+  CLERIC_RIGHTEOUS_MAGIC                => co // Vanilla; Lv 5
+  CLERIC_ANIMAL_RAGE                    => co // IWD; Lv 5
+  CLERIC_RIGHTEOUS_WRATH_OF_THE_FAITHFUL => co // IWD; Lv 5
+  CLERIC_BLADES		                    => co // DSotSC; Lv 5
+  CLERIC_DOLOROUS_DECAY                 => co // Vanilla; Lv 6
+  CLERIC_BOLT_OF_GLORY                  => co // Vanilla; Lv 6
+  CLERIC_SPIRITUAL_WRATH                => co // IWD; Lv 6
+  CLERIC_HAMMER_OF_RETRIBUTION          => co // galctygon; Lv 6
+  CLERIC_SUPERHEROISM                	=> co // mih_sp; Lv 6
+  CLERIC_HOLY_WORD                      => co // Vanilla; Lv 7
+  CLERIC_UNHOLY_WORD                    => co // Vanilla; Lv 7
+  // Sphere: creation (minor = 0; major = 4)
+  CLERIC_BLADE_BARRIER                  => cr // Vanilla; Lv 6
+  // Sphere: divination (minor = 4; major = 5)
+  CLERIC_DETECT_EVIL                    => di // Vanilla; Lv 1
+  CLERIC_DETECT_GOOD                    => di // DR, IWD; Lv 1
+  CLERIC_FIND_TRAPS                     => di // Vanilla; Lv 2
+  CLERIC_KNOW_OPPONENT                  => di // SR; Lv 2
+  CLERIC_FAR_SIGHT                      => di // Vanilla; Lv 4
+  // Sphere: elemental (minor = 1; major = 3)
+  CLERIC_RESIST_FIRE_AND_COLD           => ex // IWD; Lv 2
+  CLERIC_RESIST_ELEMENTS                => ex // SR; Lv 2
+  CLERIC_MIELIKKIS_BLADE           		=> ex // DSotSC; Lv 4
+  CLERIC_PIXIE_DUST                     => ex // Vanilla; Lv 5
+  CLERIC_NATURE_BEAUTY                  => ex // Vanilla; Lv 7
+  // Sphere: elemental (air) (minor = 1; major = 4)
+  CLERIC_GUST_OF_WIND_DRUID_VERSION     => ea // SR; Lv 2
+  CLERIC_WHIRLWIND                      => ea // IWD; Lv 6
+  CLERIC_CONJURE_AIR_ELEMENTAL          => ea // DR, mih_sp; Lv 7
+  // Sphere: elemental (earth) (minor = 1; major = 6)
+  CLERIC_STRENGTH_OF_STONE              => ee // DR, IWD; Lv 1
+  CLERIC_ADAMANTITE_MACE                => ee // DR, galctygon; Lv 4
+  CLERIC_SPIKE_STONES                   => ee // IWD; Lv 5
+  CLERIC_IRONSKIN                       => ee // Vanilla; Lv 5
+  CLERIC_CONJURE_EARTH_ELEMENTAL        => ee // Vanilla; Lv 7
+  CLERIC_EARTHQUAKE                     => ee // Vanilla; Lv 7
+  // Sphere: elemental (fire) (minor = 4; major = 10)
+  CLERIC_FIRE_BOLT                      => ef // DSotSC; Lv 1
+  CLERIC_FLAME_BLADE                    => ef // Vanilla; Lv 2
+  CLERIC_PRODUCE_FLAME                  => ef // DR, galctygon; Lv 2
+  CLERIC_FIRE_TRAP                  	=> ef // SR; Lv 2
+  CLERIC_PROTECTION_FROM_FIRE           => ef // Vanilla; Lv 3
+  CLERIC_PYROTECHNICS                   => ef // DR; Lv 3
+  CLERIC_PRODUCE_FIRE                   => ef // IWD; Lv 4
+  CLERIC_INFERNO           				=> ef // mih_sp; Lv 5
+  CLERIC_WALL_OF_FIRE                   => ef // DR; Lv 5
+  CLERIC_CONJURE_FIRE_ELEMENTAL         => ef // Vanilla; Lv 6
+  CLERIC_FIRE_SEEDS                     => ef // Vanilla; Lv 6
+  CLERIC_FIRE_STORM                     => ef // Vanilla; Lv 7
+  // Sphere: elemental (water) (minor = 3; major = 7)
+  CLERIC_WATERY_FIST					=> ew // DR; Lv 2
+  CLERIC_CLOUDBURST                     => ew // IWD; Lv 3
+  CLERIC_ICELANCE						=> ew // SR; Lv 3
+  CLERIC_SMASHING_WAVE                  => ew // IWD; Lv 4
+  CLERIC_ICE_STORM						=> ew // SR; Lv 4
+  CLERIC_PRODUCE_ICE                    => ew // DR; Lv 5
+  CLERIC_PROTECTION_FROM_COLD           => ew // SR; Lv 5
+  CLERIC_CONJURE_WATER_ELEMENTAL		=> ew // mih_sp; Lv 6
+  CLERIC_MIST_OF_ELDATH                 => ew // IWD; Lv 7
+  // Sphere: guardian (minor = 2; major = 9)
+  CLERIC_SILENCE_15_FOOT                => gu // Vanilla; Lv 2
+  CLERIC_GLYPH_OF_WARDING               => gu // Vanilla; Lv 3
+  CLERIC_DISMISSAL						=> gu // DR; Lv 4
+  CLERIC_REPULSION	                    => gu // SR; Lv 5
+  CLERIC_SHIELD_OF_LATHANDER            => gu // IWD; Lv 5
+  CLERIC_GREATER_SHIELD_OF_LATHANDER    => gu // IWD; Lv 7
+  "%CLERIC_SYMBOL_1%"       			=> gu // Vanilla; Lv 7
+  "%CLERIC_SYMBOL_2%"       			=> gu // Vanilla; Lv 7
+  "%CLERIC_SYMBOL_3%"       			=> gu // Vanilla; Lv 7
+  CLERIC_SYMBOL_WEAKNESS				=> gu // SR; Lv 7
+  // Sphere: healing (minor = 11; major = 26)
+  CLERIC_CURE_LIGHT_WOUNDS              => hr // Vanilla; Lv 1
+  CLERIC_CAUSE_LIGHT_WOUNDS             => hr // DR, IWD; Lv 1
+  CLERIC_CURE_MODERATE_WOUNDS           => hr // IWD; Lv 2
+  CLERIC_SLOW_POISON                    => he // Vanilla; Lv 2
+  CLERIC_CURE_MEDIUM_WOUNDS             => hr // Vanilla; Lv 3
+  CLERIC_CAUSE_MEDIUM_WOUNDS            => hr // DR, IWD; Lv 3
+  CLERIC_CURE_BLIND_DEAF			    => he // DR, mih_sp; Lv 3
+  CLERIC_CAUSE_BLINDNESS_OR_DEAFNESS    => he // DR; Lv 3
+  CLERIC_CURE_DISEASE_PC                => he // Vanilla; Lv 3
+  CLERIC_CAUSE_DISEASE                  => he // IWD; Lv 3
+  CLERIC_CURE_SERIOUS_WOUNDS            => hr // Vanilla; Lv 4
+  CLERIC_CAUSE_SERIOUS_WOUNDS	        => hr // Vanilla; Lv 4
+  CLERIC_NEUTRALIZE_POISON              => he // Vanilla; Lv 4
+  CLERIC_POISON                         => he // Vanilla; Lv 4
+  CLERIC_CAUSE_CRITICAL_WOUNDS		    => hr // Vanilla; Lv 5
+  CLERIC_MASS_CURE                      => hr // Vanilla; Lv 5
+  CLERIC_MASS_CAUSE_LIGHT_WOUNDS        => hr // IWD; Lv 5
+  CLERIC_HEAL                           => hr // Vanilla; Lv 6
+  CLERIC_HARM                           => hr // Vanilla; Lv 6
+  CLERIC_LIFE_STEAL		          		=> he // DSotSC; Lv 6
+  CLERIC_REGENERATE                     => hr // Vanilla; Lv 7
+  CLERIC_WITHER                         => hr // DR, IWD; Lv 7
+  CLERIC_AURA_OF_VITALITY				=> he // mih_sp; Lv 7
+  // Sphere: law  (minor = 5; major = 6)
+  CLERIC_PROTECT_FROM_CHAOS             => lw // DR; Lv 1
+  CLERIC_RIGID_THINKING                 => lw // Vanilla; Lv 3
+  CLERIC_STRENGTH_OF_ONE                => lw // Vanilla; Lv 3
+  CLERIC_DEFENSIVE_HARMONY              => lw // Vanilla; Lv 4
+  CLERIC_CHAMPIONS_STRENGTH             => lw // Vanilla; Lv 5
+  // Sphere: necromantic (minor = 10; major = 23)
+  CLERIC_ANIMATE_DEAD                   => ne // Vanilla; Lv 3
+  CLERIC_FAVOR_OF_ILMATER               => nr // IWD; Lv 3
+  CLERIC_HOLY_SMITE                     => ne // Vanilla; Lv 3
+  CLERIC_UNHOLY_BLIGHT                  => ne // Vanilla; Lv 3
+  CLERIC_NEGATIVE_PLANE_PROTECTION      => nr // Vanilla; Lv 3
+  CLERIC_REMOVE_PARALYSIS               => nr // Vanilla; Lv 3
+  CLERIC_CIRCLE_OF_BONES                => ne // IWD; Lv 3
+  CLERIC_WHEEL_OF_BONES                 => ne // galctygon; Lv 3
+  CLERIC_CONTAGION						=> ne // SR; Lv 3
+  CLERIC_DEATH_WARD                     => nr // Vanilla; Lv 4
+  CLERIC_LESSER_RESTORATION             => nr // Vanilla; Lv 4
+  CLERIC_UNFAILING_ENDURANCE            => ne // IWD; Lv 4
+  CLERIC_RAISE_DEAD                     => nr // Vanilla; Lv 5
+  CLERIC_SLAY_LIVING                    => ne // Vanilla; Lv 5
+  CLERIC_CALL_UNDEAD                    => ne // DSotSC; Lv 5
+  CLERIC_ANIMATE_SKELETON_WARRIOR		=> ne // SR; Lv 6
+  CLERIC_RESURRECTION                   => nr // Vanilla; Lv 7
+  CLERIC_RESTORATION                    => nr // Vanilla; Lv 7
+  CLERIC_FINGER_OF_DEATH                => ne // Vanilla; Lv 7
+  CLERIC_DESTRUCTION                    => ne // DR, IWD; Lv 7
+  CLERIC_ENERGY_DRAIN                   => ne // DR, IWD; Lv 7
+  CLERIC_MASS_NEGATIVE_PLANE_PROTECTION	=> nr // mih_sp; Lv 7
+  // Sphere: number (minor = 2; major = 6)
+  CLERIC_SEEKING                        => nu // galctygon; Lv 2
+  CLERIC_MOMENT	 	                    => nu // galctygon; Lv 3
+  CLERIC_DIMENSIONAL_FOLDING            => nu // galctygon; Lv 4
+  CLERIC_PHYSICAL_MIRROR                => nu // Vanilla; Lv 6
+  CLERIC_SECLUSION                      => nu // galctygon; Lv 6
+  CLERIC_SPACE_WARP                     => nu // galctygon; Lv 7
+  // Sphere: plant (minor = 7; major = 11)
+  CLERIC_GOOD_BERRIES                   => pl // SR; Lv 1
+  CLERIC_ENTANGLE                       => pl // Vanilla; Lv 1
+  CLERIC_SHILLELAGH                     => pl // Vanilla; Lv 1
+  CLERIC_BARKSKIN                       => pl // Vanilla; Lv 2
+  CLERIC_DETECT_SNARES_PITS				=> pl // DR; Lv 2
+  CLERIC_SPIKE_GROWTH                   => pl // IWD; Lv 3
+  CLERIC_MOLD_TOUCH                     => pl // IWD; Lv 3
+  CLERIC_THORN_SPRAY                    => pl // IWD; Lv 4
+  CLERIC_POISON_SPRAY                   => pl // DSotSC; Lv 4
+  CLERIC_STICKS_TO_SNAKES           	=> pl // mih_sp; Lv 4
+  CLERIC_TRANSPORT_VIA_PLANTS          	=> pl // DSotSC; Lv 5
+  CLERIC_CHOKING_VINES          		=> pl // DSotSC; Lv 6
+  CLERIC_STALKER                        => pl // IWD; Lv 7
+  // Sphere: protection (minor = 14; major = 21)
+  CLERIC_CIRCLE_OF_PROTECTION           => pr // mih_sp; Lv 1
+  CLERIC_ENDURE_HEAT_COLD          		=> pr // mih_sp; Lv 1
+  CLERIC_PROTECT_FROM_EVIL              => pr // Vanilla; Lv 1
+  CLERIC_PROTECT_FROM_GOOD              => pr // DR; Lv 1
+  CLERIC_ARMOR_OF_FAITH                 => pr // Vanilla; Lv 2
+  CLERIC_RESIST_ACID_AND_CORROSION      => pr // DR; Lv 2
+  CLERIC_RESIST_ACID_CORROSION          => pr // mih_sp; Lv 2
+  CLERIC_WARD_OF_PROTECTION             => pr // DSotSC; Lv 2
+  CLERIC_STORM_SHELL                    => pr // IWD; Lv 3
+  CLERIC_STORM_SHIELD					=> pr // SR; Lv 3
+  CLERIC_ARMOR_OF_DARKNESS              => pr // DSotSC; Lv 3
+  CLERIC_PROTECTION_FROM_GOOD_10_FOOT   => pr // DR; Lv 4
+  CLERIC_PROTECTION_FROM_EVIL_10_FOOT   => pr // Vanilla; Lv 4
+  CLERIC_WALL_OF_MOONLIGHT              => pr // IWD; Lv 4
+  CLERIC_MAGIC_RESISTANCE               => pr // Vanilla; Lv 5
+  CLERIC_IMPREGNABLE_MIND               => pr // DR; Lv 5
+  CLERIC_PROTECTION_FROM_ACID			=> pr // SR; Lv 5
+  CLERIC_SELUNES_BLESSING               => pr // DSotSC; Lv 5
+  CLERIC_CELESTIAL_PROTECTION           => pr // mih_sp; Lv 6
+  CLERIC_SHIELD_OF_THE_ARCHONS          => pr // Vanilla; Lv 7
+  CLERIC_IMPERVIOUS_SANCTITY_OF_MIND    => pr // IWD; Lv 7
+  CLERIC_AURA_OF_PROTECTION			    => pr // DSotSC; Lv 7
+  CLERIC_DARK_RITUAL				    => pr // DSotSC; Lv 7
+  // Sphere: summoning (minor = 4; major = 9)
+  CLERIC_CALL_UPON_FAITH                => su // galctygon; Lv 1
+  CLERIC_DRAW_UPON_HOLY_MIGHT           => su // Vanilla; Lv 2
+  CLERIC_ANIMAL_SPIRIT	                => su // DR; Lv 3
+  CLERIC_AERIAL_SERVANT                 => su // Vanilla; Lv 6
+  CLERIC_CONJURE_ANIMALS                => su // Vanilla; Lv 6
+  // Sphere: sun (minor = 3; major = 7)
+  CLERIC_SUNSCORCH                      => sn // IWD; Lv 2
+  CLERIC_MOON_MOTES                     => sm // galctygon; Lv 2
+  CLERIC_FALSE_DAWN                     => sn // Vanilla; Lv 6
+  CLERIC_SOL_SEARING_ORB                => sn // Vanilla; Lv 6
+  CLERIC_SUNRAY                         => sn // Vanilla; Lv 7
+  // Sphere: thought (minor = 0; major = 3)
+  CLERIC_MENTAL_DOMINATION              => th // Vanilla; Lv 4
+  // Sphere: time (minor = 0; major = 0)
+  // Sphere: travelers (minor = 0; major = 0)
+  // Sphere: war (minor = 0; major = 0)
+  // Sphere: wards (minor = 2; major = 4)
+  CLERIC_INVISIBILITY_PURGE             => wd // Vanilla; Lv 3
+  CLERIC_UNDEAD_WARD                    => wd // IWD; Lv 5
+  // Sphere: weather (minor = 3; major = 5)
+  CLERIC_FAERIE_FIRE                    => we // SR, DR, IWD, DSotSC; Lv 1
+  CLERIC_OBSCURING_MIST                 => we // DR, SR; Lv 1
+  CLERIC_SPARKS		           			=> we // DSotSC; Lv 2
+  CLERIC_CALL_LIGHTNING                 => we // Vanilla; Lv 3
+  CLERIC_PROTECTION_FROM_LIGHTNING      => we // Vanilla; Lv 4
+  CLERIC_STATIC_CHARGE                  => we // IWD; Lv 4
+  CLERIC_LIGHTNING_STORM           		=> we // mih_sp; Lv 5
+  CLERIC_THUNDER_BOLT                   => we // DSotSC; Lv 7
+
+END
+
+OUTER_SET sphere_descript = 1 
+OUTER_SET hla = 0
+LAUNCH_ACTION_MACRO CD_BUILD_SPHERE
+
+// now do it again for secondary spheres
+ACTION_CLEAR_ARRAY cd_spheres
+ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_spheres BEGIN
+
+  CLERIC_RIGID_THINKING                 => cm // Vanilla; Lv 3
+
+  CLERIC_COMMAND                        => co // Vanilla; Lv 1
+  CLERIC_STRENGTH_OF_ONE                => co // Vanilla; Lv 3 **
+  CLERIC_CHAMPIONS_STRENGTH             => co // Vanilla; Lv 5 **
+
+  CLERIC_WONDROUS_RECALL                => cr // Vanilla; Lv 6
+  CLERIC_SHIELD_OF_LATHANDER            => cr // IWD; Lv 5 **
+  CLERIC_GREATER_SHIELD_OF_LATHANDER    => cr // IWD; Lv 7 **
+
+  CLERIC_CLOUD_OF_PESTILENCE            => ea // IWD; Lv 4
+
+  CLERIC_DEFENSIVE_HARMONY              => gu // Vanilla; Lv 4 **
+  CLERIC_BLADE_BARRIER                  => gu // Vanilla; Lv 6
+  CLERIC_STALKER                        => gu // IWD; Lv 7
+
+  CLERIC_EXALTATION                     => he // IWD; Lv 3
+  CLERIC_MIST_OF_ELDATH                 => he // IWD; Lv 7
+
+  CLERIC_HOLD_PERSON                    => lw // Vanilla; Lv 3
+  CLERIC_GREATER_COMMAND                => lw // Vanilla; Lv 5
+
+  CLERIC_AID                            => nr // Vanilla; Lv 2
+  CLERIC_BEAST_CLAW                     => ne // IWD; Lv 2
+  CLERIC_DOLOROUS_DECAY                 => ne // Vanilla; Lv 6
+  CLERIC_LIFE_STEAL		          		=> ne // DSotSC; Lv 6
+  CLERIC_REINCARNATION                  => nr // galctygon; Lv 7
+
+  CLERIC_STICKS_TO_SNAKES           	=> pl // mih_sp;  Lv 4
+
+  CLERIC_SANCTUARY                      => pr // Vanilla; Lv 1
+  CLERIC_RESIST_FIRE_AND_COLD           => pr // IWD; Lv 2
+  CLERIC_RESIST_ELEMENTS                => pr // SR; Lv 2
+  CLERIC_FAVOR_OF_ILMATER               => pr // IWD; Lv 3
+  CLERIC_NEGATIVE_PLANE_PROTECTION      => pr // Vanilla; Lv 3
+  CLERIC_REMOVE_PARALYSIS               => pr // Vanilla; Lv 3
+  CLERIC_PROTECTION_FROM_COLD			=> pr // SR; Lv 5
+  CLERIC_PHYSICAL_MIRROR                => pr // Vanilla; Lv 6 **
+
+  CLERIC_DISMISSAL						=> su // DR; Lv 3
+  CLERIC_CALL_UNDEAD                    => su // DSotSC; Lv 5
+  CLERIC_BOLT_OF_GLORY                  => su // Vanilla; Lv 6
+  CLERIC_WOLF_SPIRIT					=> su // DR; Lv 7
+
+  CLERIC_MOONBLADE                      => sm // IWD; Lv 3
+  CLERIC_ARMOR_OF_DARKNESS              => sm // DSotSC; Lv 3
+  CLERIC_MOON_BLADE                     => sm // galctygon; Lv 3
+  CLERIC_WALL_OF_MOONLIGHT              => sm // IWD; Lv 4
+
+  CLERIC_IMPREGNABLE_MIND               => th // DR; Lv 5
+  CLERIC_IMPERVIOUS_SANCTITY_OF_MIND    => th // DR; Lv 7
+
+  CLERIC_GUST_OF_WIND                   => wd // SR; Lv 3
+  CLERIC_DEATH_WARD                     => wd // Vanilla; Lv 4
+
+  CLERIC_STORM_SHELL                    => we // IWD; Lv 3
+  CLERIC_STORM_SHIELD					=> we // SR; Lv 3
+
+END
+
+OUTER_SET sphere_descript = 2
+OUTER_SET hla = 0
+LAUNCH_ACTION_MACRO CD_BUILD_SPHERE
+
+// and a third time for tertiary spheres
+ACTION_CLEAR_ARRAY cd_spheres
+ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_spheres BEGIN
+
+  CLERIC_COMMAND                        => lw // Vanilla; Lv 1
+
+  CLERIC_STALKER                        => cr // IWD; Lv 7
+
+END
+
+OUTER_SET sphere_descript = 3
+OUTER_SET hla = 0
+LAUNCH_ACTION_MACRO CD_BUILD_SPHERE
+
+// now primary spheres of hlas
+ACTION_IF NOT MOD_IS_INSTALLED ~SETUP-STRATAGEMS.TP2~ ~4240~ THEN BEGIN
+  ACTION_CLEAR_ARRAY cd_spheres
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_spheres BEGIN
+  CLERIC_SUMMON_DEVA                    => al
+  CLERIC_SUMMON_FALLEN_DEVA             => al
+  CLERIC_IMPLOSION                      => co
+  CLERIC_ENERGY_BLADES                  => cr
+  CLERIC_GLOBE_OF_BLADES                => cr
+  CLERIC_STORM_OF_VENGEANCE             => ex
+  CLERIC_ELEMENTAL_SWARM                => ex
+  CLERIC_GREATER_ELEMENTAL_SWARM        => ex
+  CLERIC_ELEMENTAL_TRANSFORMATION_EARTH => ee
+  CLERIC_AURA_OF_FLAMING_DEATH          => ef
+  CLERIC_ELEMENTAL_TRANSFORMATION_FIRE  => ef
+  CLERIC_MASS_RAISE_DEAD                => ne
+  END
+END ELSE BEGIN
+  ACTION_CLEAR_ARRAY cd_spheres
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_spheres BEGIN
+  HLA_CLERIC_SUMMON_DEVA                => al
+  HLA_CLERIC_SUMMON_FALLEN_DEVA         => al
+  HLA_CLERIC_IMPLOSION                  => co
+  HLA_CLERIC_ENERGY_BLADES              => cr
+  HLA_CLERIC_GLOBE_OF_BLADES            => cr
+  HLA_CLERIC_STORM_OF_VENGEANCE         => ex
+  HLA_CLERIC_ELEMENTAL_SWARM            => ex
+  HLA_CLERIC_GREATER_ELEMENTAL_SWARM    => ex
+  CLERIC_ELEMENTAL_TRANSFORMATION_EARTH => ee
+  CLERIC_ELEMENTAL_TRANSFORMATION_FIRE  => ef
+  HLA_CLERIC_AURA_OF_FLAMING_DEATH      => ef
+  HLA_CLERIC_MASS_RAISE_DEAD            => ne
+  END
+END
+
+// build hla framework
+OUTER_SET sphere_descript = 1
+OUTER_SET hla = 1
+LAUNCH_ACTION_MACRO CD_BUILD_SPHERE
+
+// now secondary spheres of hlas
+ACTION_IF NOT MOD_IS_INSTALLED ~SETUP-STRATAGEMS.TP2~ ~4240~ THEN BEGIN
+  ACTION_CLEAR_ARRAY cd_spheres
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_spheres BEGIN
+  CLERIC_ENERGY_BLADES                  => co
+  CLERIC_GLOBE_OF_BLADES                => gu
+  CLERIC_IMPLOSION                      => nu
+  CLERIC_AURA_OF_FLAMING_DEATH          => pr
+  CLERIC_STORM_OF_VENGEANCE             => wa
+  CLERIC_ELEMENTAL_SWARM                => su
+  CLERIC_SUMMON_DEVA                    => su
+  CLERIC_SUMMON_FALLEN_DEVA             => su
+  END
+END ELSE BEGIN
+  ACTION_CLEAR_ARRAY cd_spheres
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_spheres BEGIN
+  HLA_CLERIC_ENERGY_BLADES              => co
+  HLA_CLERIC_GLOBE_OF_BLADES            => gu
+  HLA_CLERIC_IMPLOSION                  => nu
+  HLA_CLERIC_AURA_OF_FLAMING_DEATH      => pr
+  HLA_CLERIC_ELEMENTAL_SWARM            => su
+  HLA_CLERIC_SUMMON_DEVA                => su
+  HLA_CLERIC_SUMMON_FALLEN_DEVA         => su
+  HLA_CLERIC_STORM_OF_VENGEANCE         => wa
+  END
+END
+
+// build hla framework
+OUTER_SET sphere_descript = 2
+OUTER_SET hla = 1
+LAUNCH_ACTION_MACRO CD_BUILD_SPHERE
+
+// now tertiary spheres of hlas
+ACTION_IF NOT MOD_IS_INSTALLED ~SETUP-STRATAGEMS.TP2~ ~4240~ THEN BEGIN
+  ACTION_CLEAR_ARRAY cd_spheres
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_spheres BEGIN
+  CLERIC_STORM_OF_VENGEANCE             => we
+  END
+END ELSE BEGIN
+  ACTION_CLEAR_ARRAY cd_spheres
+  ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_spheres BEGIN
+  HLA_CLERIC_STORM_OF_VENGEANCE         => ex
+  END
+END
+
+// build hla framework
+OUTER_SET sphere_descript = 3
+OUTER_SET hla = 1
+LAUNCH_ACTION_MACRO CD_BUILD_SPHERE
+
+ACTION_FOR_EACH sphere IN al an as cs cm co cr di ex ea ee ef ew gu he hr lw ne nr nu pl pr su sn sm th ti tr wa wd we BEGIN
+
+  OUTER_FOR (index = 1 ; index < 8 ; ++index) BEGIN
+
+    MOVE ~override/spellbook_%sphere%_%index%_all.2da~       ~divine_remix/spheres~
+         ~override/spellbook_%sphere%_%index%_evil.2da~      ~divine_remix/spheres~
+         ~override/spellbook_%sphere%_%index%_good.2da~      ~divine_remix/spheres~
+         ~override/spellbook_%sphere%_%index%_chaotic.2da~   ~divine_remix/spheres~
+         ~override/spellbook_%sphere%_%index%_lawful.2da~    ~divine_remix/spheres~
+         ~override/spellbook_%sphere%_%index%_geneutral.2da~ ~divine_remix/spheres~
+         ~override/spellbook_%sphere%_%index%_lcneutral.2da~ ~divine_remix/spheres~
+  
+  END
+
+END

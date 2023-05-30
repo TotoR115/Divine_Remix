@@ -1,0 +1,389 @@
+
+/////                                                  \\\\\
+///// add sphere descripts to base classes             \\\\\
+/////                                                  \\\\\
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere_descript // generic cleric
+  INT_VAR 
+    string          = 9559
+  STR_VAR
+    all             = major
+	astral			= major
+    charm           = major
+    combat          = major
+    creation        = major
+    divination      = major
+    elemental_earth = minor
+    elemental_water = minor
+    guardian        = major
+    healing         = major
+    necromantic     = major
+    protection      = major
+    summoning       = major
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere_descript // ranger
+  INT_VAR
+    string          = 9557
+  STR_VAR
+    animal          = major
+    elemental       = major
+    elemental_air   = major
+    elemental_earth = major
+    elemental_fire  = major
+    elemental_water = major
+    plant           = major
+    weather         = major
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere_descript // paladin
+  INT_VAR 
+    string          = 9558
+  STR_VAR
+    combat          = major
+    divination      = major
+    healing         = major
+    protection      = major
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere_descript // Special case: inquisitor
+  INT_VAR 
+    string          = 25207
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere_descript // druid
+  INT_VAR 
+    string          = 9560
+  STR_VAR
+    all             = major
+    animal          = major
+    elemental       = major
+    elemental_air   = major
+    elemental_earth = major
+    elemental_fire  = major
+    elemental_water = major
+    healing         = major
+    plant           = major
+    sun             = major
+    weather         = major
+  END
+
+/////                                                  \\\\\
+///// innates for bioware three                        \\\\\
+/////                                                  \\\\\
+
+COPY ~divine_remix/2da/clabpr02.2da~ ~override~
+     ~divine_remix/2da/clabpr03.2da~ ~override~
+     ~divine_remix/2da/clabpr04.2da~ ~override~
+
+COPY ~Divine_Remix/spl/cdtlers.spl~ ~override~ // electrical resistance
+  SAY NAME1 @10166
+  SAY NAME2 @10166
+  SAY UNIDENTIFIED_DESC @10166
+  SAY DESC @10166
+
+COPY ~Divine_Remix/spl/cdtldst.spl~ ~override~ // destructive blow
+  SAY NAME1 @10169
+  SAY NAME2 @10169
+  SAY UNIDENTIFIED_DESC @10170
+  SAY DESC @10170
+
+// change spells to innates as needed
+COPY_EXISTING ~spwi324.spl~ ~override/cdlthun.spl~ // hold undead innate
+              ~sppr503.spl~ ~override/cdltflm.spl~ // flame strike innate
+              ~sppr607.spl~ ~override/cdlthel.spl~ // heal innate
+              ~sppr713.spl~ ~override/cdltgrs.spl~ // greater restoration innate
+              ~sppr304.spl~ ~override/cdhmglp.spl~ // glyph of warding innate
+              ~sppr415.spl~ ~override/cdhmfst.spl~ // farsight innate
+              ~spwi511.spl~ ~override/cdhmpnw.spl~ // protection from normal weapons innate
+              ~sppr505.spl~ ~override/cdhmtse.spl~ // true seeing innate
+              ~spwi708.spl~ ~override/cdhmmnt.spl~ // mantle innate
+              ~spwi502.spl~ ~override/cdtlcld.spl~ // cloudkill innate
+              ~spwi615.spl~ ~override/cdtlcnl.spl~ // chain lightning innate
+              ~sppr720.spl~ ~override/cdtlqak.spl~ // earthquake innate
+  LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
+  BUT_ONLY_IF_IT_CHANGES
+
+COPY ~Divine_Remix/BAM/cdilath.bam~ ~override~
+COPY ~Divine_Remix/spl/cdltmac.spl~ ~override~  // Lathander's Mace (innate spell)
+  SAY NAME1 @10180
+  SAY NAME2 @10180
+  SAY UNIDENTIFIED_DESC @10181
+  SAY DESC @10181
+
+COPY ~Divine_Remix/itm/cdltmc0.itm~ ~override~  // Lathander's Mace +0
+  SAY NAME1 @10180
+  SAY NAME2 @10180
+  SAY UNIDENTIFIED_DESC @10181
+  SAY DESC @10181
+  SET "weap_idx" = 0
+
+COPY_EXISTING ~cdltmc0.itm~ ~override/cdltmc1.itm~  // lathander's mace +1
+              ~cdltmc0.itm~ ~override/cdltmc2.itm~  // lathander's mace +2
+              ~cdltmc0.itm~ ~override/cdltmc3.itm~  // lathander's mace +3
+              ~cdltmc0.itm~ ~override/cdltmc4.itm~  // lathander's mace +4
+              ~cdltmc0.itm~ ~override/cdltmc5.itm~  // lathander's mace +5
+  SET "weap_idx" = ("%weap_idx%" + 1)
+  WRITE_LONG  0x60 "%weap_idx%"
+  WRITE_SHORT 0x86 "%weap_idx%"
+  WRITE_SHORT 0x8C ("%weap_idx%" + 1)
+  WRITE_SHORT 0x84 (7 - "%weap_idx%")
+
+COPY ~Divine_Remix/BAM/cdihelm.bam~ ~override~
+COPY ~Divine_Remix/spl/cdhmbst.spl~ ~override~  // Bastard Sword of Helm (innate spell)
+  SAY NAME1 @10185
+  SAY NAME2 @10185
+  SAY UNIDENTIFIED_DESC @10186
+  SAY DESC @10186
+
+COPY ~Divine_Remix/itm/cdhmbs0.itm~ ~override~  // Bastard Sword +0
+  SAY NAME1 @10185
+  SAY NAME2 @10185
+  SAY UNIDENTIFIED_DESC @10186
+  SAY DESC @10186
+  SET "weap_idx" = 0
+
+COPY_EXISTING ~cdhmbs0.itm~ ~override/cdhmbs1.itm~  // bastard sword +1
+              ~cdhmbs0.itm~ ~override/cdhmbs2.itm~  // bastard sword +2
+              ~cdhmbs0.itm~ ~override/cdhmbs3.itm~  // bastard sword +3
+              ~cdhmbs0.itm~ ~override/cdhmbs4.itm~  // bastard sword +4
+              ~cdhmbs0.itm~ ~override/cdhmbs5.itm~  // bastard sword +5
+  SET "weap_idx" = ("%weap_idx%" + 1)
+  WRITE_LONG  0x60 "%weap_idx%"
+  WRITE_SHORT 0x86 "%weap_idx%"
+  WRITE_SHORT 0x8C "%weap_idx%"
+  WRITE_SHORT 0x84 (8 - "%weap_idx%")
+
+COPY ~Divine_Remix/BAM/cditalos.bam~ ~override~
+COPY ~Divine_Remix/spl/cdtlspr.spl~ ~override~  // Half-Spear of Talos (innate spell)
+  SAY NAME1 @10167
+  SAY NAME2 @10167
+  SAY UNIDENTIFIED_DESC @10168
+  SAY DESC @10168
+
+COPY ~Divine_Remix/itm/cdtlsp0.itm~ ~override~  // Half-Spear +0
+  SAY NAME1 @10167
+  SAY NAME2 @10167
+  SAY UNIDENTIFIED_DESC @10168
+  SAY DESC @10168
+  SET "weap_idx" = 0
+
+COPY_EXISTING ~cdtlsp0.itm~ ~override/cdtlsp1.itm~  // half-spear +1
+              ~cdtlsp0.itm~ ~override/cdtlsp2.itm~  // half-spear +2
+              ~cdtlsp0.itm~ ~override/cdtlsp3.itm~  // half-spear +3
+              ~cdtlsp0.itm~ ~override/cdtlsp4.itm~  // half-spear +4
+              ~cdtlsp0.itm~ ~override/cdtlsp5.itm~  // half-spear +5
+  SET "weap_idx" = ("%weap_idx%" + 1)
+  WRITE_LONG  0x60 "%weap_idx%"
+  WRITE_SHORT 0x86 "%weap_idx%"
+  WRITE_SHORT 0x8C "%weap_idx%"
+  PATCH_IF ("%weap_idx%" > 2) BEGIN
+    WRITE_SHORT 0x84 0
+  END ELSE BEGIN
+    WRITE_SHORT 0x84 (3 - "%weap_idx%")
+  END
+
+/////                                                  \\\\\
+///// read tables to determine when spells issued      \\\\\
+/////                                                  \\\\\
+
+ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_table_lookups BEGIN
+
+  druid   => mxspldru
+  cleric  => mxsplprs
+  paladin => mxsplpal
+  ranger  => mxsplran
+
+END
+
+ACTION_PHP_EACH cd_table_lookups AS class => table BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%table%.2da~ THEN BEGIN
+  
+    COPY ~divine_remix/spheres/template.2da~ ~divine_remix/spheres/%class%.2da~
+
+    COPY_EXISTING ~%table%.2da~ ~override~
+      FOR (index = 1 ; index < 8 ; ++index) BEGIN
+        COUNT_2DA_ROWS (index + 1) rows
+        PATCH_IF (index = 1) BEGIN SET start = 2 END ELSE BEGIN SET start = 1 END
+        FOR (index2 = start ; index2 < rows ; ++index2) BEGIN
+          READ_2DA_ENTRY index2 index (index + 1) val
+          PATCH_IF (val > 0) BEGIN
+            READ_2DA_ENTRY index2 0 (index + 1) level
+            SET index2 = rows // kill loop
+            INNER_ACTION BEGIN
+
+              COPY ~divine_remix/spheres/%class%.2da~ ~divine_remix/spheres/%class%.2da~
+                SET_2DA_ENTRY 0 level 50 ~CDREPLACE%index%~
+            
+            END
+          END
+        END
+      END
+      BUT_ONLY
+
+  END
+
+END
+
+ACTION_IF NOT FILE_EXISTS ~divine_remix/spheres/druid.2da~ THEN BEGIN
+
+  COPY ~divine_remix/spheres/cleric.2da~ ~divine_remix/spheres/druid.2da~
+
+END
+
+/////                                                  \\\\\
+///// kitless clerics get an extra spell for levels 4-7 \\\\
+/////                                                  \\\\\
+
+COPY ~divine_remix/spl/cdvngn4.spl~  ~override~
+
+COPY_EXISTING ~cdvngn4.spl~ ~override/cdvngn5.spl~     // adds lvl 5 spell slot for non-kit priests
+  WRITE_LONG 0xA2 16
+
+COPY_EXISTING ~cdvngn4.spl~ ~override/cdvngn6.spl~     // adds lvl 6 spell slot for non-kit priests
+  WRITE_LONG 0xA2 32
+
+COPY_EXISTING ~cdvngn4.spl~ ~override/cdvngn7.spl~     // adds lvl 7 spell slot for non-kit priests
+  WRITE_LONG 0xA2 64
+
+COPY_EXISTING ~clabpr01.2da~ ~override~
+  LAUNCH_PATCH_MACRO ~remove_blank_lines_from_eof~ // remove eof blank lines
+  APPEND_FILE ~divine_remix/spheres/cleric.2da~
+  REPLACE_TEXTUALLY ~CDREPLACE\([4-7]\)~ ~AP_CDVNGN\1~
+  REPLACE_TEXTUALLY ~CDREPLACE[1-3]~     ~****      ~
+  LAUNCH_PATCH_MACRO ~reindex_clab~ // get ABLITYx in order
+
+/////                                                  \\\\\
+///// adjust kits to prep for spheres                  \\\\\
+/////                                                  \\\\\
+  
+ACTION_FOR_EACH kts IN cdselune ~a#shar~ ~a#red~ ~a#temp~ ohtempus cdilmatr ~a#koss~ cdxvim ~a#ogma~ nmsune ~A#feyw~ ~A#Cyric~ BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%kts%.2da~ THEN BEGIN
+    
+    INCLUDE ~divine_remix/lib/%kts%.tph~
+  
+  END
+
+
+END
+
+// new descripts
+COPY_EXISTING ~kitlist.2da~ ~override~ // look for kit descripts
+  SPRINT mixed_match @10154 // Priest
+  SPRINT lower_match @10134 // priest
+  SPRINT upper_match @10135 // PRIEST
+  COUNT_2DA_ROWS 9 rows
+  FOR (index = rows ; index > 0 ; --index) BEGIN
+    READ_2DA_ENTRY index 5 8 clab
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "clabpr02" = 0) BEGIN // talos
+      READ_2DA_ENTRY index 4 8 talos_sphere
+    END
+    PATCH_IF  ("%clab%" STRING_COMPARE_CASE "clabpr03" = 0) BEGIN // helm
+      READ_2DA_ENTRY index 4 8 helm_sphere
+    END
+    PATCH_IF  ("%clab%" STRING_COMPARE_CASE "clabpr04" = 0) BEGIN // lathander
+      READ_2DA_ENTRY index 4 8 lathander_sphere
+    END
+    PATCH_IF  ("%clab%" STRING_COMPARE_CASE "ohtempus" = 0) BEGIN // tempus
+      READ_2DA_ENTRY index 4 8 tempus_sphere
+    END
+    PATCH_IF  ("%clab%" STRING_COMPARE_CASE "ohtyr" = 0) BEGIN // tyr
+      READ_2DA_ENTRY index 4 8 tyr_sphere
+    END
+	PATCH_IF  ("%clab%" STRING_COMPARE_CASE "CDSelune" = 0) BEGIN // selune
+      READ_2DA_ENTRY index 4 8 selune_sphere
+    END
+	PATCH_IF  ("%clab%" STRING_COMPARE_CASE "A#SHAR" = 0) BEGIN // shar
+      READ_2DA_ENTRY index 4 8 shar_sphere
+    END
+	PATCH_IF  ("%clab%" STRING_COMPARE_CASE "A#RED" = 0) BEGIN // Red Knight
+      READ_2DA_ENTRY index 4 8 red_sphere
+    END
+	PATCH_IF  ("%clab%" STRING_COMPARE_CASE "A#TEMP" = 0) BEGIN // tempus
+      READ_2DA_ENTRY index 4 8 tempus_sphere
+    END
+	PATCH_IF  ("%clab%" STRING_COMPARE_CASE "CDILMATR" = 0) BEGIN // ilmater
+      READ_2DA_ENTRY index 4 8 ilmatr_sphere
+    END
+	PATCH_IF  ("%clab%" STRING_COMPARE_CASE "A#KOSS" = 0) BEGIN // kossuth
+      READ_2DA_ENTRY index 4 8 koss_sphere
+    END
+	PATCH_IF  ("%clab%" STRING_COMPARE_CASE "CDXvim" = 0) BEGIN // Xvim
+      READ_2DA_ENTRY index 4 8 xvim_sphere
+    END
+	PATCH_IF  ("%clab%" STRING_COMPARE_CASE "A#OGMA" = 0) BEGIN // Oghma
+      READ_2DA_ENTRY index 4 8 ogma_sphere
+    END
+		PATCH_IF  ("%clab%" STRING_COMPARE_CASE "NMSUNE" = 0) BEGIN // sune
+      READ_2DA_ENTRY index 4 8 sune_sphere
+    END
+		PATCH_IF  ("%clab%" STRING_COMPARE_CASE "A#FEYW" = 0) BEGIN // Corellon
+      READ_2DA_ENTRY index 4 8 feyw_sphere
+    END
+		PATCH_IF  ("%clab%" STRING_COMPARE_CASE "A#CYRIC" = 0) BEGIN // cyric
+      READ_2DA_ENTRY index 4 8 cyric_sphere
+    END
+  END
+  BUT_ONLY
+
+ACTION_IF VARIABLE_IS_SET talos_sphere THEN BEGIN
+  STRING_SET_EVALUATE ~%talos_sphere%~ @10177
+END
+
+ACTION_IF VARIABLE_IS_SET helm_sphere THEN BEGIN
+  STRING_SET_EVALUATE ~%helm_sphere%~ @10194
+END
+
+ACTION_IF VARIABLE_IS_SET lathander_sphere THEN BEGIN
+  STRING_SET_EVALUATE ~%lathander_sphere%~ @10178
+END
+
+ACTION_IF VARIABLE_IS_SET tempus_sphere THEN BEGIN
+  STRING_SET_EVALUATE ~%tempus_sphere%~ @10902
+END
+
+ACTION_IF VARIABLE_IS_SET tyr_sphere THEN BEGIN
+//  STRING_SET_EVALUATE ~%tyr_sphere%~ @10171
+END
+
+ACTION_IF VARIABLE_IS_SET selune_sphere THEN BEGIN
+  STRING_SET_EVALUATE ~%selune_sphere%~ @10302
+END
+
+ACTION_IF VARIABLE_IS_SET shar_sphere THEN BEGIN
+  STRING_SET_EVALUATE ~%shar_sphere%~ @10602
+END
+
+ACTION_IF VARIABLE_IS_SET red_sphere THEN BEGIN
+  STRING_SET_EVALUATE ~%red_sphere%~ @10702
+END
+
+ACTION_IF VARIABLE_IS_SET ilmatr_sphere THEN BEGIN
+  STRING_SET_EVALUATE ~%ilmatr_sphere%~ @11202
+END
+
+ACTION_IF VARIABLE_IS_SET koss_sphere THEN BEGIN
+  STRING_SET_EVALUATE ~%koss_sphere%~ @11504
+END
+
+ACTION_IF VARIABLE_IS_SET xvim_sphere THEN BEGIN
+  STRING_SET_EVALUATE ~%xvim_sphere%~ @11802
+END
+
+ACTION_IF VARIABLE_IS_SET ogma_sphere THEN BEGIN
+  STRING_SET_EVALUATE ~%ogma_sphere%~ @12102
+END
+
+ACTION_IF VARIABLE_IS_SET sune_sphere THEN BEGIN
+  STRING_SET_EVALUATE ~%sune_sphere%~ @12402
+END
+
+ACTION_IF VARIABLE_IS_SET feyw_sphere THEN BEGIN
+  STRING_SET_EVALUATE ~%feyw_sphere%~ @12703
+END
+
+ACTION_IF VARIABLE_IS_SET cyric_sphere THEN BEGIN
+  STRING_SET_EVALUATE ~%cyric_sphere%~ @13004
+END

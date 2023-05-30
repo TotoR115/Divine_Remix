@@ -880,6 +880,17 @@ Obszar dzia³ania: 1 istota
 Rzut obronny: brak
 
 Po rzuceniu tego czaru otwiera siê tunel miêdzy sfer¹ czarodzieja a sfer¹ Energii Negatywnej. Czarodziej dzia³a jak przewodnik ³¹cz¹cy te sfery. Wysysa z ofiary ¿ycie i wysy³a jej energiê do sfery Energii Negatywnej. Ofiara traci 2 poziomy doœwiadczenia. Cel traci na sta³e poziomy, Kostki, Punkty ¯ycia i zdolnoœci. Poziomy te mo¿na odzyskaæ tylko stosuj¹c kap³añski czar Przywrócenie.~
+@216 = ~Sprowadzenie Zwierz¹t (Sprowadzenie/Przywo³ywanie) 
+Poziom: 6
+Sfera: Przywo³ywanie 
+Zasiêg: 60 metrów
+Czas dzia³ania: 4 tury
+Czas rzucania: 9
+Obszar dzia³ania: specjalny 
+Rzut obronny: brak 
+Zaklêcie to pozwala rzucaj¹cemu na przywo³anie i kontrolowanie jednego lub dwóch niedŸwiedzio³aków. Odpowiedz¹ one na ka¿d¹ zachciankê rzucaj¹cego w czasie dzia³ania czaru. S¹ wolniejsze ni¿ wiêksze ³akowilki, ale te¿ wytrzymalsze. S¹ odporne na ¿ywio³y i magiê oraz szybko siê regeneruj¹.~
+@217 = ~Wiêkszy niedŸwiedzio³ak~
+@218 = ~NiedŸwiedzio³ak~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\

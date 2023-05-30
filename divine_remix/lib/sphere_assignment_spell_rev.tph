@@ -1,0 +1,493 @@
+/////                                                  \\\\\
+///// custom sphere assignments                        \\\\\
+/////                                                  \\\\\
+
+// anything not listed here gets the generic spheres for their class
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // cyric
+  STR_VAR
+    table             = ~a#cyric~
+    class             = cleric
+    all               = major
+    astral            = major
+    charm             = major
+    combat            = major
+    divination        = minor
+    elemental_earth   = minor
+    elemental_water   = minor
+    guardian          = major
+    healing           = major
+	healing_sr 		  = major
+    necromantic       = major
+    numbers           = minor
+    protection        = minor
+    summoning         = major
+    sun               = major
+    time              = major
+    war               = major
+    weather           = major
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // helm
+  STR_VAR
+    table           = clabpr03
+    class           = cleric
+    all             = major
+    astral          = major
+    combat          = major
+    creation        = minor
+    divination      = major
+    elemental_earth = minor
+    elemental_water = minor
+    guardian        = major
+    healing         = major
+	healing_sr 		= major
+    protection      = major
+    sun             = major
+    war             = minor
+    wards           = major
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // ilmater
+  STR_VAR
+    table             = cdilmatr
+    class             = cleric
+    all               = major
+    charm             = major
+    combat            = minor
+    creation          = major
+    elemental_earth   = minor
+    elemental_water   = minor
+    guardian          = major
+    healing           = major
+	healing_sr 		  = major
+    law               = major
+    necromantic       = major
+    protection        = major
+    summoning         = minor
+    sun               = minor
+    travelers         = major
+    wards             = minor
+    weather           = minor
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // iyachtu xvim
+  STR_VAR
+    table             = cdxvim
+    class             = cleric
+    all               = major
+    combat            = major
+    creation          = minor
+    divination        = major
+    elemental_air     = major
+    elemental_earth   = major
+    elemental_water   = major
+    elemental_fire    = major
+    guardian          = major
+    healing           = minor
+	healing_sr 		  = minor
+    law               = minor
+    necromantic       = major
+    protection        = major
+    summoning         = major
+    sun_moon          = minor
+    thoughts          = major
+    war               = major
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // kossuth
+  STR_VAR
+    table             = ~a#koss~
+    class             = cleric
+    all               = major
+    combat            = major
+    divination        = minor
+    elemental_air     = minor
+    elemental_earth   = minor
+    elemental_fire    = major
+    healing           = major
+	healing_sr 		  = major
+    necromantic       = minor
+    protection        = minor
+    summoning         = major
+    sun               = major
+    war               = minor
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // lathander
+  STR_VAR
+    table           = clabpr04
+    class           = cleric
+    all             = major
+    astral          = major
+    charm           = major
+    combat          = minor
+    creation        = major
+    divination      = minor
+    elemental_air   = major
+    elemental_earth = major
+    elemental_water = major
+    elemental_fire  = major
+    guardian        = minor
+    healing         = major
+	healing_sr 		= major
+    necromantic_restorative 	= major
+    plant           = major
+    sun             = major
+    thoughts        = major
+    time            = minor
+    wards           = major
+    weather         = major
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // oghma
+  STR_VAR
+    table             = ~a#ogma~
+    class             = cleric
+    all               = major
+    animal            = minor
+    astral            = major
+    charm             = major
+    combat            = major
+    creation          = minor
+    divination        = major
+    elemental_earth   = major
+    elemental_water   = major
+    guardian          = major
+    healing           = major
+	healing_sr 		  = major
+    necromantic       = minor
+    protection        = major
+    summoning         = major
+    sun               = minor
+    thoughts          = major
+    travelers         = major
+    wards             = minor
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // selune
+  STR_VAR
+    table             = cdselune
+    class             = cleric
+    all               = major
+    animal            = major
+    astral            = major
+    charm             = minor
+    combat            = major
+    divination        = major
+    elemental_earth   = minor
+    elemental_water   = minor
+    guardian          = major
+    healing           = major
+	healing_sr 		  = major
+    necromantic       = major
+    numbers           = major
+    plant             = minor
+    summoning         = major
+    sun               = major
+    travelers         = major
+    wards             = minor
+    weather           = major
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // shar
+  STR_VAR
+    table             = ~a#shar~
+    class             = cleric
+    all               = major
+    astral            = major
+    charm             = major
+    combat            = major
+    creation          = minor
+    divination        = major
+    elemental_earth   = minor
+    elemental_water   = minor
+    guardian          = major
+    healing           = minor
+	healing_sr 		  = minor
+    necromantic       = major
+    protection        = major
+    sun_moon          = major
+    thoughts          = major
+    time              = major
+    wards             = minor
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // sune
+  STR_VAR
+    table             = nmsune
+    class             = cleric
+    all               = major
+    astral            = major
+    charm             = major
+    combat            = minor
+    creation          = major
+    divination        = major
+    elemental_earth   = minor
+    elemental_water   = minor
+    guardian          = major
+    healing           = major
+	healing_sr 		  = major
+    necromantic       = minor
+    protection        = major
+    summoning         = minor
+    sun               = major
+    thoughts          = major
+    time              = major
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // talos
+  STR_VAR
+    table           = clabpr02
+    class           = cleric
+    all             = major
+    animal          = major
+    astral          = major
+    chaos           = major
+    combat          = major
+    creation        = minor
+    divination      = minor
+    elemental_air   = major
+    elemental_earth = major
+    elemental_fire  = major
+    elemental_water = major
+    healing         = major
+	healing_sr 		= major
+    necromantic     = major
+    protection      = minor
+    summoning       = major
+    sun             = major
+    time            = minor
+    war             = major
+    weather         = major
+  END
+
+ACTION_FOR_EACH tempus IN ~ohtempus~ ~a#temp~ BEGIN
+
+  LAUNCH_ACTION_FUNCTION cd_kit_sphere // tempus
+    STR_VAR
+      table           = EVAL ~%tempus%~
+      class           = cleric
+      all             = minor
+      animal          = major
+      chaos           = major
+      combat          = major
+      divination      = major
+      elemental_air   = major
+      elemental_earth = major
+      elemental_fire  = major
+      elemental_water = major
+      guardian        = minor
+      healing         = major
+	  healing_sr 	  = major
+      necromantic     = major
+      protection      = major
+      summoning       = minor
+      sun             = minor
+      war             = major
+      wards           = minor
+      weather         = major
+    END
+END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // tyr
+  STR_VAR
+    table           = ohtyr
+    class           = cleric
+    all             = major
+    astral          = major
+    charm           = major
+    combat          = major
+    creation        = major
+    divination      = major
+    elemental_earth = minor
+    elemental_water = minor
+    guardian        = major
+    healing         = major
+	healing_sr 		= major
+    law             = major
+    necromantic     = major
+    protection      = major
+    summoning       = major
+    sun             = major
+    war             = major
+    wards           = major
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // red knight
+  STR_VAR
+    table             = ~a#red~
+    class             = cleric
+    all               = major
+    charm             = major
+    combat            = major
+    creation          = minor
+    divination        = major
+    guardian          = minor
+    healing           = major
+	healing_sr 		  = major
+    law               = major
+    necromantic       = minor
+    protection        = major
+    thoughts          = major
+    travelers         = major
+    war               = major
+    wards             = minor
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // correllon
+  STR_VAR
+    table             = ~a#feyw~
+    class             = cleric
+    all               = major
+    animal            = minor
+    astral            = major
+    chaos             = minor
+    charm             = major
+    combat            = major
+    creation          = major
+    divination        = major
+    guardian          = major
+    healing           = major
+	healing_sr 		  = major
+    necromantic       = major
+    plant             = minor
+    protection        = major
+    summoning         = minor
+    sun               = major
+    thoughts          = major
+    war               = major
+    wards             = major
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // oozemaster - normal druid minus animal and plant
+  STR_VAR
+    table              = ~a#ooze~
+    class              = druid
+    all                = major
+    elemental          = major
+    elemental_air      = major
+    elemental_earth    = major
+    elemental_fire     = major
+    elemental_water    = major
+    healing            = major
+	healing_sr 		   = major
+    sun                = major
+    weather            = major
+  END
+
+/////                                                  \\\\\
+///// generic sphere assignments                       \\\\\
+/////                                                  \\\\\
+
+
+COPY_EXISTING ~kitlist.2da~ ~override~ // look for kit descripts
+  COUNT_2DA_ROWS 9 rows
+  FOR (index = 2 ; index <= rows ; ++index) BEGIN
+    READ_2DA_ENTRY index 8 8 class
+    PATCH_IF ((class = 6) OR (class = 12) OR (class = 11) OR (class = 3)) BEGIN
+      READ_2DA_ENTRY index 5 8 clab
+      PATCH_DEFINE_ASSOCIATIVE_ARRAY cd_mod_kits BEGIN "%clab%" => "%class%" END
+      // while we're here, also make array for future HLA work
+      READ_2DA_ENTRY index 1 8 internal_name
+      PATCH_DEFINE_ASSOCIATIVE_ARRAY cd_hla_lookup BEGIN "%internal_name%" => "%class%" END
+    END
+  END
+  BUT_ONLY
+
+// add generic classes to array
+ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_mod_kits BEGIN
+  clabpr01 => 3
+  clabpa01 => 6
+  clabrn01 => 12
+  clabdr01 => 11
+END
+
+// because cd_kit_sphere won't apply itself to already patched clabs, any unique sphere alignments 
+// taken care of prior to this step will be preserved.
+
+ACTION_PHP_EACH cd_mod_kits AS clab => class_check BEGIN
+
+  ACTION_IF class_check = 3 THEN BEGIN // clerics
+
+    LAUNCH_ACTION_FUNCTION cd_kit_sphere // generic cleric
+      STR_VAR
+        table           = EVAL "%clab%"
+        class           = cleric
+        all             = major
+		astral			= major
+        charm           = major
+        combat          = major
+        creation        = major
+        divination      = major
+        elemental_earth = minor
+        elemental_water = minor
+        guardian        = major
+        healing         = major
+		healing_sr 		= major
+        necromantic     = major
+        protection      = major
+        summoning       = major
+		wards           = major
+      END
+
+  END ELSE
+
+  ACTION_IF class_check = 12 THEN BEGIN // ranger
+
+    LAUNCH_ACTION_FUNCTION cd_kit_sphere
+      STR_VAR
+        table           = EVAL "%clab%"
+        class           = ranger
+        animal          = major
+        elemental       = major
+        elemental_air   = major
+        elemental_earth = major
+        elemental_fire  = major
+        elemental_water = major
+        healing         = major
+        plant           = major
+        sun             = major
+      END
+
+  END ELSE
+
+  ACTION_IF class_check = 6 THEN BEGIN // paladin
+
+    LAUNCH_ACTION_FUNCTION cd_kit_sphere
+      STR_VAR
+        table           = EVAL "%clab%"
+        class           = paladin
+        combat          = major
+        divination      = major
+        healing         = major
+		healing_sr 		= major
+        protection      = major
+      END
+
+  END ELSE BEGIN // druids
+
+    LAUNCH_ACTION_FUNCTION cd_kit_sphere
+      STR_VAR
+        table           = EVAL "%clab%"
+        class           = druid
+        all             = major
+        animal          = major
+        elemental       = major
+        elemental_air   = major
+        elemental_earth = major
+        elemental_fire  = major
+        elemental_water = major
+        healing         = major
+        plant           = major
+        sun             = major
+        weather         = major
+      END
+
+  END
+
+  ACTION_IF class_check = 3 OR class_check = 11 THEN BEGIN // Remove cd_hla for custom priests/druids kit
+	COPY_EXISTING ~%clab%.2da~ ~override~
+	  REPLACE_TEXTUALLY ~[%LNL%%MNL%%WNL%]CD_HLA[0-9][0-9][0-9][ %TAB%]+.+$~ ~~ // delete temp placeholders
+  END
+
+ END

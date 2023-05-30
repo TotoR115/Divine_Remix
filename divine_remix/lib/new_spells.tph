@@ -28,34 +28,23 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~eff_p32.wav~ THEN BEGIN
 
 END
 
-COPY_EXISTING ~sppr317.spl~ ~override~ // cure disease - no longer cures blindness or deafness (DR change)
-  SAY UNIDENTIFIED_DESC @125
-  LPF DELETE_EFFECT INT_VAR match_opcode = 75 END
-  LPF DELETE_EFFECT INT_VAR match_opcode = 81 END
-  LPF DELETE_EFFECT INT_VAR match_opcode = 240 match_parameter2 = 8 END
-  LPF DELETE_EFFECT INT_VAR match_opcode = 240 match_parameter2 = 112 END
-  BUT_ONLY
+// PnP Spells
+/////// Magical stone: 3 stones instead of 1
 
+COPY_EXISTING ~sppr106.spl~ ~override~
+  READ_LONG 0x08 name
+
+ COPY ~divine_remix/spl/sppr106.spl~ ~override~ // PnP Magical stone create 3 stones
+  WRITE_LONG 0x08 name
+  SAY UNIDENTIFIED_DESC @114
+ 
+ COPY ~divine_remix/itm/tr#mstn.itm~ ~override~
+  SAY UNIDENTIFIED_DESC @118 
+ COPY ~divine_remix/eff/tr#mstn.eff~ ~override~ // 1d4 damage bonus vs undead
+
+///////  move negative plane protection to level 3: PnP faithfull
 OUTER_SPRINT level_match  @2027 // needed to change descripts, below
 
-// move protection from evil 10' to level 3
-COPY_EXISTING ~sppr408.spl~ ~override~
-ADD_SPELL ~override/sppr408.spl~ 1 3 CLERIC_PROTECTION_FROM_EVIL_10_FOOT
-  WRITE_LONG 0x34 3
-  LPF ALTER_EFFECT INT_VAR match_power = 4 power = 3 END
-  PATCH_FOR_EACH offset IN 0x50 BEGIN
-    READ_LONG ~%offset%~ desc_strref
-    PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
-      READ_STRREF ~%offset%~ desc
-      INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-        REPLACE_TEXTUALLY ~%level_match%~ ~\1 3~ // change level in description to 3
-      END
-    END
-  END
-
-STRING_SET_EVALUATE desc_strref "%desc%" // change default descript
-
-// move negative plane protection to level 3
 COPY_EXISTING ~sppr413.spl~ ~override~
 ADD_SPELL ~override/sppr413.spl~ 1 3 CLERIC_NEGATIVE_PLANE_PROTECTION
   WRITE_LONG 0x34 3
@@ -72,24 +61,204 @@ ADD_SPELL ~override/sppr413.spl~ 1 3 CLERIC_NEGATIVE_PLANE_PROTECTION
 
 STRING_SET_EVALUATE desc_strref "%desc%" // change default descript
 
-COPY_EXISTING ~sppr508.spl~ ~override~
-  READ_LONG 0x08 name
+/////// PnP Conjure Animal & Animal Summoning & Monsters Summoning
 
-COPY ~divine_remix/spl/sppr508.spl~ ~override~ // chaotic commands - major changes
-  WRITE_LONG 0x08 name
-  SAY UNIDENTIFIED_DESC @168
+// Conjure Animals is closer to PnP: it now summons mammals and not only mountain bears and upgrade with level for 2 rounds/levels
+COPY_EXISTING ~divine_remix/spl/sppr604.spl~ ~override~
+  SAY UNIDENTIFIED_DESC @216
+  OUTER_FOR (i = 4 ; i < 14 ; i = i + 1) BEGIN
+	COPY_EXISTING ~spanim4.eff~ ~override/spanim%i%.eff~
+	  WRITE_LONG 0x1c ( 14 + i * 2 )
+	  PATCH_IF i < 9 BEGIN
+	    WRITE_ASCII 0x30 ~anisum04~ #8
+	  END ELSE WRITE_ASCII 0x30 "anisum05" #8
+  END
+
+// Animal Summoning has a bit more diversity (for lv1 and lv2) and more balanced Animal summoning spells
+
+COPY ~divine_remix/2da/anisum01.2da~ ~override~
+     ~divine_remix/2da/anisum02.2da~ ~override~
+	 ~divine_remix/2da/anisum03.2da~ ~override~
+	 ~divine_remix/2da/anisum04.2da~ ~override~
+	 ~divine_remix/2da/anisum05.2da~ ~override~
+
+COPY_EXISTING ~spanim1.eff~ ~override~
+  WRITE_LONG 0x1c "10"
+COPY_EXISTING ~spanim2.eff~ ~override~
+  WRITE_LONG 0x1c "20"
+COPY_EXISTING ~spanim3.eff~ ~override~
+  WRITE_LONG 0x1c "30"
+
+COPY_EXISTING ~dogwasu.cre~ override
+			  ~worgsu.cre~ override
+	WRITE_LONG 0x18 3	// XP/Power Level animalsummon 1 (x4)
+COPY_EXISTING ~catjagsu.cre~ override
+			  ~wolfdisu.cre~ override
+			  ~bearblsu.cre~ override
+			  ~jaguarsu.cre~ override
+	WRITE_LONG 0x18 4   // XP/Power Level animalsummon 1 (x3)
+COPY_EXISTING ~catliosu.cre~ override
+			  ~bearbrsu.cre~ override
+	WRITE_LONG 0x18 6   // XP/Power Level animalsummon 2 (x4)
+
+COPY_EXISTING ~bearcasu.cre~ override
+			  ~wolfwwsu.cre~ override
+	WRITE_LONG 0x18 8   // XP/Power Level animalsummon 2 (x3)
+
+COPY_EXISTING ~bearposu.cre~ override
+	WRITE_LONG 0x18 10	// XP/Power Level animalsummon 3 (x3)
+
+COPY_EXISTING ~wolfwwsu.cre~ override
+	WRITE_BYTE 0x273 11	// Set Class to druid to allow player to change weapon
+	WRITE_BYTE 0x23d 14	// Set Constotution to 14 to avoid bonus linked to the new class
+	  
+/////// better Monster Summoning III: replace ettercap by winter wolf and add carrion crawler
+
+COPY ~divine_remix/2da/monsum03.2da~ ~override~
+COPY_EXISTING ~wolfwisu.cre~ override
+	WRITE_SHORT 0x24 40
+	WRITE_SHORT 0x26 40
+	WRITE_BYTE 0x234 5	// Set Lv to 5
+	WRITE_BYTE 0x273 11	// Set Class to druid to allow player to change weapon
+	WRITE_BYTE 0x23d 14	// Set Constotution to 14 to avoid bonus linked to the new class
+
+/////// Rework of carrion Summoning: rename it Monster Summoning IV
+
+ACTION_IF ((IDS_OF_SYMBOL (~spell~ ~WIZARD_MONSTER_SUMMONING_4~)) < 0) BEGIN
+	COPY ~divine_remix/2da/monsum04.2da~ ~override~
+		 ~divine_remix/eff/spcarr.eff~ ~override~
+		 ~divine_remix/cre/ogremasu.cre~ ~override~ // Weapons + regen + spells update
+
+	COPY ~divine_remix/spl/spwi623.spl~ ~override~
+		SAY NAME1 @401
+		SAY UNIDENTIFIED_DESC @402
+
+	COMPILE ~divine_remix/baf/ogremasu.baf~ ~override~ // New spells
+END
+
+/////// better (more PnP) Djinni & Efreeti (spells and weapons) and nishrusu & Hakeshar
+
+COPY ~divine_remix/cre/efreetsu.cre~ ~override~ // New spells and Magical weapon
+	 ~divine_remix/cre/djinnisu.cre~ ~override~ // New spells and Magical weapon
+
+COMPILE ~divine_remix/baf/trefreet.baf~ ~override~ // New spells: focus on fire dmg
+		~divine_remix/baf/trdjinni.baf~ ~override~ // New spells: focus on magic prot + powerfull spells
+
+COPY_EXISTING ~nishrusu.cre~ override
+			  ~haksu.cre~ override
+    REMOVE_KNOWN_SPELLS                                                             // Remove all known spells from the current creature
+    REMOVE_MEMORIZED_SPELLS                                                         // Remove all memorized spells from the current creature
+
+/////// better Call Wyvern: 60%/40% to summon 1 or 2 wyverns like other monsters summoning spells
+
+COPY ~divine_remix/spl/spwi619.spl~ ~override~
+    SAY UNIDENTIFIED_DESC @403
+
+COPY_EXISTING ~wyvernsu.cre~ override
+	WRITE_BYTE 0x10 THIS BOR 0b01000000	// Set no corpse
+	WRITE_BYTE 0x273 11	// Set Class to druid to allow player to change weapon manually
+
+
+/////// Pnp Flame strike should be area of effect and for 6d8
+ADD_PROJECTILE ~divine_remix/spl/tr#flame.pro~
+COPY ~divine_remix/spl/sppr503.spl~ ~override~    
+    SAY UNIDENTIFIED_DESC @126
+    READ_LONG  0x64 ab_off
+    READ_SHORT 0x68 ab_num
+    FOR(i=0; i<ab_num; i+=1) BEGIN
+      WRITE_SHORT (ab_off+i*0x28+0x26) %tr#flame% // use new projectile
+    END 
+ACTION_IF !(IDS_OF_SYMBOL (~spell~ ~CLERIC_ENTROPY_SHIELD~) < 0) BEGIN
+    OUTER_SET code=IDS_OF_SYMBOL ("spell" "CLERIC_ENTROPY_SHIELD") - 1000
+    OUTER_SPRINT antropy ~SPpr%code%~
+	OUTER_SET proj= %tr#flame% - 1
+	COPY_EXISTING ~%antropy%.SPL~ ~override~
+	  LPF CLONE_EFFECT INT_VAR match_opcode = 83 match_parameter2 = 298 parameter2 = EVAL "%proj%" END
+END
+
+/////// PnP Spiritual hammer: force attack without any Strength bonus, set to ranged type for compatibility with Thrown Hammers animations...
+ACTION_IF !MOD_IS_INSTALLED ~SPELL_REV.TP2~ ~0~ BEGIN
+  COPY_EXISTING ~shammr.itm~ ~override~
+    WRITE_BYTE 0x31 0x0 //Proficiency (None)
+    LPF ALTER_ITEM_HEADER INT_VAR new_header_type = 2 range = 100 dicesize = 0 dicenumber = 0 damage_bonus = 0 thac0_bonus = 1 damage_type = 0 flag_strength = 0 speed = 0 END  // increase attack range, disallow strength bonus, disable physical damage, set speed factor to 0, tach0 + 1
+	LPF ADD_ITEM_EFFECT INT_VAR type = 2 opcode = 12 parameter1 = 2 dicenumber = 1 dicesize = 4 target = 2 resist_dispel = 2 parameter2 = 4194304 END      // 1d4 +2 points of magical damage
+    BUT_ONLY
+  COPY_EXISTING ~shammr2.itm~ ~override~
+    WRITE_BYTE 0x31 0x0 //Proficiency (None)
+    LPF ALTER_ITEM_HEADER INT_VAR new_header_type = 2 range = 100 dicesize = 0 dicenumber = 0 damage_bonus = 0 thac0_bonus = 2 damage_type = 0 flag_strength = 0 speed = 0 END  // increase attack range, disallow strength bonus, disable physical damage, set speed factor to 0, tach0 + 2
+	LPF ADD_ITEM_EFFECT INT_VAR type = 2 opcode = 12 parameter1 = 3 dicenumber = 1 dicesize = 4 target = 2 resist_dispel = 2 parameter2 = 4194304 END      // 1d4 +3 points of magical damage
+    BUT_ONLY
+  COPY_EXISTING ~shammr3.itm~ ~override~
+    WRITE_BYTE 0x31 0x0 //Proficiency (None)
+    LPF ALTER_ITEM_HEADER INT_VAR new_header_type = 2 range = 100 dicesize = 0 dicenumber = 0 damage_bonus = 0 thac0_bonus = 3 damage_type = 0 flag_strength = 0 speed = 0 END  // increase attack range, disallow strength bonus, disable physical damage, set speed factor to 0, tach0 + 3
+	LPF ADD_ITEM_EFFECT INT_VAR type = 2 opcode = 12 parameter1 = 4 dicenumber = 1 dicesize = 4 target = 2 resist_dispel = 2 parameter2 = 4194304 END      // 1d4 +4 points of magical damage
+    BUT_ONLY
+END
+
+/////// PnP Flame blade: Scimitar 1d4+4, +2 for undead
+COPY_EXISTING ~fblade.itm~ ~override~
+	WRITE_SHORT 0x1c 20 // Large Sword
+	WRITE_BYTE 0x31 95  //Proficiency (Scimitar)
+	SAY UNIDENTIFIED_DESC @128
+    LPF ALTER_ITEM_HEADER INT_VAR dicesize = 0 dicenumber = 0 damage_bonus = 0 thac0_bonus = 0 damage_type = 0 flag_strength = 0 speed = 2 END // Disallow strength bonus, disable physical damage, set speed factor to 2
+	LPF ALTER_EFFECT INT_VAR match_opcode = 12 parameter1 = 4 dicenumber = 1 dicesize = 4 target = 2 resist_dispel = 1 parameter2 = 524288 END // 1d4 +4 points of magical damage
+	LPF ADD_ITEM_EFFECT INT_VAR type = 1 opcode = 177 parameter1 = 0 target = 2 resist_dispel = 1 parameter1 = 4 parameter2 = 3 STR_VAR resource = "tr#fblad" END // +2 vs. Undead
+    BUT_ONLY
+COPY ~divine_remix/eff/tr#fblad.eff~ ~override~
+COPY_EXISTING ~sppr206.spl~ ~override~
+    SAY UNIDENTIFIED_DESC @123
+
+/////// Goodberry creates 8 berries, cures intoxication and removes fatigue as well.
+COPY_EXISTING ~sppr207.spl~ ~override~
+    SAY UNIDENTIFIED_DESC @124
+	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 122 parameter1 = 8 END
+
+COPY_EXISTING ~GBERRY.itm~ ~override~
+    SAY UNIDENTIFIED_DESC @127
+    LPF ALTER_EFFECT INT_VAR match_opcode = 17 duration = 0 dicesize = 0 END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 17 opcode = 93 parameter1 = 0 parameter2 = 1 END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 17 opcode = 164 parameter1 = 0 parameter2 = 0 END
+
+/////// Sol's Searing Orb range fixing
+COPY_EXISTING ~sorb.itm~ ~override~
+    LPF ALTER_ITEM_HEADER INT_VAR range = 30 END
+    SAY UNIDENTIFIED_DESC @129
+
+/////// Fire Seed range fixing
+COPY_EXISTING ~fireseed.itm~ ~override~
+    LPF ALTER_ITEM_HEADER INT_VAR range = 40 END
+    SAY UNIDENTIFIED_DESC @130
+	
+/////// PnP Protection from evil and Protection from evil 10' protect against charm
+COPY_EXISTING ~sppr107.spl~ ~override~
+				~sppr408.spl~ ~override~
+				~spwi113.spl~ ~override~
+				~spcl213.spl~ ~override~
+				~spcl233.spl~ ~override~
+				~spin121.spl~ ~override~
+	LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 101 parameter2 = 5 END // protect against charmed but don't cure it
+
 
 /////                                                  \\\\\
 ///// new spells                                       \\\\\
 /////                                                  \\\\\
   
-ACTION_IF ((IDS_OF_SYMBOL (~spell~ ~CLERIC_CAUSE_MEDIUM_WOUNDS~)) < 0) BEGIN // because this is a mainline iwdee spell, no overwrite option
+//////// PnP Cure/Cause + Touch Spells Add missing reversed/touch spells (overriding existing for consistance): Slay living (fixing: save vs. death); energy drain (1 lv only vs. 2 lv for mage) ; destruction (touch needed + save at -4); wither (touch); bestow curse (new spell + touch + save)
 
-  ADD_SPELL ~divine_remix/spl/cdcausmw.spl~ 1 1 CLERIC_CAUSE_MEDIUM_WOUNDS // cause medium wounds
+ACTION_IF cure_cause = 1 BEGIN
+  ADD_SPELL ~divine_remix/spl/causelightw.spl~ 1 1 CLERIC_CAUSE_LIGHT_WOUNDS // cause light wounds
+    SAY NAME1 @206
+    SAY UNIDENTIFIED_DESC @207
+
+  COPY ~divine_remix/itm/trcauslw.itm~ ~override~
+    SAY NAME1 @206
+    SAY NAME2 @206
+    SAY UNIDENTIFIED_DESC @207
+    SAY DESC @207
+
+  ADD_SPELL ~divine_remix/spl/cdcausmw.spl~ 1 3 CLERIC_CAUSE_MEDIUM_WOUNDS // cause medium wounds
     SAY NAME1 @204
-    SAY NAME2 @204
     SAY UNIDENTIFIED_DESC @205
-    SAY DESC @205
   
   COPY ~divine_remix/itm/cdcausmw.itm~ ~override~
     SAY NAME1 @204
@@ -97,49 +266,123 @@ ACTION_IF ((IDS_OF_SYMBOL (~spell~ ~CLERIC_CAUSE_MEDIUM_WOUNDS~)) < 0) BEGIN // 
     SAY UNIDENTIFIED_DESC @205
     SAY DESC @205
 
-  COPY ~divine_remix/bam/cdcausma.bam~ ~override~
+  ADD_SPELL ~divine_remix/spl/bestowcurse.spl~ 1 3 CLERIC_BESTOW_CURSE // Bestow Curse
+    SAY NAME1 @271
+    SAY UNIDENTIFIED_DESC @272
+
+  COPY ~divine_remix/itm/tr#bcurs.itm~ ~override~
+    SAY NAME1 @271
+    SAY NAME2 @271
+    SAY UNIDENTIFIED_DESC @272
+    SAY DESC @272
+
+  COPY_EXISTING ~sppr511.spl~ ~override~ // Slay Living
+    SAY UNIDENTIFIED_DESC @208
+  
+  COPY_EXISTING ~divine_remix/itm/slaylive.itm~ ~override~
+    SAY UNIDENTIFIED_DESC @208
+    SAY DESC @208
+
+  ADD_SPELL ~divine_remix/spl/energydrain.spl~ 1 7 CLERIC_ENERGY_DRAIN // Energy Drain
+    SAY NAME1 #23358
+    SAY UNIDENTIFIED_DESC @209
+  
+  COPY ~divine_remix/itm/tredrain.itm~ ~override~
+    SAY NAME1 #23358
+    SAY NAME2 #23358
+    SAY UNIDENTIFIED_DESC @209
+    SAY DESC @209
+
+  ADD_SPELL ~divine_remix/spl/destruction.spl~ 1 7 CLERIC_DESTRUCTION // Destruction
+    SAY NAME1 @210
+    SAY UNIDENTIFIED_DESC @211
+  
+  COPY ~divine_remix/itm/trdstrct.itm~ ~override~
+    SAY NAME1 @210
+    SAY NAME2 @210
+    SAY UNIDENTIFIED_DESC @211
+    SAY DESC @211
+
+  ADD_SPELL ~divine_remix/spl/wither.spl~ 1 7 CLERIC_WITHER // Wither
+    SAY NAME1 @212
+    SAY UNIDENTIFIED_DESC @213
+  
+  COPY ~divine_remix/itm/trwither.itm~ ~override~
+    SAY NAME1 @212
+    SAY NAME2 @212
+    SAY UNIDENTIFIED_DESC @213
+    SAY DESC @213
+
+  COPY ~divine_remix/bam/tr#bcurs.bam~ ~override~ // Bestow Curse
+	   ~divine_remix/spl/tr#bcurs.spl~ ~override~
+	   ~divine_remix/spl/tr#bcura.spl~ ~override~
+	   ~divine_remix/bam/trcursa.bam~  ~override~
+	   ~divine_remix/bam/trcursb.bam~  ~override~
+       ~divine_remix/bam/trcursc.bam~  ~override~
+	   ~divine_remix/bam/cdcausma.bam~ ~override~ // Cause Medium Wounds
        ~divine_remix/bam/cdcausmb.bam~ ~override~
        ~divine_remix/bam/cdcausmc.bam~ ~override~
+	   ~divine_remix/bam/cdcausmw.bam~ ~override~
+	   ~divine_remix/bam/trcausla.bam~ ~override~ // Cause Light Wounds
+       ~divine_remix/bam/trcauslb.bam~ ~override~
+       ~divine_remix/bam/trcauslc.bam~ ~override~
+	   ~divine_remix/bam/tredrain.bam~ ~override~ // Energy Drain
+	   ~divine_remix/bam/trdestra.bam~ ~override~ // Destruction
+       ~divine_remix/bam/trdestrb.bam~ ~override~
+       ~divine_remix/bam/trdestrc.bam~ ~override~
+	   ~divine_remix/bam/trdstrct.bam~ ~override~
+	   ~divine_remix/bam/trwithra.bam~ ~override~ // Wither
+       ~divine_remix/bam/trwithrb.bam~ ~override~
+       ~divine_remix/bam/trwithrc.bam~ ~override~
+	   ~divine_remix/bam/trwither.bam~ ~override~
+	   ~divine_remix/bam/witherh.bam~ ~override~
+	   ~divine_remix/bam/witherh.vvc~ ~override~
+	   ~divine_remix/spl/sppr414.spl~  ~override~ // Cause Serious Wounds
        ~divine_remix/bam/sppr414a.bam~ ~override~
        ~divine_remix/bam/sppr414b.bam~ ~override~
        ~divine_remix/bam/sppr414c.bam~ ~override~
-       ~divine_remix/bam/sppr510a.bam~ ~override~
-       ~divine_remix/bam/sppr510b.bam~ ~override~
-       ~divine_remix/bam/sppr510c.bam~ ~override~
+	   ~divine_remix/spl/sppr510.spl~  ~override~ // Cause Critical Wounds
+	   ~divine_remix/bam/icriticl_mod.bam~ ~override/trcritcl.bam~
+       ~divine_remix/bam/sppr510a_mod.bam~ ~override/sppr510a.bam~
+       ~divine_remix/bam/sppr510b_mod.bam~ ~override/sppr510b.bam~
+       ~divine_remix/bam/sppr510c_mod.bam~ ~override/sppr510c.bam~
+	   ~divine_remix/spl/sppr608.spl~  ~override~ // Harm
 
-  COPY_EXISTING ~critical.itm~ ~override~ // adjusts BAMs for existing 'Cause X Wounds' items
+  COPY_EXISTING ~critical.itm~ ~override~ // adjusts BAMs for existing 'Cause serious Wounds' item
     WRITE_ASCII 0x3A ~sppr510b~
     READ_SHORT 0x68 "abil_num"
-    READ_LONG  0x6A "abil_off"
+    READ_LONG  0x64 "abil_off"
     FOR (index = 0 ; index < abil_num ; index = index + 1) BEGIN
-      WRITE_ASCII (0x04 + "%abil_off%" + ("%index%" * 0x38)) ~sppr510b~
+      WRITE_ASCII (0x04 + "%abil_off%" + ("%index%" * 0x38)) ~trcritcl~
     END
+	BUT_ONLY
   
-  COPY_EXISTING ~serious.itm~  ~override~ // adjusts BAMs for existing 'Cause X Wounds' items
+  COPY_EXISTING ~serious.itm~  ~override~ // adjusts BAMs for existing 'Cause critical Wounds' item
     WRITE_ASCII 0x3A ~sppr414b~
     READ_SHORT 0x68 "abil_num"
-    READ_LONG  0x6A "abil_off"
+    READ_LONG  0x64 "abil_off"
     FOR (index = 0 ; index < abil_num ; index = index + 1) BEGIN
-      WRITE_ASCII (0x04 + "%abil_off%" + ("%index%" * 0x38)) ~sppr414b~
+      WRITE_ASCII (0x04 + "%abil_off%" + ("%index%" * 0x38)) ~icriticl~
     END
-  
-  COPY_EXISTING ~harm.itm~     ~override~ // adjusts BAMs for existing 'Cause X Wounds' items
+	BUT_ONLY
+ 
+  COPY_EXISTING ~harm.itm~     ~override~ // adjusts BAMs for existing harm item
     WRITE_ASCII 0x3A ~sppr608b~
     READ_SHORT 0x68 "abil_num"
-    READ_LONG  0x6A "abil_off"
+    READ_LONG  0x64 "abil_off"
     FOR (index = 0 ; index < abil_num ; index = index + 1) BEGIN
-      WRITE_ASCII (0x04 + "%abil_off%" + ("%index%" * 0x38)) ~sppr608b~
+      WRITE_ASCII (0x04 + "%abil_off%" + ("%index%" * 0x38)) ~iharm~
     END
-
+	BUT_ONLY
 END
 
-ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_CAUSE_BLINDNESS_OR_DEAFNESS~)) < 0)) BEGIN // only if not present or overwrite selected
+/////// Cure/Cause Blindness or Deafness
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_CAUSE_BLINDNESS_OR_DEAFNESS~)) < 0)) BEGIN  // only if not present or overwrite selected
 
   ADD_SPELL ~divine_remix/spl/nmcausbd.spl~ 1 3 CLERIC_CAUSE_BLINDNESS_OR_DEAFNESS // cause blindness or deafness
     SAY NAME1 @181
-    SAY NAME2 @181
     SAY UNIDENTIFIED_DESC @182
-    SAY DESC @182
   
   COPY ~divine_remix/bam/nmcausba.bam~ ~override~
        ~divine_remix/bam/nmcausbb.bam~ ~override~
@@ -147,27 +390,39 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_CAUSE_BLINDNESS_O
 
 END
 
-ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_CURE_BLINDNESS_OR_DEAFNESS~)) < 0)) BEGIN // only if not present or overwrite selected
+ACTION_IF (((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_CURE_BLINDNESS_OR_DEAFNESS~)) < 0)) AND ((IDS_OF_SYMBOL (~spell~ ~CLERIC_CURE_BLIND_DEAF~)< 0) OR !FILE_EXISTS_IN_GAME ~SPPR316.SPL~)) BEGIN // only if not present or overwrite selected
 
-  ADD_SPELL ~divine_remix/spl/nmcurebd.spl~ 1 3 CLERIC_CURE_BLINDNESS_OR_DEAFNESS  // cure blindness or deafness
+  ADD_SPELL ~divine_remix/spl/nmcurebd.spl~ 1 3 CLERIC_CURE_BLIND_DEAF  // cure blindness or deafness
     SAY NAME1 @179
-    SAY NAME2 @179
     SAY UNIDENTIFIED_DESC @180
-    SAY DESC @180
 
   COPY ~divine_remix/bam/nmcureba.bam~ ~override~
        ~divine_remix/bam/nmcurebb.bam~ ~override~
        ~divine_remix/bam/nmcurebc.bam~ ~override~
 
+// Cure Disease: create a new spell as base spell should not be midified for compatibility...
+
+COPY_EXISTING ~sppr317.spl~ ~override~
+
+ADD_SPELL ~override/sppr317.spl~ 1 3 CLERIC_CURE_DISEASE_PC // cure disease - no longer cures blindness or deafness (DR change) but do not change base spell... It is a bad idea with SCS installed...
+  SAY UNIDENTIFIED_DESC @125
+  LPF DELETE_EFFECT INT_VAR match_opcode = 75 END
+  LPF DELETE_EFFECT INT_VAR match_opcode = 81 END
+  LPF DELETE_EFFECT INT_VAR match_opcode = 240 match_parameter2 = 8 END
+  LPF DELETE_EFFECT INT_VAR match_opcode = 240 match_parameter2 = 112 END
+  BUT_ONLY
+
+
 END
 
-ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_DETECT_GOOD~)) < 0)) BEGIN // only if not present or overwrite selected
+/////// Detect Good
+
+
+ACTION_IF (((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_DETECT_GOOD~)) < 0)) AND !MOD_IS_INSTALLED ~SPELL_REV.TP2~ ~0~) BEGIN // only if not present or overwrite selected
 
   ADD_SPELL ~divine_remix/spl/cddtgood.spl~ 1 1 CLERIC_DETECT_GOOD  // detect good
     SAY NAME1 @194
-    SAY NAME2 @194
     SAY UNIDENTIFIED_DESC @195
-    SAY DESC @195
 
   COPY ~divine_remix/bam/cddtgooa.bam~ ~override~
        ~divine_remix/bam/cddtgoob.bam~ ~override~
@@ -175,13 +430,19 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_DETECT_GOOD~)) < 
 
 END
 
-ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_DIVINE_SHELL~)) < 0)) BEGIN // only if not present or overwrite selected
+/////// Entropy Shield
 
-  ADD_SPELL ~divine_remix/spl/cddshel.spl~ 1 6 CLERIC_DIVINE_SHELL  // divine shell
+ACTION_IF ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ENTROPY_SHIELD~)) < 0) BEGIN // only if not present (prfere iwdification n this case)
+
+  ADD_SPELL ~divine_remix/spl/cddshel.spl~ 1 6 CLERIC_ENTROPY_SHIELD  // divine shell
     SAY NAME1 @166
-    SAY NAME2 @166
     SAY UNIDENTIFIED_DESC @167
-    SAY DESC @167
+
+  OUTER_SET code=IDS_OF_SYMBOL ("spell" "CLERIC_ENTROPY_SHIELD") - 1000
+  OUTER_SPRINT antropy ~SPpr%code%~
+  OUTER_SET proj= %tr#flame% - 1
+  COPY_EXISTING ~%antropy%.SPL~ ~override~
+	LPF CLONE_EFFECT INT_VAR match_opcode = 83 match_parameter2 = 298 parameter2 = EVAL "%proj%" END
 
   COPY ~divine_remix/bam/cddshela.bam~ ~override~
        ~divine_remix/bam/cddshelb.bam~ ~override~
@@ -189,33 +450,88 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_DIVINE_SHELL~)) <
 
 END
 
-ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_FAERIE_FIRE~)) < 0)) BEGIN // only if not present or overwrite selected
+/////// PnP Faerie Fire and modifications to Invisbility Purge, Glitterdust and Alicorn Lance -> disallow invisibility effect
 
-  ADD_SPELL ~divine_remix/spl/cdfaerie.spl~ 1 1 CLERIC_FAERIE_FIRE  // faerie fire
+  ADD_SPELL ~divine_remix/spl/cdfaerie.spl~ 1 1 CLERIC_FAERIE_FIRE  // faerie fire: AoE as PnP and disallow invisibility effect
     SAY NAME1 @112
-    SAY NAME2 @112
     SAY UNIDENTIFIED_DESC @113
-    SAY DESC @113
 
   COPY ~divine_remix/bam/cdfaeria.bam~ ~override~
        ~divine_remix/bam/cdfaerib.bam~ ~override~
        ~divine_remix/bam/cdfaeric.bam~ ~override~
+	
+  COPY_EXISTING ~SPPR309.SPL~ override // enhance Invisibility Purge: disallow invisibility effect for 5 turns
+    LPF CLONE_EFFECT INT_VAR match_opcode = 116 opcode = 101 parameter2 = 20 timing = 0 duration = 300 END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 101 opcode = 142 parameter2 = 128 END
+	
 
-END
+  COPY_EXISTING ~SPWI224.SPL~ override // enhance Glitterdust: disallow invisibility effect for 4 rounds
+    LPF CLONE_EFFECT INT_VAR match_opcode = 116 opcode = 101 parameter2 = 20 timing = 0 duration = 24 END
+    LPF CLONE_EFFECT INT_VAR match_opcode = 101 opcode = 142 parameter2 = 128 END
+
+
+  ACTION_IF !(IDS_OF_SYMBOL (~spell~ ~CLERIC_ALICORN_LANCE~) < 0) BEGIN // only if exists
+
+    OUTER_SET code=IDS_OF_SYMBOL ("spell" "CLERIC_ALICORN_LANCE") // enhance Alicorn Lance : disallow invisibility effect for 3 rounds
+    OUTER_SET code=code - 1000
+    OUTER_SPRINT alcl "SPpr%code%"
+    COPY_EXISTING "%alcl%.SPL" "override"
+      LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 parameter2 = 20 target = 2 timing = 0 duration = 18 probability1 = 100 resist_dispel = 1 END
+      LPF CLONE_EFFECT INT_VAR match_opcode = 101 opcode = 142 parameter2 = 128 END
+  END
+
+/////// PnP Impregnable Mind & Chaotic Command
 
 ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_IMPREGNABLE_MIND~)) < 0)) BEGIN // only if not present or overwrite selected
 
-  ADD_SPELL ~divine_remix/spl/nmimpreg.spl~ 1 5 CLERIC_IMPREGNABLE_MIND
+  ADD_SPELL ~divine_remix/spl/nmimpreg.spl~ 1 5 CLERIC_IMPREGNABLE_MIND // Adding opcode 101 for charm, hold, confusion, feebleminded for compatibility with mods + protection to psionic attack
     SAY NAME1 @171
-    SAY NAME2 @171
     SAY UNIDENTIFIED_DESC @172
-    SAY DESC @172
 
   COPY ~divine_remix/bam/nmimprea.bam~ ~override~
        ~divine_remix/bam/nmimpreb.bam~ ~override~
        ~divine_remix/bam/nmimprec.bam~ ~override~
 
+// Chaotic Commands does not protect against psionic, paralyze and stun
+COPY_EXISTING ~sppr508.spl~ ~override~
+  READ_LONG 0x08 name
+
+ COPY ~divine_remix/spl/sppr508.spl~ ~override~ // chaotic commands - major changes... It should not change as intended in order to stay compatible, with moded game... In addition, chaos sphere are rare so this spell would not be availlable for most with Sphere system. A majority of priest will use IMPREGNABLE MIND wich has been improved as well... It protect now againt Feebleminded, Suggestion, Charm, Domination, hold person, Command, Sleep, Maze and Confusion but not paralyze, stun and psionic
+  WRITE_LONG 0x08 name
+  SAY UNIDENTIFIED_DESC @168
+
+COPY_EXISTING ~spwi818.spl~ ~override/spwi818.spl~ // Change of opcode for consistance
+			  ~spwi918.spl~ ~override/spwi918.spl~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 175 opcode = 109 END // Paralyze instead of hold
+  BUT_ONLY
+
+COPY_EXISTING ~spin975.spl~ ~override~ // Change of opcode for consistance
+			  ~spin910.spl~ ~override~
+  LPF ALTER_EFFECT INT_VAR match_opcode = 5 opcode = 241 END // Charm but not protected by regular items
+  WRITE_SHORT 0x1c 3 // Psionic
+  BUT_ONLY
+  
+COPY_EXISTING ~ring95.itm~ ~override~ // add missing immunities to psionic for consistance
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin542" END // Psionic Disintegrate
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin543" END // Psionic Inflict Pain
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin545" END // Psionic Life Drain
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin547" END // Psionic Project Force
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin727" END // Psionic Blast (No Save)
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin774" END // Psionic Maze
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin775" END // Psionic Mind Blast
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin804" END // Psionic Emotion Kill
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin834" END // Psionic Blast (Brain)
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin909" END // Ego Whip
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin910" END // Domination
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin911" END // Ballistic Attack
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin912" END // Detonate
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin974" END // Psionic Blast
+  LPF CLONE_EFFECT INT_VAR match_opcode = 206 STR_VAR match_resource = "SPPR704" resource = "spin975" END // Psionic Domination
+  BUT_ONLY
+
 END
+
+/////// PnP Protection from good and Chaos
 
 ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_PROTECT_FROM_GOOD~)) < 0)) BEGIN // only if not present or overwrite selected
 
@@ -223,9 +539,7 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_PROTECT_FROM_GOOD
 
   ADD_SPELL ~override/sppr107.spl~ 1 1 CLERIC_PROTECT_FROM_GOOD
     SAY NAME1 @196
-    SAY NAME2 @196
     SAY UNIDENTIFIED_DESC @197
-    SAY DESC @197
     WRITE_ASCII 0x3a ~cdprgooc~
     READ_LONG   0x64 "abil_off"
     READ_SHORT  0x68 "abil_num"
@@ -259,7 +573,7 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_PROTECT_FROM_GOOD
 
   COPY_EXISTING ~statdesc.2da~ ~override~ // changes Protected from Evil icon description to Protection from Alignment
     REPLACE_TEXTUALLY ~^9[ %TAB%].+$~ ~9 CDREPLACE~
-    REPLACE ~CDREPLACE~ @206
+    REPLACE ~CDREPLACE~ @217
     PRETTY_PRINT_2DA
 
 END
@@ -268,13 +582,11 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_PROTECTION_FROM_G
 
   COPY_EXISTING ~sppr408.spl~ ~override~
 
-  ADD_SPELL ~override/sppr408.spl~ 1 3 CLERIC_PROTECTION_FROM_GOOD_10_FOOT
+  ADD_SPELL ~override/sppr408.spl~ 1 4 CLERIC_PROTECTION_FROM_GOOD_10_FOOT
     SAY NAME1 @198
-    SAY NAME2 @198
     SAY UNIDENTIFIED_DESC @199
-    SAY DESC @199
     WRITE_ASCII 0x3A ~cdprgd1c~
-    WRITE_LONG  0x34 3
+    // WRITE_LONG  0x34 4
     READ_LONG   0x64 "abil_off"
     READ_SHORT  0x68 "abil_num"
     READ_LONG   0x6a "fx_off"
@@ -292,7 +604,7 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_PROTECTION_FROM_G
       PATCH_IF ("%opcode%" = 233) BEGIN
         WRITE_LONG ("%fx_off%" + 0x04 + (0x30 * "%index%")) 2 // for detectable spells
       END ELSE
-      PATCH_IF ("%opcode%" = 100) BEGIN
+      PATCH_IF ("%opcode%" = 100) BEGIN 
         WRITE_LONG ("%fx_off%" + 0x04 + (0x30 * "%index%")) 156
         WRITE_LONG ("%fx_off%" + 0x08 + (0x30 * "%index%")) 4
       END
@@ -307,18 +619,63 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_PROTECTION_FROM_G
 
   COPY_EXISTING ~statdesc.2da~ ~override~ // changes Protected from Evil icon description to Protection from Alignment
     REPLACE_TEXTUALLY ~^9[ %TAB%].+$~ ~9 CDREPLACE~
-    REPLACE ~CDREPLACE~ @206
+    REPLACE ~CDREPLACE~ @217
     PRETTY_PRINT_2DA
 
 END
 
-ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_RESIST_ACID_AND_CORROSION~)) < 0)) BEGIN // only if not present or overwrite selected
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_PROTECT_FROM_CHAOS~)) < 0)) BEGIN // only if not present or overwrite selected
+
+  COPY_EXISTING ~sppr107.spl~ ~override~
+
+  ADD_SPELL ~override/sppr107.spl~ 1 1 CLERIC_PROTECT_FROM_CHAOS
+    SAY NAME1 @202
+    SAY UNIDENTIFIED_DESC @203
+    WRITE_ASCII 0x3a ~trprchoc~
+    READ_LONG   0x64 "abil_off"
+    READ_SHORT  0x68 "abil_num"
+    READ_LONG   0x6a "fx_off"
+    READ_SHORT  0x70 "fx_num"
+    READ_SHORT ("%abil_off%" + 0x1e + (("%abil_num%" - 1) * 0x28)) "abil_fx_num"
+    READ_SHORT ("%abil_off%" + 0x20 + (("%abil_num%" - 1) * 0x28)) "abil_fx_idx"
+    FOR (index = 0 ; index < (abil_fx_num + abil_fx_idx) ; index = index + 1) BEGIN
+      READ_SHORT ("%fx_off%" + (0x30 * "%index%")) "opcode"
+      PATCH_IF ("%opcode%" = 139) BEGIN
+        SAY ("%fx_off%" + 0x04 + (0x30 * "%index%")) @200
+      END ELSE
+      PATCH_IF ("%opcode%" = 219) BEGIN
+        WRITE_LONG ("%fx_off%" + 0x04 + (0x30 * "%index%")) 48
+      END ELSE
+      PATCH_IF ("%opcode%" = 233) BEGIN
+        WRITE_LONG ("%fx_off%" + 0x04 + (0x30 * "%index%")) 3 // for detectable spells
+      END ELSE
+      PATCH_IF ("%opcode%" = 100) BEGIN // should stay as it also protect againt summons
+        WRITE_LONG ("%fx_off%" + 0x04 + (0x30 * "%index%")) 121
+        WRITE_LONG ("%fx_off%" + 0x08 + (0x30 * "%index%")) 4
+      END
+    END
+    FOR (index2 = 0 ; index2 < abil_num ; index2 = index2 + 1) BEGIN
+      WRITE_ASCII ("%abil_off%" + 0x04 + ("%index2%" * 0x28)) ~trprchob~
+    END
+
+  COPY ~divine_remix/bam/trprchoa.bam~ ~override~
+       ~divine_remix/bam/trprchob.bam~ ~override~
+       ~divine_remix/bam/trprchoc.bam~ ~override~
+
+  COPY_EXISTING ~statdesc.2da~ ~override~ // changes Protected from Evil icon description to Protection from Alignment
+    REPLACE_TEXTUALLY ~^9[ %TAB%].+$~ ~9 CDREPLACE~
+    REPLACE ~CDREPLACE~ @217
+    PRETTY_PRINT_2DA
+
+END
+
+/////// PnP Protection from Acid and Corrosion
+
+ACTION_IF (((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_RESIST_ACID_AND_CORROSION~)) < 0)) AND ((IDS_OF_SYMBOL (~spell~ ~CLERIC_RESIST_ACID_CORROSION~)) < 0)) BEGIN // only if not present or overwrite selected
 
   ADD_SPELL ~divine_remix/spl/nmresacd.spl~ 1 2 CLERIC_RESIST_ACID_AND_CORROSION
     SAY NAME1 @173
-    SAY NAME2 @173
     SAY UNIDENTIFIED_DESC @174
-    SAY DESC @174
 
   COPY ~divine_remix/bam/nmresaca.bam~ ~override~
        ~divine_remix/bam/nmresacb.bam~ ~override~
@@ -326,29 +683,69 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_RESIST_ACID_AND_C
 
 END
 
+/////// Strength of stone spell now use TobEx and EE features, and all strength Spells now only work on allies and no more on enemies 
+
 ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_STRENGTH_OF_STONE~)) < 0)) BEGIN // only if not present or overwrite selected
 
   ADD_SPELL ~divine_remix/spl/nmstrstn.spl~ 1 1 CLERIC_STRENGTH_OF_STONE
     SAY NAME1 @175
-    SAY NAME2 @175
     SAY UNIDENTIFIED_DESC @176
-    SAY DESC @176
 
   COPY ~divine_remix/bam/nmstrsta.bam~ ~override~
        ~divine_remix/bam/nmstrstb.bam~ ~override~
        ~divine_remix/bam/nmstrstc.bam~ ~override~
 
+  ACTION_IF (MOD_IS_INSTALLED ~TOBEX.TP2~ ~100~ OR ENGINE_IS ~bg2ee~) BEGIN // Use Bull Strength type for this spell
+    OUTER_SET code=IDS_OF_SYMBOL ("spell" "CLERIC_STRENGTH_OF_STONE")
+    OUTER_SET code=code - 1000
+    OUTER_SPRINT SOS "SPpr%code%"
+    COPY_EXISTING "%SOS%.SPL" "override"
+      SAY UNIDENTIFIED_DESC @1761
+    	LPF DELETE_EFFECT INT_VAR match_opcode = 44 END
+    	LPF DELETE_EFFECT INT_VAR match_opcode = 97 END
+    	LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 44 parameter2 = 3 parameter1 = 0 END
+    	LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 177 parameter2 = 2 parameter1 = 255 duration = 0 STR_VAR insert = "first" resource = "tr#estrs" END
+    COPY ~divine_remix/eff/tr#enstr.eff~ ~override/tr#estrs.eff~
+    	WRITE_ASCIIE 0x30 ~%SOS%~ #8 // not working on enemies
+  END
+
+  ACTION_FOR_EACH spell IN
+                 spwi214
+		    	 spin826
+		    	 sppr312
+			     sppr507
+  BEGIN
+    COPY_EXISTING ~%spell%.SPL~ ~override~ // Strength
+	  LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 177 parameter2 = 2 parameter1 = 255 duration = 0 STR_VAR insert = "first" resource = EVAL "%spell%e" END // Eff used only for enemies
+	  BUT_ONLY IF_EXISTS
+    COPY ~divine_remix/eff/tr#enstr.eff~ ~override/%spell%e.eff~
+	  WRITE_ASCIIE 0x30 ~%spell%~ #8 // not working on enemies
+  END
+
 END
+
+/////// Add Missing Air Elemental Summoning Spell for Clerics
 
 ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_CONJURE_AIR_ELEMENTAL~)) < 0)) BEGIN // only if not present or overwrite selected
 
-  COPY_EXISTING ~spwi621.spl~ ~override~
+  COPY_EXISTING ~spwi622.spl~ ~override~
 
-  ADD_SPELL ~override/spwi621.spl~ 1 7 CLERIC_CONJURE_AIR_ELEMENTAL
+  ADD_SPELL ~override/spwi622.spl~ 1 7 CLERIC_CONJURE_AIR_ELEMENTAL // Don't ask me why... but it works not with air elemental copy, add to be earth elemental
     WRITE_SHORT 0x1c 2
     WRITE_SHORT 0x1e 0
     WRITE_SHORT 0x34 7
-    LPF ALTER_EFFECT INT_VAR match_power = 6 power = 7 END
+    LPF DELETE_EFFECT INT_VAR match_opcode = 165 END // removing the mental combat visual effect for priest
+	LPF DELETE_EFFECT INT_VAR match_opcode = 215 END // removing the mental combat visual effect for priest
+	LPF DELETE_EFFECT INT_VAR match_opcode = 142 END // removing the mental combat visual effect for priest
+	REPLACE_TEXTUALLY SPEART1 DRAIR1 (8)
+    REPLACE_TEXTUALLY SPEART2 DRAIR2 (8)
+    REPLACE_TEXTUALLY SPEART3 DRAIR3 (8)
+	REPLACE_TEXTUALLY CASE_INSENSITIVE SPWI622A SPWI621A (8)
+    REPLACE_TEXTUALLY CASE_INSENSITIVE SPWI622B SPWI621B (8)
+    REPLACE_TEXTUALLY CASE_INSENSITIVE SPWI622C SPWI621C (8)
+	WRITE_LONG 0x8 24839
+	WRITE_LONG 0x50 24840
+	LPF ALTER_EFFECT INT_VAR match_power = 6 power = 7 END
     PATCH_FOR_EACH offset IN 0x50 BEGIN
       READ_LONG ~%offset%~ desc_strref
       PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
@@ -360,32 +757,417 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_CONJURE_AIR_ELEME
       SAY_EVALUATED offset ~%desc%~
     END
 
-END
-
-ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ENERGY_DRAIN~)) < 0)) BEGIN // only if not present or overwrite selected
-
-  COPY_EXISTING ~spwi914.spl~ ~override~
-
-  ADD_SPELL ~override/spwi914.spl~ 1 7 CLERIC_ENERGY_DRAIN
-    WRITE_SHORT 0x1c 2
-    WRITE_SHORT 0x1e 0
-    WRITE_SHORT 0x34 7
-    LPF ALTER_EFFECT INT_VAR match_power = 9 power = 7 END
-    PATCH_FOR_EACH offset IN 0x50 BEGIN
-      READ_LONG ~%offset%~ desc_strref
-      PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
-        READ_STRREF ~%offset%~ desc
-        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-          REPLACE_TEXTUALLY ~%level_match%~ ~\1 7~ // change level in description to 7
-        END
-      END
-      SAY_EVALUATED offset ~%desc%~
-    END
+// Cretaing the new creatuers to remove the mental combat script for priest
+  COPY_EXISTING "SPAIR1.EFF" "override/DRAIR1.EFF" WRITE_ASCIIE 0x30 DRAIRPR2 (8)
+  COPY_EXISTING "SPAIR2.EFF" "override/DRAIR2.EFF" WRITE_ASCIIE 0x30 DRAIRPR3 (8)
+  COPY_EXISTING "SPAIR3.EFF" "override/DRAIR3.EFF" WRITE_ASCIIE 0x30 DRAIRPR4 (8)
+  COPY_EXISTING "ELAIRSU2.CRE" "override/DRAIRPR2.cre"
+	  WRITE_ASCII 0x248 "None" #8
+  COPY_EXISTING "ELAIRSU3.CRE" "override/DRAIRPR3.cre"
+	  WRITE_ASCII 0x248 "None" #8
+  COPY_EXISTING "ELAIRSU4.CRE" "override/DRAIRPR4.cre"
+	  WRITE_ASCII 0x248 "None" #8
 
 END
 
-// disable original spells that were moved to another level
-COPY_EXISTING ~sppr408.spl~ ~override~
-              ~sppr413.spl~ ~override~
-  WRITE_BYTE 0x21 (THIS BOR (BIT6 + BIT7)) // don't show up automatically in spellbooks
-  BUT_ONLY
+/////// Add PnP Dismissal: work on extrapanar with save and on summons without. update Holy and Unholy words to also slay summons (PnP)
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_DISMISSAL~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  ADD_SPELL ~divine_remix/spl/dismiss.spl~ 1 4 CLERIC_DISMISSAL // Dismissal Spell
+    SAY NAME1 @250
+    SAY UNIDENTIFIED_DESC @251
+	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 STR_VAR resource = EVAL ~%DEST_RES%~ END
+
+  COPY ~divine_remix/eff/tr#unsum.eff~ ~override~  // Visual Effect
+  COPY ~divine_remix/eff/tr#dismb.eff~ ~override~  // Dismissal effect
+  
+
+  COPY ~divine_remix/bam/trdisma.bam~ ~override~
+  COPY ~divine_remix/bam/trdismb.bam~ ~override~
+       ~divine_remix/bam/trdismc.bam~ ~override~
+
+// Update Holy and Unholy words to also slay summons
+  COPY_EXISTING ~sppr710.spl~ ~override~   // Holy Word
+    SAY UNIDENTIFIED_DESC @252
+	LPF CLONE_EFFECT INT_VAR match_opcode = 177 parameter2 = 6 parameter1 = 7 dicenumber = 0 dicesize = 0 STR_VAR match_resource = "death" resource = "destself" END
+  COPY_EXISTING ~sppr715.spl~ ~override~   // Unoly Word
+    SAY UNIDENTIFIED_DESC @253
+	LPF CLONE_EFFECT INT_VAR match_opcode = 177 parameter2 = 6 parameter1 = 7 dicenumber = 0 dicesize = 0 STR_VAR match_resource = "death" resource = "destself" END
+END
+
+/////// Add Pyrotechnics spell: Blind AoE
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_PYROTECHNICS~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  ADD_PROJECTILE ~divine_remix/spl/tr#pyrot.pro~
+  ADD_SPELL ~divine_remix/spl/pyrotech.spl~ 1 3 CLERIC_PYROTECHNICS // pyrotechnics Spell
+    SAY NAME1 @254
+    SAY UNIDENTIFIED_DESC @255
+    READ_LONG  0x64 ab_off
+    READ_SHORT 0x68 ab_num
+    FOR(i=0; i<ab_num; i+=1) BEGIN
+      WRITE_SHORT (ab_off+i*0x28+0x26) %tr#pyrot%                                    // use new projectile (party friendly)
+    END 
+  COPY ~divine_remix/bam/tr#pyroa.bam~ ~override~
+  COPY ~divine_remix/bam/tr#pyrob.bam~ ~override~
+       ~divine_remix/bam/tr#pyroc.bam~ ~override~
+
+END
+
+/////// Add Animal Growth: +4 bonus to attack rolls, damage rolls, saving throws, hit points + 100%.
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ANIMAL_GROWTH~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  ADD_SPELL ~divine_remix/spl/animalgrowth.spl~ 1 5 CLERIC_ANIMAL_GROWTH // Animal Growth Spell
+    SAY NAME1 @256
+    SAY UNIDENTIFIED_DESC @257
+
+  COPY ~divine_remix/spl/tr#angr.spl~ ~override~
+       ~divine_remix/eff/tr#angr.eff~ ~override~
+
+  COPY ~divine_remix/bam/trangra.bam~ ~override~
+       ~divine_remix/bam/trangrb.bam~ ~override~
+       ~divine_remix/bam/trangrc.bam~ ~override~
+
+END
+
+/////// Add Produce Ice: Cold dmg spell for Druid
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_PRODUCE_ICE~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  ADD_PROJECTILE ~divine_remix/spl/tr#ice.pro~
+  ADD_SPELL ~divine_remix/spl/produceice.spl~ 1 5 CLERIC_PRODUCE_ICE // Produce Ice
+    SAY NAME1 @258
+	SAY UNIDENTIFIED_DESC @259
+    READ_LONG  0x64 ab_off
+    READ_SHORT 0x68 ab_num
+    FOR(i=0; i<ab_num; i+=1) BEGIN
+      WRITE_SHORT (ab_off+i*0x28+0x26) %tr#ice%                                    // use new projectile
+    END 
+
+  COPY ~divine_remix/bam/tr#ice.vvc~ ~override~ // Visual effect
+	   ~divine_remix/bam/tr#ice.bam~ ~override~ // Visual effect
+	   ~divine_remix/bam/tricea.bam~ ~override~
+	   ~divine_remix/bam/triceb.bam~ ~override~
+	   ~divine_remix/bam/tricec.bam~ ~override~
+	   ~divine_remix/wav/tre_m52a.wav~ ~override~
+END
+
+/////// Add Wall of Fire: Static fire Ball (maybe to powerfull...)
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_WALL_OF_FIRE~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  ADD_SPELL ~divine_remix/spl/walloffire.spl~ 1 5 CLERIC_WALL_OF_FIRE // Wall of Fire
+    SAY NAME1 #12063
+	SAY UNIDENTIFIED_DESC @260
+
+  ADD_PROJECTILE ~divine_remix/spl/tr#wof.pro~
+  COPY ~divine_remix/spl/tr#wofa.spl~ ~override~
+    READ_LONG  0x64 ab_off
+    READ_SHORT 0x68 ab_num
+    FOR(i=0; i<ab_num; i+=1) BEGIN
+      WRITE_SHORT (ab_off+i*0x28+0x26) %tr#wof%                                    // use new projectile (party friendly)
+    END 
+
+  COPY ~divine_remix/spl/tr#wofd.spl~ ~override~
+	   ~divine_remix/eff/tr#wofd.eff~ ~override~
+       ~divine_remix/bam/tr#wofex.vvc~ ~override~ // Visual effect
+	   ~divine_remix/bam/tr#wofex.bam~ ~override~ // Visual effect
+       ~divine_remix/wav/trf_p31a.wav~ ~override~
+       ~divine_remix/wav/trf_p31b.wav~ ~override~
+
+  COPY ~divine_remix/bam/trwofa.bam~ ~override~
+	   ~divine_remix/bam/trwofb.bam~ ~override~
+       ~divine_remix/bam/trwofc.bam~ ~override~
+
+END
+
+/////// Add Battle Fate: Low level buff
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_BATTLEFATE~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  ADD_SPELL ~divine_remix/spl/battlefate.spl~ 1 1 CLERIC_BATTLEFATE // Battle Fate
+    SAY NAME1 @263
+	SAY UNIDENTIFIED_DESC @264
+
+  COPY ~divine_remix/spl/tr#btlfa.spl~ ~override~ // Actual effect
+	   ~divine_remix/bam/trbttlfa.bam~ ~override~
+	   ~divine_remix/bam/trbttlfb.bam~ ~override~
+	   ~divine_remix/bam/trbttlfc.bam~ ~override~
+
+END
+
+/////// Add Adamantite Mace: More magical weapons
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ADAMANTITE_MACE~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  ADD_SPELL ~divine_remix/spl/admantitemace.spl~ 1 4 CLERIC_ADAMANTITE_MACE // Adamantite Mace
+    SAY NAME1 @265
+    SAY UNIDENTIFIED_DESC @266
+
+  COPY ~divine_remix/itm/tr#adma.itm~ ~override~
+       ~divine_remix/eff/tr#adma.eff~ ~override~ // damage bonus vs air elemental and flying monster
+
+  COPY ~divine_remix/bam/tradama.bam~ ~override~
+	   ~divine_remix/bam/tradamb.bam~ ~override~
+       ~divine_remix/bam/tradamc.bam~ ~override~
+
+END
+
+/////// Add Command Monster and update Command and Greater Command (PnP) 
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_COMMAND_MONSTER~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  ADD_SPELL ~divine_remix/spl/cmdmonster.spl~ 1 6 CLERIC_COMMAND_MONSTER // Command Monster: work on everything
+    SAY NAME1 @267
+    SAY UNIDENTIFIED_DESC @268
+
+  COPY ~divine_remix/bam/trcmdma.bam~ ~override~
+	   ~divine_remix/bam/trcmdmb.bam~ ~override~
+       ~divine_remix/bam/trcmdmc.bam~ ~override~
+
+// Command & Greater Command: need to know language -> work now only on humanoïd
+COPY_EXISTING ~sppr102.spl~ ~override~
+  READ_LONG 0x08 name
+
+  COPY ~divine_remix/spl/sppr102.spl~ ~override~ // PnP Command could be only used if the language is understood by the creature: humanoids
+  WRITE_LONG 0x08 name
+  SAY UNIDENTIFIED_DESC @115
+
+  COPY ~divine_remix/spl/sppr102a.spl~ ~override~ // Actual Spell - now work also on elves for obg2... it has nothing to do with sleep.
+      ~divine_remix/eff/tr#cmd.eff~ ~override~   // ids : humanoids
+
+ADD_SPELL ~divine_remix/spl/dictate.spl~ 1 3 CLERIC_GREATER_COMMAND // PnP Greater Command could be only used if the language is understood by the creature: humanoids; new name: Dictate; new level: 3
+  SAY NAME1 @116
+  SAY UNIDENTIFIED_DESC @117
+ 
+ COPY ~divine_remix/spl/tr#dict.spl~ ~override~ // Actual Spell - now work also on elves for obg2... it has nothing to do with sleep.
+      ~divine_remix/eff/tr#dict.eff~ ~override~ // ids : humanoids
+
+END
+
+/////// Add Produce Flame: Fire dmg spell for Druid
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_PRODUCE_FLAME~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  ADD_SPELL ~divine_remix/spl/prodflame.spl~ 1 2 CLERIC_PRODUCE_FLAME // Produce Flame
+    SAY NAME1 @269
+    SAY UNIDENTIFIED_DESC @270
+
+  ACTION_IF !(IDS_OF_SYMBOL (~spell~ ~CLERIC_ENTROPY_SHIELD~) < 0) BEGIN
+    OUTER_SET code=IDS_OF_SYMBOL ("spell" "CLERIC_ENTROPY_SHIELD") - 1000
+    OUTER_SPRINT antropy ~SPpr%code%~
+
+	COPY_EXISTING ~%antropy%.SPL~ ~override~
+	  LPF CLONE_EFFECT INT_VAR match_opcode = 83 match_parameter2 = 298 parameter2 = 257 END
+  END
+
+  COPY ~divine_remix/itm/tr#pflam.itm~ ~override~
+	   ~divine_remix/bam/tr#pflam.bam~ ~override~
+
+  COPY ~divine_remix/bam/trflama.bam~ ~override~
+	   ~divine_remix/bam/trflamb.bam~ ~override~
+       ~divine_remix/bam/trflamc.bam~ ~override~
+
+END
+
+/////// Add summoning spell: Animal Spirit
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ANIMAL_SPIRIT~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  ADD_SPELL ~divine_remix/spl/animalspirit.spl~ 1 3 CLERIC_ANIMAL_SPIRIT // Animal Spirit
+    SAY NAME1 @273
+    SAY UNIDENTIFIED_DESC @274
+
+  COPY ~divine_remix/eff/tr#anspi.eff~ ~override~
+	   ~divine_remix/2da/tr#anspi.2da~ ~override~
+	   ~divine_remix/itm/tr#anspi.itm~ ~override~
+
+  COPY_EXISTING ~spirbear.cre~ ~override/tr#spbea.cre~
+				~spirwolf.cre~ ~override/tr#spwol.cre~
+				~spirlion.cre~ ~override/tr#splio.cre~
+	WRITE_SHORT 0x24 24
+	WRITE_SHORT 0x26 24
+	WRITE_SHORT 0x46 4
+	WRITE_SHORT 0x48 4
+	WRITE_BYTE 0x52 15
+	WRITE_BYTE 0x53 1
+	WRITE_BYTE 0x54 11
+	WRITE_BYTE 0x55 13
+	WRITE_BYTE 0x56 12
+	WRITE_BYTE 0x57 13
+	WRITE_BYTE 0x58 14
+	WRITE_BYTE 0x5b 0
+	WRITE_BYTE 0x234 3
+	WRITE_BYTE 0x271 4
+    REPLACE_CRE_ITEM ~tr#anspi~ #0 #0 #0 ~UNDROPPABLE~ ~WEAPON1~ EQUIP                 // replace default weapon with a less powerful weapon (closer to PnP damage output)
+
+  COPY ~divine_remix/bam/transpia.bam~ ~override~
+	   ~divine_remix/bam/transpib.bam~ ~override~
+       ~divine_remix/bam/transpic.bam~ ~override~
+
+END
+
+/////// Add summoning spell: Giant Insect
+
+ACTION_IF !(IDS_OF_SYMBOL (~animate~ ~BEETLE_RHINOCEROS~) < 0) BEGIN  // only if animation exists
+
+  ADD_SPELL ~divine_remix/spl/giantinsect.spl~ 1 4 CLERIC_GIANT_INSECT // Giant Insect
+    SAY NAME1 @277
+    SAY UNIDENTIFIED_DESC @278
+
+  COPY ~divine_remix/eff/tr#gnsc1.eff~ ~override~
+	   ~divine_remix/2da/tr#gnsc1.2da~ ~override~
+	   ~divine_remix/itm/tr#gnsc1.itm~ ~override~
+	   ~divine_remix/itm/tr#gnsc0.itm~ ~override~
+	   ~divine_remix/eff/tr#gnsc2.eff~ ~override~
+	   ~divine_remix/2da/tr#gnsc2.2da~ ~override~
+	   ~divine_remix/itm/tr#gnsc2.itm~ ~override~
+	   ~divine_remix/eff/tr#gnsc3.eff~ ~override~
+	   ~divine_remix/2da/tr#gnsc3.2da~ ~override~
+	   ~divine_remix/itm/tr#gnsc3.itm~ ~override~
+
+  COPY ~divine_remix/cre/tr#gnsc0.cre~ ~override~
+    SAY 0x8 @279
+	SAY 0xc @279
+  COPY ~divine_remix/cre/tr#gnsc1.cre~ ~override~
+    SAY 0x8 @280
+	SAY 0xc @280
+  COPY ~divine_remix/cre/tr#gnsc2.cre~ ~override~
+    SAY 0x8 @281
+	SAY 0xc @281
+  COPY ~divine_remix/cre/tr#gnsc3.cre~ ~override~
+    SAY 0x8 @282
+	SAY 0xc @282
+
+  COPY ~divine_remix/bam/trgnsta.bam~ ~override~
+	   ~divine_remix/bam/trgnstb.bam~ ~override~
+       ~divine_remix/bam/trgnstc.bam~ ~override~
+
+END
+
+/////// Add summoning spell: Watery Fist 
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_WATERY_FIST~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  ADD_SPELL ~divine_remix/spl/wateryfist.spl~ 1 2 CLERIC_WATERY_FIST // Watery Fist
+    SAY NAME1 @283
+	SAY UNIDENTIFIED_DESC @284
+
+  COPY ~divine_remix/eff/tr#wfist.eff~ ~override~
+	   ~divine_remix/bam/tr#wfist.bam~ ~override~
+	   ~divine_remix/bam/tr#wfist.vvc~ ~override~
+	   ~divine_remix/itm/tr#wfist.itm~ ~override~
+	   ~divine_remix/spl/tr#wfist.spl~ ~override~
+	   ~divine_remix/cre/tr#wfist.cre~ ~override~ // Water Weird
+
+
+  COMPILE ~divine_remix/baf/tr#wfist.baf~ ~override~ // Restore buttons script
+
+
+  COPY ~divine_remix/bam/trwfista.bam~ ~override~
+	   ~divine_remix/bam/trwfistb.bam~ ~override~
+       ~divine_remix/bam/trwfistc.bam~ ~override~
+
+END
+
+/////// Add summoning spell: Wolf Spirit
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_WOLF_SPIRIT~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  ADD_SPELL ~divine_remix/spl/wolfspirit.spl~ 1 7 CLERIC_WOLF_SPIRIT // Wolf Spirit
+    SAY NAME1 @261
+	SAY UNIDENTIFIED_DESC @262
+
+  COPY ~divine_remix/2da/tr#spwlf.2da~ ~override~
+	   ~divine_remix/eff/tr#spwlf.eff~ ~override~
+	   ~divine_remix/cre/tr#spwlf.cre~ ~override~
+
+  COPY ~divine_remix/bam/trspwlfa.bam~ ~override~
+	   ~divine_remix/bam/trspwlfb.bam~ ~override~
+       ~divine_remix/bam/trspwlfc.bam~ ~override~
+
+END
+
+/////// Add PnP Detect Snares and Pit: only work outdoor
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_DETECT_SNARES_PITS~)) < 0)) BEGIN  // only if not present or overwrite selected
+  COPY_EXISTING ~sppr205.spl~ ~override~
+  
+  ADD_SPELL ~override/sppr205.spl~ 1 1 CLERIC_DETECT_SNARES_PITS // Detect Snares and Pits
+    SAY NAME1 @275
+    SAY UNIDENTIFIED_DESC @276
+	WRITE_BYTE 0x19 THIS BOR 0b00100000
+	WRITE_BYTE 0x21 THIS BOR BIT6
+	WRITE_ASCII 0x3a ~trdsnpc~ #8
+	WRITE_ASCII 0x76 ~trdsnpb~ #8
+
+  COPY ~divine_remix/bam/trdsnpa.bam~ ~override~
+	   ~divine_remix/bam/trdsnpb.bam~ ~override~
+       ~divine_remix/bam/trdsnpc.bam~ ~override~
+
+END
+
+/////// PnP Symbol for priest: Say goodby to Death, stun and Fear and Hello to Pain, Hopelessness and Persuasion
+
+ADD_SPELL ~divine_remix/spl/symbolpain.spl~ 1 7 CLERIC_SYMBOL_PAIN // Symbole, Pain
+    SAY NAME1 @285
+	SAY UNIDENTIFIED_DESC @286
+ADD_SPELL ~divine_remix/spl/symbolhopelessness.spl~ 1 7 CLERIC_SYMBOL_HOPELESSNESS // Symbole, Hopelessness
+    SAY NAME1 @287
+	SAY UNIDENTIFIED_DESC @288
+ADD_SPELL ~divine_remix/spl/symbolpersuasion.spl~ 1 7 CLERIC_SYMBOL_PERSUASION // Symbole, Persuasion
+    SAY NAME1 @289
+	SAY UNIDENTIFIED_DESC @290
+
+COPY ~divine_remix/bam/trspaina.bam~ ~override~
+	 ~divine_remix/bam/trspainb.bam~ ~override~
+     ~divine_remix/bam/trspainc.bam~ ~override~
+	 ~divine_remix/bam/trshopea.bam~ ~override~
+	 ~divine_remix/bam/trshopeb.bam~ ~override~
+     ~divine_remix/bam/trshopec.bam~ ~override~
+	 ~divine_remix/bam/trspersa.bam~ ~override~
+	 ~divine_remix/bam/trspersb.bam~ ~override~
+     ~divine_remix/bam/trspersc.bam~ ~override~
+
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ANIMAL_FRIENDSHIP~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  ADD_SPELL ~divine_remix/spl/animfriend.spl~ 1 1 CLERIC_ANIMAL_FRIENDSHIP // Animal friendship
+    SAY NAME1 #38564
+	SAY UNIDENTIFIED_DESC @249
+
+END
+
+
+// disable original spells that were moved to another level or that are already covered by this mod
+
+ACTION_IF !((IDS_OF_SYMBOL (~spell~ ~CLERIC_CAUSE_SERIOUS_WOUNDS_IWD~)) < 0) BEGIN
+  OUTER_SET csw = IDS_OF_SYMBOL (~spell~ ~CLERIC_CAUSE_SERIOUS_WOUNDS_IWD~) - 1000
+  OUTER_SPRINT cswiwd ~sppr%csw%~
+END ELSE OUTER_SPRINT cswiwd ~~
+ACTION_IF !((IDS_OF_SYMBOL (~spell~ ~CLERIC_CAUSE_CRITICAL_WOUNDS_IWD~)) < 0) BEGIN
+  OUTER_SET ccw = IDS_OF_SYMBOL (~spell~ ~CLERIC_CAUSE_CRITICAL_WOUNDS_IWD~) - 1000
+  OUTER_SPRINT ccwiwd ~sppr%ccw%~
+END ELSE OUTER_SPRINT ccwiwd ~~
+ACTION_IF !((IDS_OF_SYMBOL (~spell~ ~CLERIC_CAUSE_MODERATE_WOUNDS~)) < 0) BEGIN
+  OUTER_SET cmw = IDS_OF_SYMBOL (~spell~ ~CLERIC_CAUSE_MODERATE_WOUNDS~) - 1000
+  OUTER_SPRINT cmwiwd ~sppr%cmw%~
+END ELSE OUTER_SPRINT cmwiwd ~~
+
+ACTION_FOR_EACH file IN 
+			  ~sppr317~ // Cure Disease
+			  ~sppr413~ // Negative Plan Protection
+			  ~sppr512~ // Greater Command
+			  ~sppr719~ // Symbol, death
+			  ~sppr718~ // Symbol, stun
+			  ~sppr706~ // Symbol, fear
+			  ~%cswiwd%~ // Cause Serious Wounds IWD
+			  ~%ccwiwd%~ // Cause Critical Wounds IWD
+			  ~%cmwiwd%~ // Cause Moderate Wounds IWD
+BEGIN
+  COPY_EXISTING ~%file%.SPL~ ~override~
+    WRITE_BYTE 0x21 0b11000000 // don't show up automatically in spellbooks
+  BUT_ONLY IF_EXISTS
+END
