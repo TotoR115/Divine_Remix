@@ -88,21 +88,50 @@ COPY ~Divine_Remix/spl/cdtldst.spl~ ~override~ // destructive blow
   SAY UNIDENTIFIED_DESC @10170
   SAY DESC @10170
 
+COPY ~Divine_Remix/spl/trhmexl.spl~ ~override~ // Exaltation (from IWDification)
+  SAY NAME1 @10200
+  SAY UNIDENTIFIED_DESC @10201
+
+COPY ~Divine_Remix/bam/trhmexlb.bam~ ~override~ // Exaltation icon (from IWDification)
+
+ACTION_IF !((IDS_OF_SYMBOL (~spell~ ~CLERIC_FAERIE_FIRE~)) < 0) BEGIN
+  OUTER_SET code= IDS_OF_SYMBOL ("spell" "CLERIC_FAERIE_FIRE") - 1000
+  OUTER_SPRINT faerie "SPpr%code%"
+  COPY_EXISTING "%faerie%.SPL" "override/cdltffi.spl"
+    LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
+    BUT_ONLY_IF_IT_CHANGES
+END ELSE BEGIN
+ COPY ~divine_remix/spl/cdfaerie.spl~ ~override/cdltffi.spl~
+    SAY NAME1 @112
+    SAY UNIDENTIFIED_DESC @113
+    LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
+    BUT_ONLY_IF_IT_CHANGES
+
+ COPY ~divine_remix/bam/cdfaeria.bam~ ~override~
+      ~divine_remix/bam/cdfaerib.bam~ ~override~
+      ~divine_remix/bam/cdfaeric.bam~ ~override~
+
+END
+
 // change spells to innates as needed
 COPY_EXISTING ~spwi324.spl~ ~override/cdlthun.spl~ // hold undead innate
-              ~sppr503.spl~ ~override/cdltflm.spl~ // flame strike innate
-              ~sppr607.spl~ ~override/cdlthel.spl~ // heal innate
+              ~sppr609.spl~ ~override/cdltfld.spl~ // False Dawn innate
+              ~sppr504.spl~ ~override/cdltrad.spl~ // Raise Dead innate
               ~sppr713.spl~ ~override/cdltgrs.spl~ // greater restoration innate
               ~sppr304.spl~ ~override/cdhmglp.spl~ // glyph of warding innate
               ~sppr415.spl~ ~override/cdhmfst.spl~ // farsight innate
               ~spwi511.spl~ ~override/cdhmpnw.spl~ // protection from normal weapons innate
-              ~sppr505.spl~ ~override/cdhmtse.spl~ // true seeing innate
-              ~spwi708.spl~ ~override/cdhmmnt.spl~ // mantle innate
+              ~spwi602.spl~ ~override/trhmgli.spl~ // Globe of Invulnerability innate
+			  ~spwi708.spl~ ~override/cdhmmnt.spl~ // mantle innate
+			  ~spwi115.spl~ ~override/cdtlsgr.spl~ // Shocking Grasp innate
+              ~sppr302.spl~ ~override/cdtlclg.spl~ // Call lightning innate
               ~spwi502.spl~ ~override/cdtlcld.spl~ // cloudkill innate
               ~spwi615.spl~ ~override/cdtlcnl.spl~ // chain lightning innate
               ~sppr720.spl~ ~override/cdtlqak.spl~ // earthquake innate
   LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
   BUT_ONLY_IF_IT_CHANGES
+
+COPY ~Divine_Remix/spl/tr#tem0.spl~ ~override/trhmatk.spl~  // 1/2 atk bonus
 
 COPY ~Divine_Remix/BAM/cdilath.bam~ ~override~
 COPY ~Divine_Remix/spl/cdltmac.spl~ ~override~  // Lathander's Mace (innate spell)
@@ -182,6 +211,16 @@ COPY_EXISTING ~cdtlsp0.itm~ ~override/cdtlsp1.itm~  // half-spear +1
   END ELSE BEGIN
     WRITE_SHORT 0x84 (3 - "%weap_idx%")
   END
+
+// Update some descriptions
+COPY_EXISTING ~spcl721.spl~ ~override~ // Storm Shield
+  SAY UNIDENTIFIED_DESC @10172
+COPY_EXISTING ~spcl731.spl~ ~override~ // Seeking Sword
+  SAY UNIDENTIFIED_DESC @10202
+COPY_EXISTING ~spcl741.spl~ ~override~ // Boon of Lathander
+  SAY UNIDENTIFIED_DESC @10191
+
+
 
 /////                                                  \\\\\
 ///// read tables to determine when spells issued      \\\\\

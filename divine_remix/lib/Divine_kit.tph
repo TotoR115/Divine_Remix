@@ -29,15 +29,16 @@ COPY ~divine_remix/spl/cdslmsd.spl~ ~override~  // Moon Shield (innate spell)
   SAY UNIDENTIFIED_DESC @10308
   SAY DESC @10308
 
+COPY ~divine_remix/spl/trslmnf.spl~ ~override~  // Moonfire (innate spell)
+  SAY NAME1 @10310
+  SAY UNIDENTIFIED_DESC @10311
+
 // change spells to innates as needed
-COPY_EXISTING ~sppr403.spl~  ~override/cdslfre.spl~ // free action (innate)
-  LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
-  BUT_ONLY_IF_IT_CHANGES
 
 // build 2da from generic ability schedule
 COPY ~divine_remix/2da/generic.2da~ ~override/cdselune.2da~
-  REPLACE_TEXTUALLY ~KITBIL1~ ~cdslfre~ // free action as 1/5
-  REPLACE_TEXTUALLY ~KITBIL2~ ~cdslmsd~ // moon shield as 1/10
+  REPLACE_TEXTUALLY ~KITBIL1~ ~cdslmsd~ // free action as 1/5
+  REPLACE_TEXTUALLY ~KITBIL2~ ~trslmnf~ // moon shield as 1/10
   PATCH_IF NOT FILE_CONTAINS_EVALUATED (~clabpr02.2da~ ~AP_CDHLYSYM~) THEN BEGIN
     REPLACE_TEXTUALLY ~AP_CDHLYSYM~ ~****       ~
   END
@@ -177,10 +178,10 @@ COPY ~divine_remix/spl/cdshar2.spl~ ~override~  // dark bolt
   SAY DESC @10622
   LPF ALTER_EFFECT INT_VAR match_opcode = 215 timing = 0 duration = 4 STR_VAR resource = SPCRTWPN END
 
-COPY ~divine_remix/bam/a#sha01.bam~ ~override~ // bams for dark bolt
+COPY ~divine_remix/bam/a#sha01.bam~ ~override~ // bams for darkbolt
      ~divine_remix/bam/a#sha02.bam~ ~override~
 
-COPY ~divine_remix/itm/cdshar2.itm~ ~override~  // dark bolt
+COPY ~divine_remix/itm/cdshar2.itm~ ~override~  // darkbolt
   WRITE_BYTE 0x18 (THIS BAND 0b11110011)
   LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 233 target = 1 parameter1 = 2 parameter2 = 109 timing = 2 END
   LPF ALTER_ITEM_HEADER INT_VAR header_type = 2 damage_type = 4 charges = 1 flag_strength = 0 END
@@ -407,7 +408,7 @@ ADD_KIT ~A#TEMP~
   ~A#TEMP		0	0	0	0	0	0~
   ~A#TEMP		0	0	0	0	17	0~
   ~A#TEMP		0	0	0	0	15	0~
-  ~A#TEMP		0	0	0	0	1	0	1	1	1~
+  ~A#TEMP		0	0	0	0	0	0	1	1	1~
   ~A#TEMP		1	0	1	1	0	1~
   ~override/a#temp.2da~
   ~K_C_H    K_C_D   K_C_G   K_C_E   K_C_HE   K_C_HL   K_C_HO~
@@ -684,11 +685,11 @@ ADD_KIT ~A#KOSS~
   ~A#KOSS		0	0	0	0	0	0~
   ~A#KOSS		0	0	0	0	17	0~
   ~A#KOSS		0	0	0	0	15	0~
-  ~A#KOSS		1	1	1	1	1	1	1	1	1~
+  ~A#KOSS		0	1	1	0	1	0	0	0	0~
   ~A#KOSS		1	0	1	1	0	1~
   ~override/a#koss.2da~
-  ~K_C_H    K_C_D   K_C_G   K_C_E   K_C_HE   K_C_HL   K_C_HO~
-  ~0x00004000	3~
+  ~K_C_G   K_C_E   K_C_HE~
+  ~0x40000000	3~
   ~Cl0~
   ~CHAN09 * HELM07 BAG20 RING06 RING21 * BOOT01 AMUL19 BRAC16 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 HAMM07 SW1H27 STAF08~
   SAY @11509
@@ -1062,7 +1063,7 @@ ADD_KIT ~NMSUNE~
   ~NMSUNE                0       0       0       1       0       0       1       1       0~
   ~NMSUNE                1       0       1       1       0       1~
   ~override/nmsune.2da~
-  ~K_C_D K_C_E K_C_G K_C_H K_C_HE K_C_HL K_C_HO~
+  ~K_C_E K_C_HE~
   ~0x00004000	3~
   ~Cl0~
   ~CHAN09 * HELM07 BAG20 RING06 RING21 * BOOT01 AMUL19 BRAC16 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 HAMM07 SW1H27 STAF08~
@@ -1218,7 +1219,7 @@ ADD_KIT ~A#FEYWARDEN~
   ~A#FEYWARDEN                0       0       0       0       0       1~
   ~A#FEYWARDEN                0       0       0       0       17      0~
   ~A#FEYWARDEN                0       0       0       0       15      0~
-  ~A#FEYWARDEN                0       0       0       1       0       0       1       1       0~
+  ~A#FEYWARDEN                1       0       1       1       0       1       1       1       0~
   ~A#FEYWARDEN                1       0       1       1       0       1~
   ~override/a#feyw.2da~
   ~K_C_E K_C_HE~

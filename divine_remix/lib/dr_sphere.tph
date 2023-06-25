@@ -10,7 +10,50 @@
 ///// Preparation		 			               	   \\\\\
 /////                                                  \\\\\
 
+/// kit modifications
 INCLUDE ~divine_remix/lib/Divine_kit_sphere.tph~
+
+// Spells and alignment
+///////////// restrict gods specific spells to specific alignements
+
+// Storm Shell (Talos)
+ACTION_IF !(IDS_OF_SYMBOL ("spell" "CLERIC_STORM_SHELL") < 0) BEGIN
+  OUTER_SET code=IDS_OF_SYMBOL ("spell" "CLERIC_STORM_SHELL") - 1000
+  OUTER_SPRINT stormshell "SPpr%code%"
+  COPY_EXISTING "%stormshell%.SPL" "override"
+	WRITE_BYTE 0x1e 0b00000100 // excusion flags: good
+END
+
+COPY_EXISTING ~SPPR301.spl~ ~override~ // animate dead
+  WRITE_BYTE 0x1e 0b00000100 // excusion flags: good
+
+// Shield and greater Shield of Lathander
+ACTION_IF !(IDS_OF_SYMBOL ("spell" "CLERIC_SHIELD_OF_LATHANDER") < 0) BEGIN
+  OUTER_SET code=IDS_OF_SYMBOL ("spell" "CLERIC_SHIELD_OF_LATHANDER") - 1000
+  OUTER_SPRINT lathander "SPpr%code%"
+END ELSE OUTER_SPRINT lathander ""
+ACTION_IF !(IDS_OF_SYMBOL ("spell" "CLERIC_GREATER_SHIELD_OF_LATHANDER") < 0) BEGIN
+  OUTER_SET code=IDS_OF_SYMBOL ("spell" "CLERIC_GREATER_SHIELD_OF_LATHANDER") - 1000
+  OUTER_SPRINT glathander "SPpr%code%"
+END ELSE OUTER_SPRINT glathander ""
+COPY_EXISTING ~%lathander%.SPL~ ~override~
+			  ~%glathander%.SPL~ ~override~
+  WRITE_BYTE 0x1e 0b00000010 // excusion flags: evil
+BUT_ONLY IF_EXISTS
+
+// Moon spells from Selûne
+ACTION_IF !(IDS_OF_SYMBOL ("spell" "CLERIC_MOONBLADE") < 0) BEGIN
+  OUTER_SET code=IDS_OF_SYMBOL ("spell" "CLERIC_MOONBLADE") - 1000
+  OUTER_SPRINT moonbl "SPpr%code%"
+END ELSE OUTER_SPRINT moonbl ""
+ACTION_IF !(IDS_OF_SYMBOL ("spell" "CLERIC_WALL_OF_MOONLIGHT") < 0) BEGIN
+  OUTER_SET code=IDS_OF_SYMBOL ("spell" "CLERIC_WALL_OF_MOONLIGHT") - 1000
+  OUTER_SPRINT moonwall "SPpr%code%"
+END ELSE OUTER_SPRINT moonwall ""
+COPY_EXISTING ~%moonbl%.SPL~ ~override~
+			  ~%moonwall%.SPL~ ~override~
+  WRITE_BYTE 0x1e 0b00010010 // excusion flags: evil
+BUT_ONLY IF_EXISTS
 
 /////                                                  \\\\\
 ///// create sphere framework                          \\\\\

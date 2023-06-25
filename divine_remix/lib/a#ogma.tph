@@ -1,7 +1,9 @@
 COPY ~divine_remix/2da/a#ogma.2da~ ~override~
 
 // change spells to innates as needed
-COPY_EXISTING ~spwi419.spl~ ~override/a#og07.spl~ // secret word
+COPY_EXISTING ~spwi110.spl~ ~override/a#og03.spl~ // Identify
+              ~spwi107.spl~ ~override/a#og05.spl~ // Friends
+              ~spwi419.spl~ ~override/a#og07.spl~ // secret word
               ~spwi515.spl~ ~override/a#og09.spl~ // oracle
               ~spwi612.spl~ ~override/a#og11.spl~ // power word silence
               ~spwi704.spl~ ~override/a#og14.spl~ // ruby ray of reversal

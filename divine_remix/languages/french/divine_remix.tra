@@ -8,9 +8,10 @@
 
 @101 = ~Vous ne pouvez pas lancer ce sort jusqu'à ce que l'enchantement précédemment lancé se dissipe.~
 
-@112 = ~Lueur féérique~
-@113 = ~Lueur féérique 
+@112 = ~Lueur Féérique~
+@113 = ~Lueur Féérique 
 (Évocation)
+
 Niveau : 1
 Sphère : Climat
 Portée : champ de vision du lanceur
@@ -22,6 +23,7 @@ Jet de sauvegarde : Aucun
 Ce sort crée une pâle lueur qui entoure la cible, signalant sa position et la rendant plus visible, lui infligeant un malus de -2 à la classe d'armure.~
 @114 = ~Pierres Magiques 
 (Enchantement)
+
 Niveau : 1
 Sphère : combat
 Portée : 0
@@ -34,6 +36,7 @@ En utilisant ce sort, le prêtre peut temporairement enchanter jusqu'à trois cail
 @118 =~Créées par le sort de Pierre magique. Elles infligent 1d4 points de dégâts plus 1d4 contre les morts-vivants.~
 @115 = ~Injonction 
 (Enchantement/Charme)
+
 Niveau : 1
 Sphère : charme, Combat, Loi
 Portée : 30 mètres
@@ -46,6 +49,7 @@ Ce sort permet au prêtre d’enjoindre à une créature humanoïde de  "mourir" (dorm
 @116 = ~Directive~
 @117 = ~Directive
 (Enchantement / Charme)
+
 Niveau : 5
 Sphère : Charme, Loi
 Portée : Champ visuel du lanceur
@@ -57,6 +61,7 @@ Jet de sauvegarde : Annule
 Comme pour le sort de premier niveau ‘Injonction’, ce sort permet au prêtre d’ordonner à des créatures humanoïde de « mourir » (sommeil). Celles-ci lui obéissent au mieux de leurs capacités dans la mesure où l'injonction est formulée dans une langue qu'elles comprennent, et qu'elle est claire et sans équivoque. Cet Ordre Majeur dure 1 round par niveau. A la fin du dernier round, les créatures s’éveillent sans aucune séquelle. La zone d’effet est similaire à celle d’un Nuage Puant ou d’une Boule de Feu.~
 @123 = ~Lame enflammée 
 (Évocation)
+
 Niveau : 2
 Sphère : élémentaire de feu
 Portée : 0
@@ -68,6 +73,7 @@ Jet de sauvegarde : aucun
 Ce sort permet au jeteur de sorts de faire surgir de sa main un rayon de feu brûlant qui a la forme d'une lame et qu'il peut manier comme un cimeterre. Il inflige 1d4 + 4 points de dégâts de feu, et +2 points de dégâts de feu supplémentaire contre les morts-vivants. Cette arme n’est pas considérée comme magique.~
 @124 = ~Baie magique
 (Altération, Évocation)
+
 Niveau : 2
 Sphère : végétale
 Portée : toucher
@@ -81,6 +87,7 @@ Ce sort crée 8 baies magiques. Pour chaque baie mangée, 1 point de vie est récup
 
 @125 = ~Guérison des maladies 
 (Abjuration)
+
 Niveau : 3
 Sphère : Guérison
 Portée : Contact
@@ -92,6 +99,7 @@ Jet de sauvegarde : Aucun
 En imposant les mains sur une personne souffrante, le lanceur de ce sort peut guérir presque toutes les maladies connues. La guérison est permanente mais n'accorde pas à son bénéficiaire une quelconque immunité magique contre de futures affections. Ce sort annule également l'effet d'un sort de débilité mentale. Certaines maladies magiques ne sont pas sujettes à ce sort.~
 @126 = ~Colonne de feu 
 (Évocation)
+
 Niveau : 5
 Sphère : combat
 Portée : champ visuel du lanceur
@@ -105,6 +113,7 @@ Lorsque le prêtre lance ce sort, une colonne de feu verticale tombe en grondant 
 @166 = ~Carapace Divine~
 @167 = ~Carapace Divine 
 (Abjuration)
+
 Niveau : 6
 Sphère : Chaos
 Portée : Lanceur du sort
@@ -116,6 +125,7 @@ Jet de sauvegarde : Aucun
 Ce sort enveloppe le lanceur d'une carapace formée d'énergie qui bloque ou dévie la plupart des attaques. Le lanceur reçoit un bonus de 2 à la classe d'armure et aux jets de sauvegarde, 10 % de résistance aux dégâts élémentaires (froid, feu, électricité et acide) ainsi qu'une immunité aux projectiles non-magiques.~
 @168 = ~Ordres chaotiques 
 (Enchantement/Charme)
+
 Niveau : 5
 Sphère : Chaos
 Portée : champ visuel du lanceur
@@ -129,6 +139,7 @@ Ce sort immunise la cible contre les ordres magiques, comme Suggestion, Charme, 
 @171 = ~Esprit inexpugnable~
 @172 = ~Esprit inexpugnable 
 (Enchantement/Charme)
+
 Niveau : 5
 Sphère : Protection, Pensée
 Portée : contact
@@ -141,6 +152,7 @@ Ce sortilège protège la cible contre les attaques magiques ou psioniques affecta
 @173 = ~Résistance à l'Acide et à la Corrosion~
 @174 = ~Résistance à l'Acide et à la Corrosion 
 (Abjuration)
+
 Niveau : 2
 Sphère : Protection
 Portée : contact
@@ -153,6 +165,7 @@ Ce sortilège offre à la cible une meilleure protection contre l'acide et les sub
 @175 = ~Force de la Pierre~
 @176 = ~Force de la Pierre 
 (Invocation/Évocation)
+
 Niveau : 1
 Sphère : Élémentaire (terre)
 Portée : Contact
@@ -164,6 +177,7 @@ Jet de sauvegarde : Aucun
 Ce sort offre à la cible une force surnaturelle. En pratique, la force est augmentée jusqu'à 15+1d4 (15+4 donnant 18/50, et pas 19). Si la force du sujet est de 17 ou plus, il est possible que sa force soit diminuée.~
 @1761 = ~Force de la Pierre 
 (Invocation/Évocation)
+
 Niveau : 1
 Sphère : Élémentaire (terre)
 Portée : Contact
@@ -181,6 +195,7 @@ Grâce à son intime connaissance de son environnement et des créatures qui y vive
 @179 = ~Guérison de la cécité/surdité~
 @180 = ~Guérison de la cécité/surdité 
 (Abjuration)
+
 Niveau : 3
 Sphère : Soins
 Portée : contact
@@ -193,6 +208,7 @@ Par simple contact, le prêtre peut soigner certaines formes de cécité ou de surd
 @181 = ~Cécité/Surdité~
 @182 = ~Cécité/Surdité 
 (Abjuration)
+
 Niveau : 3
 Sphère : Soins
 Portée : contact
@@ -207,6 +223,7 @@ Une créature assourdie a 50 % de chances d'échouer à incanter ses sorts. Une cré
 @184 = ~Maladie~
 @185 = ~Maladie 
 (Abjuration)
+
 Niveau : 3
 Sphère : Guérison
 Portée : contact
@@ -219,6 +236,7 @@ Ce sort inocule l'une de deux formes de maladie à la victime (50 % de chances ch
 @194 = ~Détection du Bien~
 @195 = ~Détection du Bien 
 (Divination)
+
 Niveau : 1
 Sphère : Divination
 Portée : champ visuel du lanceur
@@ -231,6 +249,7 @@ Ce sort permet de découvrir l'aura de Bien de n'importe quelle créature. Toute c
 @196 = ~Protection contre le Bien~
 @197 = ~Protection contre le Bien 
 (Abjuration)
+
 Niveau : 1
 Sphère : Protection
 Portée : contact
@@ -243,6 +262,7 @@ Grâce à ce sort, une barrière magique se crée autour de la cible à 30 cm de dist
 @198 = ~Protection contre le Bien sur 3 mètres~
 @199 = ~Protection contre le Bien sur 3 mètres 
 (Abjuration)
+
 Niveau : 4
 Sphère : Protection
 Portée : contact
@@ -257,6 +277,7 @@ Lorsque le prêtre lance ce sort, toutes les créatures se trouvant à moins de 3 m
 @202 = ~Protection Contre le Chaos~
 @203 = ~Protection Contre le Chaos
 (Abjuration)
+
 Niveau : 1
 Sphère : Protection
 Portée : contact
@@ -270,6 +291,7 @@ Grâce à ce sort, une barrière magique se crée autour de la cible à 30 cm de dist
 @204 = ~Blessures intermédiaire~
 @205 = ~Blessures intermédiaire
 (Nécromancie)
+
 Niveau : 3
 Sphère : Guérison
 Portée : contact
@@ -282,6 +304,7 @@ Ce sort est l'inverse du sort de Soins des blessures moyennes. Au lieu de guérir
 @206 =~Blessures légères~
 @207 =~Blessures légères 
 (Nécromancie)
+
 Niveau : 1
 Sphère : Guérison
 Portée : contact
@@ -293,6 +316,7 @@ Jet de sauvegarde : Aucun
 Ce sort est l'inverse du sort de Soins des blessures légères. Au lieu de guérir la créature touchée, elle la blesse. Sur un jet d'attaque de contact réussi du prêtre, ce sort inflige 8 points de dégâts à la victime. Après avoir lancé le sort, l'attaque suivante que porte le prêtre inflige cet effet, mais il doit la porter au plus tard deux rounds après avoir lancé le sort sinon celui-ci se dissipe. Si l'attaque échoue, le sort est quand même consumé. Aucun jet de sauvegarde ne permet de se protéger contre ce sortilège.~
 @208 =~Mise à Mort
 (Nécromancie)
+
 Niveau : 5
 Sphère : Nécromancie
 Portée : Toucher
@@ -304,6 +328,7 @@ Jet de sauvegarde : Spécial
 Lorsqu’il lance ce sort, le prêtre doit toucher son adversaire afin de préparer les effets à venir. Un objet est alors créé et l’attaque suivante doit être faite par le prêtre avec cet objet dans les 3 rounds. Si la première attaque échoue, l’objet disparaît et le sort est perdu. Par contre, si l’attaque est réussie, la victime reçoit automatiquement 2d8+1 points de dégats. De plus, elle doit réussir un jet de sauvegarde contre la mort ou être instantanément tuée. Ce sort ne peut être dissipé qu’entre son incantation et l’attaque nécessaire à ses effets.~
 @209 =~Absorption d’énergie
 (Nécromancie)
+
 Niveau : 7
 Sphère : Nécromancie
 Portée : Toucher
@@ -316,6 +341,7 @@ Ce sort ouvre un canal entre le Plan du lanceur et le plan Matériel Négatif. Sur
 @210 =~Destruction~
 @211 =~Destruction
 (Nécromancie)
+
 Niveau : 7
 Sphère : Nécromancie
 Portée : Toucher
@@ -328,6 +354,7 @@ Lorsqu’il lance ce sort, le prêtre doit toucher son adversaire afin de préparer 
 @212 =~flétrissure~
 @213 =~flétrissure
 (Nécromancie)
+
 Niveau : 7
 Sphère : Guérison
 Portée : Toucher
@@ -340,6 +367,7 @@ Ce sort est l'inverse du sort de régénération. Au lieu de guérir la créature tou
 
 @214 = ~Convocation d'Élémentaire d'Air 
 (Conjuration/Convocation)
+
 Sphère : Élémentaire (air)
 Niveau : 7
 Portée : champ visuel du lanceur
@@ -351,6 +379,7 @@ Jet de sauvegarde : Aucun
 Ce sort ouvre un portail vers le plan élémentaire de l'Air, invoquant un élémentaire d'air au voisinage du jeteur de sorts. Il y a 60 % de chances qu'un élémentaire de 12 dés de vie apparaisse, 35 % qu'un élémentaire de 16 dés de vie réponde à l'appel et 5 % qu'un élémentaire de 24 dés de vie vienne faire le ménage. Ce sort requiert une concentration intense après l'incantation afin d'implanter le contrôle, et ce pendant 3 rounds (il y a 15 % de chances de perdre le contrôle). Cependant, à la fin de cette période, l'élémentaire sera aux ordres du lanceur jusqu'à la fin de la durée du sortilège ou son trépas. Tous les ordres donnés à la créature le sont par télépathie, ce qui élimine les pertes de temps dues à des problèmes de compréhension ainsi que le besoin de connaître le langage de la créature.~
 @215 = ~Absorption d'énergie 
 (Nécromancie)
+
 Niveau : 7
 Sphère : Nécromancie
 Portée : contact
@@ -362,6 +391,7 @@ Jet de sauvegarde : Aucun
 Ce sort ouvre un canal entre le Plan du lanceur et le Plan de l'Énergie Négative. Le lanceur devient alors un conduit entre ces plans, absorbant l'énergie de la victime et la transférant dans le Plan Négatif, lui drainant ainsi 2 niveaux d'expérience. La cible perd ses niveaux et toutes les capacités associées, définitivement. Seul le sort de prêtre Restauration peut les lui faire récupérer.~
 @216 = ~Conjuration d'Animaux
 (Conjuration / Convocation)
+
 Niveau : 6
 Sphère : Convocation
 Portée : 30 mètres
@@ -376,6 +406,7 @@ Ce sort permet de convoquer et de contrôler deux animaux. Le nombre de Dés de Vi
 
 @249 = ~Amitié avec les animaux
 (Enchantement/Charme)
+
 Niveau : 1
 Sphère : Animale
 Portée : 10 mètres
@@ -394,6 +425,7 @@ Notez aussi que vous ne pouvez faire quitter à la créature la zone dans laquelle
 @250 = ~Abjuration~
 @251 = ~Abjuration
 (Abjuration)
+
 Niveau : 4
 Sphère : Convocation
 Portée : champ visuel du lanceur
@@ -405,12 +437,13 @@ Jet de sauvegarde : Annule
 Lorsqu’un sort d'abjuration est lancé, si la créature ciblée a été invoquée, elle est immédiatement tuée ; si celle-ci est une créature extra-planaire, elle doit réussir un jet de sauvegarde contre les sorts ou être immédiatement renvoyée dans son plan d'origine sans pouvoir en revenir par ses propres moyens. Ce sort fonctionne donc sur un génie, mais pas sur un ogre ou une dryade qui n'ont pas été invoqués.~
 @252 = ~Parole sacrée
 (Convocation/Conjuration)
+
 Niveau : 7
 Sphère : Combat
 Portée : 0
 Durée : Spéciale
 Temps d’incantation : 1
-Zone d’effet : Rayon de 10 m
+Zone d'effet : Rayon de 10 m
 Jet de Sauvegarde : Non
 
 Prononcer une Parole sacrée crée une magie à la puissance destructrice. Le prêtre agit comme un lien entre son dieu et le Plan Primaire Matériel, ce qui cause une petite explosion centrée sur le prêtre, atteignant un rayon de 10 m. Ce sort affecte les créatures invoqués qui sont immédiarements tuées et les créatures mauvaises ou d’alignement mauvais. Les effets changent avec le niveau de la cible :
@@ -423,12 +456,13 @@ Moins de 4 DV : Mort
 Il n’y a pas de Jet de Sauvegarde contre ce sort ; les effets sont instantanés et durent jusqu’à expiration ou Dissipation. Ce sort ne peut être lancé par des prêtres d’alignement mauvais.~
 @253 = ~Parole Infernale 
 (Conjuration/Convocation)
+
 Niveau : 7
 Sphère : Combat
 Portée : 0
 Durée : Spéciale
 Temps d’incantation : 1
-Zone d’effet : 10 mètres de rayon
+Zone d'effet : 10 mètres de rayon
 Jet de sauvegarde : Aucun
 
 Prononcer une parole infernale crée une forme de magie d’une puissance colossale. Le prêtre agit comme un pont entre son dieu et le plan matériel primaire causant ainsi une explosion d’un rayon de 10 mètres autour du lanceur. Ce sort affecte les créatures invoqués qui sont immédiarements tuées et les créatures d’alignement bon se trouvant dans la zone d’effet de la parole infernale. Les effets diffèrent en fonction du niveau de la victime du sort :
@@ -442,6 +476,7 @@ Aucun jet de sauvegarde n’est applicable contre ce sort. Ses effets sont instant
 @254 = ~Pyrotechnie~
 @255 = ~Pyrotechnie
 (Altération)
+
 Niveau : 3
 Sphère : Élémentaire (feu)
 Portée : champ visuel du lanceur
@@ -454,6 +489,7 @@ Lorsqu’un sort de Pyrotechnie est lancé, les créatures présentes dans la zone d'
 @256 = ~Croissance Animale~
 @257 = ~Croissance Animale
 (Altération)
+
 Niveau : 5
 Sphère : Animale
 Portée: champ visuel du lanceur
@@ -466,6 +502,7 @@ Grâce à ce sort, le lanceur de sort peut choisir de faire atteindre à tous les a
 @258 = ~Production de glace~
 @259 = ~Production de glace
 (Invocation)
+
 Niveau : 5
 Sphère : Élémentaire (Eau)
 Portée: champ visuel du lanceur
@@ -476,7 +513,8 @@ Jet de sauvegarde : Special
 
 Ce sort génère un grand froid dans la zone d'effet qui inflige 2d4 points de dégâts, plus 1 point par niveau de dégats de froid (jusqu'a un maximum de 2d4 +20) et ralenti les créatures présentes dans la zone d'effet durant 4 rounds/Niveau. un jet de sauvegarde réussi contre les sorts réduit les dégats de moitié et évite le relentissement.~
 @260 = ~Mur de Feu
-(Conjuration)
+(Conjuration/Convocation)
+
 Niveau : 5
 Sphère : Élémentaire (feu)
 Portée: champ visuel du lanceur
@@ -488,19 +526,21 @@ Jet de sauvegarde : Aucun
 Ce sort crée un rideau immobile de feu magique. le mur inflige 4d4 points de dégâts plus 1 point par niveau du prêtre à toute créature qui le traverse (jusqu'a un maximum de 4d4 +20). Les créatures particulièrement sensibles au feu peuvent encaisser des dégâts supérieurs, et les morts-vivants encaissent toujours des dégâts doubles.~
 @261 = ~Esprit Loup~
 @262 = ~Esprit Loup
-(Conjuration / Convocation)
+(Conjuration/Convocation)
+
 Niveau : 7
 Sphère : Animale
 Portée : 60 mètres
 Durée : 4 tours
 Temps d'incantation : 9
-Zone d’effet : Spéciale
+Zone d'effet : Spéciale
 Jet de sauvegarde : Aucun
 
 Ce sort permet de convoquer et de contrôleur 4 Esprit Loups. Ils répondront aux désirs du lanceur de sort pendant toute la durée du sort et sont immusnisés à toutes les formes de contrôle mental, aux illusions, paralysation at aux sorts qui affect seulement les créatures physiques. Ces Esprit ne peuvent être blessés par des armes avec un enchantement inférieur à +2.~
 @263 = ~Bonne Fortune~
 @264 = ~Bonne Fortune
 (Altération)
+
 Niveau : 1
 Sphère : Chaos
 Portée: champ visuel du lanceur
@@ -520,47 +560,53 @@ Bonne fortune confère de la chance à une créature engagée dans un combat. Plus l
 6	Une attaque suplémentaire plus bonus sur le toucher ou les dégats~
 @265 = ~Masse d'adamantite~
 @266 = ~Masse d'adamantite
+(Altération)
+
 Niveau : 4
 Sphère : Élémentaire (terre)
 Portée : Lanceur de Sort
 Durée : 1 round/niveau
 Temps d’incantation : 1
-Zone d’effet : spéciale
+Zone d'effet : spéciale
 Jet de sauvegarde : Aucun
 
 Ce sort permet au jeteur de sorts de faire surgir de sa main une arme enchantée faite d'adamantite, le plus puissant des alliages qui soit. La masse d'adamantite bénéficie d'un bonus de +2 aux jets d'attaque et aux dégâts, mais elle est capable d'atteindre normalement les créatures qui ne sont normalement touchées que par les armes au moins +4. Elle cause 2D4 + 2 points de dégats et incarnant la puissance de l'élément terre, elle inflige 2D4 + 2 dégâts supplémentaire aux créatures de l'élément air et aux créatures volantes d'origine surnaturelle, comme les griffons, pérytons, pégases et autres baate-zus ou tanar'ris ailés. Elle conserve ses pouvoirs pendant 1 round/niveau du prêtre.~
 @267 = ~Injonction suprême~
 @268 = ~Injonction suprême
+(Enchantement/Charme)
+
 Niveau : 6
 Sphère : charme
 Portée : 60 mètres
 Durée : 1 round/2 niveau
 Temps d’incantation : 1
-Zone d’effet : 1 créature
+Zone d'effet : 1 créature
 Jet de sauvegarde : Annule
 
 Ce sort permet au prêtre d’enjoindre à n'importe quelle créature de  "mourir" (dormir) pendant un round. Celle-ci lui obéit au mieux de ses capacités dans la mesure où l'injonction est formulée dans une langue qu'elle comprend, et qu'elle est claire et sans équivoque. A la fin du dernier round, elle se réveille, indemne. Les créatures ont le droit de faire un jet de sauvegarde contre le sort pour échapper à ses effets.~
 @269 = ~Flammes~
 @270 = ~Flammes
 (Altération)
+
 Niveau : 2
 Sphère : Élémentaire (Feu)
 Portée : 40 mètres
 Durée : 1 round/niveau
 Temps d’incantation : 5
-Zone d’effet : spéciale
+Zone d'effet : spéciale
 Jet de sauvegarde : Aucun
 
 Lorsque le prêtre lance ce sort, une flamme vive d'une intensité comparable à celle d'une torche jaillit de la paume de sa main. Elle ne lui cause aucun dégât, mais elle est réellement chaude et peut mettre le feu à des matériaux inflammables. Le prêtre peut projeter cette flamme magique à une portée de 40 mètres. Toute créature touchée subit 1d4+1 points de dégâts de feu. Ce dernier peut lancer un maximum d'une flamme par niveau d'expérience possédé, mais pas plus d'une par round.~
 @271 = ~Malédiction~
 @272 = ~Malédiction
 (Abjuration)
+
 Niveau : 3
 Sphère : Protection
 Portée : Contact
 Durée : 1 round/niveau
 Temps d’incantation : 6
-Zone d’effet : 1 créature
+Zone d'effet : 1 créature
 Jet de sauvegarde : Annule
 
 Lorsque le prêtre lance ce sort, Il doit touché sa victime qui est alors soumis a une malédiction si elle rate un jet de sauvegarde contre les sorts. La malédiction ne peut pas être magiquement dissipée, elle dure un tour par niveau d'expérience du prêtre qui la lance et elle provoque l'un des effets suivants :
@@ -570,6 +616,7 @@ Lorsque le prêtre lance ce sort, Il doit touché sa victime qui est alors soumis 
 @273 = ~Invocation d'esprit animalier~
 @274 = ~Invocation d'esprit animalier
 (Nécromancie)
+
 Niveau : 3
 Sphère : Conjuration
 Portée : 30 mètres
@@ -583,6 +630,7 @@ L'esprit animalier est capable d'attaquer normalement les créatures uniquement t
 @275 = ~Détection des collets et des fosses~
 @276 = ~Détection des collets et des fosses
 (Divination)
+
 Niveau : 1
 Sphère : Végétal
 Portée : Lanceur de sorts
@@ -595,6 +643,7 @@ Ce sort permet au prêtre de détecter les collets, les fosses, les précipices et 
 @277 = ~Insectes Géants~
 @278 = ~Insectes Géants
 (Altération)
+
 Niveau : 4
 Sphère : Animale
 Portée : 20 mètres
@@ -615,6 +664,7 @@ Les insectes géants restent sous le contrôle du lanceur de sorts jusqu'à expirat
 @283 = ~Poing aqueux~
 @284 = ~Poing aqueux
 (Conjuration / Convocation)
+
 Niveau : 2
 Sphère : Élémentaire (Eau)
 Portée : 60 mètres
@@ -629,6 +679,7 @@ Le poing est incapable de manipuler quoi que ce soit, mais il peut par contre dé
 @285 = ~Symbole, Douleur~
 @286 = ~Symbole, Douleur
 (Conjuration)
+
 Niveau : 7
 Sphère : Garde
 Portée : 25 mètres
@@ -641,6 +692,7 @@ Le Symbole, Douleur est un puissant enchantement permettant au prêtre d’inscrire
 @287 = ~Symbole, Découragement ~
 @288 = ~Symbol, Découragement 
 (Conjuration)
+
 Niveau : 7
 Sphère : Garde
 Portée : 25 mètres
@@ -653,6 +705,7 @@ Le Symbole, Découragement est un puissant enchantement permettant au prêtre d’in
 @289 = ~Symbole, Persuasion~
 @290 = ~Symbole, Persuasion
 (Conjuration)
+
 Niveau : 7
 Sphère : Garde
 Portée : 25 mètres
@@ -662,22 +715,52 @@ Zone d’effet : Spéciale
 Jet de sauvegarde : Annule
 
 Le Symbole, Persuasion est un puissant enchantement permettant au prêtre d’inscrire ce symbole sur le sol ou sur toute autre surface. Il restera là jusqu’à ce que quelqu’un s’en approche suffisamment puis explosera, affectant tous ceux qui sont situés dans sa zone d’effet n’ayant pas réussi un jet de sauvegarde contre les sorts par le même effet que charme personne pendant 2 rounds + un nombre de rounds égal au niveau du prêtre divisé par 3.~
-@291 = ~Obscuring Mist~
-@292 = ~Obscuring Mist
-(Conjuration/Summoning)
-Level: 1
-Sphere: Weather
-Range: 30 ft.
-Duration: 6 rounds
-Casting Time: 5
-Area of Effect: 20-ft. radius
-Saving Throw: None
+@291 = ~Dissipation de la fatigue~
+@292 = ~Dissipation de la fatigue
+(Necromancy)
 
-When this spell is cast, a misty bank of fog billows out from the designated point obscuring all sight. Everyone within the cloud suffer -2 penalty to attack rolls, and have their line of sight halved. Anyone, inside or outside the cloud, trying to attack a creature concealed by the fog with ranged weapons will do so with a -4 penalty to attack rolls.~
+Niveau : 1
+Sphère : Nécromancie
+Portée : 30 m
+Durée : Instantanée
+Temps d'incantation : 4
+Zone d'effet : 1 créature
+Jet de sauvegarde : Aucun
+
+Ce sort fait disparaître les effets de la fatigue ou de l'épuisement. Le bénéficiaire retrouve aussitôt son état normal, comme s'il venait de se reposer. Dissipation de la fatigue peut être utilisé pour contrer les rigueurs de la marche forcée, d'une séance de natation prolongée ou d'une course plus ou moins longue ou rapide. Il fait également disparaître les points de fatigue accumulés. 
+Une fois le sort lancé, le bénéficiaire peut instantanément recommencer à accumuler des points de fatigue s'il déploie des efforts importants.~
+@293 = ~Invoquer la foi~
+@294 = ~Invoquer la foi
+(Invocation/Évocation)
+
+Niveau : 1
+Sphère : Conjuration
+Portée : Lanceur de sorts
+Durée : 2 rounds
+Temps d'incantation : 1
+Zone d'effet : Lanceur de sorts
+Jet de sauvegarde : Aucun
+
+Avant de tenter une tâche difficile, le prêtre peut invoquer la foi pour l'aider dans son action. Il gagne un bonus de +3 sur tous ses jet de dé nécessaire pour accomplir sa tâche. Le bonus est utilisé pour affecter un jet de sauvegarde, un jet d'attaque, etc.~
+@295 = ~Armure des ténèbres~
+@296 = ~Armure des ténèbres
+(Altération)
+
+Niveau : 3
+Sphère : Soleil
+Portée : Contact
+Durée : 2 tours
+Temps d'incantation : 6
+Zone d'effet : 1 créature
+Jet de sauvegarde : Aucun
+
+Ce sort crée un linceul scintillant de ténèbres autour du lanceur ou d'une créature touchée. Il améliore la classe d'armure du porteur de 2 points et réduit tous les dégâts non magiques subis par le porteur de 5 %. Si le lanceur est de niveau 12 ou plus, La classe d'armure du porteur est améliorée de 3 points et réduit tous les dégâts non magiques subis par le porteur de 10 %.
+Ce sort confère également l'infravision et une immunité aux effets d'aveuglement et de charme.~
 
 @401 = ~Convocation de monstres IV~
 @402 = ~Convocation de monstres IV 
 (Conjuration/Convocation)
+
 Niveau : 6
 Portée : 40 mètres
 Durée : 7 rounds + 1 round/niveau
@@ -688,6 +771,7 @@ Jet de sauvegarde : aucun
 Ce sort ressemble beaucoup au sort de convocation de monstres I de 3ème niveau, mais il convoque l’équivalent de 24 DV de monstres. Il y a 60 % de chances de convoquer 1 monstre et 40 % de chances d’en convoquer 2. Ces derniers apparaissent dans la portée du sort et attaquent les adversaires du jeteur de sorts, jusqu’à ce que le sort arrive à expiration ou jusqu’à ce qu’ils se fassent tuer.~
 @403 = ~Appel de la Wiverne 
 (Conjuration/Convocation)
+
 Niveau : 6
 Portée : 30 m
 Durée : 6rounds + 1 round par niveau
@@ -810,8 +894,18 @@ BOUCLIER DES TEMPÊTEs : ce sort dure 1 round par niveau du lanceur de sorts. Il 
 
 Désavantages :
 - Alignement restreint à neutre mauvais, chaotique mauvais, et chaotique neutre.~
+@10191 = ~Bouclier des Tempêtes
+(Abjuration)
 
+Niveau : 3
+Sphère : Protection, 
+Portée : contact
+Durée : 1 round/niveau
+Temps d'incantation : 3
+Zone d'effet : Lanceur de sorts
+Jet de sauvegarde : aucun
 
+Ce sort crée une barrière d'air solide qui protège complètement le lanceur de la foudre, du feu, du froid et des projectiles normaux. Cette capacité dure 1 round par niveau du lanceur de sorts. Un Bouclier des Tempêtes ne dévie que les missiles normaux ; une épée ou une autre arme peut être enfoncée à travers le bouclier sans effet sur le bouclier ni sur l'attaque.~
 @10176 = ~Esquive
 Les prêtres les plus puissants peuvent faire appel à leur divinité pour les protéger du danger, et éviter les attaques. Cette faculté donne un bonus de 4 à la CA et de +2 à tous ses jets de sauvegarde. Cet effet dure 3 rounds.~
 @10177 = ~SEIGNEUR DES TEMPÊTES DE TALOS : Talos est le dieu maléfique des tempêtes, de la destruction et de la rébellion. Ses prêtres affirment que Talos doit être apaisé ou il sèmera la destruction sur la terre.
@@ -822,9 +916,11 @@ la demi-pique est l'arme spirituelle des Seigneurs des Tempêtes de Talos, et se 
 - Résistance innée à l'électricité, 1 % par niveau.
 - 'Coup destructeur' une fois par jour.
 COUP DESTRUCTEUR : une fois par jour, un Seigneur des Tempêtes peut concentrer la fureur de Talos au combat. Ce sort lui confère des bonus de +2 aux jets d'attaque et de dégâts pendant un round par niveau (20 rounds maximum).
-- 'Bouclier des Tempêtes' une fois par jour au niveau 7.
+- 'Poigne électrique' une fois par jour (comme le sort de mage de niveau 1).
+- 'Appel de la foudre' une fois par jour au niveau 3 (comme le sort de druide de niveau 5).
+- 'Bouclier des Tempêtes' une fois par jour au niveau 5.
 BOUCLIER DES TEMPÊTES : ce sort dure 6 secondes par niveau du lanceur. Il permet au prêtre de se protéger contre l'électricité, le feu, le froid et les projectiles normaux.
-- 'Nuage Mortel' une fois par jour au niveau 9 (comme le sort de mage de niveau 5).
+- 'Éclair' une fois une fois par jour au niveau 7 et tous les trois niveaux (comme le sort de mage de niveau 3).
 - 'Chaîne d'Éclairs' une fois par jour au niveau 11 (comme le sort de mage de niveau 6).
 - 'Tremblement de Terre' une fois par jour au niveau 14 (comme le sort de prêtre de niveau 7).
 
@@ -835,11 +931,12 @@ Désavantages :
 Capacités :
 - Arme spirituelle : masse - 'Oraison de l'Aube' une fois par jour.
 cette masse est l'arme spirituelle des Seigneurs de l'Aube de Lathandre. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
-- 'Don de Lathandre' tous les 10 niveaux (une utilisation au 1er niveau).
+- 'Lueur féérique' trois fois par jour à partir du niveau 3 (comme le sort de prêtre de niveau 1).
+- 'Immobilisation des Morts-Vivants' une fois par jour à partir du niveau 5 (comme le sort de mage de niveau 3).
+- 'Don de Lathandre' une fois par jour à partir du niveau 7.
 DON DE LATHANDRE : ce sort dure 6 secondes par niveau du lanceur. Il lui procure un bonus de +1 au toucher, aux dégâts et aux jets de sauvegarde, et lui confère une attaque supplémentaire par round. Il le protège aussi du drain de niveau.
-- 'Immobilisation des Morts-Vivants' une fois par jour à partir du niveau 7 (comme le sort de mage de niveau 3).
-- 'Colonne de Feu' une fois par jour à partir du niveau 9 (comme le sort de prêtre de niveau 5).
-- 'Guérison' une fois par jour à partir du niveau 11 (comme le sort de prêtre de niveau 6).
+- 'Aube illusoire' une fois par jour à partir du niveau 9 (comme le sort de prêtre de niveau 6).
+- 'Rappel à la vie' une fois par jour à partir du niveau 11 (comme le sort de prêtre de niveau 5).
 - 'Restauration Majeure' une fois par jour à partir du niveau 14 (comme le sort de prêtre de niveau 7).
 
 Désavantages :
@@ -893,6 +990,18 @@ PARAMÈTRES :
 @10188 = ~Seigneur des Tempêtes de Talos~
 @10189 = ~Sentinelle de Heaum~
 @10190 = ~Seigneur de l'Aube de Lathandre~
+@10191 = ~Don de Lathandre
+(Conjuration/Convocation)
+
+Niveau : 4
+Sphère : Combat
+Portée : contact
+Durée : 1 round/niveau
+Temps d'incantation : 3
+Zone d'effet : Lanceur de sorts
+Jet de sauvegarde : aucun
+
+Cette capacité dure 1 round par niveau du lanceur de sorts. Il confère au lanceur de sorts un bonus de +1 aux jets d'attaque et de dégâts, un bonus de +1 à tous les jets de sauvegarde et 1 attaque supplémentaire par round. Il protège également le lanceur de sorts de la perte de niveau.~
 @10192 = ~Renouveau de Lathandre~
 @10193 = ~Accordé aux Seigneurs de l'Aube de Lathandre les plus puissants, ce sort permet de soigner tous les membres du groupe et de les guérir de tous les effets suivants : drain de niveau, maladie, confusion, cécité, surdité et débilité mentale. Le groupe acquiert en outre une régénération correspondant à un point de vie par seconde pendant 20 rounds.~
 @10194 = ~SENTINELLE DE HEAUM : les fidèles du dieu neutre des Sentinelles et des Protecteurs sont des guerriers à part entière. Ils sont souvent considérés comme les défenseurs des innocents.
@@ -900,16 +1009,45 @@ PARAMÈTRES :
 Capacités :
 - Arme spirituelle : épée bâtarde - 'Éternelle Vigilance' une fois par jour.
 cette épée bâtarde est l'arme spirituelle des Vigilants de Heaum. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25, et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
-- 'Glyphe de Garde' une fois par jour, comme le sort de clerc de niveau 3 du même nom.
-- 'Vision Lointaine' une fois par jour à partir du niveau 7, comme le sort de clerc de niveau 4 du même nom.
-- 'Protection contre les Armes Non-Magiques' une fois par jour à partir du niveau 9, comme le sort de mage de niveau 5 du même nom.
-- 'Vision Véritable' une fois par jour à partir du niveau 11, comme le sort de clerc de niveau 5 du même nom.
+- 'Glyphe de Garde' une fois par jour à partir du niveau 7, comme le sort de clerc de niveau 3 du même nom.
+- Épée Animée, une fois par jour à partir du niveau 7
+ÉPÉE ANIMÉE
+Ce sort fait apparaître une épée dans la main du prêtre (ne peut être lâchée, volontairement ou non). Dotée de 3 attaques par rounds à +4, elle inflige 2d4 points de dégâts et dure 1 round par niveau. Tant que le prêtre l'a en main, il ne peut pas lancer le moindre sort.
+- Au niveau 7, une Sentinelle de Heaum peut effectuer trois attaques de mêlée en deux round.
+- 'Vision véritable' une fois par jour à partir du niveau 9, comme le sort de prêtre de niveau 5 du même nom.
+- 'Globe d’invulnérabilité' une fois par jour à partir du niveau 11, comme le sort de mage de niveau 6 du même nom.
+- Au niveau 13, une Sentinelle de Heaum peut effectuer deux attaques de mêlée par round.
 - 'Manteau' une fois par jour à partir du niveau 14, comme le sort de mage de niveau 7 du même nom.~
 @10195 =~Je vous souhaite la bienvenue dans la Maison du Seigneur de l'Aube.~
 @10196 =~La Sentinelle Suprême Oisig a mentionné une menace qui pesait contre son temple et le vôtre.~
 @10197 =~Merci. Je vais m'en aller.~
 @10198 =~C'est Oisig qui m'envoie, à propos du prêcheur aveugle dans la rue.~
 @10199 =~C'est la Sentinelle Suprême Oisig qui vous envoie ? Alors je suis son obligé, car vous avez tout à fait l'air d'un serviteur du bien, une personne charitable et de bonne foi.~
+@10200 =~Exaltation~
+@10201 =~Exaltation
+(Abjuration)
+
+Niveau : 3
+Sphère : Guérison
+Portée : contact
+Durée : 1 tour
+Temps d'incantation : 9
+Zone d'effet : 1 créature
+Jet de sauvegarde : aucun
+
+Ce sort permet au prêtre d'aider et de protéger un compagnon (mais pas lui-même). D'un simple contact, le prêtre fait disparaître les effets de la peur, de la fatigue, de la débilité, de l'inconscience, de l'ébriété, de la confusion et de la rage sanguinaire. De plus, le sujet est protégé contre les sorts et attaques provoquant ces effets jusqu'au terme de la durée indiquée.~
+@10202 =~Épée de Recherche
+(Invocation/Évocation)
+
+Niveau : 4
+Sphère : Combat
+Portée : contact
+Durée : 1 round/niveau
+Temps d'incantation : 5
+Zone d'effet : Lanceur de sorts
+Jet de sauvegarde : aucun
+
+Ce sort crée une épée dans la main du personnage pendant 1 round/niveau. Elle est considérée comme +4, faisant 2d4 dégâts et avec 3 attaques/round. Tant qu’il l’a en main, le personnage ne peut lancer d’autres sorts.~
 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -932,8 +1070,8 @@ Capacités :
 la Main Lunaire est l'arme spirituelle des Étoiles d'Argent de Séluné. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à un maximum de 20 rounds.
 - Infravision.
 - 'Bouclier Lunaire' une fois par jour.
-BOUCLIER LUNAIRE : avec ce sort, l'Étoile d'Argent reçoit une résistance à la magie à hauteur de 2 % par niveau de clerc (maximum 40 % au niveau 20). Si la cible disposait déjà d'une résistance à la magie supérieure, celle-ci peut se retrouver diminuée par ce sort. L'effet persiste jusqu'à la fin du sort, ou jusqu'à dissipation.
-- 'Action Libre' une fois par jour à partir du niveau 7 (comme le sort de prêtre du niveau 4).
+- 'Lame Lunaire' une fois par jour à partir du niveau 5
+- 'Vision véritable' une fois par jour à partir du niveau 7 (comme le sort de prêtre du niveau 5).
 - 'Feu solaire' une fois par jour à partir du niveau 9 (comme le sort de mage du niveau 5).
 - 'Convocation d'Élémentaire d'Air' une fois par jour à partir du niveau 11 (comme le sort de mage du niveau 6).
 - 'Protection contre les Éléments' une fois par jour à partir du niveau 14 (comme le sort de mage du niveau 7).
@@ -954,6 +1092,35 @@ Zone d'effet : Lanceur du sort
 Jet de sauvegarde : Aucun
 
 Avec ce sort, l'Étoile d'Argent reçoit une résistance à la magie à hauteur de 2 % par niveau de clerc (maximum 40 % au niveau 20). Si la cible disposait déjà d'une résistance à la magie supérieure, celle-ci peut se retrouver diminuée par ce sort. L'effet persiste jusqu'à la fin du sort ou jusqu'à dissipation.~
+@10309 = ~Lame de lune~
+@10310 = ~Lame de lune
+(Altération)
+
+Niveau : 3
+Sphère : Combat, Soleil
+Portée : personnelle
+Durée : 2 tours
+Temps d'incantation : 6
+Zone d'effet : le lanceur
+Jet de sauvegarde : aucun
+
+Ce sort fait apparaître une épée silencieuse entièrement constituée de clarté lunaire et s'étendant à 1,20 mètre de la main du personnage. Elle est considérée comme une arme +4 afin de déterminer ce qu'elle peut toucher, même si ce bonus ne s'applique pas au TAC0. Comme il s'agit d'une arme dénuée de substance, les bonus de Force du personnage ne s'appliquent ni à l'attaque ni aux dégâts.
+La lame de lune absorbe l'énergie de la cible, ce qui se traduit par un total de 1d12 +4 points de dégâts à chaque coup, +1d12 points pour les morts-vivants, qui sont particulièrement vulnérables à ce sort. De plus, la lame a une action négative sur le flux des énergies magiques, avec pour conséquence que tout sort que la cible cherche à lancer lors du prochain round échoue automatiquement.~
+@10311 = ~Feu lunaire~
+@10312 = ~Feu lunaire
+(Nécromancie)
+
+Niveau : 3
+Sphère : Soleil
+Portée : 20 mètres
+Durée : Spéciale
+Temps d'incantation : 1
+Zone d'effet : Cone de 10m de large sur 30 m de long
+Jet de sauvegarde : aucun
+
+Ce sort libère un éclair "blanc glacé" semblable, en apparence, à un clair de lune brillant. Tous les morts-vivants dans la zone d'effet subissent 20 points de dégâts magiques (pas de jet de sauvegarde).
+Ce sort refroidit également les créatures vivantes, infligeant 2d4 points de dégâts de froid à ceux qui entrent en contact avec lui.
+Enfin, il a aussi la propriété de révéler toutes les créatures, les décrivant d'un brillant éclat verdâtre. L'effet est une pénalité de -2 à la CA et de rendre visibles toutes les creatures pendant 1 tour.~
 @10319 = ~Symbole Sacré de Séluné~
 @10320 = ~Seuls les plus fidèles et les plus dévouées Étoiles d'Argent reçoivent un de ces puissants symboles sacrés.
 
@@ -969,10 +1136,14 @@ Les lycanthropes d'alignement non-mauvais rendent hommage à Séluné car elle est 
 Les prêtres de Séluné se font appeler les Etoiles d'Argent. Ce sont d'ardents défenseurs de la liberté, de la tolérance et de la vérité, doublés d'ennemis absolus de Shar. Il veulent créer une entente entre les lycanthropes et les non-métamorphes. Ils protègent les faibles et les oppressés où qu'ils se trouvent. En aucun cas ils ne peuvent fermer les yeux sur l'esclavage, et haïssent particulièrement les morts-vivants. Il est rare qu'ils s'établissent quelque part pour longtemps, et voyagent le plus souvent, guidés par la bougeotte ou par une nouvelle cause à défendre. Ils commandent aux énergies lunaires, et peuvent, à un degré limité, tirer leur pouvoir de la lune, apportant sa lumière pure à Toril, en accord avec les souhaits de leur déesse.
 
 Avantages : 
-- Action Libre, une fois par jour tous les 5 niveaux (une utilisation au 1er niveau)
+- Feu lunaire, une fois par jour tous les 5 niveaux (une utilisation au 1er niveau)
 - Bouclier Lunaire, une fois par jour tous les 10 niveaux (une utilisation au 1er niveau)
 
 BOUCLIER LUNAIRE : avec ce sort, l'Étoile d'Argent reçoit une résistance à la magie à hauteur de 2 % par niveau de clerc (maximum 40 % au niveau 20). Si la cible disposait déjà d'une résistance à la magie supérieure, celle-ci peut se retrouver diminuée par ce sort. L'effet persiste jusqu'à la fin du sort, ou jusqu'à dissipation.
+
+FEU LUNAIRE : Ce sort libère un éclair "blanc glacé" semblable, en apparence, à un clair de lune brillant. Tous les morts-vivants dans la zone d'effet subissent 20 points de dégâts magiques (pas de jet de sauvegarde).
+Ce sort refroidit également les créatures vivantes, infligeant 2d4 points de dégâts de froid à ceux qui entrent en contact avec lui.
+Enfin, il a aussi la propriété de révéler toutes les créatures, les décrivant d'un brillant éclat verdâtre. L'effet est une pénalité de -2 à la CA et de rendre visibles toutes les creatures pendant 1 tour.
 
 Désavantages :
 - Alignement restreint à chaotique bon, neutre bon et chaotique neutre.~
@@ -1003,13 +1174,12 @@ Les Manteaux de la Nuit de Shar peuvent uniquement être d'alignement Neutre Mauv
 Capacités :
 - Arme spirituelle : chakram - 'Disque de la Nuit' une fois par jour.
 le chakram est l'arme spirituelle des Manteaux de la Nuit. Le chakram est équivalent à une fléchette de retour et s'utilise comme si le lanceur en avait la grande maîtrise. Le chakram est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
-- Immunité à toute forme de cécité.
-- 'Disques Ténébreux' une fois par jour.
-Ce sort crée des petits chakrams dans la main du lanceur (un par niveau du lanceur de sorts). Ces chakrams peuvent être lancés, provoquant le silence sur les cibles ratant leur jet de sauvegarde contre les sorts, ainsi que 2d4 dégâts de froid. Les morts-vivants doivent également réussir un jds contre la paralysie ou être immobilisés  pendant un round.
-- 'Confusion' une fois par jour à partir du niveau 7 (comme le sort de mage de niveau 4).
+- Immunité à toute forme de cécité
+- 'Cécité' une fois par jour à partir du niveau 3 (comme le sort de mage de niveau 1).
+- 'Mot de Pouvoir Sommeil' une fois par jour à partir du niveau 5 (comme le sort de mage de niveau 2).
 - 'Débilité Mentale' une fois par jour à partir du niveau 9 (comme le sort de mage de niveau 5).
-- 'Chasseur Invisible' une fois par jour à partir du niveau 11 (comme le sort de mage de niveau 6).
-- 'Mot de Pouvoir : Étourdissement' une fois par jour à partir du niveau 14 (comme le sort de mage du niveau 7).~
+- 'Porte d’ombre' une fois par jour à partir du niveau 11 (comme le sort de mage de niveau 5).
+- 'Mot de pouvoir, Cécité' une fois par jour à partir du niveau 14 (comme le sort de mage du niveau 7).~
 @10603 = ~manteau de la nuit de shar~
 @10604 = ~Malédiction de Shar~
 @10605 = ~Malédiction de Shar (Enchantement/Charme)
@@ -1082,10 +1252,11 @@ Capacités :
 Échec et Mat est l'arme spirituelle des Stratèges Divins et se manie comme si le lanceur en avait la grande maîtrise. Echec et Mat est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
 - Peut lancer les sorts de mage suivants : 'Infravision', 'Clairvoyance' et 'Oeil de Magicien'.
 - Au niveau 13, un Stratège Divin peut effectuer deux attaques de mêlée par round.
-- 'Hâte' une fois par jour à partir du niveau 7 (comme le sort de mage de niveau 3).
-- 'Harmonie Défensive' une fois par jour à partir du niveau 9 (comme le sort de prêtre de niveau 4).
-- 'Guérison de Masse' une fois par jour à partir du niveau 11 (comme le sort de prêtre de niveau 5).
-- 'Manteau' une fois par jour à partir du niveau 14 (comme le sort de mage de niveau 7).
+- 'Clairvoyance' une fois par jour à partir du niveau 5 (comme le sort de mage de niveau 3).
+- 'Vision Lointaine' une fois par jour à partir du niveau 7 (comme le sort de mage de niveau 4).
+- 'Oracle' une fois par jour à partir du niveau 9 (comme le sort de mage de niveau 5).
+- 'Bouclier des Archontes' une fois par jour à partir du niveau 11 (comme le sort de prêtre de niveau 7).
+- 'Invisibilité de masse' une fois par jour à partir du niveau 14 (comme le sort de mage de niveau 7).
 
 Désavantages :
 - Alignement restreint à loyal bon, loyal neutre et loyal mauvais.~
@@ -1131,20 +1302,20 @@ Bien que ces missions dans des contrées sauvages soient souvent vues comme des c
 
 Les Guerroyeur de Tempus revêtent des armures usées et cabossées. Dans les régions civilisées, cela a été remplacé par une calotte d'acier, mais le message reste le même : ce sont des prêtres combattants. Leur place est au beau milieu de la bataille, à haranguer les troupes. Lors d'un conflit, on peut trouver des Guerroyeur de Tempus dans les deux camps car nul ne peut vraiment savoir qui le dieu de la guerre choisira de soutenir.
 
-Les Guerroyeur de Tempus peuvent uniquement être d'alignement Chaotique Neutre, Chaotique Bon, Neutre Strict et Chaotique Mauvais.
+Les Guerroyeur de Tempus peuvent uniquement être d'alignement Chaotique Neutre, Chaotique Bon et Chaotique Mauvais.
 
 Capacités :
 - Arme spirituelle : hache d'armes - 'Prouesse Martiale' une fois par jour.
 Prouesse Martiale est l'arme spirituelle des Guerroyeur de Tempus, et se manie comme si l'utilisateur en avait la grande maîtrise. Prouesse martiale est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
+- Au niveau 7, un Guerroyeur de Tempus peut effectuer trois attaques de mêlée en deux round. Au niveau 13, un Guerroyeur de Tempus peut effectuer deux attaques de mêlée par round.
 - Peut se spécialiser (deux étoiles) dans toutes les armes de mêlée qu'un prêtre peut utiliser.
 - Peut entrer en Rage Berserk une fois par jour.
+- 'Cantique' une fois par jour à partir du niveau 5 (comme le sort de prêtre du niveau 2).
 - 'Puissance Sacrée' une fois par jour à partir du niveau 7 (comme le sort de prêtre du niveau 4).
-- 'Chaos' une fois par jour à partir du niveau 9 (comme le sort de mage du niveau 5).
 - 'Transformation de Tenser' une fois par jour à partir du niveau 11 (comme le sort de mage du niveau 6).
-- 'Sphère de Chaos' une fois par jour à partir du niveau 14 (comme le sort de mage du niveau 7).
 
 Désavantages :
-– Alignement restreint à chaotique neutre, chaotique bon, neutre strict et chaotique mauvais.
+– Alignement restreint à chaotique neutre, chaotique bon et chaotique mauvais.
 - Ne peut placer de point de spécialisation dans les armes à distance.~
 @10903 = ~Hache d'Armes : 'Prouesse Martiale'~
 @10904 = ~Utilisée dans une bataille sans fin, la hache 'Prouesse Martiale' est l'arme favorite de Tempus. Il offre à ses suivants les plus ardents, les Guerroyeur, la capacité de créer une arme similaire enchantée par sa force une fois par jour. Ceci est un exemple d'une telle arme. La hache est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs.~
@@ -1158,7 +1329,9 @@ PARAMÈTRES :
  +5 % de Résistance à la magie
  +1 en Force~
 @10912 = ~Bouclier de Tempus~
-@10913 = ~Bouclier de Tempus (Abjuration)
+@10913 = ~Bouclier de Tempus
+(Abjuration)
+
 Niveau : Quête
 Portée : 0
 Durée : 4 rounds
@@ -1181,7 +1354,7 @@ Avantages :
 RAGE : L'état enragé dure 1 tour. Un Guerroyeur enragé gagne un bonus de +2 à ses jets d'attaque et de dégâts, ainsi qu'à sa classe d'armure, et devient immunisé au charme, à la confusion, la peur, la débilité mentale, l'immobilisation, l'emprisonnement, l'absorption de niveau, au sort de labyrinthe, à l'étourdissement et au sommeil. L'Guerroyeur gagne également 15 pv temporaires qui lui seront retirés à la fin de sa rage berserk, donc avec le risque de l'assommer.
 
 Désavantages :
-– Alignement restreint à chaotique neutre, chaotique bon, neutre strict et chaotique mauvais.
+– Alignement restreint à chaotique neutre, chaotique bon et chaotique mauvais.
 - Ne peut placer de point de spécialisation dans les armes à distance.~
 @10916 =~Les Guerroyeur connaissent bien le combat et la destruction. Soyez le messager de la fureur du Seigneur des Tempêtes !~ ~Les Guerroyeur connaissent bien le combat et la destruction. Soyez la messagère de la fureur du Seigneur des Tempêtes !~
 
@@ -1205,11 +1378,13 @@ Les Nobles Martyrs d'Ilmater peuvent uniquement être d'alignement Loyal Bon, Neu
 Capacités :
 - Arme spirituelle : poing - 'Main d'Ilmater' une fois par jour.
 la Main d'Ilmater est l'arme spirituelle des Nobles Martyrs d'Ilmater. La Main d'Ilmater totalise 1d6 points de dégâts de base et se manie comme si l'utilisateur en avait la grande maîtrise. La Main d'Ilmater est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. La Main d'Ilmater dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
-- 'Guérison par Imposition des Mains' une fois par jour.
+- 'Apaisement' une fois par jour.
+- Peut préparer, une fois par jour, un antidote ou une potion de soins au niveau 1, un élixir de santé ou une potion de grands soins au niveau 10 et un élixir de santé, une potion de régénération ou de soin majeur au niveau 15.
+- 'Puiser dans la puissance divine' une fois par jour à partir du niveau 5 (comme le sort de prêtre de niveau 2).
 - 'Neutralisation du Poison' une fois par jour à partir du niveau 7 (comme le sort de prêtre de niveau 4).
 - 'Endurance d'Ilmater' une fois par jour à partir du niveau 9.
 ENDURANCE D'ILMATER : les Nobles Martyrs puisent dans la puissance divine d'Ilmater pour alléger le fardeau des épreuves à venir. Pendant un round par niveau de Noble Martyr, le clerc gagne un bonus de +2 aux jets de sauvegarde, double le nombre de ses points de vie, est immunisé à la panique et aux maladies et ne reculera jamais devant n'importe quelle charge ou force.
-- 'Guérison' une fois par jour à partir du niveau 11 (comme le sort de prêtre du niveau 6).
+- 'Symbole, Douleur' une fois par jour à partir du niveau 11 (comme le sort de prêtre du niveau 7).
 - 'Régénération' une fois par jour à partir du niveau 14 (comme le sort de prêtre du niveau 7).
 
 Désavantages :
@@ -1218,16 +1393,17 @@ Désavantages :
 @11204 = ~La Main d'Ilmater est l'arme spirituelle des Nobles Martyrs d'Ilmater. La Main d'Ilmater totalise 1d6 points de dégâts de base et se manie comme si l'utilisateur en avait la grande maîtrise. La Main d'Ilmater est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. La Main d'Ilmater dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.~
 @11205 = ~Endurance d'Ilmater~
 @11206 = ~Endurance d'Ilmater
+(Nécromancie)
+
+NIveau : 4
 Sphère : Nécromancie, Protection
-Portée : Contact
+Portée : 0
 Durée : 1 round + 1 round/niveau
-Temps d'incantation : 7
-Zone d'effet : une créature
+Temps d'incantation : 1
+Zone d'effet : Lanceur de sorts
 Jet de sauvegarde : non
 
-Ce sort double le nombre de points de vie de la cible pendant la durée du sort. Tout dégât subi est déduit de ces "points de vie fantômes" jusqu'à ce qu'ils soient épuisés ; les dégâts subis sont alors déduits des véritables points de vie de la créature affectée.
-
-La cible reçoit un bonus de +2 aux jets de sauvegarde. En outre, une créature sous l'effet d'Endurance d'Ilmater ne peut être renversée, bousculée, jetée à terre ou piétinée ; elle est en mesure de résister fermement à toutes les charges.~
+les Nobles Martyrs puisent dans la puissance divine d'Ilmater pour alléger le fardeau des épreuves à venir. Pendant un round par niveau de Noble Martyr, le clerc gagne un bonus de +2 aux jets de sauvegarde, double le nombre de ses points de vie, est immunisé à la panique et aux maladies et ne reculera jamais devant n'importe quelle charge ou force.~
 @11207 = ~Symbole Sacré d'Ilmater~
 @11208 = ~Ilmater récompense ses serviteurs les plus puissants avec un Symbole Sacré, un anneau portant ses armoiries : une paire de mains blanches liées par une corde rouge sang. Le symbole accorde au Noble Martyr la puissance d'Ilmater.
 
@@ -1254,6 +1430,16 @@ Désavantages :
 Bien que ces missions dans des contrées sauvages soient souvent vues comme des corvées indésirables par les membres de votre ordre les moins enthousiastes, il vous fallut peu de temps pour accepter cette tâche, cette chance d’apporter l’espoir et le repos aux habitants du Nord, cette chance de répandre réellement le bien plutôt que s’étioler à servir les banals fidèles des villes. Sans hésitation, vous acceptâtes d’effectuer ce pèlerinage, et en quelques jours vous fûtes à bord d’un bateau en direction du Nord, avec pour seuls bagages un bâton dans les mains, et l’endurance du Dieu Brisé dans le coeur.~
 @11212 =~Le Dieu Brisé a beaucoup de choses en commun avec Lathandre. J'aimerais vous demander un service en échange des faveurs du temple et de Lathandre.~
 @11213 =~Ilmater et Heaum ont beaucoup d'intérêts en commun. J'aimerais vous demander un service pour le compte du temple de Heaum.~
+@11214 =~Alchimie~
+@11215 =~Alchimie
+
+Le Noble Martyr a appris comment utiliser les plantes. il peut préparer :
+
+- Au niveau 1, une Potion de soins ou un Antidote.
+- Au niveau 10, un Élixir de Santé ou une Potion de grands soins.
+- Au niveau 15, un Élixir de santé, une Potion de Régénération ou une Potion de soin majeur.
+
+La préparation des potions est une tâche délicate qui ne peut être entreprise que dans des zones sûres (non hostiles).~
 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1272,21 +1458,26 @@ Bien que ces missions dans des contrées sauvages soient souvent vues comme des c
 
 L'église de Kossuth est diverse et très anarchique, puisque ce dernier ne s'intéresse nullement à sa structure. Il en résulte toute une galerie de cultes dont chaque faction possède ses propres valeurs morales ou éthiques, ses propres codes et ses propres enseignements. Le symbole de Kossuth est très variable d'une faction à l'autre, mais il symbolise généralement le feu. On estime que si tous les suivants de Kossuth s'unissaient, ils deviendraient une force considérable dans les Royaumes, chose que les autres dieux n'ont pas vraiment envie de voir se réaliser. Des quatre Seigneurs Elémentaires, ce sont les cultes de Kossuth qui sont les plus connus et les plus craints, notamment en Thay et dans les Terres de l'Est où ils représentent une force très puissante.
 
-Les Adeptes du Flammes peuvent être de n'importe quel alignement mais la plupart sont maléfiques, se complaisant dans les pouvoirs destructeurs du feu. Ils peuvent être de n'importe quelle race. Ils s'habillent dans les tenues que leur faction juge appropriées pour représenter leur dieu. Habituellement, ce sont des robes et de longues capes rouges, jaunes et oranges.
+Les Adeptes du Flammes peuvent peut être d'alignement neutre mais la plupart sont maléfiques, se complaisant dans les pouvoirs destructeurs du feu. Ils peuvent être de n'importe quelle race. Ils s'habillent dans les tenues que leur faction juge appropriées pour représenter leur dieu. Habituellement, ce sont des robes et de longues capes rouges, jaunes et oranges.
 
 Capacités :
 - Arme spirituelle : fléau - 'Filament de Feu' une fois par jour.
 Le fléau est l'arme spirituelle des Adeptes des Flammes de Kossuth. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Le fléau est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
 - Gagne 2 % de résistance au feu par niveau.
+- 'Mains ardentes' une fois par jour à partir du niveau 3 (comme le sort de mage du niveau 1).
+- 'Conjuration d'Élémentaire du Feu mineur' une fois par jour à partir du niveau 5 (comme le sort de mage du niveau 5).
 - 'Bouclier de Feu (Rouge)' une fois par jour à partir du niveau 7 (comme le sort de mage du niveau 4).
+- 'Boule de Feu' une fois par jour à partir du niveau 7 (comme le sort de mage du niveau 3).
 - 'Feu Solaire' une fois par jour à partir du niveau 9 (comme le sort de mage du niveau 5).
 - 'Conjuration d'Élémentaire du Feu' une fois par jour à partir du niveau 11 (comme le sort de prêtre du niveau 6).
 - 'Boule de Feu à Retardement' une fois par jour à partir du niveau 14 (comme le sort de mage du niveau 7).
 
 Désavantages :
-- Aucun~
+- Ne peut pas porter d'armure plus lourde que l'armure feuilletée.~
 @11505 = ~Toucher Purificateur de Kossuth~
-@11506 = ~Toucher Purificateur de Kossuth (Invocation)
+@11506 = ~Toucher Purificateur de Kossuth 
+(Invocation)
+
 Niveau : Quête
 Sphère : Élémentaire (feu)
 Portée : lanceur
@@ -1318,7 +1509,7 @@ Avantages :
 - Gagne 2 % de résistance au feu par niveau
 
 Désavantages :
-- Aucun~
+- Ne peut pas porter d'armure plus lourde que l'armure feuilletée.~
 @11511 = ~Moins de deux semaines après votre initiation au Temple de Kossuth, la Soeur des Flammes de votre temple vous convoqua. En termes cordiaux mais formels, elle vous confia votre première mission en tant que Promis : voyager jusqu’aux régions frontalières du Grand Nord et allumer le brasier de la foi en Kossuth chez les habitants de ces rudes contrées. Elle vous parla également de présages et d’augures concernant de mystérieux évènements à l’oeuvre dans le Nord dignes d’intérêt pour le Seigneur des Flammes, et de la conviction du temple qu’un représentant de Kossuth pourrait aider à apporter sa justice brutale dans la région.
 
 Bien que ces missions dans des contrées sauvages soient souvent vues comme des corvées indésirables, et malgré la hiérarchie indiscutable de votre foi, il vous fallut peu de temps pour accepter cette tâche, cette chance d’appliquer concrètement les volontés du Seigneur de Feu, cette opportunité d’échapper à la routine des complots incessants de la ville. Sans hésitation, vous acceptâtes d’effectuer ce pèlerinage, et en quelques jours vous fûtes à bord d’un bateau en direction du Nord, avec pour seuls bagages un bâton dans les mains, et un brasier dans le coeur.~
@@ -1346,11 +1537,15 @@ Les Tyrans de Xvim peuvent être de n'importe quelle race. Ils peuvent uniquement
 Capacités :
 - Arme spirituelle : cimeterre - 'Cimeterre des Âmes' une fois par jour.
 Le Cimeterre des Âmes est l'arme spirituelle des Tyrans d'Iyachtu Xvim. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Le Cimeterre des Âmes est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
-- Immunité à la peur.
+- Immunité à la peur
+- 'Guérison par imposition des mains' une fois par jour sur lui-même
+- 'Neutralisation du poison' une fois par jour à partir du niveau 5 (comme le sort de prêtre du niveau 4).
+- 'Émotion' une fois par jour à partir du niveau 5 (comme le sort de mage du niveau 4).
 - 'Grande Malédiction' une fois par jour à partir du niveau 7 (comme le sort de mage du niveau 4).
+- 'Soins des blessures graves' une fois par jour à partir du niveau 7 (comme le sort de prêtre du niveau 4).
 - 'Abaissement de la Résistance' une fois par jour à partir du niveau 9 (comme le sort de mage du niveau 5).
-- 'Sort de Mort' une fois par jour à partir du niveau 11 (comme le sort de mage du niveau 6).
-- 'Manteau' une fois par jour à partir du niveau 14 (comme le sort de mage du niveau 7).
+- 'Soins des blessures Critiques' une fois par jour à partir du niveau 9 (comme le sort de prêtre du niveau 5).
+- 'Guérison' une fois par jour à partir du niveau 11 (comme le sort de prêtre du niveau 6).
 
 Désavantages :
 - Alignement restreint à loyal mauvais, loyal neutre et neutre mauvais.~
@@ -1411,6 +1606,8 @@ Capacités :
 - Arme spirituelle : épée longue - 'Coup Mortel' une fois par jour.
 Coup Mortel est l'arme spirituelle des Gardiens du Savoir d'Oghma. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Coup Mortel est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
 - Gagne 10 points de connaissance par niveau.
+- 'Identification' une fois par jour à partir du niveau 3 (comme le sort de mage du niveau 1).
+- 'Amitié' une fois par jour à partir du niveau 5 (comme le sort de mage du niveau 1).
 - 'Mot Secret' une fois par jour à partir du niveau 7 (comme le sort de mage du niveau 4).
 - 'Oracle' une fois par jour à partir du niveau 9 (comme le sort de mage du niveau 5).
 - 'Mot de Pouvoir : Silence' une fois par jour à partir du niveau 11 (comme le sort de mage du niveau 6).
@@ -1465,13 +1662,12 @@ Les prêtres de Sunie, connus sous le titre de Gardes du Coeur, sont des esthètes
 Capacités :
 - Arme spirituelle : fléau 'Fléau de Choc' une fois par jour.
 Fléau de Choc est l'arme spirituelle des Gardes du Coeur de Sunie. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Le Fléau de Choc est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
-- +1 en Charisme
-- 'Voile de Djalice' une fois par jour.
+- 'Charme-personne' une fois par jour à partir du niveau 5 (comme le sort de mage du niveau 1)
+- 'Colonne de Feu' une fois par jour à partir du niveau 7 (comme le sort de prêtre du niveau 5)
+- Au niveau 9, gagne +1 en Charisme 
+- 'Émotion' une fois par jour à partir du niveau 11 (comme le sort de mage du niveau 4)
+- 'Voile de Djalice' une fois par jour à partir du niveau 14
 Le Garde du Coeur augmente temporairement sa beauté à un niveau surhumain, montant son charisme jusqu'à 20 et forçant les créatures hostiles à réussir un jds contre les sorts à -2, sous peine d'être sous l'effet du sort de Charme Néfaste pendant 6 rounds.
-- 'Émotion' une fois par jour à partir du niveau 7 (comme le sort de mage du niveau 4).
-- 'Colonne de Feu' une fois par jour à partir du niveau 9 (comme le sort de prêtre du niveau 5).
-- 'Double Illusoire' une fois par jour à partir du niveau 11 (comme le sort de mage du niveau 6).
-- 'Manteau' une fois par jour à partir du niveau 14 (comme le sort de mage du niveau 7).
 
 Désavantages :
 - Alignement restreint à neutre bon, chaotique bon et chaotique neutre.~
@@ -1494,7 +1690,7 @@ Les prêtres de Sunie, connus sous le titre de Gardes du Coeur, sont des esthètes
 
 Avantages : 
 - +1 en Charisme
-- Émotion : Désespoir, une fois par jour tous les 5 niveaux (une utilisation au 1er niveau)
+- Émotion, une fois par jour tous les 5 niveaux (une utilisation au 1er niveau)
 - Peut utiliser Voile de Djalice, une fois par jour tous les 10 niveaux (une utilisation au 1er niveau)
 
 VOILE DE DJALICE : Le Garde du Coeur augmente temporairement sa beauté à un niveau surhumain, montant son charisme jusqu'à 20 et forçant les créatures hostiles à réussir un jds contre les sorts à -2, sous peine d'être sous l'effet du sort de Charme Néfaste pendant 6 rounds.
@@ -1503,7 +1699,16 @@ Désavantages :
 - Alignement restreint à neutre bon, chaotique bon et chaotique neutre.~
 @12409 = ~Voile de Djalice~
 @12410 = ~Voile de Djalice
-Le Garde du Coeur augmente temporairement sa beauté à un niveau surhumain, montant son charisme jusqu'à 20 et forçant les créatures hostiles à réussir un jds contre les sorts à -2, sous peine d'être sous l'effet du sort de Charme Néfaste pendant 6 rounds.~
+(Illusion/Fantasme)
+
+Niveau : 6
+Portée : Lanceur de sort
+Durée : 6 rounds
+Temps d’incantation : 7 round
+Zone d’effet : 10 mètres de rayon
+Jet de Sauvegarde : Spéciale
+
+Le Garde du Coeur augmente temporairement sa beauté à un niveau surhumain, montant son charisme jusqu'à 20 et forçant les créatures hostiles à réussir un jet contre les sorts à -2, sous peine d'être sous l'effet du sort de Charme Néfaste pendant 6 rounds.~
 @12411 = ~Moins de deux semaines après votre initiation au Temple de Sunie, la meneuse de votre ordre vous convoqua. En termes chaleureux, appropriés pour une fidèle de Sunie, elle vous confia votre première mission en tant que membre du clergé : voyager jusqu’aux régions frontalières du Grand Nord et apporter l’amour de la Dame au Cheveux de Feu aux habitants de ces rudes contrées. Elle vous parla également de présages et d’augures concernant de mystérieux évènements à l’oeuvre dans le Nord, et de la conviction du temple qu’un représentant de la foi pourrait aider à apaiser les troubles potentiels de la région.
 
 Bien que ces missions dans des contrées sauvages soient souvent vues comme des corvées indésirables par les membres de votre ordre les moins enthousiastes, il vous fallut peu de temps pour accepter cette tâche, cette chance d’apporter l’amour et la passion aux habitants du Nord, cette chance de répandre réellement le bien plutôt que s’étioler à servir les banals fidèles des villes. Sans hésitation, vous acceptâtes d’effectuer ce pèlerinage, et en quelques jours vous fûtes à bord d’un bateau en direction du Nord, avec pour seuls bagages un bâton dans les mains, et l’amour de la Dame aux Cheveux de Feu dans la poitrine.~
@@ -1528,10 +1733,12 @@ Capacités :
 - Arme spirituelle : épée longue 'Sahandrian' une fois par jour.
 Sahandrian est l'arme spirituelle des Protecteurs Féériques de Corellon. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Sahandrian est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
 - Peut dépenser deux points de compétence dans les armes, et le maximum de points dans les styles de combat.
-- +1 aux jets de sauvegarde contre la mort.
+- +1 aux jets de sauvegarde contre la mort
+- 'Lueur Féérique' une fois par jour à partir du niveau 1 (comme le sort de prêtre du niveau 1).
+- 'Force' une fois par jour à partir du niveau 3 (comme le sort de mage du nivau 2).
 - 'Arme Magique' une fois par jour à partir du niveau 7 (comme le sort de mage du nivau 4).
-- 'Immunité aux Sorts' une fois par jour à partir du niveau 9 (comme le sort de mage du niveau 5).
-- 'Protection contre les Armes Magiques' une fois par jour à partir du niveau 11 (comme le sort de mage du niveau 6).
+- 'Parole sacrée' une fois par jour à partir du niveau 9 (comme le sort de prêtre du niveau 7).
+- 'Rayon de soleil' une fois par jour à partir du niveau 11 (comme le sort de prêtre du niveau 7).
 - 'Vaporisation Prismatique' une fois par jour à partir du niveau 14 (comme le sort de mage du niveau 7).
 
 Désavantages :
@@ -1597,11 +1804,12 @@ Capacités :
 - Arme spirituelle : épée longue 'Lame de Rasoir' une fois par jour.
 Lame de Rasoir est l'arme spirituelle des Maîtres des Conflits de Cyric. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Lame de Rasoir est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
 - Peut enduire son arme de poison une fois par jour par tranche de 6 niveaux. Les attaques effectuées durant le round suivant empoisonneront la cible, qui subira un point de dégâts par seconde pendant 24 secondes (3 points de dégâts pendant les 6 premières secondes). Un jet de sauvegarde contre le poison réussi limitera les dégâts à 12 points.
+- Immunité à toute forme de peur
 - 'Décharge Terrifiante' une fois par jour à partir du niveau 7.
-Cette capacité permet de lancer un rayon d'énergie négative qui inflige 4d8 points de dégâts +1 par niveau (+20 maximum) et qui rend la cible confuse pendant un round (un jet de sauvegarde contre les sorts à -2 réussi annule la confusion).
-- 'Chaos' une fois par jour à partir du niveau 9 (comme le sort de mage du niveau 5).
-- 'Brume Mortelle' une fois par jour à partir du niveau 11 (comme le sort de mage du niveau 6).
-- 'Sphère de Chaos' une fois par jour à partir du niveau 14 (comme le sort de mage du niveau 7).~
+DÉCHARGE TERRIFIANTE : cette capacité permet de lancer un rayon d'énergie négative qui inflige 4d8 points de dégâts +1 par niveau (+20 maximum) et qui rend la cible confuse pendant un round (un jet de sauvegarde contre les sorts à -2 réussi annule la confusion).
+- 'Serviteur aérien' une fois par jour à partir du niveau 9 (comme le sort de mage du niveau 5).
+- 'Symbole, Terreur' une fois par jour à partir du niveau 11 (comme le sort de mage du niveau 8).
+- 'Débilité mentale' une fois par jour à partir du niveau 14 (comme le sort de mage du niveau 5).~
 @13005 = ~Symbole Sacré de Cyric~
 @13006 = ~Cyric récompense ses serviteurs les plus puissants avec un Symbole Sacré, des bracelets argentés représentant ses armoiries : un crâne devant un soleil de teinte sombre. En plus d'être un signe visible de la puissance du prêtre, ces bracelets représentent sa dévotion inconditionnelle au Prince des Mensonges. Utilisés, ces bracelets améliorent les pouvoirs déjà terrifiants du Semeur de discorde.
 
@@ -1630,6 +1838,16 @@ DÉCHARGE TERRIFIANTE : cette capacité permet de lancer un rayon d'énergie négati
 Désavantages :
 - Alignement restreint à chaotique neutre ou tout alignement mauvais.~
 @13010 = ~Décharge Terrifiante
+(Nécromancie)
+
+Niveau : 4
+Sphère : Nécromantic
+Portée : 15 mètres
+Durée : 1 round
+Temps d'incantation : 1
+Zone d'effet : 1 créature
+Jet de sauvegarde : spécial
+
 Cette capacité permet de lancer un rayon d'énergie négative qui inflige 4d8 points de dégâts +1 par niveau (+20 maximum) et qui rend la cible confuse pendant un round (un jet de sauvegarde contre les sorts à -2 réussi annule la confusion).~
 @13011 = ~~
 @13012 =~Le Prince des Mensonges nous envoie un Semeur de discorde ? Même s'il n'est pas aussi terrifiant que le tout-puissant Talos, votre seigneur Cyric doit sans doute vouloir nous porter assistance dans notre lutte contre les infidèles !~
@@ -1648,6 +1866,19 @@ Cette capacité permet de lancer un rayon d'énergie négative qui inflige 4d8 poin
 @13025= ~Donc, <CHARNAME>, es-tu digne de mes faveurs ? C'est par le conflit que l'on apprend ce que l'on vaut vraiment. Maintenant, il est temps de tester ton courage face à certains de mes autres favoris. Peut-être nous reverrons-nous. Je te conseille de bien te préparer.~
 @13026= ~Oui, bien sûr que tu sais qui je suis. Tu sens mon regard sur toi à chacune de tes prières nocturnes.~
 @13027= ~J'ai été guéri récemment d'un léger accès de folie... pour constater en me réveillant que les enfants de mon prédécesseur avaient poussé un peu partout comme de mauvaises herbes.~
+@13028 = ~Création d'un garde funeste~
+@13029 = ~Création d'un garde funeste
+(Nécromancie)
+
+Niveau : 7
+Sphère : Nécromancie
+Portée : 30 mètres
+Durée : 8 heures
+Temps d'incantation : 1 round
+Zone d'effet : spéciale
+Jet de sauvegarde : spécial
+
+Ce sort crée un garde funeste, un skelette avec des flame rouge à la place des yeux, portant une armure noire.~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\

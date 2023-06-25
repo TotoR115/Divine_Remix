@@ -21,7 +21,6 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // cyric
     numbers           = minor
     protection        = minor
     summoning         = major
-    sun               = major
     time              = major
     war               = major
     weather           = major
@@ -29,21 +28,21 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // cyric
 
 LAUNCH_ACTION_FUNCTION cd_kit_sphere // helm
   STR_VAR
-    table           = clabpr03
-    class           = cleric
-    all             = major
-    astral          = major
-    combat          = major
-    creation        = minor
-    divination      = major
-    elemental_earth = minor
-    elemental_water = minor
-    guardian        = major
-    healing         = major
-    protection      = major
-    sun             = major
-    war             = minor
-    wards           = major
+    table             = clabpr03
+    class             = cleric
+    all               = major
+    astral            = major
+    combat            = major
+    creation          = minor
+    divination        = major
+    elemental_earth   = minor
+    elemental_water   = minor
+    guardian          = major
+    healing           = major
+    law               = major
+    protection        = major
+    war               = minor
+    wards             = major
   END
 
 LAUNCH_ACTION_FUNCTION cd_kit_sphere // ilmater
@@ -86,7 +85,6 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // iyachtu xvim
     necromantic       = major
     protection        = major
     summoning         = major
-    sun_moon          = minor
     thoughts          = major
     war               = major
   END
@@ -111,27 +109,27 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // kossuth
 
 LAUNCH_ACTION_FUNCTION cd_kit_sphere // lathander
   STR_VAR
-    table           = clabpr04
-    class           = cleric
-    all             = major
-    astral          = major
-    charm           = major
-    combat          = minor
-    creation        = major
-    divination      = minor
-    elemental_air   = major
-    elemental_earth = major
-    elemental_water = major
-    elemental_fire  = major
-    guardian        = minor
-    healing         = major
-    necromantic 	= major
-    plant           = major
-    sun             = major
-    thoughts        = major
-    time            = minor
-    wards           = major
-    weather         = major
+    table             = clabpr04
+    class             = cleric
+    all               = major
+    astral            = major
+    charm             = major
+    combat            = minor
+    creation          = major
+    divination        = minor
+    elemental_air     = major
+    elemental_earth   = major
+    elemental_water   = major
+    elemental_fire    = major
+    guardian          = minor
+    healing           = major
+    necromantic_restorative 	= major
+    plant             = major
+    sun               = major
+    thoughts          = major
+    time              = minor
+    wards             = major
+    weather           = major
   END
 
 LAUNCH_ACTION_FUNCTION cd_kit_sphere // oghma
@@ -152,9 +150,28 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // oghma
     necromantic       = minor
     protection        = major
     summoning         = major
-    sun               = minor
     thoughts          = major
     travelers         = major
+    wards             = minor
+  END
+
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // red knight
+  STR_VAR
+    table             = ~a#red~
+    class             = cleric
+    all               = major
+    charm             = major
+    combat            = major
+    creation          = minor
+    divination        = major
+    guardian          = minor
+    healing           = major
+    law               = major
+    necromantic       = minor
+    protection        = major
+    thoughts          = minor
+    travelers         = major
+    war               = major
     wards             = minor
   END
 
@@ -176,7 +193,7 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // selune
     numbers           = major
     plant             = minor
     summoning         = major
-    sun               = major
+    sun_moon          = major
     travelers         = major
     wards             = minor
     weather           = major
@@ -198,7 +215,6 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // shar
     healing           = minor
     necromantic       = major
     protection        = major
-    sun_moon          = major
     thoughts          = major
     time              = major
     wards             = minor
@@ -228,27 +244,26 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // sune
 
 LAUNCH_ACTION_FUNCTION cd_kit_sphere // talos
   STR_VAR
-    table           = clabpr02
-    class           = cleric
-    all             = major
-    animal          = major
-    astral          = major
-    chaos           = major
-    combat          = major
-    creation        = minor
-    divination      = minor
-    elemental_air   = major
-    elemental_earth = major
-    elemental_fire  = major
-    elemental_water = major
-    healing         = major
-    necromantic     = major
-    protection      = minor
-    summoning       = major
-    sun             = major
-    time            = minor
-    war             = major
-    weather         = major
+    table             = clabpr02
+    class             = cleric
+    all               = major
+    animal            = major
+    astral            = major
+    chaos             = major
+    combat            = major
+    creation          = minor
+    divination        = minor
+    elemental_air     = major
+    elemental_earth   = major
+    elemental_fire    = major
+    elemental_water   = major
+    healing           = major
+    necromantic       = major
+    protection        = minor
+    summoning         = major
+    time              = minor
+    war               = major
+    weather           = major
   END
 
 ACTION_FOR_EACH tempus IN ~ohtempus~ ~a#temp~ BEGIN
@@ -262,16 +277,13 @@ ACTION_FOR_EACH tempus IN ~ohtempus~ ~a#temp~ BEGIN
       chaos           = major
       combat          = major
       divination      = major
-      elemental_air   = major
       elemental_earth = major
-      elemental_fire  = major
       elemental_water = major
       guardian        = minor
       healing         = major
       necromantic     = major
       protection      = major
       summoning       = minor
-      sun             = minor
       war             = major
       wards           = minor
       weather         = major
@@ -301,26 +313,6 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // tyr
     wards           = major
   END
 
-LAUNCH_ACTION_FUNCTION cd_kit_sphere // red knight
-  STR_VAR
-    table             = ~a#red~
-    class             = cleric
-    all               = major
-    charm             = major
-    combat            = major
-    creation          = minor
-    divination        = major
-    guardian          = minor
-    healing           = major
-    law               = major
-    necromantic       = minor
-    protection        = major
-    thoughts          = major
-    travelers         = major
-    war               = major
-    wards             = minor
-  END
-
 LAUNCH_ACTION_FUNCTION cd_kit_sphere // correllon
   STR_VAR
     table             = ~a#feyw~
@@ -340,7 +332,7 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // correllon
     protection        = major
     summoning         = minor
     sun               = major
-    thoughts          = major
+    thoughts          = minor
     war               = major
     wards             = major
   END
@@ -357,6 +349,7 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // oozemaster - normal druid minus animal a
     elemental_water    = major
     healing            = major
     sun                = major
+    sun_moon           = major
     weather            = major
   END
 
@@ -398,55 +391,53 @@ ACTION_PHP_EACH cd_mod_kits AS clab => class_check BEGIN
       STR_VAR
         table           = EVAL "%clab%"
         class           = cleric
-        all             = major
-		astral			= major
-        charm           = major
-        combat          = major
-        creation        = major
-        divination      = major
-        elemental_earth = minor
-        elemental_water = minor
-        guardian        = major
-        healing         = major
-        necromantic     = major
-        protection      = major
-        summoning       = major
-		wards           = major
-      END
+        all             = major // 8
+		astral			= major // 0
+        charm           = major // 12
+        combat          = major // 32
+        creation        = major // 4
+        divination      = major // 5
+        elemental_earth = minor // 1
+        elemental_water = minor // 3
+        guardian        = major // 9
+        healing         = major // 26
+        necromantic     = major // 23
+        protection      = major // 21
+        summoning       = major // 9
+		wards           = major // 5
+      END // 158
 
   END ELSE
 
-  ACTION_IF class_check = 12 THEN BEGIN // ranger
+  ACTION_IF class_check = 12 THEN BEGIN // ranger lv3 spells
 
     LAUNCH_ACTION_FUNCTION cd_kit_sphere
       STR_VAR
         table           = EVAL "%clab%"
         class           = ranger
         animal          = major
-        elemental       = major
-        elemental_air   = major
-        elemental_earth = major
-        elemental_fire  = major
-        elemental_water = major
-        healing         = major
-        plant           = major
-        sun             = major
-        weather         = major
-      END
+        elemental       = major // 3
+        elemental_air   = major // 4
+        elemental_fire  = major // 10
+        healing         = major // 28
+        plant           = major // 11
+        sun             = major // 4
+        weather         = major // 7
+      END // 85
 
   END ELSE
 
-  ACTION_IF class_check = 6 THEN BEGIN // paladin
+  ACTION_IF class_check = 6 THEN BEGIN // paladin lv4 spells
 
     LAUNCH_ACTION_FUNCTION cd_kit_sphere
       STR_VAR
         table           = EVAL "%clab%"
         class           = paladin
-        combat          = major
-        divination      = major
-        healing         = major
-        protection      = major
-      END
+        combat          = major // 32
+        divination      = major // 5
+        healing         = major // 28
+        protection      = major // 21
+      END // 86
 
   END ELSE BEGIN // druids
 
@@ -454,18 +445,19 @@ ACTION_PHP_EACH cd_mod_kits AS clab => class_check BEGIN
       STR_VAR
         table           = EVAL "%clab%"
         class           = druid
-        all             = major
-        animal          = major
-        elemental       = major
-        elemental_air   = major
-        elemental_earth = major
-        elemental_fire  = major
-        elemental_water = major
-        healing         = major
-        plant           = major
-        sun             = major
-        weather         = major
-      END
+        all             = major // 8
+        animal          = major // 15
+        elemental       = major // 3
+        elemental_air   = major // 4
+        elemental_earth = major // 6
+        elemental_fire  = major // 10
+        elemental_water = major // 7
+        healing         = major // 26
+        plant           = major // 11
+        sun             = major // 9
+		sun_moon        = major
+        weather         = major // 7
+      END // 106
 
   END
 

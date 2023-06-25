@@ -1,28 +1,41 @@
 COPY ~divine_remix/2da/A#Cyric.2DA~ ~override~
 
 //Dread Blast innate
-COPY ~Divine_Remix/spl/a#cyr07.spl~ ~override~
+COPY ~Divine_Remix/spl/a#cyr07.spl~ ~override~ //Dread Blast
   SAY NAME1 @13000
-  SAY NAME2 @13000
+  SAY UNIDENTIFIED_DESC @13010
+//Create DireGuard spell
+COPY ~Divine_Remix/spl/tr#cyrdg.spl~ ~override~ //Create Direguard
+  SAY NAME1 @13028
+  SAY UNIDENTIFIED_DESC @13029
+COPY ~Divine_Remix/eff/tr#cyrdg.eff~ ~override~ 
+COPY ~Divine_Remix/cre/tr#cyrdg.cre~ ~override~ //Direguard
+  SAY 0x8 @13030
+  SAY 0xc @13030
+COPY ~Divine_Remix/bam/tr#cyrda.bam~ ~override~
+	 ~Divine_Remix/bam/tr#cyrdb.bam~ ~override~
+	 ~Divine_Remix/bam/tr#cyrdc.bam~ ~override~
+
+COPY ~divine_remix/spl/givespell.spl~ ~override/tr#cyr07.spl~  // Give Create Direguard, lv7 Spell
+  LPF ALTER_EFFECT STR_VAR resource = "tr#cyrdg" END
+
 
 // change spells to innates as needed
-COPY_EXISTING ~spwi508.spl~ ~override/a#cyr09.spl~ // chaos
-              ~spwi614.spl~ ~override/a#cyr11.spl~ // death fog
-              ~spwi711.spl~ ~override/a#cyr14.spl~ // sphere of chaos
+COPY_EXISTING ~sppr601.spl~ ~override/a#cyr05.spl~ // Aerial Servant
+			  ~spwi811.spl~ ~override/a#cyr11.spl~ // Symbol, Fear
+              ~spwi509.spl~ ~override/a#cyr14.spl~ // Feeblemind
   LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
   BUT_ONLY_IF_IT_CHANGES
 
 COPY ~Divine_Remix/spl/a#cyr0b.spl~ ~override~  // Razor's Edge (innate)
   SAY NAME1 @13007
-  SAY NAME2 @13007
   SAY UNIDENTIFIED_DESC @13008
-  SAY DESC @13008
+
+COPY ~Divine_Remix/spl/CDXVFEAR.spl~ ~override~  // immunity to fear (permanent innate spell)
 
 COPY ~Divine_Remix/itm/a#cyr00.itm~ ~override~  // Razor's Edge +0
   SAY NAME1 @13007
-  SAY NAME2 @13007
   SAY UNIDENTIFIED_DESC @13008
-  SAY DESC @13008
   SET "weap_idx" = 0
 
 COPY_EXISTING ~a#cyr00.itm~ ~override/a#cyr01.itm~  // Razor's Edge +1

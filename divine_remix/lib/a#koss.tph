@@ -28,7 +28,9 @@ COPY_EXISTING ~a#koss00.itm~ ~override/a#koss01.itm~ // tendril of flame +1
 COPY ~Divine_Remix/spl/a#kos0c.spl~ ~override~ //fire res
 
 // change spells to innates as needed
-COPY_EXISTING ~spwi418.spl~ ~override/a#kos07.spl~ // fire shield (red)
+COPY_EXISTING ~spwi103.spl~ ~override/a#kos03.spl~ // burning hand
+              ~spwi304.spl~ ~override/tr#kos07.spl~// fireball
+              ~spwi418.spl~ ~override/a#kos07.spl~ // fire shield (red)
               ~spwi523.spl~ ~override/a#kos09.spl~ // sunfire
               ~sppr605.spl~ ~override/a#kos11.spl~ // conjure fire elemental
               ~spwi712.spl~ ~override/a#kos14.spl~ // delayed blast fireball
@@ -44,3 +46,16 @@ ACTION_IF GAME_IS ~tob bg2ee eet bgt~ THEN BEGIN
     SAY DESC @11506
 
 END
+
+COPY_EXISTING ~spwi516.spl~ ~override/a#kos05.spl~ // Conjure Lesser Fire Elemental
+  LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
+    LPF DELETE_EFFECT INT_VAR match_opcode = 165 END // removing the mental combat visual effect for priest
+	LPF DELETE_EFFECT INT_VAR match_opcode = 215 END // removing the mental combat visual effect for priest
+	LPF DELETE_EFFECT INT_VAR match_opcode = 142 END // removing the mental combat visual effect for priest
+	REPLACE_TEXTUALLY SPLESFIR DRLFIR1 (8)
+  BUT_ONLY_IF_IT_CHANGES
+// Cretaing the new creatuers to remove the mental combat script for priest
+	COPY_EXISTING "SPLESFIR.EFF" "override/DRLFIR1.EFF" WRITE_ASCIIE 0x30 DRLFIR1 (8)
+    
+	COPY_EXISTING "ELFIRSUW.CRE" "override/DRLFIR1.cre"
+	  WRITE_ASCII 0x248 "None" #8

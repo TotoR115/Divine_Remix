@@ -12,6 +12,7 @@
 @112 =~Faerie Fire~
 @113 =~Faerie Fire 
 (Alteration)
+
 Level: 1
 Sphere: Weather
 Range: Sight of Caster
@@ -23,18 +24,20 @@ Saving Throw: None
 Faerie Fire outlines the creatures within area of effect with a pale glow, making their positions and movements easily visible. The net effect is an armor class penalty of -2 to the creature and invisible creature become visible.~
 @114 =~Magical Stones
 (Enchantment) 
+
 Level: 1
 Sphere: Combat 
 Range: 0 
 Duration: Special 
 Casting Time: 4 
-Area of Effect: Caster 
+Area of Effect: The Caster 
 Saving Throw: None 
 
 By using this spell, the priest can create three small magical pebbles, no larger than sling bullets. The magical stones can then be hurled up to 30 yards, and all three can be thrown in one round. The character using them must roll normally to hit, although the magic of the stones enables any character to be proficient with them. The stones are considered +1 weapons for determining if a creature can be struck (those struck only by magical weapons, for instance), although they do not have an attack or damage bonus. Each stone that hits inflicts 1d4 points of damage plus an additional 1d4 points to undead. The magic in each stone lasts only for half an hour, or until used.~
 @118 =~Created by the Magical Stone spell.  When thrown at opponents they inflicts 1d4 points of damage plus an additional 1d4 points to undead.~
 @115 =~Command
 (Enchantment/Charm)
+
 Level: 1
 Sphere: Charm, Combat, Law
 Range: 25 ft. 
@@ -47,6 +50,7 @@ This spell enables the priest to command with a single word another humanoid to 
 @116 = ~Dictate~
 @117 = ~Dictate
 (Enchantment/Charm)
+
 Level: 3
 Sphere: Charm, Law
 Range: 30 yards
@@ -58,6 +62,7 @@ Saving Throw: Neg.
 As with the 1st-level spell Command, this spell enables the priest to command other creatures to "die" (sleep), except that the effects of this spell last 1 round per level of the caster. The command must be uttered in a language understood by the creatures. At the end of the last round, the creature(s) awaken and are unharmed. The area of effect is similar to that of a Stinking Cloud or a Fireball.~
 @123 = ~Flame Blade
 (Evocation)
+
 Level: 2
 Sphere: Elemental (Fire) 
 Range: 0 
@@ -70,6 +75,7 @@ With this spell, the caster causes a blazing ray of red-hot fire to spring forth
 
 @124 = ~Goodberry
 (Alteration, Evocation)
+
 Level: 2
 Sphere: Plant
 Range: 0
@@ -83,6 +89,7 @@ Casting a Goodberry spell creates 8 magical berries that the caster can carry wi
 // translator note--you can just use your language's cure disease description and remove the part about curing blindness or deafness
 @125 = ~Cure Disease 
 (Abjuration)
+
 Level: 3
 Sphere: Healing
 Range: Touch
@@ -94,10 +101,11 @@ Saving Throw: None
 By laying <PRO_HISHER> hands upon a sickly person, the caster can cure almost any disease with this spell. The cure is permanent, but does not grant the recipient of the spell immunity from further afflictions. Feeblemind are also cured with this spell. Some magically created diseases may not be curable by this spell.~
 @126 = ~Flame Strike 
 (Invocation/Evocation)
+
 Level: 5
 Sphere: Combat
 Range: 60 yards
-Duration: Instantaneous
+Duration: instantaneous
 Casting Time: 8
 Area of Effect: 7 ft. radius
 Saving Throw: 1/2
@@ -111,17 +119,19 @@ When the priest calls down a flame strike spell, a vertical column of fire roars
 @166 =~Entropy Shield~
 @167 =~Entropy Shield
 (Abjuration)
+
 Level: 6
 Sphere: Chaos
 Range: Caster
 Duration: 8 rounds
 Casting Time: 9
-Area of Effect: Caster
+Area of Effect: The Caster
 Saving Throw: None
 
 When cast, this spell surrounds the caster with a defensive shell of energy that blocks or deflects many attacks. The caster receives a +2 bonus to armor class, 50% resistance to elemental damage (cold, fire, lightning, and acid), +2 to saves and immunity to normal missiles.~
 @168 = ~Chaotic Commands 
 (Enchantment/Charm)
+
 Level: 5
 Sphere: Chaos
 Range: Visual sight of caster
@@ -136,6 +146,7 @@ Chaotic Commands renders a creature immune to magical commands. Suggestion, Char
 @171 = ~Impregnable Mind~
 @172 = ~Impregnable Mind 
 (Enchantment/Charm)
+
 Level: 5
 Sphere: Protection, Thought
 Range: Touch
@@ -148,6 +159,7 @@ This spell guards the spell recipient against magical or psionic attacks that af
 @173 = ~Resist Acid and Corrosion~
 @174 = ~Resist Acid and Corrosion 
 (Abjuration)
+
 Level: 2
 Sphere: Protection
 Range: Touch
@@ -160,6 +172,7 @@ This spell provides a subject with a better resistance to acid, corrosives, and 
 @175 = ~Strength of Stone~
 @176 = ~Strength of Stone 
 (Invocation/Evocation)
+
 Level: 1
 Sphere: Elemental (earth)
 Range: Touch
@@ -171,6 +184,7 @@ Saving Throw: None
 This spell grants supernatural strength to the recipient by raising his strength score to 15+1D4, with +4 translating to 18/50 rather than 19. If the recipient's strength is already 17 or above, this spell may actually lower it.~
 @1761 = ~Strength of Stone 
 (Invocation/Evocation)
+
 Level: 1
 Sphere: Elemental (earth)
 Range: Touch
@@ -188,6 +202,7 @@ With an intimate knowledge of his surroundings and the creatures that live withi
 @179 = ~Cure Blindness or Deafness~
 @180 = ~Cure Blindness or Deafness 
 (Abjuration)
+
 Level: 3
 Sphere: Healing
 Range: Touch
@@ -200,6 +215,7 @@ By touching the creature afflicted, the priest employing the spell can permanent
 @181 = ~Cause Blindness or Deafness~
 @182 = ~Cause Blindness or Deafness 
 (Abjuration)
+
 Level: 3
 Sphere: Healing
 Range: Touch
@@ -214,6 +230,7 @@ Deafened spellcasters have a 50% chance to miscast any spell.  A blinded creatur
 @184 = ~Cause Disease~
 @185 = ~Cause Disease 
 (Abjuration)
+
 Level: 3
 Sphere: Healing
 Range: Touch
@@ -229,10 +246,11 @@ This spell will cause one of two forms of disease in a creature (50% chance of e
 @194 =~Detect Good~
 @195 =~Detect Good 
 (Divination)
+
 Level: 1
 Sphere:  Divination
 Range: Visual range of caster
-Duration: Instant
+Duration: instantaneous
 Casting Time: 2
 Area of Effect: Sight
 Saving Throw: None
@@ -241,6 +259,7 @@ This spell discovers emanations of good from any creature. Any good creature wit
 @196 =~Protection From Good~
 @197 =~Protection From Good 
 (Abjuration)
+
 Level: 1
 Sphere: Protection
 Range: Touch
@@ -253,6 +272,7 @@ When this spell is cast, it creates a magical barrier around the recipient at a 
 @198 =~Protection From Good 10' Radius~
 @199 =~Protection From Good 10' Radius
 (Abjuration)
+
 Level: 4
 Sphere: Protection
 Range: Touch
@@ -268,6 +288,7 @@ When this spell is cast, all creatures within a 10' radius are affected individu
 @202 = ~Protection From Chaos~
 @203 = ~Protection From Chaos
 (Abjuration)
+
 Level: 1
 Sphere: Law
 Range: Touch
@@ -282,6 +303,7 @@ When this spell is cast, it creates a magical barrier around the recipient at a 
 @204 =~Cause Medium Wounds~
 @205 =~Cause Medium Wounds 
 (Necromancy)
+
 Level: 3
 Sphere: Healing
 Range: Touch
@@ -294,6 +316,7 @@ This spell is the reverse of Cure Medium Wounds. Instead of healing the creature
 @206 =~Cause Light Wounds~
 @207 =~Cause Light Wounds 
 (Necromancy)
+
 Level: 1
 Sphere: Healing
 Range: Touch
@@ -305,6 +328,7 @@ Saving Throw: None
 This spell is the reverse of Cure Light Wounds. Instead of healing the creature touched, it causes damage.  On a successful touch from the priest, the spell inflicts 8 damage upon the target.  The next attack that the priest makes will inflict this effect, however he only has 2 rounds to make the attack before the spell fizzles.  Also, if the priest misses the target creature the spell is wasted. There is no saving throw.~
 @208 =~Slay Living 
 (Necromancy)
+
 Level: 5
 Sphere: Necromantic
 Range: Touch
@@ -315,7 +339,8 @@ Saving Throw: Special
 
 Upon casting this spell, the priest has to touch an opponent in order to visit the effect upon them. An item is created upon casting. The next attack the priest makes, which must happen in the next 3 rounds, will use this item. If the first attack misses, the item disappears and the spell is wasted; however, if the attack succeeds, the victim automatically takes 2d8+1 damage. Also, <PRO_HESHE> must make a Save vs. Death or be instantly killed. Slay Living can be dispelled if cast between the casting of this spell and the necessary attack.~
 @209 =~Energy Drain
-(Necromancy) 
+(Necromancy)
+
 Level: 7
 Sphere: Necromantic
 Range: Touch
@@ -328,6 +353,7 @@ Upon casting this spell, the priest has to touch an opponent in order to visit t
 @210 =~Destruction~
 @211 =~Destruction
 (Necromancy)
+
 Level: 7
 Sphere: Necromantic
 Range: Touch
@@ -340,6 +366,7 @@ Upon casting this spell, the priest has to touch an opponent in order to visit t
 @212 =~Wither~
 @213 =~Wither
 (Necromancy)
+
 Level: 7
 Sphere: Healing
 Range: Touch
@@ -350,8 +377,9 @@ Saving Throw: Special
 
 This spell is the reverse of regeneration. Instead of healing, this spell causes the member or organ touched to cease functioning in one round.  On a successful touch from the priest, the spell inflicts 3 damage per seconds upon the target.  The next attack that the priest makes will inflict this effect, however he only has 2 rounds to make the attack before the spell fizzles.  Also, if the priest misses the target creature the spell is wasted. There is no saving throw.~
 
-@214 =~Conjure Air Elemental 
+@214 =~Conjure Air Elemental
 (Conjuration/Summoning)
+
 Sphere: Elemental (air)
 Level: 7
 Range: Visual sight of caster 
@@ -361,8 +389,9 @@ Area of Effect: Special
 Saving Throw: None 
 
 Upon casting a conjure air elemental spell, the caster opens a special gate to the elemental plane of Air, and an air elemental is summoned to the vicinity of the spellcaster.  It is 60% likely that a 12 hit dice elemental appears, 35% likely that a 16 hit dice elemental appears, and 5% likely that a 24 hit dice elemental appears.  Once the elemental appears the caster must concentrate on the creature for 3 rounds in order to assure that the elemental will not turn on him (there is a 15% chance of losing control).  However, after this period has passed the elemental will do the bidding of the caster until it is slain, or the duration of the spell runs out.  All of the commands given to the elemental are done so telepathically, so there is no time lost due to miscommunication, and it is not necessary to know the language of the summoned creature.~
-@215 =~Energy Drain 
+@215 =~Energy Drain
 (Necromancy)
+
 Level: 7
 Sphere:  Necromantic
 Range: Touch
@@ -373,13 +402,14 @@ Saving Throw: None
 
 The casting of this spell opens a channel between the caster's plane and the Negative Energy plane.  The caster of the spell acts as a conduit between the two planes, sucking life from a victim and transferring it to the Negative energy plane, draining him of 2 levels of experience.  The target of this spell loses levels, Hit Dice, hit points, and abilities permanently.  These levels can only be restored by a priest's restoration spell.~
 @216 = ~Conjure Animals
-(Conjuration/Summoning) 
+(Conjuration/Summoning)
+ 
 Level: 6
 Sphere: Summoning
 Range: 30 yards
 Duration: 2 rounds/levels
 Casting Time: 9
-Area of Effect: Special 
+Area of Effect: special 
 Saving Throw: None
 
 This spell allows the caster to summon forth and control massive animals. The total Hit Dice of the mammals cannot exceed his level. The animals will respond to the caster's every whim for the duration of the spell.~
@@ -387,6 +417,7 @@ This spell allows the caster to summon forth and control massive animals. The to
 @217 =~Protection from Alignment~
 @249 = ~Animal Friendship
 (nchantment/Charm)
+
 Level: 1
 Sphere: Animal
 Range: 10 yards
@@ -398,13 +429,14 @@ Saving Throw: Neg.
 This spell affects any single animal it is cast upon. If the spell's recipient fails <PRO_HISHER> Saving Throw, <PRO_HESHE> regards the caster as a trusted friend and ally to be heeded and protected. The caster may give <PRO_HIMHER> orders, and the charmed individual will carry them out as quickly as possible.
 
 If the caster harms—or attempts to harm—the charmed animal by some overt action, or if a Dispel Magic spell is cast upon the charmed animal, the Charm spell is broken. If two or more Charms simultaneously affect a creature, the most recent Charm takes precedence. Note that the subject has full memory of the events that took place while <PRO_HESHE> was charmed. Also note that you cannot have a charmed creature leave the area where <PRO_HESHE> is charmed.~
-@250 = ~Dismissal~
-@251 = ~Dismissal
+@250 = ~Abjure~
+@251 = ~Abjure
 (Abjuration)
+
 Level: 4
 Sphere: Summoning
 Range: Visual sight of caster
-Duration: Instant
+Duration: instantaneous
 Casting Time: 1
 Area of Effect: 1 creature
 Saving Throw: Special
@@ -412,6 +444,7 @@ Saving Throw: Special
 Upon completion of this spell the target summoned creature is instantly slay. If the target creature is an extraplanar it must make a saving throw vs. Spell or be returned to the place it came from. This spell has no effect on creatures that are not summoned or extraplanar, so it is possible to send back a djinni but not an ogre or a dryad that have not been summoned.~
 @252 = ~Holy Word
 (Conjuration/Summoning)
+
 Level: 7
 Sphere: Combat
 Range: 0
@@ -431,6 +464,7 @@ Less than 4  –  Death
 There is no Saving Throw. The effects are instantaneous and last for the duration of the spell or until dispelled. Note that this spell may not be cast by any priest of evil alignment.~
 @253 = ~Unholy Word
 (Conjuration/Summoning)
+
 Level: 7
 Sphere: Combat
 Range: 0
@@ -451,10 +485,11 @@ There is no Saving Throw. The effects are instantaneous and last for the duratio
 @254 = ~Pyrotechnics~
 @255 = ~Pyrotechnics
 (Transmutation/Alteration)
+
 Level: 3
 Sphere: Elemental Fire
 Range: Visual sight of caster
-Duration: Instant
+Duration: instantaneous
 Casting Time: 2
 Area of Effect: 15-ft. radius
 Saving Throw: Neg.
@@ -463,6 +498,7 @@ Upon completion of this spell, the caster create a display of flashing, fiery li
 @256 = ~Animal Growth~
 @257 = ~Animal Growth
 (Transmutation/Alteration)
+
 Level: 5
 Sphere: Animal
 Range: Visual sight of caster
@@ -474,7 +510,8 @@ Saving Throw: None
 When this spell is cast, the caster causes all friendly animals within range to grow in size. This increase had a number of effects including making the creature more powerful. The alteration grants +4 bonus to attack rolls, damage rolls and saving throws. It also increases the recipient's hit points by 100%.~
 @258 = ~Produce Ice~
 @259 = ~Produce Ice
-(Evocation)
+(Invocation/Evocation)
+
 Level: 5
 Sphere: Elemental Water
 Range: 60 yards
@@ -486,6 +523,7 @@ Saving Throw: Special
 When this spell is cast, This spell creates supernatural cold in the area of effect that inflicts 2d4 points plus 1 point per level of the caster of cold damage (up to a maximum of 2d4 + 20) and slow any creature within the area of effect for 4 rounds/Level. a successfully save versus spells half damage and negate slow.~
 @260 = ~Wall of Fire 
 (Conjuration/Summoning)
+
 Level: 5
 Sphere: Elemental Fire
 Range: 60 yards
@@ -498,6 +536,7 @@ The wall of fire spell brings forth an immobile, blazing curtain of magical fire
 @261 = ~Wolf Spirit~
 @262 = ~Wolf Spirit
 (Conjuration/Summoning)
+
 Level: 7
 Sphere: Animal
 Range: 60 yards
@@ -510,6 +549,7 @@ This spell allows the caster to summon forth and control 5 Wolf Spirit. They wil
 @263 = ~Battlefate~
 @264 = ~Battlefate
 (Transmutation/Alteration)
+
 Level: 1
 Sphere: Chaos
 Range: Visual sight of caster
@@ -529,6 +569,7 @@ This spell alters probability to favor one character or creature locked in battl
 @265 = ~Adamantite Mace~
 @266 = ~Adamantite Mace
 (Transmutation/Alteration)
+
 Level: 4
 Sphere: Elemental Earth
 Range: 0
@@ -541,6 +582,7 @@ By means of this spell, the priest creates a an enchanted weapon of adamantite, 
 @267 = ~Command Monster~
 @268 = ~Command Monster
 (Enchantment/Charm)
+
 Level: 6
 Sphere: Charm
 Range: 25 ft. 
@@ -553,6 +595,7 @@ This spell enables the priest to command with a single word to any one creature 
 @269 = ~Produce Flame~
 @270 = ~Produce Flame
 (Transmutation/Alteration)
+
 Level: 2
 Sphere: Elemental Fire
 Range: 40 yards
@@ -565,6 +608,7 @@ This spell produce a flame in the Priest hand. The flame does not harm the caste
 @271 = ~Bestow Curse~
 @272 = ~Bestow Curse
 (Abjuration)
+
 Level: 3
 Sphere: Protection
 Range: Touch
@@ -580,6 +624,7 @@ Upon completion of this spell, the priest must touched his target of a bestow cu
 @273 = ~Summon Animal Spirit~
 @274 = ~Summon Animal Spirit
 (Necromancy)
+
 Level: 3
 Sphere: Summoning
 Range: 30 yards
@@ -592,18 +637,20 @@ This spell summons a minor spirit or entity to the caster's aid. It appears as a
 @275 = ~Detect Snares and Pits~
 @276 = ~Detect Snares and Pits
 (Divination)
+
 Level: 1
 Sphere: Plant
 Range: Caster
 Duration: 3 turns
 Casting Time: 4
-Area of Effect: Caster
+Area of Effect: The Caster
 Saving Throw: None
 
 Upon casting this spell, the caster is able to detect snares, pits, deadfalls and similar hazards. The caster experiences a feeling of danger from the direction of a detected hazard, which increases as the danger is approached. The caster learns the general nature of the danger (pit, snare, or deadfall) but not its exact operation, nor how to disarm it. Close examination, however, enables the caster to sense what intended actions might trigger it. Due to the nature of the spell, the caster must be outdoor.~
 @277 = ~Giant Insect~
 @278 = ~Giant Insect
 (Transmutation/Alteration)
+
 Level: 4
 Sphere: Animal
 Range: 20 yards
@@ -624,6 +671,7 @@ These insects will remain under the Priest's control until slain, or the spell d
 @283 = ~Watery Fist~
 @284 = ~Watery Fist
 (Conjuration)
+
 Level: 2
 Sphere: Elemental Water
 Range: 60 yards
@@ -637,6 +685,7 @@ it attacks with THAC0 of 12, inflicts 2d8 damage, is AC 6 and has 28 hp. It can 
 @285 = ~Symbol, Pain~
 @286 = ~Symbol, Pain
 (Conjuration/Summoning)
+
 Level: 7
 Sphere: Guardian
 Range: 25 ft.
@@ -649,6 +698,7 @@ Symbol, Pain is a powerful enchantment that allows the priest to inscribe a symb
 @287 = ~Symbol, Hopelessness~
 @288 = ~Symbol, Hopelessness
 (Conjuration/Summoning)
+
 Level: 7
 Sphere: Guardian
 Range: 25 ft.
@@ -661,6 +711,7 @@ Symbol, Hopelessness is a powerful enchantment that allows the priest to inscrib
 @289 = ~Symbol, Persuasion~
 @290 = ~Symbol, Persuasion
 (Conjuration/Summoning)
+
 Level: 7
 Sphere: Guardian
 Range: 25 ft.
@@ -671,22 +722,38 @@ Saving Throw: None
 
 Symbol, Persuasion is a powerful enchantment that allows the priest to inscribe a symbol on the ground or any other surface. The symbol will remain there until an opponent comes too close, at which point it will explode, causing all enemies within the area of effect to make a Saving Throw vs. Spell or become of the same alignment as and friendly
 to the priest who scribed for 2 rounds + 1 round every 3 levels of the caster.~
-@291 = ~Obscuring Mist~
-@292 = ~Obscuring Mist
-(Conjuration/Summoning)
+@291 = ~Dispel Fatigue~
+@292 = ~Dispel Fatigue
+(Necromancy)
+
 Level: 1
-Sphere: Weather
-Range: 30 ft.
-Duration: 6 rounds
-Casting Time: 5
-Area of Effect: 20-ft. radius
+Sphere: Necromantic
+Range: Visual sight of caster
+Duration: instantaneous
+Casting Time: 4
+Area of Effect: 1 Creature
 Saving Throw: None
 
-When this spell is cast, a misty bank of fog billows out from the designated point obscuring all sight. Everyone within the cloud suffer -2 penalty to attack rolls, and have their line of sight halved. Anyone, inside or outside the cloud, trying to attack a creature concealed by the fog with ranged weapons will do so with a -4 penalty to attack rolls.~
+This spell removes physical fatigue or exhaustion from the subject by undoing the physiological effects of his exertions. The subject is instantly restored to his normal, fully rested level of endurance or vigor. This spell can be used to negate the penalties of forced marching, long swims, jogging, running, or sprinting. 
+Once this spell has been cast, the subject may start to accumulate fatigue, depending on how he continues to exert himself.~
+@293 = ~Call Upon Faith~
+@294 = ~Call Upon Faith
+(Invocation/Evocation)
+
+Level: 1
+Sphere: Summoning
+Range: Caster
+Duration: 2 rounds
+Casting Time: 1
+Area of Effect: The Caster
+Saving Throw: None
+
+Before attempting a difficult task, the priest may cast call upon faith to aid his performance. The priest raises by 1 point for every 3 levels any die roll needed to complete a task to a maximum of 3 points at level 9. The bonus affects saving throws, attack rolls, ability checks, etc.~
 
 @401 = ~Monster Summoning IV~
 @402 = ~Monster Summoning IV 
 (Conjuration/Summoning) 
+
 Level: 6
 Range: 40 yards 
 Duration: 7 rounds + 1 round/level
@@ -697,6 +764,7 @@ Saving Throw: None
 This spell is much like the 3rd-level monster summoning I spell, except that this spell summons 6 HD monsters. There is a 60% chance of receiving one monster and a 40% chance of receiving two monsters.  These monster(s) appear within spell range and attack the caster's opponents until the spell duration expires, or until they are slain.~
 @403 = ~Wyverns Call 
 (Conjuration/Summoning) 
+
 Level: 6
 Range: 40 yards 
 Duration: 6 rounds + 1 round/level
@@ -820,8 +888,18 @@ STORM SHIELD: This spell lasts 1 round per level of the caster. It protects the 
 
 Disadvantages:
 – Alignment restricted to neutral evil, chaotic evil, and chaotic neutral.~
+@10172 =~Storm Shield
+(Abjuration)
 
+Level: 3
+Sphere: Protection, Weather
+Range: 0
+Duration: 1 round/level
+Casting Time: 3
+Area of Effect: The Caster
+Saving Throw: None
 
+This spell creates a barrier of solid air that protects the caster completely from lightning, fire, cold, and normal missiles. This ability lasts 1 round per level of the caster. A storm shield is only deflects normal missiles; a sword or other weapon can be thrust through it with no effect on either the shield or the attack.~
 @10176 =~Evasion
 Powerful clerics may call upon their deity to watch over them from harm, sliding past blows with ease. Evasion gives a bonus of 4 to AC and 2 to all saving throws. The effect lasts for 3 rounds.~
 // this is the sphere-enabled kit description. Spheres will be added automatically via patching
@@ -833,9 +911,11 @@ The Half-Spear is the spiritual weapon of Stormlords of Talos, and is wielded as
 - Innate electrical resistance of 1% per level
 - Destructive Blow once per day
 DESTRUCTIVE BLOW: Once per day, a Stormlord can focus the destructive wrath of Talos in combat. This spell grants the Stormlord +2 to damage and +2 to hit for one round per level, up to 20 rounds.
-- From level 7 can cast Storm Shield once per day
+- Shocking Grasp once per day, as fist level mage spell of the same name
+- From level 3 can cast Call lightning once per day, as third level priest spell of the same name
+- From level 5 can cast Storm Shield once per day
 STORM SHIELD:  This spell lasts 6 seconds per level of the caster.  It protects the caster from lightning, fire, cold and normal missiles.
-- From level 9 can cast Cloudkill once per day, as fifth level mage spell of the same name
+- From level 7 can cast Lightning Bolt once per day and every three levels, as third level mage spell of the same name
 - From level 11 can cast Chain Lightning once per day, as sixth level mage spell of the same name
 - From level 14 can cast Earthquake once per day, as seventh level cleric spell of the same name
 
@@ -855,11 +935,12 @@ Abilities:
 
 - Spiritual Weapon: Mace - 'Dawn's Embrace' once per day
 The mace is the spiritual weapon of Morninglords of Lathander, and is wielded as if the caster had grand mastery in the weapon. The mace is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
-- May cast 'Boon of Lathander' for every 10 levels of the caster, as detailed below  (starts at 1st level with one use).
+- From level 3 can cast Faerie Fire thrice per day, as first level priest spell of the same name
+- From level 5 can cast Hold Undead once per day, as third level mage spell of the same name
+- From level 7 can cast Boon of Lathander once per day
 BOON OF LATHANDER:  This spell lasts for 6 seconds per level of the caster.  It gives the caster +1 to hit, +1 to damage, +1 to all saving throws and gives the caster 1 extra attack per round.  It also protects the recipient from level drain.
-- From level 7 can cast Hold Undead once per day, as third level mage spell of the same name
-- From level 9 can cast Flame Strike once per day, as fifth level cleric spell of the same name
-- From level 11 can cast Heal once per day, as sixth level cleric spell of the same name
+- From level 9 can cast False Dawn once per day, as sixth level cleric spell of the same name
+- From level 11 can cast Raise Dead once per day, as fifth level cleric spell of the same name
 - From level 14 can cast Greater Restoration once per day, as seventh level cleric spell of the same name
 
 Disadvantages:
@@ -908,6 +989,18 @@ STATISTICS:
 @10189 =~Watcher of Helm~
 @10190 =~Morninglord of Lathander~
 @10192 =~Lathander's Renewal~
+@10191 =~Boon of Lathander
+(Conjuration/Summoning)
+
+Level: 4
+Sphere: Combat
+Range: 0
+Duration: 1 round/level
+Casting Time: 3
+Area of Effect: The Caster
+Saving Throw: None
+
+This ability lasts 1 round per level of the caster. It gives the caster a +1 bonus to attack and damage rolls, a +1 bonus to all Saving Throws, and 1 extra attack per round. It also protects the caster from level drain.~
 @10193 =~Granted to the highest ranks of Lathander's Morninglords, this spell heals all party members, removes adverse effects including level drain, blindness, disease, confusion, feeblemind, and deafness as well as healing the party. The party will also generate one hp/sec for 20 rounds.~
 // this is the sphere-enabled kit description. Spheres will be added automatically via patching
 @10194 =~WATCHER OF HELM: Followers of the neutral god of watchers and protectors are warriors in their own right and are often seen as defenders of the innocent.
@@ -915,17 +1008,46 @@ STATISTICS:
 Abilities:
 - Spiritual Weapon: Bastard Sword - 'Ever Watchful' once per day
 The bastard sword is the spiritual weapon of Watchers of Helm, and is wielded as if the caster had grand mastery in the weapon. The bastard sword is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
-- Glyph of Warding once per day, as third level cleric spell of the same name
-- From level 7 can cast Farsight once per day, as fourth level cleric spell of the same name
-- From level 9 can cast Protection From Normal Weapons once per day, as fifth level mage spell of the same name
-- From level 11 can cast True Seeing once per day, as fifth level cleric spell of the same name
-- From level 14 can cast Mantle once per day, as seventh level mage spell of the same name~
+- From level 3 can cast Glyph of Warding once per day, as third level cleric spell of the same name
+- From level 5 can cast exaltation once per day, as third level cleric spell of the same name
+EXALTATION: This spell enables a priest to aid and protect any one being other than the priest. By touch, the caster removes the effects of fear, sleep, feeblemindedness, unconsciousness, and intoxication, as well as berserk and confused states of mind. In addition, the recipient is protected against spells and other attacks that cause these effects for the duration of the spell.
+- From level 7 can cast seeking Sword once per day
+SEEKING SWORD: This spell creates a sword in the Cleric's hand (that cannot be dropped or unequipped). The sword is considered a +4 weapon for purposes of determining what it can hit (but this bonus does not apply to attack or damage rolls), and it deals out 2d4 damage to any target it hits. The weapon sets the number of attacks of the Cleric to 3. It lasts for 1 round per level of the caster. When equipped, the wielder cannot cast further spells.
+- At 7th level, Watcher of Helm can make three melee attacks every two rounds
+- From level 9 can cast True Seeing once per day, as fifth level cleric spell of the same name
+- From level 11 can cast Globe of Invulnerability once per day, as sixth level mage spell of the same name
+- At 13th level, Watcher of Helm can make two melee attacks per round
+- From level 14 can cast Mantle once per day, as seventh level cleric spell of the same name~
 @10195 =~I bid you welcome to the Home of the Morninglord.~
 @10196 =~High Watcher Oisig mentioned a threat to his temple and yours.~
 @10197 =~Thank you. I'll be on my way.~
 @10198 =~Oisig sent me here regarding the eyeless preacher on the street.~
 @10199 =~High Watcher Oisig did? Then I am indeed in his debt, as you have the look of a servant of what is right, a <PRO_MANWOMAN> of good faith and charity.~
+@10200 =~Exaltation~
+@10201 =~Exaltation
+(Abjuration)
 
+Level: 3
+Sphere: Combat, Healing
+Range: Touch
+Duration: 1 turn
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
+
+This spell enables a priest to aid and protect any one being other than the priest. By touch, the caster removes the effects of fear, sleep, feeblemindedness, unconsciousness, and intoxication, as well as berserk and confused states of mind. In addition, the recipient is protected against spells and other attacks that cause these effects for the duration of the spell.~
+@10202 =~Seeking Sword
+(Evocation)
+
+Level: 4
+Sphere: Combat
+Range: 0
+Duration: 1 round/level
+Casting Time: 5
+Area of Effect: The Caster
+Saving Throw: None
+
+This ability creates a sword in the character's hand that cannot be dropped or unequipped. The sword is enchanted as a +4 weapon and provides a +4 THAC0 bonus, but no damage bonus. It deals 2d4 damage to any target it hits. The weapon sets the character's number of attacks per round to 3 and lasts for 1 round per level. While it is equipped, the wielder cannot cast further spells.~
 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -948,10 +1070,10 @@ Abilities:
 - Spiritual Weapon: Mace - 'Moon's Hand' once per day
 The Moon's Hand is the spiritual weapon of Silverstars of Selûne, and is wielded as if the caster had grand mastery in the weapon. The Moon's Mace is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - Infravision
-- Can cast Moon Shield once per day
-MOON SHIELD: Upon casting this spell, the Silverstar receives a resistance to all magic. The resistance conferred is 2% per level of the cleric up to a maximum of 40% at 20th level. This resistance is set so if the target already has more magic resistance than the cleric would confer, it will actually lower it to the set value. This effect will last for the duration of the spell or until dispelled.
-- From level 7 can cast Free Action once per day, as fourth level cleric spell of the same name
-- From level 9 can cast Sunfire once per day, as fifth level mage spell of the same name
+- From level 3 Can cast Moon Shield once per day
+- From level 5 can cast Moon Blade once per day
+- From level 7 can cast True Seeing once per day, as fifth level cleric spell of the same name
+- From level 9 can cast Moonfire once per day
 - From level 11 can cast Summon Air Elemental once per day, as sixth level mage spell of the same name
 - From level 14 can cast Protection From The Elements once per day, as seventh level mage spell of the same name
 
@@ -961,16 +1083,48 @@ Disadvantages:
 @10304 =~The Moon's Hand is the spiritual weapon of Silverstars of Selûne, and is wielded as if the caster had grand mastery in the weapon. The Moon's Hand is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
 @10305 =~silverstar of Selûne~
 @10307 =~Moon Shield~
-@10308 =~Moon Shield (Alteration)
-Level: 5
+@10308 =~Moon Shield 
+(Alteration)
+
+Level: 2
 Sphere: Protection
 Range: Caster
-Duration: 3 rounds + 1 round/level
+Duration: 1 turn
 Casting Time: 1 round
-Area of Effect: Caster
+Area of Effect: The Caster
 Saving Throw: None
 
-Upon casting this spell, the Silverstar receives a resistance to all magic.  The resistance conferred is 2% per level of the cleric up to a maximum of 40% at 20th level.  This resistance is set so if the target already has more magic resistance than the cleric would confer, it will actually lower it to the set value.  This effect will last for the duration of the spell or until dispelled.~
+Upon casting this spell, the Silverstar receives a protection against fear, negative plane and ability-draining attack. The Shield also provides a +2 bonus to all saving throws against Spell.~
+@10309 =~Moon Blade~
+@10310 =~Moon Blade
+(Alteration)
+
+Level: 3
+Sphere: Combat, Sun
+Range: 0
+Duration: 2 turns
+Casting Time: 6 rounds
+Area of Effect: The Caster
+Saving Throw: None
+
+This spell summons forth a silent, weightless sword-like construct made of moonlight that extends four feet from the caster's hand. The moonblade is considered a +4 weapon for determining what creatures it can hit, though the bonus does not apply to attack rolls made with it. In addition, due to the insubstantial nature of the moonblade, melee bonuses from Strength do not apply.
+
+The strike of a moonblade drains a target's vitality, inflicting 1d12+4 points of damage, plus an additional 1d12 points to undead, who are particularly susceptible. A successful strike also temporarily scrambles magic, causing any spells the target casts in the next round to fail.~
+@10311 =~Moonfire~
+@10312 =~Moonfire
+(Necromancy)
+
+Level: 5
+Sphere: Sun
+Range: 20 yards
+Duration: instantaneous
+Casting Time: 1 round
+Area of Effect: 10 ft. wide and 30 ft. long
+Saving Throw: None
+
+This spell unleashes a flash of “cold white fire” akin to bright moonlight in appearance. All undead creatures within the area of effect suffer 20 points of magic damage (no saving throw). 
+Moonfire also chills living creatures, doing 2d4 points of cold damage to those who come into contact with it.
+Finally, It has the property of revealing all creatures, outlining them with a brilliant greenish radiance. The net effect is an armor class penalty of -2 and invisible creature become visible for 1 turn.~
 @10319 =~Holy Symbol of Selûne~
 @10320 =~Only the most worthy and devoted Silverstars of Selûne are granted these powerful holy symbols.
 
@@ -986,10 +1140,14 @@ Non-evil lycanthropes honor Selûne as the master of their fate as do astrologers
 Selûne's clerics, called Silverstars of Selûne, are dedicated advocates of freedom and tolerance, wanderers on the path of truth and absolute foes of Shar. They seek to build harmony among lycanthropes and non-shapechangers, and they protect the weak and the oppressed everywhere. They cannot abide slavery, and they hate most undead. They rarely settle in one place for long, instead moving along when seized by wanderlust or enticed by a new cause or mission. They deal with lunar energies and phenomena and are, to a limited degree, able to wield the power of the moon, bringing its fierce, pure white light to Toril to advance the goddess's wishes.
 
 Advantages:
-– May cast Free Action once per day every 5 levels (starts at 1st level with one use).
-– May cast Moon Shield once per day every 10 levels (starts at 1st level with one use), as detailed below.
+– May cast Moon Shield once per day every 5 levels (starts at 1st level with one use), as detailed below.
+– May cast Moonfire once per day every 10 levels (starts at 1st level with one use), as detailed below.
 
-MOON SHIELD: Upon casting this spell, the Silverstar receives a resistance to all magic. The resistance conferred is 2% per level of the cleric up to a maximum of 40% at 20th level. This resistance is set so if the target already has more magic resistance than the cleric would confer, it will actually lower it to the set value. This effect will last for the duration of the spell or until dispelled.
+MOON SHIELD: Upon casting this spell, the Silverstar receives a protection against fear, negative plane and ability-draining attack. The Shield also provides a +2 bonus to all saving throws against Spell.
+
+MOONFIRE: This spell unleashes a flash of “cold white fire” akin to bright moonlight in appearance. All undead creatures within the area of effect suffer 20 points of magic damage (no saving throw). 
+Moonfire also chills living creatures, doing 2d4 points of cold damage to those who come into contact with it.
+Finally, It has the property of revealing all creatures, outlining them with a brilliant greenish radiance. The net effect is an armor class penalty of -2 and invisible creature become visible for 1 turn.
 
 Disadvantages:
 – Alignment restricted to chaotic good, neutral good, and chaotic neutral.~
@@ -1020,15 +1178,16 @@ Abilities:
 - Spiritual Weapon: Chakram - 'Disc of Night' once per day
 The Disc of Night is the spiritual weapon of Nightcloaks. The chakram is treated as a returning dart and is wielded as if the caster had grand mastery in the weapon. The chakram is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - Immune to all forms of Blindness.
-- Can cast Dark Bolt once per day.
-This spell creates small chakrams in the casters hand (one per level of the caster). These chakrams can be hurled, causing silence on a failed save vs. spell on the target creature and causing 2d4 cold damage. Undead creatures must also make a save vs. paralyzation or be held for one round.
-- From level 7 can cast Confusion once per day, as fourth level mage spell of the same name
+- From level 3 can cast Blindness once per day, as first level mage spell of the same name
+- From level 5 can cast Power Word, Sleep once per day, as second level mage spell of the same name
 - From level 9 can cast Feeblemind once per day, as fifth level mage spell of the same name
-- From level 11 can cast Invisible Stalker once per day, as sixth level mage spell of the same name
-- From level 14 can cast Power Word, Stun once per day, as seventh level mage spell of the same name~
+- From level 11 can cast Shadow Door once per day, as fifth level mage spell of the same name
+- From level 14 can cast Power Word, Blind once per day, as eighth level mage spell of the same name~
 @10603 =~nightcloak of shar~
 @10604 =~Shar's Curse~
-@10605 =~Shar's Curse (Enchantment/Charm)
+@10605 =~Shar's Curse 
+(Enchantment/Charm)
+
 Level: Quest
 Sphere: Charm
 Range: Visual range of the caster
@@ -1040,10 +1199,38 @@ Saving Throw: Neg
 A powerful spell granted by Shar to the most worthy of her clerics, Shar's Curse sucks the wits from her foes, leaving them incapable of performing actions--a fitting curse from the Lady of Loss. Affected foes remain in this state until a successful dispel magic is cast upon them. The victim must make a save vs. spell at -4 in order to avoid the effect.
 
 Choosing this ability permits the spell to be cast as an innate once per day. This may only be chosen once.~
+@10606 = ~Armor of Darkness~
+@10607 = ~Armor of Darkness
+(Transmutation/Alteration)
+
+Level: 3
+Sphere: Protection, Sun
+Range: Touch
+Duration: 2 turns
+Casting Time: 6
+Area of Effect: 1 Creature
+Saving Throw: None
+
+This spell creates a flickering, impressive-seeming shroud of magical darkness around the caster or a single touched recipient creature. It improves the wearer's Armor Class by 2 point and lessens all nonmagical damage suffered by the wearer by 5%. If the caster is of 12th level or greater, it improves the wearer's Armor Class by 3 point and lessen all nonmagical damage suffered by the wearer by 10%. 
+This spell also gives infravision and immunity to blind and charm effects.~
 @10608 =~Chakram - 'Disc of Night'~
 @10609 =~The favored weapon of Shar is the Disc of Night, a chakram. Much like a dart, this circular metal weapon is thrown, and in this case will magically return to its owner.
 
 Shar has gifted the most devout of her clergy, the Nightcloaks, with the ability to summon such a weapon, once a day. The weapon becomes more powerful as the cleric grows with power and importance in Shar's eyes. The chakram is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above.~
+@10610 =~Darkbolt~
+@10611 =~Darkbolt
+(Invocation/Evocation)
+
+Level: 4
+Sphere: Combat
+Range: 30 yards
+Duration: 1 turns
+Casting Time: 7
+Area of Effect: 1 Creature
+Saving Throw: Special
+
+This spell creates small chakrams in the casters hand (one per level of the caster). These chakrams can be hurled, causing silence on a failed save vs. spell on the target creature and causing 2d4 cold damage. Undead creatures must also make a save vs. paralyzation or be held for one round.~
+
 @10615 =~Holy Symbol of Shar~
 @10616 =~Shar rewards her most powerful servants with a Holy Symbol, a ring bearing her personal device of a black circle lined with purple. When worn, the symbol empowers the Nightcloak with Shar's power.
 
@@ -1064,9 +1251,9 @@ Clerics of Shar are called Nightcloaks. They exist outside the standard church h
 
 Advantages:
 – May cast Confusion once per day every 5 levels (starts at 1st level with one use).
-– May cast Dark Bolt once per day every 10 levels (starts at 1st level with one use), as detailed below.
+– May cast Darkbolt once per day every 10 levels (starts at 1st level with one use), as detailed below.
 
-DARK BOLT: This spell creates small chakrams in the casters hand (one per level of the caster). These chakrams can be hurled, causing silence on a failed save vs. spell on the target creature and causing 2d4 cold damage. Undead creatures must also make a save vs. paralyzation or be held for one round.
+DARKBOLT: This spell creates small chakrams in the casters hand (one per level of the caster). These chakrams can be hurled, causing silence on a failed save vs. spell on the target creature and causing 2d4 cold damage. Undead creatures must also make a save vs. paralyzation or be held for one round.
 
 Disadvantages:
 – Alignment restricted to neutral evil, lawful evil, chaotic evil, and true neutral.~
@@ -1074,10 +1261,13 @@ Disadvantages:
 @10620 = ~Less than a fortnight after your secret acceptance into the the local order of Nightcloaks, you were summoned before the leader of your cell. In a quiet, if somewhat brief meeting, you were assigned your first duty by your Sister Night: to make a pilgrimage to the North and see if you could estblish a small organization in the frontier towns. Almost as an afterthought, he mentioned portents and omens concerning events transpiring in the North that might be of interest to the Lady of Loss; it was the belief of the temple that having a direct line of information on the potential troubles in the region was needed.
 
 Though these pilgrimages are often considered an unwanted duty by the more politically minded clergymen of your order, you found yourself eager to accept the task. It seemed to be a chance to do the Nightsinger’s will in a practical way, an opportunity to escape the routine of long nights skulking in the dark alleyways in the city. Without hesitation, you agreed to make the pilgrimage, and within a tenday you set out on your journey, armed only with a staff in your hand and the promise of unearthed secrets.~
-@10621 = ~Dark Bolt~
-@10622 = ~Dark Bolt 
+@10621 = ~Darkbolt~
+@10622 = ~Darkbolt
 This spell creates small chakrams in the casters hand (one per level of the caster). These chakrams can be hurled, causing silence on a failed save vs. spell on the target creature and causing 2d4 cold damage. Undead creatures must also make a save vs. paralyzation or be held for one round.~
 @10623 =~Shar has often been our ally. I offer you a chance to deliver vengeance for the Stormlord!~
+@10624 = ~Darkbolt
+
+Created by the Darkbolt spell, This chakrams can be hurled, causing silence on a failed save vs. spell on the target creature and inflicting 2d4 cold damage. Undead creatures must also make a save vs. paralyzation or be held for one round.~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1095,12 +1285,13 @@ Collectively, the clerics of the Red Knight are referred to as the Red Fellowshi
 Abilities:
 - Spiritual Weapon: Longsword - 'Checkmate' once per day
 The Checkmate is the spiritual weapon of Holy Strategists, and is wielded as if the caster had grand mastery in the weapon. The Checkmate is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
-- Can cast Infravision, Clairvoyance, and Wizard Eye as divine spells
+- Can cast Infravision and Wizard Eye as divine spells
 - At 13th level, Holy Strategists can make two melee attacks per round
-- From level 7 can cast Haste once per day, as third level mage spell of the same name
-- From level 9 can cast Defensive Harmony once per day, as fourth level cleric spell of the same name
-- From level 11 can cast Mass Cure once per day, as fifth level cleric spell of the same name
-- From level 14 can cast Mantle once per day, as seventh level mage spell of the same name
+- From level 5 can cast Clairvoyance once per day, as third level mage spell of the same name
+- From level 7 can cast Farsight once per day, as fourth level mage spell of the same name
+- From level 9 can cast Oracle once per day, as fifth level mage spell of the same name
+- From level 11 can cast Shield of the Archons once per day, as seventh level cleric spell of the same name
+- From level 14 can cast Mass Invisibility once per day, as seventh level mage spell of the same name
 
 Disadvantages:
 – Alignment restricted to lawful good, lawful neutral, and lawful evil.~
@@ -1150,15 +1341,15 @@ Battleguards of Tempus can only be of Chaotic Neutral, Chaotic Good, True Neutra
 Abilities:
 - Spiritual Weapon: Battleaxe - 'Battle Prowess' once per day
 The Battle Prowess battleaxe is the spiritual weapon of Battleguards, and is wielded as if the caster had grand mastery in the weapon. The Battle Prowess is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
+- At 7th level, Battleguard of Tempus can make three melee attacks every two rounds. It becomes two melee attacks per round, at 13th level.
 - Can specialize (two points) in any melee weapon that a cleric can use
 - Can go into a Berserker Rage once per day
+- From level 5 can cast Chant once per day, as second level cleric spell of the same name
 - From level 7 can cast Holy Power once per day, as fourth level cleric spell of the same name
-- From level 9 can cast Chaos once per day, as fifth level mage spell of the same name
 - From level 11 can cast Tenser's Transformation once per day, as sixth level mage spell of the same name
-- From level 14 can cast Sphere of Chaos once per day, as seventh level mage spell of the same name
 
 Disadvantages:
-– Alignment restricted to chaotic neutral, chaotic good, true neutral, and chaotic evil.
+– Alignment restricted to Chaotic Neutral, Chaotic Good and Chaotic Evil.
 - Cannot be proficient in ranged weapons~
 @10903 =~Battleaxe - 'Battle Prowess'~
 @10904 =~Striding into eternal battle, Tempus' favored weapon is his axe 'Battle Prowess'. He gifts his most ardent followers the Battleguards the ability to magically create a similar weapon imbued with his strength once per day. This is an example of such a weapon. The axe is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above.~
@@ -1172,13 +1363,15 @@ Grants an additional 6th and 7th level spell.
 5% Magic Resistance while worn
 +1 to Strength while worn~
 @10912 =~Tempus' Shield~
-@10913 =~Tempus' Shield (Abjuration)
+@10913 =~Tempus' Shield
+(Abjuration)
+
 Level: Quest
 Sphere: Combat
 Range: 0
 Duration: 4 rounds
 Casting Time: 1
-Area of Effect: Caster
+Area of Effect: The Caster
 Saving Throw: None
 
 Calling upon Tempus for endurance in adversity, the Battleguard becomes protected from most physical harm. When the spell is cast, it confers complete invulnerability to all weapons except for those of greater than +5 enchantment. This spell is incredibly powerful, hence the short duration. However the casting time is also very short making this spell incredibly useful in the thick of combat where buying a few seconds can mean the difference between life or death. This spell lasts for the duration or until dispelled.~
@@ -1218,11 +1411,13 @@ Painbearers of Ilmater can only be of Lawful Good, Neutral Good, and Lawful Neut
 Abilities:
 - Spiritual Weapon: Fist - 'Hand of Ilmater' once per day
 The Hand of Ilmater is the spiritual weapon of Painbearers. The Hand of Ilmater does 1d6 base damage and is treated as if the caster is a grand master. The Hand of Ilmater is treated as a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 25 and above. The Hand of Ilmater lasts for one round per level of the caster, up to 20 rounds.
-- Can Lay On Hands once per day
+- Can Remove Fear once per day
+- Can brew an Antidote or a potion of Healing at Level 1, an Elixir or a potion of Extra Healing at level 10 and an Elixir, a potion of Regeneration or a potion of Superior Healing at level 15
+- From level 5 can cast Draw Upon Holy Might once per day, as second level cleric spell of the same name
 - From level 7 can cast Neutralize Poison once per day, as fourth level cleric spell of the same name
 - From level 9 can cast Ilmater's Endurance once per day
 The Painbearer draws upon Ilmater to be able to shoulder the burden of trials ahead. For 1 round per level of the Painbearer, the cleric gains +2 to saves, doubles HP, is immune to panic and disease, and will stand firm in the face of any charge or force.
-- From level 11 can cast Heal once per day, as sixth level cleric spell of the same name
+- From level 11 can cast symbol, pain once per day, as seventh level cleric spell of the same name
 - From level 14 can cast Regeneration once per day, as seventh level cleric spell of the same name
 
 Disadvantages:
@@ -1231,16 +1426,17 @@ Disadvantages:
 @11204 =~The Hand of Ilmater is the spiritual weapon of Painbearers. The Hand of Ilmater does 1d6 base damage and is treated as if the caster is a grand master. The Hand of Ilmater is treated as a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 25 and above. The Hand of Ilmater lasts for one round per level of the caster, up to 20 rounds.~
 @11205 =~Endurance of Ilmater~
 @11206 =~Endurance of Ilmater
+(Necromancy)
+
+Level: 4
 Sphere: Necromantic, Protection
-Range: Touch
+Range: 0
 Duration: 1 round + 1 round/level
 Casting Time: 7
-Area of effect: One creature
+Area of effect: The Caster
 Saving Throw: None
 
-This spell doubles the hit points of the spell recipient for the spell duration. Any damage suffered is taken first from these phantom hit points until they are all exhausted; damage is then taken from the real hit points of the affected being.
-
-All saving throws receive a +2 bonus. In addition, no being protected by Endurance of Ilmater can be knocked over, trampled, ridden down, or overthrown; all protected beings can stand firm against all charges.~
+The Painbearer draws upon Ilmater to be able to shoulder the burden of trials ahead. For 1 round per level of the Painbearer, the cleric gains +2 to saves, doubles HP, is immune to panic and disease, and will stand firm in the face of any charge or force.~
 @11207 =~Holy Symbol of Ilmater~
 @11208 =~Ilmater rewards his most powerful servants with a Holy Symbol, a ring bearing his personal device of white hands bound by a blood red cord. When worn, the symbol empowers the Painbearer with Ilmater's power.
 
@@ -1267,6 +1463,16 @@ Disadvantages:
 Though these missions to the untamed wilderness are often considered an unwanted chore by the less optimistic members of your order, you found yourself eager to accept the task. It seemed to be a chance to bring hope and relief to the people of the North, a chance to do some real good rather than settling into weekly services delivered for the temple’s casual worshipers in the city. Without hesitation, you agreed to make the pilgrimage, and within a tenday, you embarked on your journey North, with only a staff in hand and the endurance of the Broken God in your heart.~
 @11212 =~The crying god has much in common with Lathander. I ask a boon of you in exchange for the favor of the temple and Lathander.~
 @11213 =~Ilmater and Helm share many interests. I ask a service for the Temple of Helm.~
+@11214 =~Alchemy~
+@11215 =~Alchemy
+
+The Painbearer has learned the arts of herbalism. he could brew:
+
+- At level 1, a Potion of Healing or an Antidote
+- At level 10, an Elixir of Health or a Potion of Extra Healing
+- At level 15, an Elixir of Health, a Potion of Regeneration or a Potion of Superior Healing
+
+Brewing potions is a delicate task which can only be undertaken in safe (non-hostile) areas.~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1284,25 +1490,31 @@ Though these missions to the untamed wilderness are often considered an unwanted
 
 Kossuth's church is varied and chaotic since he takes no interest in its structure. As a result it is a collection of cults with each faction coming up with its own ethics, codes, morals, and teachings. Kossuth's symbol varies greatly from faction to faction, but is generally a depiction of fire. It is believed that if Kossuth's following were to somehow become unified he would become a very powerful force in the Realms, something the other gods don't really wish to see happen. Of the four Elemental Lords, the best known and most feared are the cults of Kossuth, who are very powerful in Thay and the lands of the East.
 
-Firewalkers of Kossuth can be of any alignment, but most are evil, reveling in the destructive power of fire. They can be members of any race. They dress in whatever their faction deems appropriate for the representation of their god. This is usually robes and long capes in reds, yellows, and oranges.
+Firewalkers of Kossuth can be of neutral alignment, but most are evil, reveling in the destructive power of fire. They can be members of any race. They dress in whatever their faction deems appropriate for the representation of their god. This is usually robes and long capes in reds, yellows, and oranges.
 
 Abilities:
 - Spiritual Weapon: Flail - 'Tendril of Flame' once per day
 The flail is the spiritual weapon of Firewalkers of Kossuth, and is wielded as if the caster had grand mastery in the weapon. The flail is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - Gains 2% fire resistance per level.
+- From level 3 can cast burning hand once per day, as the first level mage spell of the same name
+- From level 5 can cast Conjure Lesser Fire Elemental once per day, as the fifth level mage spell of the same name
 - From level 7 can cast Fireshield: Red once per day, as the fourth level mage spell of the same name
+- From level 7 can cast Fireball once per day, as the third level mage spell of the same name
 - From level 9 can cast Sunfire once per day, as the fifth level mage spell of the same name
 - From level 11 can cast Conjure Fire Elemental once per day, as the sixth level cleric spell of the same name
 - From level 14 can cast Delayed Blast Fireball once per day, as the seventh level mage spell of the same name
 
 Disadvantages:
-– None.~
+– May not wear armor heavier than splint mail.
+– Alignment restricted to lawful neutral, neutral, and lawful evil.~
 @11505 =~Kossuth's Purifying Touch~
-@11506 =~Kossuth's Purifying Touch (Invocation)
+@11506 =~Kossuth's Purifying Touch 
+(Invocation)
+
 Level: Quest
 Sphere: Elemental, fire
 Range: Caster
-Duration: Instantaneous
+Duration: instantaneous
 Casting Time: 3
 Area of Effect:  Special
 Saving Throw: 1/2
@@ -1323,14 +1535,14 @@ Grants an additional 6th and 7th level spell.
 
 Kossuth's church is varied and chaotic since he takes no interest in its structure. As a result it is a collection of cults with each faction coming up with its own ethics, codes, morals, and teachings. Kossuth's symbol varies greatly from faction to faction, but is generally a depiction of fire. It is believed that if Kossuth's following were to somehow become unified he would become a very powerful force in the Realms, something the other gods don't really wish to see happen. Of the four Elemental Lords, the best known and most feared are the cults of Kossuth, who are very powerful in Thay and the lands of the East.
 
-Firewalkers of Kossuth can be of any alignment, but most are evil, reveling in the destructive power of fire. They can be members of any race. They dress in whatever their faction deems appropriate for the representation of their god. This is usually robes and long capes in reds, yellows, and oranges.
+Firewalkers of Kossuth can be of neutral alignment, but most are evil, reveling in the destructive power of fire. They can be members of any race. They dress in whatever their faction deems appropriate for the representation of their god. This is usually robes and long capes in reds, yellows, and oranges.
 
 Advantages:
 – May cast Sunfire once per day every 5 levels (starts at 1st level with one use).
 - Gains 2% fire resistance per level.
 
 Disadvantages:
-– None.~
+– May not wear armor heavier than splint mail.~
 @11511 = ~Less than a fortnight after your initiation ceremony into the Temple of Kossuth, you were summoned before the Flamesister of your temple. In a cordial, if somewhat formal meeting, you were assigned your first duty as a Promised: to make a pilgrimage to the North and see if you could kindle the fires of Kossuth's faith in the frontier towns. Almost as an afterthought, he mentioned portents and omens concerning events transpiring in the North that might be of interest to the Lord of Flames; it was the belief of the temple that a representative of Kossuth might serve to bring his swift, brutal justice to the region.
 
 Though these pilgrimages are often considered an unwanted duty and the rigid heirarchy of your faith brooks no dissension, you found yourself eager to accept the task. It seemed to be a chance to do the Firelord’s will in a practical way, an opportunity to escape the routine of plots and scehemes in the city. Without hesitation, you agreed to make the pilgrimage, and within a tenday you set out on your journey, armed only with a staff in your hand and fire in your heart.~
@@ -1357,11 +1569,15 @@ Authlims of Xvim can be members of any race. They can only be of Lawful Evil, La
 Abilities:
 - Spiritual Weapon: Scimitar - 'Scimitar of Souls' once per day.
 The scimitar is the spiritual weapon of the Authlim of Iyachtu Xvim, and is wielded as if the caster had grand mastery in the weapon. It is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 25 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
-- Immune to Fear.
+- Immune to Fear
+- Can cast Lay on Hands, self only, once per day
+- From level 5 can cast Neutralize Poison once per day, as fourth level priest spell of the same name
+- From level 5 can cast Emotion once per day, as fourth level mage spell of the same name
 - From level 7 can cast Greater Malison once per day, as fourth level mage spell of the same name
+- From level 7 can cast Cure Serious Wounds once per day, as fourth level priest spell of the same name
 - From level 9 can cast Lower Resistance once per day, as fifth level mage spell of the same name
-- From level 11 can cast Death Spell once per day, as sixth level mage spell of the same name
-- From level 14 can cast Mantle once per day, as seventh level mage spell of the same name
+- From level 9 can cast Cure Critical Wounds once per day, as fifth level priest spell of the same name
+- From level 14 can cast Heal once per day, as sixth level priest spell of the same name
 
 Disadvantages:
 – Alignment restricted to lawful evil, lawful neutral or neutral evil.~
@@ -1421,6 +1637,8 @@ Abilities:
 - Spiritual Weapon: Longsword - 'Mortal Strike' once per day
 The longsword is the spiritual weapon of Lorekeepers of Oghma, and is wielded as if the caster had grand mastery in the weapon. The sword is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - Gain a base of 10 lore/level.
+- From level 3 can cast Identify once per day, as first level mage spell of the same name
+- From level 5 can cast Friends once per day, as fourth level mage spell of the same name
 - From level 7 can cast Secret Word once per day, as fourth level mage spell of the same name
 - From level 9 can cast Oracle once per day, as fifth level mage spell of the same name
 - From level 11 can cast Power Word: Silence once per day, as sixth level mage spell of the same name
@@ -1474,13 +1692,12 @@ Sune's speciality priests, known as Heartwarders of Sune, are aesthetes and hedo
 Abilities:
 - Spiritual Weapon: Flail - 'Shock Flail' once per day
 The Shock Flail is the spiritual weapon of Heartwarders of Sune, and is wielded as if the caster had grand mastery in the weapon. The Shock Flail is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
-- +1 charisma bonus
-- Can cast Veil of Djalice once per day
-The Heartwarder temporarily augments <PRO_HISHER> beauty to unearthly levels, boosting effective charisma to 20 and forcing any hostiles to save vs. spell at -2 or be dire charmed for six rounds.
-- From level 7 can cast Emotion: Hoplessness once per day, as fourth level mage spell of the same name
-- From level 9 can cast Flamestrike once per day, as fifth level cleric spell of the same name
-- From level 11 can cast Mislead once per day, as sixth level mage spell of the same name
-- From level 14 can cast Mantle once per day, as seventh level mage spell of the same name
+- From level 5 can cast Charm Person once per day, as first level mage spell of the same name
+- From level 7 can cast Flame Strike once per day, as fifth level cleric spell of the same name
+- gains a permanent +1 charisma bonu, at 9th level
+- From level 11 can cast Emotion once per day, as fourth level mage spell of the same name
+- From level 14 can cast Veil of Djalice once per day
+VEIL OF DJALICE: The Heartwarder temporarily augments <PRO_HISHER> beauty to unearthly levels, boosting effective charisma to 20 and forcing any hostiles to save vs. spell at -2 or be dire charmed for six rounds.
 
 Disadvantages:
 – Alignment restricted to neutral good, chaotic good, and chaotic neutral.~
@@ -1504,7 +1721,7 @@ Sune's speciality priests, known as Heartwarders of Sune, are aesthetes and hedo
 
 Advantages:
 - +1 charisma bonus
-– May cast Emotion: Hoplessness once per day every 5 levels (starts at 1st level with one use).
+– May cast Emotion once per day every 5 levels (starts at 1st level with one use).
 – May use Veil of Djalice once per day every 10 levels (starts at 1st level with one use), as detailed below.
 
 VEIL OF DJALICE: The Heartwarder temporarily augments <PRO_HISHER> beauty to unearthly levels, boosting effective charisma to 20 and forcing any hostiles to save vs. spell at -2 or be dire charmed for six rounds.
@@ -1513,6 +1730,16 @@ Disadvantages:
 – Alignment restricted to neutral good, chaotic good, and chaotic neutral.~
 @12409 = ~Veil of Djalice~
 @12410 = ~Veil of Djalice
+(Illusion/Phantasm)
+
+Level: 4
+Sphere: Charm
+Range: Caster
+Duration: 6 rounds
+Casting Time: 7
+Area of Effect: 12-ft radius
+Saving Throw: Special
+
 The Heartwarder temporarily augments <PRO_HISHER> beauty to unearthly levels, boosting effective charisma to 20 and forcing any hostiles to save vs. spell at -2 or be dire charmed for six rounds.~
 @12411 = ~Less than a fortnight after your initiation ceremony into the Temple of Sune, you were summoned before the leader of your order. In warm words fitting for a follower of Sune, she gave you your first assignment as a member of the clergy: to travel to the frontier towns of the North and spread the love of Lady Firehair to the people that make the harsh environments their home. Almost as an afterthought, she spoke to you of portents and omens concerning events transpiring in the North, and it was the belief of the temple that a representative of their interests there might serve to soothe potential troubles in the region.
 
@@ -1538,9 +1765,11 @@ Abilities:
 Sahandrian is the spiritual weapon of Feywardens of Corellon, and is wielded as if the caster had grand mastery in the weapon. Sahandrian is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - May place up to 2 proficiency points in weapons and maximum in fighting styles
 - Gains a +1 bonus to saves vs. death
+- From level 1 can cast Faerie Fire once per day, as first level priest spell of the same name
+- From level 3 can cast Strength once per day, as second level mage spell of the same name
 - From level 7 can cast Enchanted Weapon once per day, as fourth level mage spell of the same name
-- From level 9 can cast Spell Immunity once per day, as fifth level mage spell of the same name
-- From level 11 can cast Protection from Magical Weapons once per day, as sixth level mage spell of the same name
+- From level 9 can cast Holy Word once per day, as seventh level Priest spell of the same name
+- From level 11 can cast Sunray once per day, as seventh level Priest spell of the same name
 - From level 14 can cast Prismatic Spray once per day, as seventh level mage spell of the same name
 
 Disadvantages:
@@ -1550,6 +1779,7 @@ Disadvantages:
 @12705 =~Sahandrian is the spiritual weapon of Feywardens of Corellon, and is wielded as if the caster had grand mastery in the weapon. Sahandrian is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
 @12706 =~Improved Alacrity 
 (Any School)
+
 Level: Quest
 Sphere: All
 Range: Unlimited
@@ -1608,11 +1838,12 @@ Abilities:
 Razor's Edge is the spiritual weapon of Strifeleaders of Cyric, and is wielded as if the caster had grand mastery in the weapon. The Razor's Edge is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - May coat his weapon in poison once per day per 6 levels.  
 Attacks made in the next round with that weapon will inject the poison into the target, dealing out 1 damage per second for 24 seconds (3 damage for the first 6 seconds).  A saving throw vs. poison limits damage to 12 total.
+- Immune to all forms of fear
+- From level 5 can summon an Aerial servant once per day, as sixth level priest spell of the same name
 - From level 7 can cast Dread Blast once per day
-Fires a ray of negative energy that deals 4d8 damage +1/level (max +20) and confuses target for 1 round (save vs. spell at -2 to negate confusion)
-- From level 9 can cast Chaos once per day, as fifth level mage spell of the same name
-- From level 11 can cast Death Fog once per day, as sixth level mage spell of the same name
-- From level 14 can cast Sphere of Chaos once per day, as seventh level mage spell of the same name
+DREAD BLAST: Fires a ray of negative energy that deals 4d8 damage +1/level (max +20) and confuses target for one round (save vs. spell at -2 to negate confusion)
+- From level 11 can cast Symbol, Fear once per day, as eighth level mage spell of the same name
+- From level 14 can cast Feeblemind once per day, as fifth level mage spell of the same name
 
 Disadvantages:
 – Alignment restricted to chaotic neutral or any evil.~
@@ -1643,6 +1874,16 @@ DREAD BLAST: Fires a ray of negative energy that deals 4d8 damage +1/level (max 
 Disadvantages:
 – Alignment restricted to chaotic neutral or any evil.~
 @13010 = ~Dread Blast
+(Necromancy)
+
+Level: 4
+Sphere: Necromantic
+Range: 15 ft
+Duration: 1 round
+Casting Time: 1
+Area of Effect: 1 Creature
+Saving Throw: Special
+
 Fires a ray of negative energy that deals 4d8 damage +1/level (max +20) and confuses target for one round (save vs. spell at -2 to negate confusion)~
 @13011 = ~~
 @13012 =~The upstart Prince of Lies sends a Strifeleader? Although not as fearsome as mighty Talos, your lord Cyric must surely wish you to aid us against the heathens!~
@@ -1661,6 +1902,21 @@ Fires a ray of negative energy that deals 4d8 damage +1/level (max +20) and conf
 @13025= ~So, <CHARNAME>, *are* you worthy of my favour?  Through strife we learn our true merit; time, I think, to test your mettle against some of my other servants.  Perhaps we will meet again.  I suggest you prepare yourself.~
 @13026= ~You know who I am, of course.  You feel my gaze as you pray at night.~
 @13027= ~Recently I've recovered from a little bout of madness... only to find the seedlings of the former holder of my office everywhere, like weeds.~
+@13028 = ~Create Direguard~
+@13029 = ~Create Direguard
+(Necromancy)
+
+Level: 7
+Sphere: Necromantic
+Range: 30 yards
+Duration: 8 hours
+Casting Time: 1
+Area of Effect: Special
+Saving Throw: None
+
+The casting of this spell create one direguard, a skeletal figure with red flames in its eye sockets, wearing black armor.~
+@13030 = ~Direguard~
+
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////                                                  \\\\\

@@ -21,7 +21,6 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // cyric
     numbers           = minor
     protection        = minor
     summoning         = major
-    sun               = major
     time              = major
     war               = major
     weather           = major
@@ -29,22 +28,22 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // cyric
 
 LAUNCH_ACTION_FUNCTION cd_kit_sphere // helm
   STR_VAR
-    table           = clabpr03
-    class           = cleric
-    all             = major
-    astral          = major
-    combat          = major
-    creation        = minor
-    divination      = major
-    elemental_earth = minor
-    elemental_water = minor
-    guardian        = major
-    healing         = major
-	healing_sr 		= major
-    protection      = major
-    sun             = major
-    war             = minor
-    wards           = major
+    table             = clabpr03
+    class             = cleric
+    all               = major
+    astral            = major
+    combat            = major
+    creation          = minor
+    divination        = major
+    elemental_earth   = minor
+    elemental_water   = minor
+    guardian          = major
+    law               = major
+    healing           = major
+	healing_sr 		  = major
+    protection        = major
+    war               = minor
+    wards             = major
   END
 
 LAUNCH_ACTION_FUNCTION cd_kit_sphere // ilmater
@@ -89,7 +88,6 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // iyachtu xvim
     necromantic       = major
     protection        = major
     summoning         = major
-    sun_moon          = minor
     thoughts          = major
     war               = major
   END
@@ -115,28 +113,28 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // kossuth
 
 LAUNCH_ACTION_FUNCTION cd_kit_sphere // lathander
   STR_VAR
-    table           = clabpr04
-    class           = cleric
-    all             = major
-    astral          = major
-    charm           = major
-    combat          = minor
-    creation        = major
-    divination      = minor
-    elemental_air   = major
-    elemental_earth = major
-    elemental_water = major
-    elemental_fire  = major
-    guardian        = minor
-    healing         = major
-	healing_sr 		= major
+    table             = clabpr04
+    class             = cleric
+    all               = major
+    astral            = major
+    charm             = major
+    combat            = minor
+    creation          = major
+    divination        = minor
+    elemental_air     = major
+    elemental_earth   = major
+    elemental_water   = major
+    elemental_fire    = major
+    guardian          = minor
+    healing           = major
+	healing_sr 		  = major
     necromantic_restorative 	= major
-    plant           = major
-    sun             = major
-    thoughts        = major
-    time            = minor
-    wards           = major
-    weather         = major
+    plant             = major
+    sun               = major
+    thoughts          = major
+    time              = minor
+    wards             = major
+    weather           = major
   END
 
 LAUNCH_ACTION_FUNCTION cd_kit_sphere // oghma
@@ -158,7 +156,6 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // oghma
     necromantic       = minor
     protection        = major
     summoning         = major
-    sun               = minor
     thoughts          = major
     travelers         = major
     wards             = minor
@@ -183,7 +180,7 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // selune
     numbers           = major
     plant             = minor
     summoning         = major
-    sun               = major
+    sun_moon          = major
     travelers         = major
     wards             = minor
     weather           = major
@@ -206,7 +203,6 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // shar
 	healing_sr 		  = minor
     necromantic       = major
     protection        = major
-    sun_moon          = major
     thoughts          = major
     time              = major
     wards             = minor
@@ -237,28 +233,27 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // sune
 
 LAUNCH_ACTION_FUNCTION cd_kit_sphere // talos
   STR_VAR
-    table           = clabpr02
-    class           = cleric
-    all             = major
-    animal          = major
-    astral          = major
-    chaos           = major
-    combat          = major
-    creation        = minor
-    divination      = minor
-    elemental_air   = major
-    elemental_earth = major
-    elemental_fire  = major
-    elemental_water = major
-    healing         = major
-	healing_sr 		= major
-    necromantic     = major
-    protection      = minor
-    summoning       = major
-    sun             = major
-    time            = minor
-    war             = major
-    weather         = major
+    table             = clabpr02
+    class             = cleric
+    all               = major
+    animal            = major
+    astral            = major
+    chaos             = major
+    combat            = major
+    creation          = minor
+    divination        = minor
+    elemental_air     = major
+    elemental_earth   = major
+    elemental_fire    = major
+    elemental_water   = major
+    healing           = major
+	healing_sr 		  = major
+    necromantic       = major
+    protection        = minor
+    summoning         = major
+    time              = minor
+    war               = major
+    weather           = major
   END
 
 ACTION_FOR_EACH tempus IN ~ohtempus~ ~a#temp~ BEGIN
@@ -282,7 +277,6 @@ ACTION_FOR_EACH tempus IN ~ohtempus~ ~a#temp~ BEGIN
       necromantic     = major
       protection      = major
       summoning       = minor
-      sun             = minor
       war             = major
       wards           = minor
       weather         = major
@@ -328,7 +322,7 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // red knight
     law               = major
     necromantic       = minor
     protection        = major
-    thoughts          = major
+    thoughts          = minor
     travelers         = major
     war               = major
     wards             = minor
@@ -354,7 +348,7 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // correllon
     protection        = major
     summoning         = minor
     sun               = major
-    thoughts          = major
+    thoughts          = minor
     war               = major
     wards             = major
   END
@@ -372,6 +366,7 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // oozemaster - normal druid minus animal a
     healing            = major
 	healing_sr 		   = major
     sun                = major
+    sun_moon           = major
     weather            = major
   END
 
@@ -441,9 +436,7 @@ ACTION_PHP_EACH cd_mod_kits AS clab => class_check BEGIN
         animal          = major
         elemental       = major
         elemental_air   = major
-        elemental_earth = major
         elemental_fire  = major
-        elemental_water = major
         healing         = major
         plant           = major
         sun             = major
@@ -461,6 +454,7 @@ ACTION_PHP_EACH cd_mod_kits AS clab => class_check BEGIN
         divination      = major
         healing         = major
 		healing_sr 		= major
+        law		        = major
         protection      = major
       END
 
@@ -480,6 +474,7 @@ ACTION_PHP_EACH cd_mod_kits AS clab => class_check BEGIN
         healing         = major
         plant           = major
         sun             = major
+		sun_moon        = major
         weather         = major
       END
 

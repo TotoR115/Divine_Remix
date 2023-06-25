@@ -18,6 +18,8 @@ ACTION_IF GAME_IS ~tob bg2ee eet bgt~ THEN BEGIN
 
 END
 
+COPY ~Divine_Remix/spl/tr#tem0.spl~ ~override~  // 1/2 atk
+
 COPY ~Divine_Remix/spl/a#tem0b.spl~ ~override~  // Battle prowess (innate)
   SAY NAME1 @10903
   SAY NAME2 @10903
@@ -44,9 +46,8 @@ COPY_EXISTING ~a#tem00.itm~ ~override/a#tem01.itm~  // Battle Prowess +1
   WRITE_SHORT 0x84 (7 - "%weap_idx%")
 
 // change spells to innates as needed
-COPY_EXISTING ~sppr412.spl~ ~override/a#tem07.spl~ // holy power
-              ~spwi508.spl~ ~override/a#tem09.spl~ // chaos
+COPY_EXISTING ~sppr203.spl~ ~override/a#tem05.spl~ // Chant
+              ~sppr412.spl~ ~override/a#tem07.spl~ // holy power
               ~spwi603.spl~ ~override/a#tem11.spl~ // tenser's transformation
-              ~spwi711.spl~ ~override/a#tem14.spl~ // sphere of chaos
   LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
   BUT_ONLY_IF_IT_CHANGES

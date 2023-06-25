@@ -9,40 +9,31 @@ ACTION_IF FILE_EXISTS_IN_GAME ~viconia.bcs~ THEN BEGIN
 
 END
 
-COPY ~divine_remix/spl/cdshar2.spl~ ~override~  // dark bolt
-  // temp to get some strings into the game
-  PATCH_IF ((GAME_IS ~bgee bg2ee eet~) OR (FILE_EXISTS_IN_GAME ~howparty.2da~)) BEGIN
-    PATCH_IF FILE_EXISTS_IN_GAME ~howparty.2da~ BEGIN // iwdee
-      SAY NAME1 @10620
-      READ_LONG NAME1 bio
-    END ELSE BEGIN // bgee/bg2ee bio
-      PATCH_IF GAME_IS ~bg2ee eet~ BEGIN // bg2ee
-        SET bio = "-1"
-      END ELSE BEGIN // bgee
-        SET bio  = 15884
-      END
-    END
-  END
+COPY ~divine_remix/spl/trshar4.spl~ ~override~  // darkbolt
+  SAY NAME1 @10610
+  SAY UNIDENTIFIED_DESC @10611
+
+COPY ~divine_remix/spl/trshar3.spl~ ~override~  // Armor of Darkness
+  SAY NAME1 @10606
+  SAY UNIDENTIFIED_DESC @10607
+
+COPY ~divine_remix/itm/trshar4.itm~ ~override~  // darkbolt
   SAY NAME1 @10621
   SAY NAME2 @10621
-  SAY UNIDENTIFIED_DESC @10622
-  SAY DESC @10622
-  LPF ALTER_EFFECT INT_VAR match_opcode = 215 timing = 0 duration = 4 STR_VAR resource = SPCRTWPN END
-  
-COPY ~divine_remix/itm/cdshar2.itm~ ~override~  // dark bolt
-  WRITE_BYTE 0x18 (THIS BAND 0b11110011)
-  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 233 target = 1 parameter1 = 2 parameter2 = 109 timing = 2 END
-  LPF ALTER_ITEM_HEADER INT_VAR header_type = 2 damage_type = 4 charges = 1 flag_strength = 0 END
-  SAY NAME1 @10621
-  SAY NAME2 @10621
-  SAY UNIDENTIFIED_DESC @10622
-  SAY DESC @10622
-  
+  SAY UNIDENTIFIED_DESC @10624
+  SAY DESC @10624
+
+COPY ~divine_remix/spl/givespell.spl~ ~override/tr#shar3.spl~  // Give Armor of Darkness, lv3 Spell
+  LPF ALTER_EFFECT STR_VAR resource = "trshar3" END
+COPY ~divine_remix/spl/givespell.spl~ ~override/tr#shar4.spl~  // Give darkbolt, lv4 Spell
+  LPF ALTER_EFFECT STR_VAR resource = "trshar4" END
+ 
 // change spells to innates as needed
-COPY_EXISTING ~spwi401.spl~ ~override/a#sha07.spl~ // Confusion
+COPY_EXISTING ~spwi106.spl~ ~override/a#sha03.spl~ // Blindness
+			  ~spwi220.spl~ ~override/a#sha05.spl~ // Power Word, Sleep
               ~spwi509.spl~ ~override/a#sha09.spl~ // Feeblemind
-              ~spwi601.spl~ ~override/a#sha11.spl~ // Invisible Stalker
-              ~spwi715.spl~ ~override/a#sha14.spl~ // Power Word, Stun
+              ~spwi505.spl~ ~override/a#sha11.spl~ // shadow door
+              ~spwi815.spl~ ~override/a#sha14.spl~ // Power Word, Blind
   LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
   BUT_ONLY_IF_IT_CHANGES
 

@@ -1,6 +1,11 @@
 COPY ~divine_remix/2da/cdxvim.2da~ ~override~
   
-COPY_EXISTING ~spwi605.spl~ ~override/cdxvdth.spl~ // Death Spell (innate)
+COPY_EXISTING ~spwi411.spl~ ~override/cdxvemo.spl~ // Emotion (innate)
+			  ~sppr404.spl~ ~override/cdxvnep.spl~ // Neutralize Poison (innate)
+			  ~sppr401.spl~ ~override/cdxvcsw.spl~ // Cure Serious Wounds (innate)
+			  ~sppr502.spl~ ~override/cdxvccw.spl~ // Cure Critical Wounds (innate)
+			  ~sppr607.spl~ ~override/cdxvhel.spl~ // Heal (innate)
+			  ~spwi605.spl~ ~override/cdxvdth.spl~ // Death Spell (innate)
 			  ~spwi514.spl~ ~override/cdxvlrs.spl~ // Lower Resistance (innate)
 			  ~spwi708.spl~ ~override/cdxvmtl.spl~ // Mantle (innate)
   LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell

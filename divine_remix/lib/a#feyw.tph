@@ -4,12 +4,15 @@ COPY ~divine_remix/2da/A#feyw.2DA~ ~override~
 COPY ~Divine_Remix/spl/a#fey0a.spl~ ~override~
 
 // change spells to innates as needed
-COPY_EXISTING ~spwi417.spl~ ~override/a#fey07.spl~ // enchanted weapon
-              ~spwi510.spl~ ~override/a#fey09.spl~ // spell immunity
-              ~spwi611.spl~ ~override/a#fey11.spl~ // protection from magical weapons
+COPY_EXISTING ~spwi214.spl~ ~override/a#fey03.spl~ // Strength
+			  ~spwi417.spl~ ~override/a#fey07.spl~ // enchanted weapon
+              ~sppr710.spl~ ~override/a#fey09.spl~ // Holy Word
+              ~sppr707.spl~ ~override/a#fey11.spl~ // Sunray
               ~spwi714.spl~ ~override/a#fey14.spl~ // prismatic spray
   LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
   BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~cdltffi.spl~ ~override/a#fey01.spl~ // Faerie Fire
 
 COPY ~Divine_Remix/spl/a#fey0b.spl~ ~override~  // Sahandrian (innate)
   SAY NAME1 @12704

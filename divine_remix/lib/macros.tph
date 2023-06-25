@@ -730,8 +730,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
             PATCH_IF ("%plant%" STRING_COMPARE_CASE "none")                   THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_pl_%index%_%restrict%.2da~ END
             PATCH_IF ("%protection%" STRING_COMPARE_CASE "none")              THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_pr_%index%_%restrict%.2da~ END
             PATCH_IF ("%summoning%" STRING_COMPARE_CASE "none")               THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_su_%index%_%restrict%.2da~ END
-            PATCH_IF ("%sun%" STRING_COMPARE_CASE "none")                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_sn_%index%_%restrict%.2da~ 
-                                                                                         APPEND_FILE ~divine_remix/spheres/spellbook_sm_%index%_%restrict%.2da~ END
+            PATCH_IF ("%sun%" STRING_COMPARE_CASE "none")                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_sn_%index%_%restrict%.2da~ END
             PATCH_IF ("%sun_moon%" STRING_COMPARE_CASE "none") 				  THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_sm_%index%_%restrict%.2da~ END
             PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "none")                THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_th_%index%_%restrict%.2da~ END
             PATCH_IF ("%time%" STRING_COMPARE_CASE "none")                    THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_ti_%index%_%restrict%.2da~ END
@@ -769,8 +768,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
             PATCH_IF ("%plant%" STRING_COMPARE_CASE "major" = 0)                   THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_pl_%index%_%restrict%.2da~ END
             PATCH_IF ("%protection%" STRING_COMPARE_CASE "major" = 0)              THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_pr_%index%_%restrict%.2da~ END
             PATCH_IF ("%summoning%" STRING_COMPARE_CASE "major" = 0)               THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_su_%index%_%restrict%.2da~ END
-            PATCH_IF ("%sun%" STRING_COMPARE_CASE "major" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_sn_%index%_%restrict%.2da~ 
-																							  APPEND_FILE ~divine_remix/spheres/spellbook_sm_%index%_%restrict%.2da~ END
+            PATCH_IF ("%sun%" STRING_COMPARE_CASE "major" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_sn_%index%_%restrict%.2da~ END
             PATCH_IF ("%sun_moon%" STRING_COMPARE_CASE "major" = 0) 			   THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_sm_%index%_%restrict%.2da~ END
             PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "major" = 0)                THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_th_%index%_%restrict%.2da~ END
             PATCH_IF ("%time%" STRING_COMPARE_CASE "major" = 0)                    THEN BEGIN APPEND_FILE ~divine_remix/spheres/spellbook_ti_%index%_%restrict%.2da~ END
@@ -915,8 +913,7 @@ DEFINE_ACTION_FUNCTION cd_kit_sphere
         PATCH_IF ("%plant%" STRING_COMPARE_CASE "major" = 0)                   THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_pl_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_pl.2da~ END
         PATCH_IF ("%protection%" STRING_COMPARE_CASE "major" = 0)              THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_pr_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_pr.2da~ END
         PATCH_IF ("%summoning%" STRING_COMPARE_CASE "major" = 0)               THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_su_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_su.2da~ END
-        PATCH_IF ("%sun%" STRING_COMPARE_CASE "major" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_sn_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_sn.2da~ 
-                                                                                          APPEND_FILE ~divine_remix/spheres/%class%_sm_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_sm.2da~ END
+        PATCH_IF ("%sun%" STRING_COMPARE_CASE "major" = 0)                     THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_sn_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_sn.2da~ END
         PATCH_IF ("%sun_moon%" STRING_COMPARE_CASE "major" = 0) 			   THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_sm_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_sm.2da~ END
         PATCH_IF ("%thoughts%" STRING_COMPARE_CASE "major" = 0)                THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_th_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_th.2da~ END
         PATCH_IF ("%time%" STRING_COMPARE_CASE "major" = 0)                    THEN BEGIN APPEND_FILE ~divine_remix/spheres/%class%_ti_major.2da~ APPEND_FILE ~divine_remix/spheres/hla_ti.2da~ END

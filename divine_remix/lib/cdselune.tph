@@ -29,12 +29,33 @@ COPY ~Divine_Remix/spl/cdslinf.spl~ ~override~  // infravision (permanent innate
 
 COPY ~Divine_Remix/spl/cdslmsd.spl~ ~override~  // Moon Shield (innate spell)
   SAY NAME1 @10307
-  SAY NAME2 @10307
   SAY UNIDENTIFIED_DESC @10308
-  SAY DESC @10308
+
+COPY ~Divine_Remix/spl/trslmnb.spl~ ~override~  // Selune's Blade (innate spell)
+  SAY NAME1 @10309
+  SAY UNIDENTIFIED_DESC @10310
+
+COPY ~Divine_Remix/eff/trslmnb.eff~ ~override~  // Selune's Blade
+COPY ~Divine_Remix/itm/trslmnb.itm~ ~override~  // Selune's Blade
+
+ADD_PROJECTILE ~Divine_Remix/spl/trslmnf.pro~ 	// New projectile
+COPY ~Divine_Remix/spl/trslmnf.spl~ ~override~  // Moonfire (innate spell)
+  SAY NAME1 @10309
+  SAY UNIDENTIFIED_DESC @10310
+  READ_LONG  0x64 ab_off 
+  READ_SHORT 0x68 ab_num
+  FOR(i=0; i<ab_num; i+=1) BEGIN
+    WRITE_SHORT (ab_off+i*0x28+0x26) ~%trslmnf%~        // use new projectile
+  END
+COPY ~Divine_Remix/bam/trslmnf.bam~ ~override~ // New Visual effect
+	 ~Divine_Remix/bam/trslmnfa.bam~ ~override~
+	 ~Divine_Remix/bam/trslmnfb.bam~ ~override~
+	 ~Divine_Remix/bam/trslmnfc.bam~ ~override~
+	 ~Divine_Remix/eff/trslmnfd.eff~ ~override~
+	 ~Divine_Remix/eff/trslmnfi.eff~ ~override~
 
 // change spells to innates as needed
-COPY_EXISTING ~sppr403.spl~  ~override/cdslfre.spl~ // free action (innate)
+COPY_EXISTING ~sppr505.spl~  ~override/cdsltrs.spl~ // True seeing (innate)
               ~spwi523.spl~  ~override/cdslsun.spl~ // sunfire (innate)
               ~spwi702.spl~  ~override/cdslpfe.spl~ // protection from the elements (innate)
   LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
@@ -56,44 +77,35 @@ ACTION_IF !((IDS_OF_SYMBOL (~spell~ ~CLERIC_CONJURE_AIR_ELEMENTAL~)) < 0) BEGIN 
 
 END ELSE BEGIN
 
-  COPY_EXISTING ~spwi622.spl~ ~override/cdslair.spl~
+  OUTER_SPRINT level_match  @2027 // needed to change descripts, below
+
+  COPY_EXISTING ~sppr702.spl~ ~override/cdslair.spl~
   LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
-    WRITE_SHORT 0x1c 2
-    WRITE_SHORT 0x1e 0
-    WRITE_SHORT 0x34 7
-    LPF DELETE_EFFECT INT_VAR match_opcode = 165 END // removing the mental combat visual effect for priest
-	LPF DELETE_EFFECT INT_VAR match_opcode = 215 END // removing the mental combat visual effect for priest
-	LPF DELETE_EFFECT INT_VAR match_opcode = 142 END // removing the mental combat visual effect for priest
-	REPLACE_TEXTUALLY SPEART1 DRAIR1 (8)
-    REPLACE_TEXTUALLY SPEART2 DRAIR2 (8)
-    REPLACE_TEXTUALLY SPEART3 DRAIR3 (8)
-	REPLACE_TEXTUALLY CASE_INSENSITIVE SPWI622A SPWI621A (8)
-    REPLACE_TEXTUALLY CASE_INSENSITIVE SPWI622B SPWI621B (8)
-    REPLACE_TEXTUALLY CASE_INSENSITIVE SPWI622C SPWI621C (8)
+	REPLACE_TEXTUALLY SPEART1P DRAIR1P (8)
+    REPLACE_TEXTUALLY SPEART2P DRAIR2P (8)
+    REPLACE_TEXTUALLY SPEART3P DRAIR3P (8)
+    REPLACE_TEXTUALLY CASE_INSENSITIVE SPPR702B SPWI621B (8)
+    REPLACE_TEXTUALLY CASE_INSENSITIVE SPPR702C SPWI621C (8)
 	WRITE_LONG 0x8 24839
 	WRITE_LONG 0x50 24840
-	LPF ALTER_EFFECT INT_VAR match_power = 6 power = 7 END
-    PATCH_FOR_EACH offset IN 0x50 BEGIN
-      READ_LONG ~%offset%~ desc_strref
-      PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
-        READ_STRREF ~%offset%~ desc
-        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-          REPLACE_TEXTUALLY ~Level: 6~ ~Level: 7~ // change level in description to 7
-        END
+    READ_LONG 0x50 desc_strref
+    PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
+      READ_STRREF 0x50 desc
+      INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+        REPLACE_TEXTUALLY ~%level_match%~ ~\1 7~ // change level in description to 7
       END
-      SAY_EVALUATED offset ~%desc%~
     END
-  BUT_ONLY_IF_IT_CHANGES
+    SAY_EVALUATED 0x50 ~%desc%~
+
 // Cretaing the new creatuers to remove the mental combat script for priest
-	COPY_EXISTING "SPAIR1.EFF" "override/DRAIR1.EFF" WRITE_ASCIIE 0x30 DRAIRPR2 (8)
-    COPY_EXISTING "SPAIR2.EFF" "override/DRAIR2.EFF" WRITE_ASCIIE 0x30 DRAIRPR3 (8)
-    COPY_EXISTING "SPAIR3.EFF" "override/DRAIR3.EFF" WRITE_ASCIIE 0x30 DRAIRPR4 (8)
-    
-	COPY_EXISTING "ELAIRSU2.CRE" "override/DRAIRPR2.cre"
+  COPY_EXISTING "SPAIR1.EFF" "override/DRAIR1P.EFF" WRITE_ASCIIE 0x30 DRAIRPR2 (8)
+  COPY_EXISTING "SPAIR2.EFF" "override/DRAIR2P.EFF" WRITE_ASCIIE 0x30 DRAIRPR3 (8)
+  COPY_EXISTING "SPAIR3.EFF" "override/DRAIR3P.EFF" WRITE_ASCIIE 0x30 DRAIRPR4 (8)
+  COPY_EXISTING "ELAIRSU2.CRE" "override/DRAIRPR2.cre"
 	  WRITE_ASCII 0x248 "None" #8
-	COPY_EXISTING "ELAIRSU3.CRE" "override/DRAIRPR3.cre"
+  COPY_EXISTING "ELAIRSU3.CRE" "override/DRAIRPR3.cre"
 	  WRITE_ASCII 0x248 "None" #8
-	COPY_EXISTING "ELAIRSU4.CRE" "override/DRAIRPR4.cre"
+  COPY_EXISTING "ELAIRSU4.CRE" "override/DRAIRPR4.cre"
 	  WRITE_ASCII 0x248 "None" #8
 
 END

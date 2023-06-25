@@ -30,11 +30,37 @@ COPY_EXISTING ~cdilfs0.itm~ ~override/cdilfs1.itm~  // hand of ilmater +1
   END
 
 // change spells to innates as needed
-COPY_EXISTING ~sppr404.spl~ ~override/cdilnps.spl~ // neutralize poison
+COPY_EXISTING ~sppr214.spl~ ~override/cdildhm.spl~ // Draw Upon Holy Might
+              ~sppr404.spl~ ~override/cdilnps.spl~ // neutralize poison
               ~sppr607.spl~ ~override/cdilhel.spl~ // heal
               ~sppr711.spl~ ~override/cdilrgn.spl~ // regeneration
   LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
   BUT_ONLY_IF_IT_CHANGES
+
+COPY ~divine_remix/spl/symbolpain.spl~ ~override/cdilsmp.spl~ // Symbol, Pain
+    LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
+    SAY NAME1 @285
+	SAY UNIDENTIFIED_DESC @286
+	
+
+COPY ~divine_remix/spl/tr#potn0.spl~ ~override~ // Brew Potion
+    SAY NAME1 @11214
+	SAY UNIDENTIFIED_DESC @11215
+COPY ~divine_remix/spl/tr#potn1.spl~ ~override~ // Potion Of Healing
+    SAY NAME1 #6990
+COPY ~divine_remix/spl/tr#potn2.spl~ ~override~ // Antidote
+    SAY NAME1 #7029
+COPY ~divine_remix/spl/tr#potn3.spl~ ~override~ // Elixir of Health
+    SAY NAME1 #7011
+COPY ~divine_remix/spl/tr#potn4.spl~ ~override~ // Potion of Extra Healing
+    SAY NAME1 #18893
+COPY ~divine_remix/spl/tr#potn5.spl~ ~override~ // Potion of regeneration
+    SAY NAME1 #7101
+COPY ~divine_remix/spl/tr#potn6.spl~ ~override~ // Potion of Superior Healing
+    SAY NAME1 #64945
+COPY ~divine_remix/2da/tr#ptn01.2da~ ~override~ // Potion level 1
+	 ~divine_remix/2da/tr#ptn10.2da~ ~override~ // Potion level 10
+	 ~divine_remix/2da/tr#ptn15.2da~ ~override~ // Potion level 15
 
 COPY ~Divine_Remix/bam/cdilenda.bam~ ~override~ // Ilmater's Endurance (innate)
      ~Divine_Remix/bam/cdilendb.bam~ ~override~

@@ -37,7 +37,7 @@ END
 
 //Alignment changes
 COPY_EXISTING ~alignmnt.2da~ ~override~
-  REPLACE_TEXTUALLY ~^\(DRUID\|FIGHTER_DRUID\|TOTEMIC_DRUID\|SHAPESHIFTER\|BEAST_FRIEND\)[ %TAB%]+.+~ ~\1 0 1 0 1 1 1 0 1 0~
+  REPLACE_TEXTUALLY ~^\(DRUID\|FIGHTER_DRUID\|TOTEMIC_DRUID\|SHAPESHIFTER\|BEAST_FRIEND\)[ %TAB%]+.+~ ~\1 0 1 0 0 1 0 0 1 0~
   BUT_ONLY_IF_IT_CHANGES
 
 PRINT @3
@@ -46,7 +46,7 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
   PATCH_IF (("%type%" = 2) OR (("%type%" > 59) AND ("%type%" < 68))) BEGIN // any armor
     READ_BYTE 0x1F "fighter_druid"
     READ_BYTE 0x21 "druid"
-    PATCH_IF (("%druid%"  BAND 0b01000000) = 0b01000000) BEGIN // If unusable by druids
+    PATCH_IF (("%druid%"  BAND 0b01000000) = 0b01000000) BEGIN  // If unusable by druids
       WRITE_BYTE 0x1F ("%fighter_druid%" BOR 0b00010000)        // Making sure Fighter-Druids are restricted to Druid items only.
     END
   END

@@ -28,6 +28,8 @@ ACTION_IF NOT FILE_EXISTS_IN_GAME ~eff_p32.wav~ THEN BEGIN
 
 END
 
+OUTER_SPRINT level_match  @2027 // needed to change descripts, below
+
 // PnP Spells
 /////// Magical stone: 3 stones instead of 1
 
@@ -42,20 +44,17 @@ COPY_EXISTING ~sppr106.spl~ ~override~
   SAY UNIDENTIFIED_DESC @118 
  COPY ~divine_remix/eff/tr#mstn.eff~ ~override~ // 1d4 damage bonus vs undead
 
-///////  move negative plane protection to level 3: PnP faithfull
-OUTER_SPRINT level_match  @2027 // needed to change descripts, below
+///////  move negative plane protection to level 3: PnP
 
 COPY_EXISTING ~sppr413.spl~ ~override~
 ADD_SPELL ~override/sppr413.spl~ 1 3 CLERIC_NEGATIVE_PLANE_PROTECTION
   WRITE_LONG 0x34 3
   LPF ALTER_EFFECT INT_VAR match_power = 4 power = 3 END
-  PATCH_FOR_EACH offset IN 0x50 BEGIN
-    READ_LONG ~%offset%~ desc_strref
+    READ_LONG 0x50 desc_strref
     PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
-      READ_STRREF ~%offset%~ desc
-      INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-        REPLACE_TEXTUALLY ~%level_match%~ ~\1 3~ // change level in description to 3
-      END
+    READ_STRREF 0x50 desc
+    INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+      REPLACE_TEXTUALLY ~%level_match%~ ~\1 3~ // change level in description to 3
     END
   END
 
@@ -231,13 +230,13 @@ COPY_EXISTING ~fireseed.itm~ ~override~
 	
 /////// PnP Protection from evil and Protection from evil 10' protect against charm
 COPY_EXISTING ~sppr107.spl~ ~override~
-				~sppr408.spl~ ~override~
-				~spwi113.spl~ ~override~
-				~spcl213.spl~ ~override~
-				~spcl233.spl~ ~override~
-				~spin121.spl~ ~override~
-	LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 101 parameter2 = 5 END // protect against charmed but don't cure it
-
+			  ~sppr408.spl~ ~override~
+			  ~spwi113.spl~ ~override~
+			  ~spcl213.spl~ ~override~
+			  ~spcl233.spl~ ~override~
+			  ~spin121.spl~ ~override~
+  LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 101 parameter2 = 5 END // protect against charmed but don't cure it
+BUT_ONLY IF_EXISTS
 
 /////                                                  \\\\\
 ///// new spells                                       \\\\\
@@ -357,7 +356,7 @@ ACTION_IF cure_cause = 1 BEGIN
     END
 	BUT_ONLY
   
-  COPY_EXISTING ~serious.itm~  ~override~ // adjusts BAMs for existing 'Cause critical Wounds' item
+  COPY_EXISTING ~serious.itm~ ~override~ // adjusts BAMs for existing 'Cause critical Wounds' item
     WRITE_ASCII 0x3A ~sppr414b~
     READ_SHORT 0x68 "abil_num"
     READ_LONG  0x64 "abil_off"
@@ -366,7 +365,7 @@ ACTION_IF cure_cause = 1 BEGIN
     END
 	BUT_ONLY
  
-  COPY_EXISTING ~harm.itm~     ~override~ // adjusts BAMs for existing harm item
+  COPY_EXISTING ~harm.itm~ ~override~ // adjusts BAMs for existing harm item
     WRITE_ASCII 0x3A ~sppr608b~
     READ_SHORT 0x68 "abil_num"
     READ_LONG  0x64 "abil_off"
@@ -728,39 +727,29 @@ END
 
 ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_CONJURE_AIR_ELEMENTAL~)) < 0)) BEGIN // only if not present or overwrite selected
 
-  COPY_EXISTING ~spwi622.spl~ ~override~
+  COPY_EXISTING ~sppr702.spl~ ~override~
 
-  ADD_SPELL ~override/spwi622.spl~ 1 7 CLERIC_CONJURE_AIR_ELEMENTAL // Don't ask me why... but it works not with air elemental copy, add to be earth elemental
-    WRITE_SHORT 0x1c 2
-    WRITE_SHORT 0x1e 0
-    WRITE_SHORT 0x34 7
-    LPF DELETE_EFFECT INT_VAR match_opcode = 165 END // removing the mental combat visual effect for priest
-	LPF DELETE_EFFECT INT_VAR match_opcode = 215 END // removing the mental combat visual effect for priest
-	LPF DELETE_EFFECT INT_VAR match_opcode = 142 END // removing the mental combat visual effect for priest
-	REPLACE_TEXTUALLY SPEART1 DRAIR1 (8)
-    REPLACE_TEXTUALLY SPEART2 DRAIR2 (8)
-    REPLACE_TEXTUALLY SPEART3 DRAIR3 (8)
-	REPLACE_TEXTUALLY CASE_INSENSITIVE SPWI622A SPWI621A (8)
-    REPLACE_TEXTUALLY CASE_INSENSITIVE SPWI622B SPWI621B (8)
-    REPLACE_TEXTUALLY CASE_INSENSITIVE SPWI622C SPWI621C (8)
+  ADD_SPELL ~override/sppr702.spl~ 1 7 CLERIC_CONJURE_AIR_ELEMENTAL // use earth elemental as base
+	REPLACE_TEXTUALLY SPEART1P DRAIR1P (8)
+    REPLACE_TEXTUALLY SPEART2P DRAIR2P (8)
+    REPLACE_TEXTUALLY SPEART3P DRAIR3P (8)
+    REPLACE_TEXTUALLY CASE_INSENSITIVE SPPR702B SPWI621B (8)
+    REPLACE_TEXTUALLY CASE_INSENSITIVE SPPR702C SPWI621C (8)
 	WRITE_LONG 0x8 24839
 	WRITE_LONG 0x50 24840
-	LPF ALTER_EFFECT INT_VAR match_power = 6 power = 7 END
-    PATCH_FOR_EACH offset IN 0x50 BEGIN
-      READ_LONG ~%offset%~ desc_strref
-      PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
-        READ_STRREF ~%offset%~ desc
-        INNER_PATCH_SAVE desc ~%desc%~ BEGIN
-          REPLACE_TEXTUALLY ~%level_match%~ ~\1 7~ // change level in description to 7
-        END
+    READ_LONG 0x50 desc_strref
+    PATCH_IF (desc_strref >= 0 && desc_strref < 2147483646) BEGIN
+      READ_STRREF 0x50 desc
+      INNER_PATCH_SAVE desc ~%desc%~ BEGIN
+        REPLACE_TEXTUALLY ~%level_match%~ ~\1 7~ // change level in description to 7
       END
-      SAY_EVALUATED offset ~%desc%~
     END
+    SAY_EVALUATED 0x50 ~%desc%~
 
 // Cretaing the new creatuers to remove the mental combat script for priest
-  COPY_EXISTING "SPAIR1.EFF" "override/DRAIR1.EFF" WRITE_ASCIIE 0x30 DRAIRPR2 (8)
-  COPY_EXISTING "SPAIR2.EFF" "override/DRAIR2.EFF" WRITE_ASCIIE 0x30 DRAIRPR3 (8)
-  COPY_EXISTING "SPAIR3.EFF" "override/DRAIR3.EFF" WRITE_ASCIIE 0x30 DRAIRPR4 (8)
+  COPY_EXISTING "SPAIR1.EFF" "override/DRAIR1P.EFF" WRITE_ASCIIE 0x30 DRAIRPR2 (8)
+  COPY_EXISTING "SPAIR2.EFF" "override/DRAIR2P.EFF" WRITE_ASCIIE 0x30 DRAIRPR3 (8)
+  COPY_EXISTING "SPAIR3.EFF" "override/DRAIR3P.EFF" WRITE_ASCIIE 0x30 DRAIRPR4 (8)
   COPY_EXISTING "ELAIRSU2.CRE" "override/DRAIRPR2.cre"
 	  WRITE_ASCII 0x248 "None" #8
   COPY_EXISTING "ELAIRSU3.CRE" "override/DRAIRPR3.cre"
@@ -770,30 +759,21 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_CONJURE_AIR_ELEME
 
 END
 
-/////// Add PnP Dismissal: work on extrapanar with save and on summons without. update Holy and Unholy words to also slay summons (PnP)
+/////// Add PnP Abjure: work on extrapanar with save and on summons without.
 
-ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_DISMISSAL~)) < 0)) BEGIN  // only if not present or overwrite selected
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ABJURE~)) < 0)) BEGIN  // only if not present or overwrite selected
 
-  ADD_SPELL ~divine_remix/spl/dismiss.spl~ 1 4 CLERIC_DISMISSAL // Dismissal Spell
+  ADD_SPELL ~divine_remix/spl/dismiss.spl~ 1 4 CLERIC_ABJURE // Abjure Spell
     SAY NAME1 @250
     SAY UNIDENTIFIED_DESC @251
 	LPF ALTER_SPELL_EFFECT INT_VAR match_opcode = 206 STR_VAR resource = EVAL ~%DEST_RES%~ END
 
-  COPY ~divine_remix/eff/tr#unsum.eff~ ~override~  // Visual Effect
-  COPY ~divine_remix/eff/tr#dismb.eff~ ~override~  // Dismissal effect
-  
+  COPY ~divine_remix/eff/tr#unsum.eff~ ~override~  // Visual effect
+  COPY ~divine_remix/eff/tr#dismb.eff~ ~override~  // Abjure effect
 
   COPY ~divine_remix/bam/trdisma.bam~ ~override~
   COPY ~divine_remix/bam/trdismb.bam~ ~override~
        ~divine_remix/bam/trdismc.bam~ ~override~
-
-// Update Holy and Unholy words to also slay summons
-  COPY_EXISTING ~sppr710.spl~ ~override~   // Holy Word
-    SAY UNIDENTIFIED_DESC @252
-	LPF CLONE_EFFECT INT_VAR match_opcode = 177 parameter2 = 6 parameter1 = 7 dicenumber = 0 dicesize = 0 STR_VAR match_resource = "death" resource = "destself" END
-  COPY_EXISTING ~sppr715.spl~ ~override~   // Unoly Word
-    SAY UNIDENTIFIED_DESC @253
-	LPF CLONE_EFFECT INT_VAR match_opcode = 177 parameter2 = 6 parameter1 = 7 dicenumber = 0 dicesize = 0 STR_VAR match_resource = "death" resource = "destself" END
 END
 
 /////// Add Pyrotechnics spell: Blind AoE
@@ -902,9 +882,15 @@ END
 
 ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ADAMANTITE_MACE~)) < 0)) BEGIN  // only if not present or overwrite selected
 
-  ADD_SPELL ~divine_remix/spl/admantitemace.spl~ 1 4 CLERIC_ADAMANTITE_MACE // Adamantite Mace
-    SAY NAME1 @265
-    SAY UNIDENTIFIED_DESC @266
+  ACTION_IF !((IDS_OF_SYMBOL (~spell~ ~CLERIC_STAR_METAL_CUDGEL~)) < 0) BEGIN
+	ADD_SPELL ~divine_remix/spl/admantitemace.spl~ 1 4 CLERIC_STAR_METAL_CUDGEL // Adamantite Mace replace Star metal cudgel
+	  SAY NAME1 @265
+	  SAY UNIDENTIFIED_DESC @266  
+  END ELSE BEGIN
+	ADD_SPELL ~divine_remix/spl/admantitemace.spl~ 1 4 CLERIC_ADAMANTITE_MACE // Adamantite Mace
+	  SAY NAME1 @265
+	  SAY UNIDENTIFIED_DESC @266
+  END
 
   COPY ~divine_remix/itm/tr#adma.itm~ ~override~
        ~divine_remix/eff/tr#adma.eff~ ~override~ // damage bonus vs air elemental and flying monster
@@ -912,39 +898,6 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ADAMANTITE_MACE~)
   COPY ~divine_remix/bam/tradama.bam~ ~override~
 	   ~divine_remix/bam/tradamb.bam~ ~override~
        ~divine_remix/bam/tradamc.bam~ ~override~
-
-END
-
-/////// Add Command Monster and update Command and Greater Command (PnP) 
-
-ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_COMMAND_MONSTER~)) < 0)) BEGIN  // only if not present or overwrite selected
-
-  ADD_SPELL ~divine_remix/spl/cmdmonster.spl~ 1 6 CLERIC_COMMAND_MONSTER // Command Monster: work on everything
-    SAY NAME1 @267
-    SAY UNIDENTIFIED_DESC @268
-
-  COPY ~divine_remix/bam/trcmdma.bam~ ~override~
-	   ~divine_remix/bam/trcmdmb.bam~ ~override~
-       ~divine_remix/bam/trcmdmc.bam~ ~override~
-
-// Command & Greater Command: need to know language -> work now only on humanoïd
-COPY_EXISTING ~sppr102.spl~ ~override~
-  READ_LONG 0x08 name
-
-  COPY ~divine_remix/spl/sppr102.spl~ ~override~ // PnP Command could be only used if the language is understood by the creature: humanoids
-  WRITE_LONG 0x08 name
-  SAY UNIDENTIFIED_DESC @115
-
-  COPY ~divine_remix/spl/sppr102a.spl~ ~override~ // Actual Spell - now work also on elves for obg2... it has nothing to do with sleep.
-      ~divine_remix/eff/tr#cmd.eff~ ~override~   // ids : humanoids
-
-ADD_SPELL ~divine_remix/spl/dictate.spl~ 1 3 CLERIC_GREATER_COMMAND // PnP Greater Command could be only used if the language is understood by the creature: humanoids; new name: Dictate; new level: 3
-  SAY NAME1 @116
-  SAY UNIDENTIFIED_DESC @117
- 
- COPY ~divine_remix/spl/tr#dict.spl~ ~override~ // Actual Spell - now work also on elves for obg2... it has nothing to do with sleep.
-      ~divine_remix/eff/tr#dict.eff~ ~override~ // ids : humanoids
-
 END
 
 /////// Add Produce Flame: Fire dmg spell for Druid
@@ -1111,13 +1064,13 @@ END
 
 /////// PnP Symbol for priest: Say goodby to Death, stun and Fear and Hello to Pain, Hopelessness and Persuasion
 
-ADD_SPELL ~divine_remix/spl/symbolpain.spl~ 1 7 CLERIC_SYMBOL_PAIN // Symbole, Pain
+ADD_SPELL ~divine_remix/spl/symbolpain.spl~ 1 7 CLERIC_SYMBOL_PAIN // Symbol, Pain
     SAY NAME1 @285
 	SAY UNIDENTIFIED_DESC @286
-ADD_SPELL ~divine_remix/spl/symbolhopelessness.spl~ 1 7 CLERIC_SYMBOL_HOPELESSNESS // Symbole, Hopelessness
+ADD_SPELL ~divine_remix/spl/symbolhopelessness.spl~ 1 7 CLERIC_SYMBOL_HOPELESSNESS // Symbol, Hopelessness
     SAY NAME1 @287
 	SAY UNIDENTIFIED_DESC @288
-ADD_SPELL ~divine_remix/spl/symbolpersuasion.spl~ 1 7 CLERIC_SYMBOL_PERSUASION // Symbole, Persuasion
+ADD_SPELL ~divine_remix/spl/symbolpersuasion.spl~ 1 7 CLERIC_SYMBOL_PERSUASION // Symbol, Persuasion
     SAY NAME1 @289
 	SAY UNIDENTIFIED_DESC @290
 
@@ -1131,6 +1084,7 @@ COPY ~divine_remix/bam/trspaina.bam~ ~override~
 	 ~divine_remix/bam/trspersb.bam~ ~override~
      ~divine_remix/bam/trspersc.bam~ ~override~
 
+/////// Animal friendship
 
 ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ANIMAL_FRIENDSHIP~)) < 0)) BEGIN  // only if not present or overwrite selected
 
@@ -1140,6 +1094,127 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ANIMAL_FRIENDSHIP
 
 END
 
+/////// Dispel Fatigue
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_DISPEL_FATIGUE~)) < 0)) BEGIN  // only if not present or overwrite selected **
+
+  ADD_SPELL ~divine_remix/spl/dispelfatig.spl~ 1 1 CLERIC_DISPEL_FATIGUE // Dispel Fatigue
+    SAY NAME1 @291
+    SAY UNIDENTIFIED_DESC @292
+
+  COPY ~divine_remix/bam/trdispfa.bam~ ~override~
+	   ~divine_remix/bam/trdispfb.bam~ ~override~
+       ~divine_remix/bam/trdispfc.bam~ ~override~
+
+END
+
+/////// Call Upon Faith
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_CALL_UPON_FAITH~)) < 0)) BEGIN  // only if not present or overwrite selected **
+
+  ADD_SPELL ~divine_remix/spl/calluponfaith.spl~ 1 1 CLERIC_CALL_UPON_FAITH // Call Upon Faith
+    SAY NAME1 @293
+    SAY UNIDENTIFIED_DESC @294
+
+  COPY ~divine_remix/bam/trcallfa.bam~ ~override~
+       ~divine_remix/bam/trcallfb.bam~ ~override~
+       ~divine_remix/bam/trcallfc.bam~ ~override~
+
+END
+
+/////// Armor of Darkness
+
+// ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ARMOR_OF_DARKNESS~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  // ADD_SPELL ~divine_remix/spl/armorofdarkness.spl~ 1 3 CLERIC_ARMOR_OF_DARKNESS // Armor of darkness (shar)
+    // SAY NAME1 @295
+	// SAY UNIDENTIFIED_DESC @296
+
+// COPY ~divine_remix/bam/trardrka.bam~ ~override~
+	 // ~divine_remix/bam/trardrkb.bam~ ~override~
+     // ~divine_remix/bam/trardrkc.bam~ ~override~
+
+// END
+
+// ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_UNDEAD_FORM~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  // ADD_SPELL ~divine_remix/spl/undeadform.spl~ 1 4 CLERIC_UNDEAD_FORM // Assume Undead form
+    // SAY NAME1 @252
+	// SAY UNIDENTIFIED_DESC @253
+
+// COPY ~divine_remix/bam/trfdeada.bam~ ~override~
+	 // ~divine_remix/bam/trfdeadb.bam~ ~override~
+     // ~divine_remix/bam/trfdeadc.bam~ ~override~
+
+// END
+
+// ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_OBSCURING_MIST~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  // ADD_PROJECTILE ~divine_remix/spl/tr#omist.pro~
+  // ADD_SPELL ~divine_remix/spl/obscuringmist.spl~ 1 1 CLERIC_OBSCURING_MIST // Obscuring Mist
+    // SAY NAME1 @291
+	// SAY UNIDENTIFIED_DESC @292
+    // READ_LONG  0x64 ab_off
+    // READ_SHORT 0x68 ab_num
+    // FOR(i=0; i<ab_num; i+=1) BEGIN
+      // WRITE_SHORT (ab_off+i*0x28+0x26) %tr#omist%                                    // use new projectile
+    // END 
+
+  // COPY ~divine_remix/bam/trmista.bam~ ~override~
+	   // ~divine_remix/bam/trmistb.bam~ ~override~
+       // ~divine_remix/bam/trmistc.bam~ ~override~
+
+// END
+
+/////// Dispel Outsider: Instead of Dispel Evil
+
+// ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_DISPEL_OUTSIDER~)) < 0)) BEGIN  // only if not present or overwrite selected **
+
+  // ADD_SPELL ~divine_remix/spl/dispeloutsider.spl~ 1 5 CLERIC_DISPEL_OUTSIDER // Dispel outsider Spell for Dispel Evil/Good
+    // SAY NAME1 @291
+    // SAY UNIDENTIFIED_DESC @292
+
+  // COPY ~divine_remix/eff/tr#unsum.eff~ ~override~  // Visual Effect
+	   // ~divine_remix/eff/tr#banb.eff~ ~override~   // Banishement effect
+  
+  // COPY ~divine_remix/bam/trbana.bam~ ~override~
+	   // ~divine_remix/bam/trbanb.bam~ ~override~
+       // ~divine_remix/bam/trbanc.bam~ ~override~
+
+// END
+
+
+///// Add Command Monster and update Command and Greater Command (PnP) 
+
+// ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_COMMAND_MONSTER~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  // ADD_SPELL ~divine_remix/spl/cmdmonster.spl~ 1 6 CLERIC_COMMAND_MONSTER // Command Monster: work on everything
+    // SAY NAME1 @267
+    // SAY UNIDENTIFIED_DESC @268
+
+  // COPY ~divine_remix/bam/trcmdma.bam~ ~override~
+	   // ~divine_remix/bam/trcmdmb.bam~ ~override~
+       // ~divine_remix/bam/trcmdmc.bam~ ~override~
+
+// Command & Greater Command: need to know language -> work now only on humanoïd
+// COPY_EXISTING ~sppr102.spl~ ~override~
+  // READ_LONG 0x08 name
+
+  // COPY ~divine_remix/spl/sppr102.spl~ ~override~ // PnP Command could be only used if the language is understood by the creature: humanoids
+  // WRITE_LONG 0x08 name
+  // SAY UNIDENTIFIED_DESC @115
+
+  // COPY ~divine_remix/spl/sppr102a.spl~ ~override~ // Actual Spell - now work also on elves for obg2... it has nothing to do with sleep.
+      // ~divine_remix/eff/tr#cmd.eff~ ~override~   // ids : humanoids
+
+  // COPY ~divine_remix/spl/sppr512.spl~ ~override~ // PnP Greater Command could be only used if the language is understood by the creature: humanoids; new name: Dictate
+  // SAY NAME1 @116
+  // SAY UNIDENTIFIED_DESC @117
+ 
+ // COPY ~divine_remix/spl/tr#dict.spl~ ~override~ // Actual Spell - now work also on elves for obg2... it has nothing to do with sleep.
+      // ~divine_remix/eff/tr#dict.eff~ ~override~ // ids : humanoids
+
+// END
 
 // disable original spells that were moved to another level or that are already covered by this mod
 
@@ -1159,7 +1234,6 @@ END ELSE OUTER_SPRINT cmwiwd ~~
 ACTION_FOR_EACH file IN 
 			  ~sppr317~ // Cure Disease
 			  ~sppr413~ // Negative Plan Protection
-			  ~sppr512~ // Greater Command
 			  ~sppr719~ // Symbol, death
 			  ~sppr718~ // Symbol, stun
 			  ~sppr706~ // Symbol, fear

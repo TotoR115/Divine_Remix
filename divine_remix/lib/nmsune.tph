@@ -1,19 +1,25 @@
 COPY ~divine_remix/2da/nmsune.2DA~ ~override~
 
 // change spells to innates as needed
-COPY_EXISTING ~spwi411.spl~ ~override/nmsun07.spl~ // emotion
-              ~sppr503.spl~ ~override/nmsun09.spl~ // flame strike
+COPY_EXISTING ~spwi104.spl~ ~override/nmsun05.spl~ // Charm Person
+              ~spwi411.spl~ ~override/nmsun11.spl~ // emotion
+              ~sppr503.spl~ ~override/nmsun07.spl~ // flame strike
               ~spwi607.spl~ ~override/nmsun11.spl~ // mislead
-              ~spwi708.spl~ ~override/nmsun14.spl~ // mantle
   LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
   BUT_ONLY_IF_IT_CHANGES
 
 COPY ~Divine_Remix/spl/nmsun0a.spl~ ~override~  // +1 Charisma
+
 COPY ~Divine_Remix/spl/cdsune2.spl~ ~override~  // Veil of Djalice
   SAY NAME1 @12409
   SAY NAME2 @12409
   SAY UNIDENTIFIED_DESC @12410
   SAY DESC @12410
+
+COPY ~divine_remix/spl/givespell.spl~ ~override/tr#sune4.spl~  // Give Veil of Djalice, lv4 Spell
+  LPF ALTER_EFFECT STR_VAR resource = "cdsune2" END
+
+
 COPY ~Divine_Remix/spl/nmsun0b.spl~ ~override~  // Shock Flail (innate)
   SAY NAME1 @12403
   SAY NAME2 @12403
