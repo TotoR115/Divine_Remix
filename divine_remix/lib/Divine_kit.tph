@@ -1524,6 +1524,46 @@ ACTION_IF FILE_EXISTS_IN_GAME ~j#aoev22.txt~ THEN BEGIN // if Ashes of Embers is
 END
 END
 
+/////                                                  \\\\\
+///// assign kits                                      \\\\\
+/////                                                  \\\\\
+
+ACTION_FOR_EACH creature IN a#murn BEGIN
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
+  ADD_KIT ~A#OOZ2~
+	  ~A#OOZE                  0           0           1           1           0           1           0           0~
+	  ~A#OOZE 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	  ~A#OOZE	0       0       0       0       9       0~
+	  ~A#OOZE		0       0       0       0       0       0~
+	  ~A#OOZE		0	0	0	0	17	0~
+	  ~A#OOZE		0	0	0	0	15	0~
+	  ~A#OOZE		0       0       0       1       0       0       1       1       0~
+	  ~A#OOZE		1       0       1       1       0       1~
+	  ~divine_remix/2da/a#ooze.2da~
+	  ~~
+	  ~0x00004000 3~
+	  ~Cl0~
+	  ~CHAN09 * HELM07 BAG20 RING06 RING21 * BOOT01 AMUL19 BRAC16 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 HAMM07 SW1H27 STAF08~
+	  SAY @20302
+	  SAY @20303
+	  SAY @20304
+
+OUTER_SET kit = "%A#OOZ2%" // Oozemaster
+
+    COPY_EXISTING ~%creature%.cre~ ~override~
+      WRITE_SHORT   0x244 0
+      WRITE_SHORT   0x246 0x4000 + "%kit%" // Oozemaster
+	  WRITE_BYTE   0x273 11 // Druid
+//    WRITE_BYTE    0x247 0x40
+	  BUT_ONLY
+
+  END
+
+END
+END
+
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////                                                  \\\\\

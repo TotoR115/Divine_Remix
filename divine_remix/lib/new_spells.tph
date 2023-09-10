@@ -109,7 +109,7 @@ COPY_EXISTING ~bearposu.cre~ override
 
 COPY_EXISTING ~wolfwwsu.cre~ override
 	WRITE_BYTE 0x273 11	// Set Class to druid to allow player to change weapon
-	WRITE_BYTE 0x23d 14	// Set Constotution to 14 to avoid bonus linked to the new class
+	WRITE_BYTE 0x23d 14	// Set Constitution to 14 to avoid hp bonus
 	  
 /////// better Monster Summoning III: replace ettercap by winter wolf and add carrion crawler
 
@@ -119,7 +119,7 @@ COPY_EXISTING ~wolfwisu.cre~ override
 	WRITE_SHORT 0x26 40
 	WRITE_BYTE 0x234 5	// Set Lv to 5
 	WRITE_BYTE 0x273 11	// Set Class to druid to allow player to change weapon
-	WRITE_BYTE 0x23d 14	// Set Constotution to 14 to avoid bonus linked to the new class
+	WRITE_BYTE 0x23d 14	// Set Constitution to 14 to avoid hp bonus
 
 /////// Rework of carrion Summoning: rename it Monster Summoning IV
 
@@ -158,7 +158,7 @@ COPY_EXISTING ~wyvernsu.cre~ override
 	WRITE_BYTE 0x273 11	// Set Class to druid to allow player to change weapon manually
 
 
-/////// Pnp Flame strike should be area of effect and for 6d8
+/////// PnP Flame strike should be area of effect and deals 6d8
 ADD_PROJECTILE ~divine_remix/spl/tr#flame.pro~
 COPY ~divine_remix/spl/sppr503.spl~ ~override~    
     SAY UNIDENTIFIED_DESC @126
@@ -242,7 +242,7 @@ BUT_ONLY IF_EXISTS
 ///// new spells                                       \\\\\
 /////                                                  \\\\\
   
-//////// PnP Cure/Cause + Touch Spells Add missing reversed/touch spells (overriding existing for consistance): Slay living (fixing: save vs. death); energy drain (1 lv only vs. 2 lv for mage) ; destruction (touch needed + save at -4); wither (touch); bestow curse (new spell + touch + save)
+//////// PnP Cure/Cause + Touch Spells - Add missing reversed/touch spells (overriding existing for consistance): Slay living (fixing: save vs. death); energy drain (1 lv only vs. 2 lv for mage) ; destruction (touch needed + save at -4); wither (touch); bestow curse (new spell + touch + save)
 
 ACTION_IF cure_cause = 1 BEGIN
   ADD_SPELL ~divine_remix/spl/causelightw.spl~ 1 1 CLERIC_CAUSE_LIGHT_WOUNDS // cause light wounds
@@ -399,7 +399,7 @@ ACTION_IF (((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_CURE_BLINDNESS_O
        ~divine_remix/bam/nmcurebb.bam~ ~override~
        ~divine_remix/bam/nmcurebc.bam~ ~override~
 
-// Cure Disease: create a new spell as base spell should not be midified for compatibility...
+// Cure Disease: create a new spell as base spell should not be modified for compatibility...
 
 COPY_EXISTING ~sppr317.spl~ ~override~
 
@@ -431,7 +431,7 @@ END
 
 /////// Entropy Shield
 
-ACTION_IF ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ENTROPY_SHIELD~)) < 0) BEGIN // only if not present (prfere iwdification n this case)
+ACTION_IF ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ENTROPY_SHIELD~)) < 0) BEGIN // only if not present (prefere iwdification in this case)
 
   ADD_SPELL ~divine_remix/spl/cddshel.spl~ 1 6 CLERIC_ENTROPY_SHIELD  // divine shell
     SAY NAME1 @166
@@ -478,6 +478,38 @@ END
       LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 parameter2 = 20 target = 2 timing = 0 duration = 18 probability1 = 100 resist_dispel = 1 END
       LPF CLONE_EFFECT INT_VAR match_opcode = 101 opcode = 142 parameter2 = 128 END
   END
+
+/// Add Command Monster and update Command and Greater Command (PnP) 
+
+ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_COMMAND_MONSTER~)) < 0)) BEGIN  // only if not present or overwrite selected
+
+  ADD_SPELL ~divine_remix/spl/cmdmonster.spl~ 1 6 CLERIC_COMMAND_MONSTER // Command Monster: work on everything
+    SAY NAME1 @267
+    SAY UNIDENTIFIED_DESC @268
+
+  COPY ~divine_remix/bam/trcmdma.bam~ ~override~
+	   ~divine_remix/bam/trcmdmb.bam~ ~override~
+       ~divine_remix/bam/trcmdmc.bam~ ~override~
+
+// Command & Greater Command: need to know language -> work now only on humanoïd, giant humanoids, fiends and genies
+COPY_EXISTING ~sppr102.spl~ ~override~
+  READ_LONG 0x08 name
+
+  COPY ~divine_remix/spl/sppr102.spl~ ~override~ // PnP Command could be only used if the language is understood by the creature
+  WRITE_LONG 0x08 name
+  SAY UNIDENTIFIED_DESC @115
+
+  COPY ~divine_remix/spl/sppr102a.spl~ ~override~ // Actual Spell - now work also on elves for obg2... it has nothing to do with sleep.
+      ~divine_remix/eff/tr#cmd.eff~ ~override~   // ids
+
+  COPY ~divine_remix/spl/sppr512.spl~ ~override~ // PnP Greater Command could be only used if the language is understood by the creature: humanoïd, giant humanoids, fiends and genies; new name: Dictate
+  SAY NAME1 @116
+  SAY UNIDENTIFIED_DESC @117
+ 
+ COPY ~divine_remix/spl/tr#dict.spl~ ~override~ // Actual Spell - now work also on elves for obg2... it has nothing to do with sleep.
+      ~divine_remix/eff/tr#dict.eff~ ~override~ // ids
+
+END
 
 /////// PnP Impregnable Mind & Chaotic Command
 
@@ -893,7 +925,12 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_ADAMANTITE_MACE~)
   END
 
   COPY ~divine_remix/itm/tr#adma.itm~ ~override~
-       ~divine_remix/eff/tr#adma.eff~ ~override~ // damage bonus vs air elemental and flying monster
+    SAY NAME1 @265
+    SAY NAME2 @265
+    SAY UNIDENTIFIED_DESC @266
+    SAY DESC @266
+  
+  COPY ~divine_remix/eff/tr#adma.eff~ ~override~ // damage bonus vs air elemental and flying monster
 
   COPY ~divine_remix/bam/tradama.bam~ ~override~
 	   ~divine_remix/bam/tradamb.bam~ ~override~
@@ -917,7 +954,9 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_PRODUCE_FLAME~)) 
   END
 
   COPY ~divine_remix/itm/tr#pflam.itm~ ~override~
-	   ~divine_remix/bam/tr#pflam.bam~ ~override~
+    SAY UNIDENTIFIED_DESC @270
+    SAY DESC @270    
+  COPY ~divine_remix/bam/tr#pflam.bam~ ~override~
 
   COPY ~divine_remix/bam/trflama.bam~ ~override~
 	   ~divine_remix/bam/trflamb.bam~ ~override~
@@ -1180,39 +1219,6 @@ END
   // COPY ~divine_remix/bam/trbana.bam~ ~override~
 	   // ~divine_remix/bam/trbanb.bam~ ~override~
        // ~divine_remix/bam/trbanc.bam~ ~override~
-
-// END
-
-
-///// Add Command Monster and update Command and Greater Command (PnP) 
-
-// ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_COMMAND_MONSTER~)) < 0)) BEGIN  // only if not present or overwrite selected
-
-  // ADD_SPELL ~divine_remix/spl/cmdmonster.spl~ 1 6 CLERIC_COMMAND_MONSTER // Command Monster: work on everything
-    // SAY NAME1 @267
-    // SAY UNIDENTIFIED_DESC @268
-
-  // COPY ~divine_remix/bam/trcmdma.bam~ ~override~
-	   // ~divine_remix/bam/trcmdmb.bam~ ~override~
-       // ~divine_remix/bam/trcmdmc.bam~ ~override~
-
-// Command & Greater Command: need to know language -> work now only on humanoïd
-// COPY_EXISTING ~sppr102.spl~ ~override~
-  // READ_LONG 0x08 name
-
-  // COPY ~divine_remix/spl/sppr102.spl~ ~override~ // PnP Command could be only used if the language is understood by the creature: humanoids
-  // WRITE_LONG 0x08 name
-  // SAY UNIDENTIFIED_DESC @115
-
-  // COPY ~divine_remix/spl/sppr102a.spl~ ~override~ // Actual Spell - now work also on elves for obg2... it has nothing to do with sleep.
-      // ~divine_remix/eff/tr#cmd.eff~ ~override~   // ids : humanoids
-
-  // COPY ~divine_remix/spl/sppr512.spl~ ~override~ // PnP Greater Command could be only used if the language is understood by the creature: humanoids; new name: Dictate
-  // SAY NAME1 @116
-  // SAY UNIDENTIFIED_DESC @117
- 
- // COPY ~divine_remix/spl/tr#dict.spl~ ~override~ // Actual Spell - now work also on elves for obg2... it has nothing to do with sleep.
-      // ~divine_remix/eff/tr#dict.eff~ ~override~ // ids : humanoids
 
 // END
 

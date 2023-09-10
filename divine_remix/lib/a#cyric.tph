@@ -12,11 +12,12 @@ COPY ~Divine_Remix/eff/tr#cyrdg.eff~ ~override~
 COPY ~Divine_Remix/cre/tr#cyrdg.cre~ ~override~ //Direguard
   SAY 0x8 @13030
   SAY 0xc @13030
+COPY ~Divine_Remix/spl/tr#phdg.spl~ ~override~ // innate blink
 COPY ~Divine_Remix/bam/tr#cyrda.bam~ ~override~
 	 ~Divine_Remix/bam/tr#cyrdb.bam~ ~override~
 	 ~Divine_Remix/bam/tr#cyrdc.bam~ ~override~
 
-COPY ~divine_remix/spl/givespell.spl~ ~override/tr#cyr07.spl~  // Give Create Direguard, lv7 Spell
+COPY ~divine_remix/spl/givespell.spl~ ~override/tr#cyr7.spl~  // Give Create Direguard, lv7 Spell
   LPF ALTER_EFFECT STR_VAR resource = "tr#cyrdg" END
 
 

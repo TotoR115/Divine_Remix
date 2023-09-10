@@ -443,7 +443,7 @@ Sphère : Combat
 Portée : 0
 Durée : Spéciale
 Temps d’incantation : 1
-Zone d'effet : Rayon de 10 m
+Zone d'effet : 10 m de rayon
 Jet de Sauvegarde : Non
 
 Prononcer une Parole sacrée crée une magie à la puissance destructrice. Le prêtre agit comme un lien entre son dieu et le Plan Primaire Matériel, ce qui cause une petite explosion centrée sur le prêtre, atteignant un rayon de 10 m. Ce sort affecte les créatures invoqués qui sont immédiarements tuées et les créatures mauvaises ou d’alignement mauvais. Les effets changent avec le niveau de la cible :
@@ -462,7 +462,7 @@ Sphère : Combat
 Portée : 0
 Durée : Spéciale
 Temps d’incantation : 1
-Zone d'effet : 10 mètres de rayon
+Zone d'effet : 10 m de rayon
 Jet de sauvegarde : Aucun
 
 Prononcer une parole infernale crée une forme de magie d’une puissance colossale. Le prêtre agit comme un pont entre son dieu et le plan matériel primaire causant ainsi une explosion d’un rayon de 10 mètres autour du lanceur. Ce sort affecte les créatures invoqués qui sont immédiarements tuées et les créatures d’alignement bon se trouvant dans la zone d’effet de la parole infernale. Les effets diffèrent en fonction du niveau de la victime du sort :
@@ -881,7 +881,7 @@ Après avoir assisté au sermon du prêtre sans yeux, j'ai été contacté par un cler
 
 @10166 = ~Résistance à l'électricité~
 @10167 = ~Demi-Pique : 'Furie de Talos'~
-@10168 = ~La demi-pique est l'arme spirituelle des Seigneurs des Tempêtes de Talos. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure un round par niveau de lanceur, jusqu'à un maximum de 20 rounds, et ne peut être utilisée qu'une fois par jour.~
+@10168 = ~La demi-pique est l'arme spirituelle des Seigneurs des Tempêtes de Talos. L'arme se manie comme un arme de jets dont le lanceur disposait de la grande maîtrise et inflige +1d4 dégats éléctric. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure un round par niveau de lanceur, jusqu'à un maximum de 20 rounds, et ne peut être utilisée qu'une fois par jour.~
 @10169 = ~Coup destructeur~
 @10170 = ~Une fois par jour, un Seigneur des Tempêtes peut concentrer la fureur de Talos au combat. Ce sort lui confère des bonus de +2 aux jets d'attaque et de dégâts pendant un round par niveau (20 rounds maximum).~ 
 @10171 =~SEIGNEUR DES TEMPÊTES DE TALOS : Talos est le dieu maléfique des tempêtes, de la destruction et de la rébellion. Ses prêtres affirment que Talos doit être apaisé ou il sèmera la destruction sur la terre.
@@ -912,7 +912,7 @@ Les prêtres les plus puissants peuvent faire appel à leur divinité pour les prot
 
 Capacités :
 - Arme spirituelle : demi-pique - 'Furie de Talos' une fois par jour.
-la demi-pique est l'arme spirituelle des Seigneurs des Tempêtes de Talos, et se manie comme si le lanceur en avait la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure un round par niveau de lanceur, jusqu'à un maximum de 20 rounds, et ne peut être utilisée qu'une fois par jour.
+la demi-pique est l'arme spirituelle des Seigneurs des Tempêtes de Talos. Elle se manie comme un arme de jets dont le lanceur disposait de la grande maîtrise et inflige +1d4 dégats éléctric. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure un round par niveau de lanceur, jusqu'à un maximum de 20 rounds, et ne peut être utilisée qu'une fois par jour.
 - Résistance innée à l'électricité, 1 % par niveau.
 - 'Coup destructeur' une fois par jour.
 COUP DESTRUCTEUR : une fois par jour, un Seigneur des Tempêtes peut concentrer la fureur de Talos au combat. Ce sort lui confère des bonus de +2 aux jets d'attaque et de dégâts pendant un round par niveau (20 rounds maximum).
@@ -930,7 +930,7 @@ Désavantages :
 
 Capacités :
 - Arme spirituelle : masse - 'Oraison de l'Aube' une fois par jour.
-cette masse est l'arme spirituelle des Seigneurs de l'Aube de Lathandre. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
+cette masse est l'arme spirituelle des Seigneurs de l'Aube de Lathandre. L'arme inflige +1d6 de dégats aux Morts-Vivants et se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
 - 'Lueur féérique' trois fois par jour à partir du niveau 3 (comme le sort de prêtre de niveau 1).
 - 'Immobilisation des Morts-Vivants' une fois par jour à partir du niveau 5 (comme le sort de mage de niveau 3).
 - 'Don de Lathandre' une fois par jour à partir du niveau 7.
@@ -952,7 +952,7 @@ DON DE LATHANDRE : ce sort dure 1 round par niveau et confère +1 aux jets d'atta
 Désavantages :
 - Alignement restreint à loyal bon, neutre bon, chaotique bon et neutre strict.~
 @10180 = ~Masse : 'Oraison de l'Aube'~
-@10181 = ~Cette masse est l'arme spirituelle des Seigneurs de l'Aube de Lathandre. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau de lanceur, jusqu'à 20 rounds.~
+@10181 = ~Cette masse est l'arme spirituelle des Seigneurs de l'Aube de Lathandre. L'arme inflige +1d6 de dégats aux Morts-Vivants et se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau de lanceur, jusqu'à 20 rounds.~
 @10182 = ~Seuls les plus fidèles et les plus dévoués serviteurs du Seigneur des Tempêtes reçoivent un de ces puissants symboles sacrés.
 
 PARAMÈTRES :
@@ -979,7 +979,7 @@ Ce sort fait apparaître une épée dans la main du prêtre (ne peut être lâchée, vo
 Désavantages :
 - Alignement restreint à loyal bon, loyal neutre, loyal mauvais et neutre strict.~
 @10185 = ~Épée Bâtarde : 'Éternelle Vigilance'~
-@10186 = ~Cette épée bâtarde est l'arme spirituelle des Vigilants de Heaum. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à un maximum de 20 rounds.~
+@10186 = ~Cette épée bâtarde est l'arme spirituelle des Vigilants de Heaum. L'arme octroie un bonus de +5% aux chance de coups critiques et se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à un maximum de 20 rounds.~
 @10187 = ~Seuls les plus fidèles et les plus dévoués serviteurs du Vigilant reçoivent un de ces puissants symboles sacrés.
 
 PARAMÈTRES :
@@ -1008,7 +1008,7 @@ Cette capacité dure 1 round par niveau du lanceur de sorts. Il confère au lanceu
 
 Capacités :
 - Arme spirituelle : épée bâtarde - 'Éternelle Vigilance' une fois par jour.
-cette épée bâtarde est l'arme spirituelle des Vigilants de Heaum. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25, et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
+cette épée bâtarde est l'arme spirituelle des Vigilants de Heaum. L'arme octroie un bonus de +5% aux chance de coups critiques et se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25, et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
 - 'Glyphe de Garde' une fois par jour à partir du niveau 7, comme le sort de clerc de niveau 3 du même nom.
 - Épée Animée, une fois par jour à partir du niveau 7
 ÉPÉE ANIMÉE
@@ -1067,7 +1067,7 @@ Les prêtres de Séluné se font appeler les Étoiles d'Argent. Ce sont d'ardents dé
 
 Capacités :
 - Arme spirituelle : masse - 'Main Lunaire' une fois par jour.
-la Main Lunaire est l'arme spirituelle des Étoiles d'Argent de Séluné. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à un maximum de 20 rounds.
+la Main Lunaire est l'arme spirituelle des Étoiles d'Argent de Séluné. L'arme octroie un bonus de +2 à la CA et se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à un maximum de 20 rounds.
 - Infravision.
 - 'Bouclier Lunaire' une fois par jour.
 - 'Lame Lunaire' une fois par jour à partir du niveau 5
@@ -1079,7 +1079,7 @@ la Main Lunaire est l'arme spirituelle des Étoiles d'Argent de Séluné. L'arme se
 Désavantages :
 - Alignement restreint à chaotique bon, neutre bon et chaotique neutre.~
 @10303 = ~Masse : 'Main Lunaire'~
-@10304 = ~La Main Lunaire est l'arme spirituelle des Étoiles d'Argent de Séluné. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau de lanceur, jusqu'à un maximum de 20 rounds.~
+@10304 = ~La Main Lunaire est l'arme spirituelle des Étoiles d'Argent de Séluné. L'arme octroie un bonus de +2 à la CA et se manie comme si le lanceur disposait de la grande maîtrise. Il s'agit d'une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau de lanceur, jusqu'à un maximum de 20 rounds.~
 @10305 = ~étoile d'argent de séluné~
 @10307 = ~Bouclier Lunaire~
 @10308 = ~Bouclier Lunaire (Altération)
@@ -1173,7 +1173,7 @@ Les Manteaux de la Nuit de Shar peuvent uniquement être d'alignement Neutre Mauv
 
 Capacités :
 - Arme spirituelle : chakram - 'Disque de la Nuit' une fois par jour.
-le chakram est l'arme spirituelle des Manteaux de la Nuit. Le chakram est équivalent à une fléchette de retour et s'utilise comme si le lanceur en avait la grande maîtrise. Le chakram est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
+le chakram est l'arme spirituelle des Manteaux de la Nuit. Le chakram est équivalent à une fléchette de retour, octroie 5 attaque par round et s'utilise comme si le lanceur en avait la grande maîtrise. Le chakram est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
 - Immunité à toute forme de cécité
 - 'Cécité' une fois par jour à partir du niveau 3 (comme le sort de mage de niveau 1).
 - 'Mot de Pouvoir Sommeil' une fois par jour à partir du niveau 5 (comme le sort de mage de niveau 2).
@@ -1195,7 +1195,7 @@ La Malédiction de Shar, un sort puissant que Shar confère à ses prêtres les plus
 
 Choisir cette capacité permet de lancer le sort de façon innée une fois par jour. Cette capacité ne peut être choisie qu'une seule fois.~
 @10608 = ~Chakram : 'Disque de la Nuit'~
-@10609 = ~L'arme de prédilection de Shar est le Disque de la Nuit, un chakram. Il s'agit d'une arme métallique circulaire qui se lance comme une fléchette et qui, dans ce cas, retourne magiquement à son propriétaire.
+@10609 = ~L'arme de prédilection de Shar est le Disque de la Nuit, un chakram. Il s'agit d'une arme métallique circulaire qui se lance comme une fléchette et qui, dans ce cas, retourne magiquement à son propriétaire. Elle octroie 5 attaque par round.
 
 Shar offre à ses plus fidèles dévots, les Manteaux de la Nuit, la capacité d'invoquer une telle arme une fois par jour. La puissance de l'arme augmente à mesure que le prêtre gagne en pouvoir et en importance aux yeux de Shar. Le chakram est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.~
 @10615 = ~Symbole Sacré de Shar~
@@ -1306,7 +1306,7 @@ Les Guerroyeur de Tempus peuvent uniquement être d'alignement Chaotique Neutre, 
 
 Capacités :
 - Arme spirituelle : hache d'armes - 'Prouesse Martiale' une fois par jour.
-Prouesse Martiale est l'arme spirituelle des Guerroyeur de Tempus, et se manie comme si l'utilisateur en avait la grande maîtrise. Prouesse martiale est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
+Prouesse Martiale est l'arme spirituelle des Guerroyeur de Tempus. L'arme octroie un bonus de +5% aux chance de coups critiques et se manie comme si l'utilisateur en avait la grande maîtrise. Prouesse martiale est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
 - Au niveau 7, un Guerroyeur de Tempus peut effectuer trois attaques de mêlée en deux round. Au niveau 13, un Guerroyeur de Tempus peut effectuer deux attaques de mêlée par round.
 - Peut se spécialiser (deux étoiles) dans toutes les armes de mêlée qu'un prêtre peut utiliser.
 - Peut entrer en Rage Berserk une fois par jour.
@@ -1377,7 +1377,7 @@ Les Nobles Martyrs d'Ilmater peuvent uniquement être d'alignement Loyal Bon, Neu
 
 Capacités :
 - Arme spirituelle : poing - 'Main d'Ilmater' une fois par jour.
-la Main d'Ilmater est l'arme spirituelle des Nobles Martyrs d'Ilmater. La Main d'Ilmater totalise 1d6 points de dégâts de base et se manie comme si l'utilisateur en avait la grande maîtrise. La Main d'Ilmater est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. La Main d'Ilmater dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
+la Main d'Ilmater est l'arme spirituelle des Nobles Martyrs d'Ilmater. La Main d'Ilmater totalise 2d6 points de dégâts de base et se manie comme si l'utilisateur en avait la grande maîtrise. La Main d'Ilmater est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. La Main d'Ilmater dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
 - 'Apaisement' une fois par jour.
 - Peut préparer, une fois par jour, un antidote ou une potion de soins au niveau 1, un élixir de santé ou une potion de grands soins au niveau 10 et un élixir de santé, une potion de régénération ou de soin majeur au niveau 15.
 - 'Puiser dans la puissance divine' une fois par jour à partir du niveau 5 (comme le sort de prêtre de niveau 2).
@@ -1390,7 +1390,7 @@ ENDURANCE D'ILMATER : les Nobles Martyrs puisent dans la puissance divine d'Ilma
 Désavantages :
 - Alignement restreint à loyal bon, neutre bon et loyal neutre.~
 @11203 = ~La Main d'Ilmater~
-@11204 = ~La Main d'Ilmater est l'arme spirituelle des Nobles Martyrs d'Ilmater. La Main d'Ilmater totalise 1d6 points de dégâts de base et se manie comme si l'utilisateur en avait la grande maîtrise. La Main d'Ilmater est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. La Main d'Ilmater dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.~
+@11204 = ~La Main d'Ilmater est l'arme spirituelle des Nobles Martyrs d'Ilmater. La Main d'Ilmater totalise 2d6 points de dégâts de base et se manie comme si l'utilisateur en avait la grande maîtrise. La Main d'Ilmater est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. La Main d'Ilmater dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.~
 @11205 = ~Endurance d'Ilmater~
 @11206 = ~Endurance d'Ilmater
 (Nécromancie)
@@ -1452,7 +1452,7 @@ La préparation des potions est une tâche délicate qui ne peut être entreprise qu
 
 @11501 = ~Fléau : 'Filament de Feu'~
 @11502 = ~Chaîne Cloutée : 'Filament de Feu'~
-@11516 = ~Le fléau est l'arme spirituelle des Adeptes des Flammes de Kossuth. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Le fléau est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs.~
+@11516 = ~Le fléau est l'arme spirituelle des Adeptes des Flammes de Kossuth. L'arme se manie comme si le lanceur disposait de la grande maîtrise et inflige +1d4 dégats de feu. Le fléau est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs.~
 @11503 = ~Adepte des Flammes de Kossuth~
 @11504 = ~ADEPTE DES FLAMMES DE KOSSUTH : Kossuth, le Seigneur du Feu, le Tyran des Flammes, est un Seigneur Élémentaire originaire du Plan Élémentaire du Feu. De façon générale il ne porte aucune attention à ses croyants, mais il continue à conférer des pouvoirs à ses prêtres ; en effet, leur dévotion augmente son pouvoir dans son plan de résidence. Afin de maintenir ce niveau de dévotion, il lui arrive de s'intéresser un minimum aux problèmes de ses dévots mortels et à l'occasion il peut lui arriver de montrer sa présence via une manifestation, mais jamais un avatar.
 
@@ -1462,7 +1462,7 @@ Les Adeptes du Flammes peuvent peut être d'alignement neutre mais la plupart son
 
 Capacités :
 - Arme spirituelle : fléau - 'Filament de Feu' une fois par jour.
-Le fléau est l'arme spirituelle des Adeptes des Flammes de Kossuth. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Le fléau est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
+Le fléau est l'arme spirituelle des Adeptes des Flammes de Kossuth. L'arme se manie comme si le lanceur disposait de la grande maîtrise et inflige +1d4 dégats de feu. Le fléau est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
 - Gagne 2 % de résistance au feu par niveau.
 - 'Mains ardentes' une fois par jour à partir du niveau 3 (comme le sort de mage du niveau 1).
 - 'Conjuration d'Élémentaire du Feu mineur' une fois par jour à partir du niveau 5 (comme le sort de mage du niveau 5).
@@ -1604,7 +1604,7 @@ Les adeptes d'Oghma considèrent que le savoir est suprême, et particulièrement d
 
 Capacités :
 - Arme spirituelle : épée longue - 'Coup Mortel' une fois par jour.
-Coup Mortel est l'arme spirituelle des Gardiens du Savoir d'Oghma. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Coup Mortel est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
+Coup Mortel est l'arme spirituelle des Gardiens du Savoir d'Oghma. L'arme octroie un bonus de +2 à la CA et se manie comme si le lanceur disposait de la grande maîtrise. Coup Mortel est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
 - Gagne 10 points de connaissance par niveau.
 - 'Identification' une fois par jour à partir du niveau 3 (comme le sort de mage du niveau 1).
 - 'Amitié' une fois par jour à partir du niveau 5 (comme le sort de mage du niveau 1).
@@ -1616,7 +1616,7 @@ Coup Mortel est l'arme spirituelle des Gardiens du Savoir d'Oghma. L'arme se man
 Désavantages :
 - Aucun~
 @12103 = ~Épée Longue : 'Coup Mortel'~
-@12112 = ~Coup Mortel est l'arme spirituelle des Gardiens du Savoir d'Oghma. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Coup Mortel est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.~
+@12112 = ~Coup Mortel est l'arme spirituelle des Gardiens du Savoir d'Oghma. L'arme octroie un bonus de +2 à la CA et se manie comme si le lanceur disposait de la grande maîtrise. Coup Mortel est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.~
 @12104 = ~Savoir d'Oghma~
 @12105 = ~Symbole Sacré d'Oghma~
 @12106 = ~Oghma récompense ses serviteurs les plus puissants avec un Symbole Sacré, un anneau portant ses armoiries : un parchemin vierge. Utilisé, le symbole accorde au Gardien du Savoir la puissance d'Oghma.
@@ -1731,7 +1731,7 @@ Les habits de cérémonie des prêtres de Corellon incluent des robes azurées faite
 
 Capacités :
 - Arme spirituelle : épée longue 'Sahandrian' une fois par jour.
-Sahandrian est l'arme spirituelle des Protecteurs Féériques de Corellon. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Sahandrian est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
+Sahandrian est l'arme spirituelle des Protecteurs Féériques de Corellon. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Sahandrian est une arme +1 aux niveaux 1 à 5, +2 aux niveaux 6 à 10, +3 aux niveaux 11 à 15, +4 aux niveaux 16 à 20, +5 aux niveaux 21 à 25 et +6 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
 - Peut dépenser deux points de compétence dans les armes, et le maximum de points dans les styles de combat.
 - +1 aux jets de sauvegarde contre la mort
 - 'Lueur Féérique' une fois par jour à partir du niveau 1 (comme le sort de prêtre du niveau 1).
@@ -1745,7 +1745,7 @@ Désavantages :
 - Race restreinte aux elfes et demi-elfes.
 - Alignement restreint à chaotique bon, neutre bon et chaotique neutre.~
 @12704 = ~Épée Longue : 'Sahandrian'~
-@12705 = ~Sahandrian est l'arme spirituelle des Protecteurs Féériques de Corellon. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Sahandrian est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.~
+@12705 = ~Sahandrian est l'arme spirituelle des Protecteurs Féériques de Corellon. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Sahandrian est une arme +1 aux niveaux 1 à 5, +2 aux niveaux 6 à 10, +3 aux niveaux 11 à 15, +4 aux niveaux 16 à 20, +5 aux niveaux 21 à 25 et +6 L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.~
 @12706 = ~Enchaînement 
 (toutes écoles)
 Niveau : Quête
@@ -1802,7 +1802,7 @@ Les maîtres des Conflits portent des robes noires et violettes. Ils portent des 
 
 Capacités :
 - Arme spirituelle : épée longue 'Lame de Rasoir' une fois par jour.
-Lame de Rasoir est l'arme spirituelle des Maîtres des Conflits de Cyric. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Lame de Rasoir est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
+Lame de Rasoir est l'arme spirituelle des Maîtres des Conflits de Cyric. L'arme octroie un bonus de +5% aux chance de coups critiques et se manie comme si le lanceur disposait de la grande maîtrise. Lame de Rasoir est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
 - Peut enduire son arme de poison une fois par jour par tranche de 6 niveaux. Les attaques effectuées durant le round suivant empoisonneront la cible, qui subira un point de dégâts par seconde pendant 24 secondes (3 points de dégâts pendant les 6 premières secondes). Un jet de sauvegarde contre le poison réussi limitera les dégâts à 12 points.
 - Immunité à toute forme de peur
 - 'Décharge Terrifiante' une fois par jour à partir du niveau 7.
@@ -1819,7 +1819,7 @@ PARAMÈTRES :
  +5 % de Résistance à la magie
  +1 en Force~
 @13007 = ~Épée Longue : 'Lame de Rasoir'~
-@13008 = ~Lame de Rasoir est l'arme spirituelle des Maîtres des Conflits de Cyric. L'arme se manie comme si le lanceur disposait de la grande maîtrise. Lame de Rasoir est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.~
+@13008 = ~Lame de Rasoir est l'arme spirituelle des Maîtres des Conflits de Cyric. L'arme octroie un bonus de +5% aux chance de coups critiques et se manie comme si le lanceur disposait de la grande maîtrise. Lame de Rasoir est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.~
 @13009 =~SEMEUR DE DISCORDE DE CYRIC : Cyric est un dieu mégalomane dont le culte est largement répandu, ainsi que l'une des trois plus grandes puissances maléfiques de Féérune. Mesquin et égocentrique, il n'aime rien tant que de mener des individus de tous bords à commettre des actes qui ruinent leur vie entière ou à leur faire faire des erreurs fatales. Il boit à la source des larmes des rêveurs qui ont perdu leurs illusions et des coeurs brisés. Il est tout à fait capable de s'allier à une autre divinité pourvu qu'il puisse la trahir et s'en sortir.
 
 Les prêtres du Soleil Noir font le voeu de propager le conflit et le meurtre afin d'accroître la peur et la croyance en Cyric. Ils soutiennent les dirigeants ayant un goût prononcé pour la cruauté, mais agissent de telle façon qu'ils évitent que le monde entier ne plonge dans une guerre de grande envergure (ce qui renforcerait le pouvoir de Tempus). Dans les faits, les fidèles de Cyric passent le plus clair de leur temps à comploter et à se trahir les uns les autres, mais de tels conflits se font de plus en plus rares récemment, Cyric ayant acquis un plus grand contrôle de lui-même et ayant consolidé son influence parmi les fidèles des divinités dont il a pris les attributions.
@@ -1909,15 +1909,15 @@ Il y a malgré tout de substantiels avantages à poursuivre ce choix de carrière. 
 
 Avantages :
 - Peut effectuer une attaque de Toucher Paralytique une fois par jour par tranche de 5 niveaux. Cette capacité fonctionne de la même manière que le sort de mage de niveau 2 'Toucher de la Goule'.
+- A partir du niveau 3, le métabolisme étrange du Maître des Vases l'immunise aux maladies.
 - A partir du niveau 5, le métabolisme étrange du Maître des Vases l'immunise au poison.
 - Au niveau 7, peut adopter la forme d'une gelée de moutarde trois fois par jour.
 - Immunité à l'acide à partir du niveau 9.
-- A partir du niveau 11, le métabolisme étrange du Maître des Vases l'immunise aux maladies.
 - A partir du niveau 15, le Maître des Vases est immunisé à la cécité, au sommeil, à la paralysie, à l'étourdissement et aux coups critiques. En effet, à ce niveau, son corps ne fait plus qu'un avec la vase, et il perd toute forme d'anatomie interne.
 
 Inconvénients :
 - Ne gagne pas les capacités standard du druide (forme animale de loup ou d'ours, résistances élémentaires).
-- Pénalité de -1 en charisme aux niveaux 1, 5, 7, 9, 11 et 15. En effet, au fur et à mesure de leur progression dans cette classe, les Maîtres des Vases se déconnectent progressivement du mode de pensée humanoïde, et leurs traits se distordent.~
+- Pénalité de -1 en charisme aux niveaux 1, 3, 5, 7, 9 et 15. En effet, au fur et à mesure de leur progression dans cette classe, les Maîtres des Vases se déconnectent progressivement du mode de pensée humanoïde, et leurs traits se distordent.~
 
 @20305 = ~Toucher Paralysant~
 @20306 = ~Forme Animale : Gelée Moutarde~

@@ -248,7 +248,6 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_spheres BEGIN
   CLERIC_CALL_UPON_FAITH                => su // galctygon; Lv 1
   CLERIC_DRAW_UPON_HOLY_MIGHT           => su // Vanilla; Lv 2
   CLERIC_ANIMAL_SPIRIT	                => su // DR; Lv 3
-  CLERIC_DISPEL_OUTSIDER                => su // DR; Lv 5
   CLERIC_AERIAL_SERVANT                 => su // Vanilla; Lv 6
   CLERIC_CONJURE_ANIMALS                => su // Vanilla; Lv 6
   // Sphere: sun (minor = 3; major = 9)
@@ -331,8 +330,8 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_spheres BEGIN
   CLERIC_IMPERVIOUS_SANCTITY_OF_MIND    => th // DR; Lv 7
 
   CLERIC_ZONE_OF_SWEET_AIR              => wd // Vanilla; Lv 3
-  CLERIC_DEATH_WARD                     => wd // Vanilla; Lv 4
   CLERIC_INVISIBILITY_PURGE             => wd // Vanilla; Lv 3
+  CLERIC_DEATH_WARD                     => wd // Vanilla; Lv 4
 
   CLERIC_STORM_SHELL                    => we // IWD; Lv 3
 

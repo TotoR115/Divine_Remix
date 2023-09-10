@@ -24,7 +24,7 @@ COPY ~Divine_Remix/bam/a#ifey.bam~  ~override~
 COPY ~Divine_Remix/itm/a#fey00.itm~ ~override~  // Sahandrian +0
   SAY NAME1 @12704
   SAY NAME2 @12704
-  SET "weap_idx" = 0
+  SET "weap_idx" = 1
 
 COPY_EXISTING ~a#fey00.itm~ ~override/a#fey01.itm~  // sahandrian +1
               ~a#fey00.itm~ ~override/a#fey02.itm~  // sahandrian +2

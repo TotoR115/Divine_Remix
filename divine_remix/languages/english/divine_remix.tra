@@ -874,7 +874,7 @@ After witnessing the eyeless priest's speech, I was approached by a cleric of La
 
 @10166 =~Electrical Resistance~
 @10167 =~Half-Spear - 'Fury of Talos'~
-@10168 =~The Half-Spear is the spiritual weapon of Stormlords of Talos, and is wielded as if the caster had grand mastery in the weapon. The Half-Spear is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds and can be used once per day. ~
+@10168 =~The Half-Spear is the spiritual weapon of Stormlords of Talos. It is treated as a returning spear, wielded as if the caster had grand mastery in the weapon and does +1d4 electrical damage. The Half-Spear is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds and can be used once per day.~
 @10169 =~Destructive Blow~
 @10170 =~Once per day, a Stormlord can focus the destructive wrath of Talos in combat. This spell grants the Stormlord +2 to damage and +2 to hit for one round/level, up to 20 rounds.~
 // this is the generic kit description with 'PRIEST' changed to 'STORMLORD'
@@ -907,7 +907,7 @@ Powerful clerics may call upon their deity to watch over them from harm, sliding
 
 Abilities:
 - Spiritual Weapon: Half-Spear - 'Fury of Talos' once per day
-The Half-Spear is the spiritual weapon of Stormlords of Talos, and is wielded as if the caster had grand mastery in the weapon. The Half-Spear is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds and can be used once per day.
+The Half-Spear is the spiritual weapon of Stormlords of Talos. it is treated as a returning spear, wielded as if the caster had grand mastery in the weapon and does +1d4 electrical damage. The Half-Spear is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds and can be used once per day.
 - Innate electrical resistance of 1% per level
 - Destructive Blow once per day
 DESTRUCTIVE BLOW: Once per day, a Stormlord can focus the destructive wrath of Talos in combat. This spell grants the Stormlord +2 to damage and +2 to hit for one round per level, up to 20 rounds.
@@ -934,7 +934,7 @@ STATISTICS:
 Abilities:
 
 - Spiritual Weapon: Mace - 'Dawn's Embrace' once per day
-The mace is the spiritual weapon of Morninglords of Lathander, and is wielded as if the caster had grand mastery in the weapon. The mace is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
+The mace is the spiritual weapon of Morninglords of Lathander. It deals +1d6 damage to Undead and is wielded as if the caster had grand mastery in the weapon. The mace is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - From level 3 can cast Faerie Fire thrice per day, as first level priest spell of the same name
 - From level 5 can cast Hold Undead once per day, as third level mage spell of the same name
 - From level 7 can cast Boon of Lathander once per day
@@ -957,7 +957,7 @@ BOON OF LATHANDER: This spell lasts 1 round per level of the caster. It gives th
 Disadvantages:
 – Alignment restricted to lawful good, neutral good, chaotic good, and true neutral.~
 @10180 =~Mace - 'Dawn's Embrace'~
-@10181 =~The mace is the spiritual weapon of Morninglords of Lathander, and is wielded as if the caster had grand mastery in the weapon. The mace is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above.~
+@10181 =~The mace is the spiritual weapon of Morninglords of Lathander. It deals +1d6 damage to Undead and is wielded as if the caster had grand mastery in the weapon. The mace is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above.~
 @10183 =~Only the most worthy and devoted servants of the Dawnbringer are granted these powerful holy symbols.
 
 STATISTICS:
@@ -977,7 +977,7 @@ SEEKING SWORD: This spell creates a sword in the Cleric's hand (that cannot be d
 Disadvantages:
 – Alignment restricted to lawful good, lawful neutral, lawful evil, and true neutral.~
 @10185 =~Bastard Sword - 'Ever Watchful'~
-@10186 =~The bastard sword is the spiritual weapon of Watchers of Helm, and is wielded as if the caster had grand mastery in the weapon. The bastard sword is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
+@10186 =~The bastard sword is the spiritual weapon of Watchers of Helm. It grants +5% chance to score critical hits and is wielded as if the caster had grand mastery in the weapon. The bastard sword is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
 @10187 =~Only the most worthy and devoted servants of the Watcher are granted these powerful holy symbols.
 
 STATISTICS:
@@ -1007,7 +1007,7 @@ This ability lasts 1 round per level of the caster. It gives the caster a +1 bon
 
 Abilities:
 - Spiritual Weapon: Bastard Sword - 'Ever Watchful' once per day
-The bastard sword is the spiritual weapon of Watchers of Helm, and is wielded as if the caster had grand mastery in the weapon. The bastard sword is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
+The bastard sword is the spiritual weapon of Watchers of Helm. It grants +5% chance to score critical hits and is wielded as if the caster had grand mastery in the weapon. The bastard sword is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - From level 3 can cast Glyph of Warding once per day, as third level cleric spell of the same name
 - From level 5 can cast exaltation once per day, as third level cleric spell of the same name
 EXALTATION: This spell enables a priest to aid and protect any one being other than the priest. By touch, the caster removes the effects of fear, sleep, feeblemindedness, unconsciousness, and intoxication, as well as berserk and confused states of mind. In addition, the recipient is protected against spells and other attacks that cause these effects for the duration of the spell.
@@ -1068,7 +1068,7 @@ Selûne's clerics, called Silverstars of Selûne, are dedicated advocates of freed
 
 Abilities:
 - Spiritual Weapon: Mace - 'Moon's Hand' once per day
-The Moon's Hand is the spiritual weapon of Silverstars of Selûne, and is wielded as if the caster had grand mastery in the weapon. The Moon's Mace is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
+The Moon's Hand is the spiritual weapon of Silverstars of Selûne. It grants +2 bonus to AC while equipped and is wielded as if the caster had grand mastery in the weapon. The Moon's Mace is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - Infravision
 - From level 3 Can cast Moon Shield once per day
 - From level 5 can cast Moon Blade once per day
@@ -1080,7 +1080,7 @@ The Moon's Hand is the spiritual weapon of Silverstars of Selûne, and is wielded
 Disadvantages:
 – Alignment restricted to chaotic good, neutral good, and chaotic neutral.~
 @10303 =~Mace - 'Moon's Hand'~
-@10304 =~The Moon's Hand is the spiritual weapon of Silverstars of Selûne, and is wielded as if the caster had grand mastery in the weapon. The Moon's Hand is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
+@10304 =~The Moon's Hand is the spiritual weapon of Silverstars of Selûne. It grants +2 bonus to AC while equipped and is wielded as if the caster had grand mastery in the weapon. The Moon's Hand is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
 @10305 =~silverstar of Selûne~
 @10307 =~Moon Shield~
 @10308 =~Moon Shield 
@@ -1176,7 +1176,7 @@ Nightcloaks of Shar can only be of Neutral Evil, Lawful Evil, Chaotic Evil, and 
 
 Abilities:
 - Spiritual Weapon: Chakram - 'Disc of Night' once per day
-The Disc of Night is the spiritual weapon of Nightcloaks. The chakram is treated as a returning dart and is wielded as if the caster had grand mastery in the weapon. The chakram is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
+The Disc of Night is the spiritual weapon of Nightcloaks. The chakram is treated as a returning dart, grants 5 attacks per round and is wielded as if the caster had grand mastery in the weapon. The chakram is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - Immune to all forms of Blindness.
 - From level 3 can cast Blindness once per day, as first level mage spell of the same name
 - From level 5 can cast Power Word, Sleep once per day, as second level mage spell of the same name
@@ -1214,7 +1214,7 @@ Saving Throw: None
 This spell creates a flickering, impressive-seeming shroud of magical darkness around the caster or a single touched recipient creature. It improves the wearer's Armor Class by 2 point and lessens all nonmagical damage suffered by the wearer by 5%. If the caster is of 12th level or greater, it improves the wearer's Armor Class by 3 point and lessen all nonmagical damage suffered by the wearer by 10%. 
 This spell also gives infravision and immunity to blind and charm effects.~
 @10608 =~Chakram - 'Disc of Night'~
-@10609 =~The favored weapon of Shar is the Disc of Night, a chakram. Much like a dart, this circular metal weapon is thrown, and in this case will magically return to its owner.
+@10609 =~The favored weapon of Shar is the Disc of Night, a chakram. Much like a dart, this circular metal weapon is thrown, and in this case will magically return to its owner. It grants 5 attacks per round.
 
 Shar has gifted the most devout of her clergy, the Nightcloaks, with the ability to summon such a weapon, once a day. The weapon becomes more powerful as the cleric grows with power and importance in Shar's eyes. The chakram is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above.~
 @10610 =~Darkbolt~
@@ -1340,7 +1340,7 @@ Battleguards of Tempus can only be of Chaotic Neutral, Chaotic Good, True Neutra
 
 Abilities:
 - Spiritual Weapon: Battleaxe - 'Battle Prowess' once per day
-The Battle Prowess battleaxe is the spiritual weapon of Battleguards, and is wielded as if the caster had grand mastery in the weapon. The Battle Prowess is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
+The Battle Prowess battleaxe is the spiritual weapon of Battleguards. It grants +5% chance to score critical hits and is wielded as if the caster had grand mastery in the weapon. The Battle Prowess is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - At 7th level, Battleguard of Tempus can make three melee attacks every two rounds. It becomes two melee attacks per round, at 13th level.
 - Can specialize (two points) in any melee weapon that a cleric can use
 - Can go into a Berserker Rage once per day
@@ -1352,7 +1352,7 @@ Disadvantages:
 – Alignment restricted to Chaotic Neutral, Chaotic Good and Chaotic Evil.
 - Cannot be proficient in ranged weapons~
 @10903 =~Battleaxe - 'Battle Prowess'~
-@10904 =~Striding into eternal battle, Tempus' favored weapon is his axe 'Battle Prowess'. He gifts his most ardent followers the Battleguards the ability to magically create a similar weapon imbued with his strength once per day. This is an example of such a weapon. The axe is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above.~
+@10904 =~Striding into eternal battle, Tempus' favored weapon is his axe 'Battle Prowess'. He gifts his most ardent followers the Battleguards the ability to magically create a similar weapon imbued with his strength once per day. This is an example of such a weapon. The axe grants +5% chance to score critical hits, is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above.~
 
 @10910 =~Holy Symbol of Tempus~
 @10911 =~Tempus rewards his most powerful servants with a Holy Symbol, a ring bearing his personal device of a blazing silver sword on a red shield. When worn, the symbol empowers the Battleguard with Tempus' power.
@@ -1410,7 +1410,7 @@ Painbearers of Ilmater can only be of Lawful Good, Neutral Good, and Lawful Neut
 
 Abilities:
 - Spiritual Weapon: Fist - 'Hand of Ilmater' once per day
-The Hand of Ilmater is the spiritual weapon of Painbearers. The Hand of Ilmater does 1d6 base damage and is treated as if the caster is a grand master. The Hand of Ilmater is treated as a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 25 and above. The Hand of Ilmater lasts for one round per level of the caster, up to 20 rounds.
+The Hand of Ilmater is the spiritual weapon of Painbearers. The Hand of Ilmater does 2d6 base damage and is treated as if the caster is a grand master. The Hand of Ilmater is treated as a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 25 and above. The Hand of Ilmater lasts for one round per level of the caster, up to 20 rounds.
 - Can Remove Fear once per day
 - Can brew an Antidote or a potion of Healing at Level 1, an Elixir or a potion of Extra Healing at level 10 and an Elixir, a potion of Regeneration or a potion of Superior Healing at level 15
 - From level 5 can cast Draw Upon Holy Might once per day, as second level cleric spell of the same name
@@ -1423,7 +1423,7 @@ The Painbearer draws upon Ilmater to be able to shoulder the burden of trials ah
 Disadvantages:
 – Alignment restricted to lawful good, neutral good, and lawful neutral.~
 @11203 =~The Hand of Ilmater~
-@11204 =~The Hand of Ilmater is the spiritual weapon of Painbearers. The Hand of Ilmater does 1d6 base damage and is treated as if the caster is a grand master. The Hand of Ilmater is treated as a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 25 and above. The Hand of Ilmater lasts for one round per level of the caster, up to 20 rounds.~
+@11204 =~The Hand of Ilmater is the spiritual weapon of Painbearers. The Hand of Ilmater does 2d6 base damage and is treated as if the caster is a grand master. The Hand of Ilmater is treated as a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 25 and above. The Hand of Ilmater lasts for one round per level of the caster, up to 20 rounds.~
 @11205 =~Endurance of Ilmater~
 @11206 =~Endurance of Ilmater
 (Necromancy)
@@ -1484,7 +1484,7 @@ Brewing potions is a delicate task which can only be undertaken in safe (non-hos
 
 @11501 =~Flail - 'Tendril of Flame'~
 @11502 =~Spiked Chain - 'Tendril of Flame'~
-@11516 =~The flail is the spiritual weapon of Firewalkers of Kossuth, and is wielded as if the caster had grand mastery in the weapon. The flail is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
+@11516 =~The flail is the spiritual weapon of Firewalkers of Kossuth. It does +1d4 fire damage and is wielded as if the caster had grand mastery in the weapon. The flail is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
 @11503 =~Firewalker of Kossuth~
 @11504 =~FIREWALKER OF KOSSUTH: Kossuth, Firelord, the Tyrant among Fire, is an Elemental Lord from the Elemental Plane of Fire. He is generally uncaring to his faithful, but continues to grant his priests their powers since their worship increases his power on his home plane. To maintain continued worship he does take a limited interest in his followers' mortal problems, and occasionally makes his presence known with a manifestation, but never an avatar.
 
@@ -1494,7 +1494,7 @@ Firewalkers of Kossuth can be of neutral alignment, but most are evil, reveling 
 
 Abilities:
 - Spiritual Weapon: Flail - 'Tendril of Flame' once per day
-The flail is the spiritual weapon of Firewalkers of Kossuth, and is wielded as if the caster had grand mastery in the weapon. The flail is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
+The flail is the spiritual weapon of Firewalkers of Kossuth. It does +1d4 fire damage and and is wielded as if the caster had grand mastery in the weapon. The flail is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - Gains 2% fire resistance per level.
 - From level 3 can cast burning hand once per day, as the first level mage spell of the same name
 - From level 5 can cast Conjure Lesser Fire Elemental once per day, as the fifth level mage spell of the same name
@@ -1635,7 +1635,7 @@ Oghma's followers believe that knowledge is most supreme, particularly in its ra
 
 Abilities:
 - Spiritual Weapon: Longsword - 'Mortal Strike' once per day
-The longsword is the spiritual weapon of Lorekeepers of Oghma, and is wielded as if the caster had grand mastery in the weapon. The sword is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
+The longsword is the spiritual weapon of Lorekeepers of Oghma. It grants +2 to AC and is wielded as if the caster had grand mastery in the weapon. The sword is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - Gain a base of 10 lore/level.
 - From level 3 can cast Identify once per day, as first level mage spell of the same name
 - From level 5 can cast Friends once per day, as fourth level mage spell of the same name
@@ -1647,7 +1647,7 @@ The longsword is the spiritual weapon of Lorekeepers of Oghma, and is wielded as
 Disadvantages:
 – None~
 @12103 = ~Longsword - Mortal Strike~
-@12112 = ~The longsword is the spiritual weapon of Lorekeepers of Oghma, and is wielded as if the caster had grand mastery in the weapon. The sword is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
+@12112 = ~The longsword is the spiritual weapon of Lorekeepers of Oghma. It grants +2 to AC and is wielded as if the caster had grand mastery in the weapon. The sword is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
 @12104 = ~Wisdom of Oghma~
 @12105 = ~Holy Symbol of Oghma~
 @12106 = ~Oghma rewards his most powerful servants with a Holy Symbol, a ring bearing his personal device of an scroll of parchment. When worn, the symbol empowers the Lorekeeper with Oghma's power.
@@ -1762,7 +1762,7 @@ Ceremonial vestments for priests of Corellon consist of azure robes made of goss
 
 Abilities:
 - Spiritual Weapon: Longsword - 'Sahandrian' once per day
-Sahandrian is the spiritual weapon of Feywardens of Corellon, and is wielded as if the caster had grand mastery in the weapon. Sahandrian is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
+Sahandrian is the spiritual weapon of Feywardens of Corellon, and is wielded as if the caster had grand mastery in the weapon. Sahandrian is a +1 weapon at levels 1-5, +2 at levels 6-10, +3 at 11-15, +4 at 16-20, +5 at 21-25, and +6 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - May place up to 2 proficiency points in weapons and maximum in fighting styles
 - Gains a +1 bonus to saves vs. death
 - From level 1 can cast Faerie Fire once per day, as first level priest spell of the same name
@@ -1776,7 +1776,7 @@ Disadvantages:
 – Race restricted to elf and half-elf.
 – Alignment restricted to chaotic good, neutral good or chaotic neutral.~
 @12704 =~Longsword - 'Sahandrian'~
-@12705 =~Sahandrian is the spiritual weapon of Feywardens of Corellon, and is wielded as if the caster had grand mastery in the weapon. Sahandrian is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
+@12705 =~Sahandrian is the spiritual weapon of Feywardens of Corellon, and is wielded as if the caster had grand mastery in the weapon. Sahandrian is a +1 weapon at levels 1-5, +2 at levels 6-10, +3 at 11-15, +4 at 16-20, +5 at 21-25, and +6 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
 @12706 =~Improved Alacrity 
 (Any School)
 
@@ -1835,7 +1835,7 @@ Strifeleaders wear black and purple robes. Silver bands, the symbol of their ens
 
 Abilities:
 - Spiritual Weapon: Long Sword - 'Razor's Edge' once per day
-Razor's Edge is the spiritual weapon of Strifeleaders of Cyric, and is wielded as if the caster had grand mastery in the weapon. The Razor's Edge is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
+Razor's Edge is the spiritual weapon of Strifeleaders of Cyric. It grants +5% chance to score critical hits and is wielded as if the caster had grand mastery in the weapon. The Razor's Edge is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.
 - May coat his weapon in poison once per day per 6 levels.  
 Attacks made in the next round with that weapon will inject the poison into the target, dealing out 1 damage per second for 24 seconds (3 damage for the first 6 seconds).  A saving throw vs. poison limits damage to 12 total.
 - Immune to all forms of fear
@@ -1857,7 +1857,7 @@ Grants an additional 6th and 7th level spell.
 5% Magic Resistance while worn
 +1 to Strength while worn~
 @13007 =~Long Sword - 'Razor's Edge'~
-@13008 =~Razor's Edge is the spiritual weapon of Strifeleaders of Cyric, and is wielded as if the caster had grand mastery in the weapon. Razor's Edge is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
+@13008 =~Razor's Edge is the spiritual weapon of Strifeleaders of Cyric. It grants +5% chance to score critical hits and is wielded as if the caster had grand mastery in the weapon. Razor's Edge is a regular weapon at levels 1-5, +1 at levels 6-10, +2 at 11-15, +3 at 16-20, +4 at 21-25, and +5 at levels 26 and above. The spiritual weapon lasts for one round per level of the caster, up to 20 rounds.~
 @13009 =~STRIFELEADER OF CYRIC: Cyric (seer-ick) is a megalomaniacal deity with an immense following. One of the three greater powers of evil on Faerun, he is petty and self-centered, and enjoys misleading individuals of all inclinations so that they perform acts that ruin their lives or so that they make fatal mistakes. He drinks the tears of disillusioned dreamers and broken-hearted lovers. He is not above an alliance with another deity as long as he thinks he can betray the other divine power and come out ahead.
 
 Cyric's church is pledged to spread strife and work murder everywhere in order to make folk believe in and fear the Dark Sun. It supports cruel rulers and indulges in intrigue in such a way that the world won't be overrun by wars (and thus fall under the sway of Tempus). His church is often beset by internal feuds and backstabbing, but this conflict has decreased in recent years as Cyric has gained better control of himself and has consolidated the churches of the deities whose portfolios he took over.
@@ -1948,19 +1948,19 @@ There are, however, substantial rewards to pursuing the path of the oozemaster. 
 Advantages:
 - May use a Paralytic Touch attack once per day per 5 levels.
 This spell functions in the same manner to the second level mage spell Ghoul Touch
+- From level 3, the oozemaster's alien metabolism renders them immune to disease
 - From level 5, the oozemaster's alien metabolism makes them immune to poison
 - From level 7, may shapeshift to the form of a mustard jelly. This ability is useable 3 times per day
 - From level 9, oozemasters become immune to acid
-- From level 11, the oozemaster's alien metabolism renders them immune to disease
 - From level 15, oozemasters become immune to blindness, sleep, paralysis, stunning and critical hits as they become one with the ooze and lack a discernable internal anatomy
 
 Disadvantages:
 - Do not gain other standard druidic special abilities (such as shapeshifting into wolves or bears, or the elemental resistance gained at high levels)
-- Suffers a -1 penalty to Charisma at levels 1, 5, 7, 9, 11 and 15 as they become increasingly separated from a humanoid mindset and their features continue to distort~
+- Suffers a -1 penalty to Charisma at levels 1, 3, 5, 7, 9 and 15 as they become increasingly separated from a humanoid mindset and their features continue to distort~
 
 @20305 = ~Paralytic Touch~
 @20306 = ~Shapeshift: Mustard Jelly~
-@20307 = ~Charisma -1~ 
+@20307 = ~Charisma -1~
 @20308 = ~Immune to Acid~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\

@@ -23,6 +23,13 @@ COPY ~divine_remix/itm/trshar4.itm~ ~override~  // darkbolt
   SAY UNIDENTIFIED_DESC @10624
   SAY DESC @10624
 
+COPY ~divine_remix/bam/trardrka.bam~ ~override~
+	 ~divine_remix/bam/trardrkb.bam~ ~override~ 
+	 ~divine_remix/bam/trardrkc.bam~ ~override~
+	 ~divine_remix/bam/trshar4a.bam~ ~override~
+	 ~divine_remix/bam/trshar4b.bam~ ~override~
+	 ~divine_remix/bam/trshar4c.bam~ ~override~
+
 COPY ~divine_remix/spl/givespell.spl~ ~override/tr#shar3.spl~  // Give Armor of Darkness, lv3 Spell
   LPF ALTER_EFFECT STR_VAR resource = "trshar3" END
 COPY ~divine_remix/spl/givespell.spl~ ~override/tr#shar4.spl~  // Give darkbolt, lv4 Spell

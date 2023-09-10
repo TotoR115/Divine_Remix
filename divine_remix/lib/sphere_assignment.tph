@@ -337,20 +337,22 @@ LAUNCH_ACTION_FUNCTION cd_kit_sphere // correllon
     wards             = major
   END
 
-LAUNCH_ACTION_FUNCTION cd_kit_sphere // oozemaster - normal druid minus animal and plant
+LAUNCH_ACTION_FUNCTION cd_kit_sphere // oozemaster - normal druid minus plant, sun and weather but add necromantic, guardian, chaos and combat
   STR_VAR
     table              = ~a#ooze~
     class              = druid
     all                = major
+	animal			   = major
+	chaos              = major
+	combat			   = major
     elemental          = major
     elemental_air      = major
     elemental_earth    = major
     elemental_fire     = major
     elemental_water    = major
+	guardian           = major
     healing            = major
-    sun                = major
-    sun_moon           = major
-    weather            = major
+	necromantic		   = major
   END
 
 /////                                                  \\\\\
@@ -436,6 +438,7 @@ ACTION_PHP_EACH cd_mod_kits AS clab => class_check BEGIN
         combat          = major // 32
         divination      = major // 5
         healing         = major // 28
+        law		        = major
         protection      = major // 21
       END // 86
 

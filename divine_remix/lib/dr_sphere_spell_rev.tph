@@ -201,7 +201,7 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_spheres BEGIN
   CLERIC_FAVOR_OF_ILMATER               => nr // IWD; Lv 3
   CLERIC_HOLY_SMITE                     => ne // Vanilla; Lv 3
   CLERIC_UNHOLY_BLIGHT                  => ne // Vanilla; Lv 3
-  CLERIC_NEGATIVE_PLANE_PROTECTION      => nr // Vanilla; Lv 3
+  CLERIC_NEGATIVE_PLANE_PROTECTION      => nr // Vanilla; Lv 3 (DR)
   CLERIC_REMOVE_PARALYSIS               => nr // Vanilla; Lv 3
   CLERIC_CIRCLE_OF_BONES                => ne // IWD; Lv 3
   CLERIC_WHEEL_OF_BONES                 => ne // galctygon; Lv 3
@@ -288,7 +288,6 @@ ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_spheres BEGIN
   // Sphere: travelers (minor = 0; major = 0)
   // Sphere: war (minor = 0; major = 0)
   // Sphere: wards (minor = 2; major = 4)
-  CLERIC_INVISIBILITY_PURGE             => wd // Vanilla; Lv 3
   CLERIC_UNDEAD_WARD                    => wd // IWD; Lv 5
   // Sphere: weather (minor = 3; major = 5)
   CLERIC_FAERIE_FIRE                    => we // SR, DR, IWD, DSotSC; Lv 1
