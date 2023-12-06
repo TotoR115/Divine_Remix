@@ -36,7 +36,10 @@ COPY ~Divine_Remix/spl/CDXVFEAR.spl~ ~override~  // immunity to fear (permanent 
 
 COPY ~Divine_Remix/itm/a#cyr00.itm~ ~override~  // Razor's Edge +0
   SAY NAME1 @13007
+  SAY NAME2 @13007
   SAY UNIDENTIFIED_DESC @13008
+  SAY DESC @13008
+
   SET "weap_idx" = 0
 
 COPY_EXISTING ~a#cyr00.itm~ ~override/a#cyr01.itm~  // Razor's Edge +1

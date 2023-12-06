@@ -12,6 +12,7 @@ COPY ~Divine_Remix/itm/cdilfs0.itm~ ~override~  // Hand of Ilmater +0
   SAY NAME2 @11203
   SAY UNIDENTIFIED_DESC @11204
   SAY DESC @11204
+
   SET "weap_idx" = 0
 
 COPY_EXISTING ~cdilfs0.itm~ ~override/cdilfs1.itm~  // hand of ilmater +1

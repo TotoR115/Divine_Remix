@@ -32,6 +32,7 @@ COPY ~Divine_Remix/itm/nmsune00.itm~ ~override~  // Shock Flail +0
   SAY NAME2 @12403
   SAY UNIDENTIFIED_DESC @12404
   SAY DESC @12404
+
   SET "weap_idx" = 0
 
 COPY_EXISTING ~nmsune00.itm~ ~override/nmsune01.itm~  // shock flail +1

@@ -32,6 +32,7 @@ COPY ~Divine_Remix/itm/a#tem00.itm~  ~override~  // Battle Prowess +0
   SAY NAME2 @10903
   SAY UNIDENTIFIED_DESC @10904
   SAY DESC @10904
+
   SET "weap_idx" = 0
 
 COPY_EXISTING ~a#tem00.itm~ ~override/a#tem01.itm~  // Battle Prowess +1

@@ -184,7 +184,7 @@ COPY_EXISTING ~kitlist.2da~ ~override~
   BUT_ONLY_IF_IT_CHANGES
 
 OUTER_SET kit = 19 // talos
-ACTION_FOR_EACH creature IN acolyte1 bhnalla c6cler3 cldad cltalp01 ltalos /*nalla*/ scyarryl talmiss talmiss2 talvilon vvpriest yssold16 BEGIN // nalla is a bard, not a priest...
+ACTION_FOR_EACH creature IN acolyte1 bhnalla c6cler3 cldad cltalp01 ltalos scyarryl talmiss talmiss2 talvilon vvpriest yssold16 BEGIN
 
   ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
 	
@@ -210,7 +210,7 @@ END
 ACTION_IF MOD_IS_INSTALLED "song_and_silence.tp2" 3 BEGIN
     COPY_EXISTING ~nalla.cre~ ~override~ 
       WRITE_LONG   0x244 (IDS_OF_SYMBOL (~KIT~ ~A!CHORISTER~))
-	  BUT_ONLY
+	  BUT_ONLY IF_EXISTS
 END
 
 

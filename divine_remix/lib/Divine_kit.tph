@@ -6,7 +6,7 @@
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 
-ACTION_IF Selune OR cleric_all BEGIN 
+ACTION_IF Selune OR cleric_all BEGIN
 
 COPY ~divine_remix/bam/CDMNSHLB.bam~ ~override~ /// use spell shield BAM for moon shield
 
@@ -141,7 +141,8 @@ ACTION_FOR_EACH creature IN bstq007 ysselune BEGIN
   END
 
 END
-END
+
+END //ACTION_IF Selune OR cleric_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -265,7 +266,7 @@ ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold st
   COMPILE ~divine_remix/dlg/shar.d~
 
 END
-END
+END //ACTION_IF Shar OR cleric_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -376,7 +377,7 @@ ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold st
   COMPILE ~divine_remix/dlg/red.d~
 
 END
-END
+END // ACTION_IF Knight OR cleric_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -498,7 +499,8 @@ ACTION_FOR_EACH creature IN kpchap01 everard accalia BEGIN
   END
 
 END
-END
+
+END  //ACTION_IF Tempus OR cleric_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -636,7 +638,8 @@ ACTION_FOR_EACH creature IN _priilm _priilmu priilm priilmu slilmat wilmat s#ilm
   END
 
 END
-END
+
+END  //ACTION_IF Ilmater OR cleric_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -750,7 +753,8 @@ ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold st
   COMPILE ~divine_remix/dlg/kossuth.d~
 
 END
-END
+
+END  //ACTION_IF Kossuth OR cleric_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -867,7 +871,8 @@ ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold st
   COMPILE ~divine_remix/dlg/xvim.d~
 
 END
-END
+
+END  //ACTION_IF Iyachtu OR cleric_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1009,7 +1014,8 @@ ACTION_FOR_EACH creature IN doghma poghm10 poghm3 poghm6 poghm8 poghm9 poghma po
   END
 
 END
-END
+
+END //ACTION_IF Oghma OR cleric_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1123,6 +1129,7 @@ ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold st
   COMPILE ~Divine_Remix/dlg/sune.d~
 
 END
+
 /////                                                  \\\\\
 ///// assign kits                                      \\\\\
 /////                                                  \\\\\
@@ -1170,7 +1177,8 @@ ACTION_IF FILE_EXISTS_IN_GAME ~YxYve1.cre~ THEN BEGIN
     BUT_ONLY
 
 END
-END
+
+END  // ACTION_IF Sune OR cleric_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1282,7 +1290,8 @@ ACTION_IF GAME_IS ~soa bg2 tob bg2ee eet bgt~ THEN BEGIN // temple stronghold st
   COMPILE ~divine_remix/dlg/corellon.d~
 
 END
-END
+
+END  //ACTION_IF Corellon OR cleric_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1420,7 +1429,8 @@ ACTION_FOR_EACH creature IN ar18prie hghprmod mvpries prcdmod prcmod slapri Z#pr
   END
 
 END
-END
+
+END  //ACTION_IF Cyric OR cleric_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1522,7 +1532,6 @@ ACTION_IF FILE_EXISTS_IN_GAME ~j#aoev22.txt~ THEN BEGIN // if Ashes of Embers is
     BUT_ONLY_IF_IT_CHANGES
 
 END
-END
 
 /////                                                  \\\\\
 ///// assign kits                                      \\\\\
@@ -1562,7 +1571,8 @@ OUTER_SET kit = "%A#OOZ2%" // Oozemaster
   END
 
 END
-END
+
+END // ACTION_IF Oozemaster OR druid_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1692,7 +1702,8 @@ LAF fl#add_kit_ee
     kit_name = ~A#FERALAN~
     clascolr = ~35 67 67 25 80~
 END
-END
+
+END // ACTION_IF Bowslinger OR druid_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1737,7 +1748,7 @@ COPY ~divine_remix/spl/nmrnfr2.spl~ ~override~ // 'Inspire' innate
   SAY UNIDENTIFIED_DESC  @40906
   SAY DESC  @40906
 
-END
+END  //ACTION_IF Forest OR druid_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1785,7 +1796,7 @@ COPY_EXISTING ~sppr103.spl~ ~override/a#justcl.spl~ // 'cure light wounds'
   LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
   BUT_ONLY_IF_IT_CHANGES
 
-END
+END  // ACTION_IF Justifier OR druid_all 
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1835,4 +1846,4 @@ COPY ~divine_remix/spl/nmrnwr3.spl~ ~override~ // +10% Fire and Cold Resistance
 COPY_EXISTING ~nmrnwr4.spl~ ~override/nmrnwr5.spl~ // +5% set snares
   WRITE_LONG 0x9e 5
 
-END
+END  //ACTION_IF Wilderness OR druid_all 

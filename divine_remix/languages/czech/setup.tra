@@ -1019,9 +1019,40 @@ Knìží zmateného pøesvìdèení~
 @10190 =~Lathanderùv Pán úsvitu~
 @10192 =~Lathanderova obroda~
 @10193 =~Toto kouzlo, dáno tìm nejvýše postaveným Pánùm úsvitu, vyléèí všechny èleny družiny a odstraní nepøíznivé úèinky vèetnì vysátí úrovnì, slepoty, nemoci, zmatku, slabomyslnosti a hluchoty. Družina se také bude po dobu 20 kol regenerovat rychlostí 1 život za sekundu.~
+@10201 =~Exaltation
+(Abjuration)
 
+Level: 3
+Sphere: Combat, Healing
+Range: Touch
+Duration: 1 turn
+Casting Time: 9
+Area of Effect: 1 creature
+Saving Throw: None
 
+This spell enables a priest to aid and protect any one being other than the priest. By touch, the caster removes the effects of fear, sleep, feeblemindedness, unconsciousness, and intoxication, as well as berserk and confused states of mind. In addition, the recipient is protected against spells and other attacks that cause these effects for the duration of the spell.~
+@10202 =~Seeking Sword
+(Evocation)
 
+Level: 4
+Sphere: Combat
+Range: 0
+Duration: 1 round/level
+Casting Time: 5
+Area of Effect: The Caster
+Saving Throw: None
+
+This ability creates a sword in the character's hand that cannot be dropped or unequipped. The sword is enchanted as a +4 weapon and provides a +4 THAC0 bonus, but no damage bonus. It deals 2d4 damage to any target it hits. The weapon sets the character's number of attacks per round to 3 and lasts for 1 round per level. While it is equipped, the wielder cannot cast further spells.~
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// Cleric Kits                                     \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+@10100 =~Nainstalujte všechny sady Cleric~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
@@ -1635,6 +1666,16 @@ Nesmí užívat:
  Druid
  Mág
  Zlodìj~
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// Druid & Ranger Kits                               \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+@20100 =~Nainstalujte všechny sady Druid a Ranger~
 
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\

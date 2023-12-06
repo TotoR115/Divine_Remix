@@ -23,6 +23,7 @@ COPY ~Divine_Remix/itm/cdxvsc0.itm~ ~override~  // Scimitar of Souls +0
   SAY NAME2 @11805
   SAY UNIDENTIFIED_DESC @11806
   SAY DESC @11806
+
   SET "weap_idx" = 0
 
 COPY_EXISTING ~cdxvsc0.itm~ ~override/cdxvsc1.itm~  // scimitar of souls +1

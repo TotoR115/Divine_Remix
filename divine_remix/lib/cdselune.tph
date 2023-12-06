@@ -12,6 +12,7 @@ COPY ~Divine_Remix/itm/cdslmc0.itm~ ~override~  // Moon Mace +0
   SAY NAME2 @10303
   SAY UNIDENTIFIED_DESC @10304
   SAY DESC @10304
+
   SET "weap_idx" = 0
 
 COPY_EXISTING ~cdslmc0.itm~ ~override/cdslmc1.itm~  // moon mace +1

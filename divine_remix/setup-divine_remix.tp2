@@ -219,12 +219,12 @@ INCLUDE ~divine_remix/lib/cleric_remix.tph~
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////                                                  \\\\\
-///// Cleric Remix                                     \\\\\
+///// All Cleric kit                                     \\\\\
 /////                                                  \\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 
-BEGIN @10200 DESIGNATED 102
+BEGIN @10100 DESIGNATED 101
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
 GROUP @10
 
@@ -242,7 +242,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 BEGIN @10300 DESIGNATED 103 // component 103
 GROUP @10
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~102~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~101~ @17
 
 OUTER_SET Selune = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -258,7 +258,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 BEGIN @10600 DESIGNATED 106 // component 106
 GROUP @10
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~102~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~101~ @17
 
 OUTER_SET Shar = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -274,7 +274,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 BEGIN @10700 DESIGNATED 107 // component 107
 GROUP @10
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~102~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~101~ @17
 
 OUTER_SET Knight = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -291,7 +291,7 @@ BEGIN @10900 DESIGNATED 109// component 109
 GROUP @10
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
 REQUIRE_PREDICATE NOT FILE_EXISTS_IN_GAME ~ohtempus.2da~ @14
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~102~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~101~ @17
 
 OUTER_SET Tempus = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -307,7 +307,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 BEGIN @11200 DESIGNATED 112 // component 112
 GROUP @10
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~102~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~101~ @17
 
 OUTER_SET Ilmater = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -323,7 +323,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 BEGIN @11500 DESIGNATED 115
 GROUP @10
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~102~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~101~ @17
 
 OUTER_SET Kossuth = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -339,7 +339,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 BEGIN @11800 DESIGNATED 118
 GROUP @10
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~102~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~101~ @17
 
 OUTER_SET Iyachtu = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -355,7 +355,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 BEGIN @12100 DESIGNATED 121
 GROUP @10
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~102~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~101~ @17
 
 OUTER_SET Oghma = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -371,7 +371,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 BEGIN @12400 DESIGNATED 124
 GROUP @10
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~102~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~101~ @17
 
 OUTER_SET Sune = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -387,7 +387,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 BEGIN @12700 DESIGNATED 127
 GROUP @10
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~102~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~101~ @17
 
 OUTER_SET Corellon = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -403,7 +403,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 BEGIN @13001 DESIGNATED 130
 GROUP @10
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~102~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~101~ @17
 
 OUTER_SET Cyric = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -429,7 +429,7 @@ INCLUDE ~divine_remix/lib/druid_remix.tph~
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 /////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
 
-BEGIN @20200 DESIGNATED 202
+BEGIN @20100 DESIGNATED 201
 GROUP @11
 
 OUTER_SET druid_all = 1 
@@ -446,7 +446,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 BEGIN @20301 DESIGNATED 203
 GROUP @11
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~200~ @8
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~202~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~201~ @17
 
 OUTER_SET Oozemaster = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -461,7 +461,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 
 BEGIN @40300 DESIGNATED 403
 GROUP @13
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~202~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~201~ @17
 
 OUTER_SET Bowslinger = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -477,7 +477,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 BEGIN @40600 DESIGNATED 406
 GROUP @13
 REQUIRE_PREDICATE NOT FILE_EXISTS_IN_GAME ~a#feral.2da~ @9
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~202~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~201~ @17
 
 OUTER_SET Feralan = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -492,7 +492,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 
 BEGIN @40900 DESIGNATED 409
 GROUP @13
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~202~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~201~ @17
 
 OUTER_SET Forest = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -508,7 +508,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 BEGIN @41200 DESIGNATED 412
 GROUP @13
 REQUIRE_PREDICATE NOT FILE_EXISTS_IN_GAME ~a#justif.2da~ @9
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~202~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~201~ @17
 
 OUTER_SET Justifier = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -523,7 +523,7 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 
 BEGIN @41500 DESIGNATED 415
 GROUP @13
-FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~202~ @17
+FORBID_COMPONENT ~Setup-divine_remix.tp2~ ~201~ @17
 
 OUTER_SET Wilderness = 1 
 INCLUDE ~divine_remix/lib/divine_kit.tph~
@@ -538,9 +538,9 @@ INCLUDE ~divine_remix/lib/divine_kit.tph~
 
 BEGIN @60000 DESIGNATED 600 // component 600
 GROUP @10
-REQUIRE_PREDICATE GAME_IS ~bgt tutu tutu_totsc tob soa bg2ee eet bgee~ @16
+REQUIRE_PREDICATE GAME_IS ~bgt tutu tutu_totsc eet bgee~ @16
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
-REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-divine_remix.tp2~ ~109~ OR MOD_IS_INSTALLED ~Setup-divine_remix.tp2~ ~102~) @4
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-divine_remix.tp2~ ~109~ OR MOD_IS_INSTALLED ~Setup-divine_remix.tp2~ ~101~) @4
 
 // find tempus kit in kitlist
 COPY_EXISTING ~kitlist.2da~ ~override~
@@ -614,7 +614,7 @@ BEGIN @61000 DESIGNATED 610
 GROUP @10
 REQUIRE_PREDICATE GAME_IS ~bgt tutu tutu_totsc tob soa bg2ee eet bgee~ @16
 REQUIRE_COMPONENT ~Setup-divine_remix.tp2~ ~100~ @1
-REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-divine_remix.tp2~ ~106~ OR MOD_IS_INSTALLED ~Setup-divine_remix.tp2~ ~102~) @2
+REQUIRE_PREDICATE (MOD_IS_INSTALLED ~Setup-divine_remix.tp2~ ~106~ OR MOD_IS_INSTALLED ~Setup-divine_remix.tp2~ ~101~) @2
 
 ACTION_IF GAME_INCLUDES ~tob~ THEN BEGIN // Fate Spirit line if ToB is installed
 
@@ -628,7 +628,7 @@ COPY_EXISTING ~kitlist.2da~ ~override~
   FOR ( index = 31 ; index <= rows ; index = index + 1 ) BEGIN
     READ_2DA_ENTRY "%index%" 5 9 "clab"
     PATCH_IF ("%clab%" STRING_COMPARE_CASE "A#SHAR" = 0) BEGIN
-      SET "A#SHAR" = "%index%"
+      READ_2DA_ENTRY "%index%" 0 9 "A#SHAR"
       SET "rows" = 0
     END
   END

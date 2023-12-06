@@ -10,9 +10,10 @@ COPY ~Divine_Remix/bam/cdikoss.bam~ ~override~
 COPY ~Divine_Remix/itm/a#koss00.itm~ ~override~  // Tendril of Flame
   SAY NAME1 @11502
   SAY NAME2 @11502
-  SET "weap_idx" = 0
   SAY UNIDENTIFIED_DESC @11516
   SAY DESC @11516
+
+  SET "weap_idx" = 0
 
 COPY_EXISTING ~a#koss00.itm~ ~override/a#koss01.itm~ // tendril of flame +1
               ~a#koss00.itm~ ~override/a#koss02.itm~ // tendril of flame +2

@@ -27,6 +27,7 @@ COPY ~Divine_Remix/itm/a#redw00.itm~ ~override~  // Checkmate +0
   SAY NAME2 @10703
   SAY UNIDENTIFIED_DESC @10704
   SAY DESC @10704
+
   SET "weap_idx" = 0
 
 COPY_EXISTING ~a#redw00.itm~ ~override/a#redw01.itm~  // Checkmate +1

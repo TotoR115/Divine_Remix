@@ -62,6 +62,7 @@ COPY ~Divine_Remix/itm/a#sha00.itm~ ~override~  // Chakram +0
   SAY NAME2 @10608
   SAY UNIDENTIFIED_DESC @10609
   SAY DESC  @10609
+
   SET "weap_idx" = 0
 
 COPY_EXISTING ~a#sha00.itm~ ~override/a#sha01.itm~  // chakram +1
