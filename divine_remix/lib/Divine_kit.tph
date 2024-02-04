@@ -1537,35 +1537,30 @@ END
 ///// assign kits                                      \\\\\
 /////                                                  \\\\\
 
-ACTION_FOR_EACH creature IN a#murn BEGIN
+ACTION_FOR_EACH creature IN a#murn BEGIN // Mur'Neth
 
   ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
 
-  ADD_KIT ~A#OOZ2~
-	  ~A#OOZE                  0           0           1           1           0           1           0           0~
-	  ~A#OOZE 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	  ~A#OOZE	0       0       0       0       9       0~
-	  ~A#OOZE		0       0       0       0       0       0~
-	  ~A#OOZE		0	0	0	0	17	0~
-	  ~A#OOZE		0	0	0	0	15	0~
-	  ~A#OOZE		0       0       0       1       0       0       1       1       0~
-	  ~A#OOZE		1       0       1       1       0       1~
-	  ~divine_remix/2da/a#ooze.2da~
-	  ~~
-	  ~0x00004000 3~
-	  ~Cl0~
-	  ~CHAN09 * HELM07 BAG20 RING06 RING21 * BOOT01 AMUL19 BRAC16 BELT06 AROW11,40 BULL03,40 BOLT06,40 POTN52,5 POTN04,2 POTN14,5 HAMM07 SW1H27 STAF08~
-	  SAY @20302
-	  SAY @20303
-	  SAY @20304
-
-OUTER_SET kit = "%A#OOZ2%" // Oozemaster
-
     COPY_EXISTING ~%creature%.cre~ ~override~
-      WRITE_SHORT   0x244 0
-      WRITE_SHORT   0x246 0x4000 + "%kit%" // Oozemaster
-	  WRITE_BYTE   0x273 11 // Druid
-//    WRITE_BYTE    0x247 0x40
+	  WRITE_LONG   0x18	 3000 // XP
+	  WRITE_SHORT  0x24	 9	// HP
+	  WRITE_SHORT  0x26	 9	// HP
+	  WRITE_BYTE   0x45  10 // Hide in Shadow
+	  WRITE_BYTE   0x64  0 // Detect illusion
+	  WRITE_BYTE   0x65  0 // Set trap
+	  WRITE_BYTE   0x67  30 // Open locks
+	  WRITE_BYTE   0x68  5 // Move silently
+	  WRITE_BYTE   0x69  20 // Find traps
+	  WRITE_BYTE   0x6a  0 // Pick pockets
+	  WRITE_BYTE   0x234 1 // Cleric lv.
+	  WRITE_BYTE   0x235 2 // thief lv.
+	  WRITE_BYTE   0x273 15 // Cleric_thief
+	  WRITE_BYTE   0x23d 10 // Constitution
+	  WRITE_BYTE   0x23b 16 // Wisdom
+	  LPF ALTER_EFFECT INT_VAR match_opcode = 233 match_parameter2 = 96 parameter2 = 107 END
+      REPLACE_CRE_ITEM ~SLNG01~ #0 #0 #0 ~IDENTIFIED~ ~WEAPON2~
+      REPLACE_CRE_ITEM ~BULL01~ #20 #20 #20 ~IDENTIFIED~ ~QUIVER1~
+	  REMOVE_CRE_ITEM ~DAGG05~
 	  BUT_ONLY
 
   END
