@@ -236,6 +236,8 @@ COPY_EXISTING ~sppr107.spl~ ~override~
 			  ~spcl233.spl~ ~override~
 			  ~spin121.spl~ ~override~
   LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 101 parameter2 = 5 END // protect against charmed but don't cure it
+  LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 169 parameter2 = 0 END // protect against charmed but don't cure it
+  LPF CLONE_EFFECT INT_VAR match_opcode = 142 opcode = 169 parameter2 = 1 END // protect against charmed but don't cure it
 BUT_ONLY IF_EXISTS
 
 /////                                                  \\\\\
@@ -1052,7 +1054,10 @@ ACTION_IF ((overwrite = 1) OR ((IDS_OF_SYMBOL (~spell~ ~CLERIC_WATERY_FIST~)) < 
 	   ~divine_remix/bam/tr#wfist.vvc~ ~override~
 	   ~divine_remix/itm/tr#wfist.itm~ ~override~
 	   ~divine_remix/spl/tr#wfist.spl~ ~override~
-	   ~divine_remix/cre/tr#wfist.cre~ ~override~ // Water Weird
+
+  COPY ~divine_remix/cre/tr#wfist.cre~ ~override~ // Watery Fist
+		SAY NAME1 @283
+		SAY NAME2 @283
 
 
   COMPILE ~divine_remix/baf/tr#wfist.baf~ ~override~ // Restore buttons script
