@@ -22,9 +22,9 @@ COPY ~divine_remix/spl/givespell.spl~ ~override/tr#cyr7.spl~  // Give Create Dir
 
 
 // change spells to innates as needed
-COPY_EXISTING ~sppr601.spl~ ~override/a#cyr05.spl~ // Aerial Servant
-			  ~spwi811.spl~ ~override/a#cyr11.spl~ // Symbol, Fear
-              ~spwi509.spl~ ~override/a#cyr14.spl~ // Feeblemind
+COPY_EXISTING ~sppr601.spl~ ~override/a#cyr09.spl~ // Aerial Servant
+              ~spwi509.spl~ ~override/a#cyr11.spl~ // Feeblemind
+			  ~spwi811.spl~ ~override/a#cyr14.spl~ // Symbol, Fear
   LAUNCH_PATCH_MACRO ~spell_to_innate~ // change to innate spell
   BUT_ONLY_IF_IT_CHANGES
 

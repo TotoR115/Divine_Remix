@@ -1803,13 +1803,13 @@ Les maîtres des Conflits portent des robes noires et violettes. Ils portent des 
 Capacités :
 - Arme spirituelle : épée longue 'Lame de Rasoir' une fois par jour.
 Lame de Rasoir est l'arme spirituelle des Maîtres des Conflits de Cyric. L'arme octroie un bonus de +5% aux chance de coups critiques et se manie comme si le lanceur disposait de la grande maîtrise. Lame de Rasoir est une arme normale aux niveaux 1 à 5, +1 aux niveaux 6 à 10, +2 aux niveaux 11 à 15, +3 aux niveaux 16 à 20, +4 aux niveaux 21 à 25 et +5 aux niveaux 26 et supérieurs. L'arme spirituelle dure pendant un round par niveau du lanceur, jusqu'à 20 rounds.
-- Peut enduire son arme de poison une fois par jour par tranche de 6 niveaux. Les attaques effectuées durant le round suivant empoisonneront la cible, qui subira un point de dégâts par seconde pendant 24 secondes (3 points de dégâts pendant les 6 premières secondes). Un jet de sauvegarde contre le poison réussi limitera les dégâts à 12 points.
 - Immunité à toute forme de peur
+- Peut enduire son arme de poison une fois par jour par à partir du niveau 5 et par tranche de 5 niveaux. Les attaques effectuées durant le round suivant empoisonneront la cible, qui subira un point de dégâts par seconde pendant 24 secondes (3 points de dégâts pendant les 6 premières secondes). Un jet de sauvegarde contre le poison réussi limitera les dégâts à 12 points.
 - 'Décharge Terrifiante' une fois par jour à partir du niveau 7.
 DÉCHARGE TERRIFIANTE : cette capacité permet de lancer un rayon d'énergie négative qui inflige 4d8 points de dégâts +1 par niveau (+20 maximum) et qui rend la cible confuse pendant un round (un jet de sauvegarde contre les sorts à -2 réussi annule la confusion).
-- 'Serviteur aérien' une fois par jour à partir du niveau 9 (comme le sort de mage du niveau 5).
-- 'Symbole, Terreur' une fois par jour à partir du niveau 11 (comme le sort de mage du niveau 8).
-- 'Débilité mentale' une fois par jour à partir du niveau 14 (comme le sort de mage du niveau 5).~
+- 'Serviteur aérien' une fois par jour à partir du niveau 9 (comme le sort de prêtre du niveau 6).
+- 'Débilité mentale' une fois par jour à partir du niveau 11 (comme le sort de mage du niveau 5).
+- 'Symbole, Terreur' une fois par jour à partir du niveau 14 (comme le sort de mage du niveau 8).~
 @13005 = ~Symbole Sacré de Cyric~
 @13006 = ~Cyric récompense ses serviteurs les plus puissants avec un Symbole Sacré, des bracelets argentés représentant ses armoiries : un crâne devant un soleil de teinte sombre. En plus d'être un signe visible de la puissance du prêtre, ces bracelets représentent sa dévotion inconditionnelle au Prince des Mensonges. Utilisés, ces bracelets améliorent les pouvoirs déjà terrifiants du Semeur de discorde.
 
